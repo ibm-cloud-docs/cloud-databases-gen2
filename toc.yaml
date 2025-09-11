@@ -1,0 +1,128 @@
+---
+toc:
+  properties:
+    subcollection: cloud-databases
+    version: 2
+    audience: solution
+    category: solution_docs
+    content-type: solution
+    href: /docs/cloud-databases
+    path: cloud-databases
+    label: IBM Cloud Databases
+  entries:
+  - navgroup:
+      id: overview
+      topics:
+      - cdb-provision.md
+      - topicgroup:
+          label: Hosting models
+          topics:
+          - topic: hosting-models.md
+            navtitle: Overview
+          - topic: hosting-models-transition.md
+            navtitle: Transition timeline and placement
+          - topic: hosting-models-faq.md
+            navtitle: FAQ
+          - topic: hosting-pricing.md
+            navtitle: Pricing
+  - navgroup:
+      id: plan
+      topics:
+      - index.md
+      - learn-getting-to-production.md
+  - navgroup:
+      id: howto
+      topics:
+      - cdb-notifications.md
+      - topicgroup:
+          label: Observability
+          topics:
+          - cdb-logging-monitoring.md
+          - topic: logging.md
+            navtitle: Logging
+          - topic: reference-monitoring.md
+            navtitle: Monitoring
+          - topic: at-events.md
+            navtitle: Activity tracking events
+      - topicgroup:
+          label: Enhancing security
+          topics:
+          - cdb-secure.md
+          - manage-scc.md
+          - howto-cbr.md
+          - howto-allowlists.md
+          - reference-service-endpoints.md
+          - howto-vpes.md
+          - reference-iam.md
+          - reference-key-protect.md
+          - reference-hpcs.md
+          - howto-deprovisioning.md
+      - scaling.md
+      - howto-manage-backups.md
+      - closures.md
+  - navgroup:
+      id: tutorial
+      topics:
+      - hello-world-tutorial.md
+      - cbr-tutorial.md
+      - terra-postgres-tutorial.md
+      - k8-tutorial.md
+      - truck-tracker-tutorial.md
+      - disk-util-alerts-tutorial.md
+      - kms-tutorial.md
+  - navgroup:
+      id: reference
+      topics:
+      - icd-cli.md
+      - topicgroup:
+          label: High availability and disaster recovery
+          topics:
+          - ha-dr.md
+          - bc-dr.md
+      - db-version-policy.md
+      - reference-responsibilities.md
+      - service-dependency.md
+      - topicgroup:
+          label: Related product guides
+          topics:
+          - link:
+              label: Cloud Databases for PostgreSQL
+              href: https://cloud.ibm.com/docs/databases-for-postgresql          
+          - link:
+              label: Cloud Databases for MongoDB
+              href: https://cloud.ibm.com/docs/databases-for-mongodb
+          - link:
+              label: Cloud Databases for Redis
+              href: https://cloud.ibm.com/docs/databases-for-redis              
+          - link:
+              label: Cloud Databases for Elasticsearch
+              href: https://cloud.ibm.com/docs/databases-for-elasticsearch
+          - link:
+              label: Cloud Databases for MySQL
+              href: https://cloud.ibm.com/docs/databases-for-mysql
+          - link:
+              label: Messages for RabbitMQ
+              href: https://cloud.ibm.com/docs/messages-for-rabbitmq
+          - link:
+              label: Cloud Databases for EnterpriseDB
+              href: https://cloud.ibm.com/docs/databases-for-enterprisedb              
+          - link:
+              label: Cloud Databases for etcd
+              href: https://cloud.ibm.com/docs/databases-for-etcd
+  - navgroup:
+      id: help
+      topics:
+      - topicgroup:
+          label: Troubleshoot
+          topics:
+          - ts-terraform.md
+      - topicgroup:
+          label: FAQs
+          topics:
+          - availability-zones-faq.md
+          - status-page-faq.md
+          - resource-config-faq.md
+          - data-faq.md
+          - ha-faq.md
+          - cert-faq.md
+          - backups-faq.md
