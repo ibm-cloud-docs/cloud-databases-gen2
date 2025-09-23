@@ -1,18 +1,19 @@
 ---
 toc:
   properties:
-    subcollection: cloud-databases
+    subcollection: cloud-databases-gen2
     version: 2
     audience: solution
     category: solution_docs
     content-type: solution
-    href: /docs/cloud-databases
-    path: cloud-databases
-    label: IBM Cloud Databases
+    href: /docs/cloud-databases-gen2
+    path: cloud-databases-gen2
+    label: IBM Cloud Databases Gen 2
   entries:
   - navgroup:
-      id: overview
+      id: learn
       topics:
+      - overview.md
       - cdb-provision.md
       - topicgroup:
           label: Hosting models
