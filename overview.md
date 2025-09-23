@@ -11,7 +11,7 @@ subcollection: cloud-databases-gen2
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Overview of Gen 1 (Classic) and Gen 2 (VPC) {{site.data.keyword.databases-for}} 
+# Gen 1 (Classic) and Gen 2 (VPC)
 {: #overview-gen1-gen2}
 
 {{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across 
