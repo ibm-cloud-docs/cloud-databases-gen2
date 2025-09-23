@@ -15,17 +15,8 @@ toc:
       topics:
       - overview.md
       - cdb-provision.md
-      - topicgroup:
-          label: Hosting models
-          topics:
-          - topic: hosting-models.md
-            navtitle: Overview
-          - topic: hosting-models-transition.md
-            navtitle: Transition timeline and placement
-          - topic: hosting-models-faq.md
-            navtitle: FAQ
-          - topic: hosting-pricing.md
-            navtitle: Pricing
+      - isolated-compute.md
+      - pricing.md
   - navgroup:
       id: plan
       topics:
