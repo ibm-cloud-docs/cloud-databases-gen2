@@ -11,7 +11,7 @@ subcollection: cloud-databases-gen2
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Gen 1 (Classic) and Gen 2 (VPC)
+# Gen 1 (Classic) versus Gen 2 (VPC)
 {: #overview-gen1-gen2}
 
 {{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across all industries. The following page outlines the key differences between {{site.data.keyword.databases-for}} built on IBM’s Classic platform (Gen 1) and the latest VPC based platform (Gen 2). 
@@ -40,7 +40,8 @@ Gen 2 databases are built on IBM’s latest platform, based on highly secure sof
 | Read replicas (SQL only)    | Yes                                                               | Future release                                    |
 {: caption="Feature differentiators" caption-side="bottom"}
 
-Performance differentiators:
+## Performance differentiators
+{: #performance-differentiators}
 
 | Category               | Gen 1                                                                 | Gen 2                                               |
 |------------------------|-----------------------------------------------------------------------|-----------------------------------------------------|
@@ -51,13 +52,13 @@ Performance differentiators:
 | Backup and restore     | Timing depends on size of backup and performance impact during backup | Consistent, fast [add link](link to Backup/restore gen 2 page)|
 {: caption="Performance differentiators" caption-side="bottom"}
 
-Access, compliance, and security differentiators:
+## Access, compliance, and security differentiators
+{: #access-compliance-security-differentiators}
 
-| Category               | Gen 1                                                                 | Gen 2                                                                 |
-|------------------------|-----------------------------------------------------------------------|------------------------------------------------------------------------|
-| User and role management | [Database `admin` user created by IBM](docs/databases-for-mongodb?topic=databases-for-mongodb-user-management&interface=ui)                            | Database "manager" via service-credential                              |
+| Category               | Gen 1                                                                 | Gen 2                                              |
+|------------------------|-----------------------------------------------------------------------|----------------------------------------------------|
+| User and role management | [Database `admin` user created by IBM](docs/databases-for-mongodb?topic=databases-for-mongodb-user-management&interface=ui) | Database "manager" via service-credential                              |
 | Certificate type       | Signed by IBM Cloud Database Certificate Authority                    | Certificates signed by a Certificate Authority (Let's encrypt)         |
-| Encryption             | Encryption at Rest \\n Encryptions in Transit \\n Customer-managed encryption - Bring your own key (BYOK) | Encryption at Rest \\n Encryptions in Transit \\n 
-Customer-managed encryption - Bring your own key (BYOK) |
-| Compliance             | FS Cloud \\nGDPR \\nISO 27001, 27017, 27018 \\nSOC 1, SOC 2PCI DSS \\nHIPAA  | FS Cloud \\nGDPR \\nISO 27001, 27017, 27018SOC 1 \\nSOC 2PCI DSS \\nHIPAA      |
+| Encryption             | Encryption at Rest <br> Encryptions in Transit <br> Customer-managed encryption - Bring your own key (BYOK) | Encryption at Rest <br> Encryptions in Transit <br> Customer-managed encryption - Bring your own key (BYOK) |
+| Compliance             | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018 <br> SOC 1, SOC 2PCI DSS <br> HIPAA  | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018SOC 1 <br> SOC 2PCI DSS <br> HIPAA      |
 {: caption="Access, compliance, and security differentiators" caption-side="bottom"}
