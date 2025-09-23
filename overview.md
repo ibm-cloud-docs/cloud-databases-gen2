@@ -14,34 +14,30 @@ subcollection: cloud-databases-gen2
 # Gen 1 (Classic) and Gen 2 (VPC)
 {: #overview-gen1-gen2}
 
-{{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across 
-all industries. The following page outlines the key differences between {{site.data.keyword.databases-for}} built on IBM’s Classic platform (Gen 1) and the latest VPC based platform (Gen 2). 
+{{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across all industries. The following page outlines the key differences between {{site.data.keyword.databases-for}} built on IBM’s Classic platform (Gen 1) and the latest VPC based platform (Gen 2). 
 
-- Generation  1
+## Generation  1 (Classic)
+{: #gen1}
 
-  IBM’s original platform consisting of all databases across all regions and a rich feature set. Gen 1 Databases support both private and public endpoints, with options for isolated 
-and shared compute. This environment is best suited for workloads that benefit from simpler networking and isolation features. 
+IBM’s original platform consisting of all databases across all regions and a rich feature set. Gen 1 Databases support both private and public endpoints, with options for isolated and shared compute. This environment is best suited for workloads that benefit from simpler networking and isolation features. 
 
-- Generation 2
+## Generation 2 (VPC)
+{: #gen2}
 
-  Gen 2 databases are built on IBM’s latest platform, based on highly secure software-defined networking architecture and ideal for cloud-native applications. 
-Gen 2 Databases currently are only available in select regions only and support private endpoints and isolated compute options. This environment is ideal for modern applications 
-that demand advanced networking and secure, software-defined isolation. 
+Gen 2 databases are built on IBM’s latest platform, based on highly secure software-defined networking architecture and ideal for cloud-native applications. Gen 2 Databases currently are only available in select regions only and support private endpoints and isolated compute options. This environment is ideal for modern applications that demand advanced networking and secure, software-defined isolation. 
 
-Feature differentiators: 
+## Feature differentiators
+{: #feature-differentiators}
 
-
-| Category                     | Gen 1                                                                         | Gen 2                                                                 |
-|-----------------------------|--------------------------------------------------------------------------------|-----------------------------------------------------------------------|
-| Regions                     | Multizone location (MZR) \\n Dallas (us-south) \\n Sao Paulo (br-sao) \\n Toronto (ca-tor) \\n Washington (us-east) \\n Frankfurt (eu-de) \\n 
-London (eu-gb) \\n Madrid (eu-es) \\n Osaka (jp-osa) \\n Sydney (au-syd) \\n Tokyo (jp-tok) | Single-campus MZR (SC-MZR) \\n Montreal (ca-mon)   |
-| Database editions           | PostgreSQL \\n MongoDB (Standard and Enterprise) \\n MySQL \\n ElasticSearch (Enterprise and Platinum) \\n RabbitMQ \\n Redis              | PostgreSQL \\n 
-MongoDB (Standard)     |
-| Endpoints                   | Private endpoints \\n Public endpoints                                          | Private endpoints                                                      |
-| Hosting models              | Isolated compute \\n Shared compute                                             | Isolated compute                                                       |
-| Database versions supported | Minimum 2, varies per database                                                  | Latest                                                                 |
-| Autoscaling                 | Yes                                                                             | Future release                                                         |
-| Read replicas (SQL only)    | Yes                                                                             | Future release                                                         |
+| Category                     | Gen 1                                                            | Gen 2                                             |
+|-----------------------------|-------------------------------------------------------------------|---------------------------------------------------|
+| Regions                     | Multizone location (MZR) <br> Dallas (us-south) <br> Sao Paulo (br-sao) <br> Toronto (ca-tor) <br> Washington (us-east) <br> Frankfurt (eu-de) <br> London (eu-gb) <br> Madrid (eu-es) <br> Osaka (jp-osa) <br> Sydney (au-syd) <br> Tokyo (jp-tok) | Single-campus MZR (SC-MZR) <br> Montreal (ca-mon)   |
+| Database editions           | PostgreSQL <br> MongoDB (Standard and Enterprise) <br> MySQL <br> ElasticSearch (Enterprise and Platinum) <br> RabbitMQ <br> Redis              | PostgreSQL <br> MongoDB (Standard)     |
+| Endpoints                   | Private endpoints <br> Public endpoints                           | Private endpoints                                 |
+| Hosting models              | Isolated compute <br> Shared compute                              | Isolated compute                                  |
+| Database versions supported | Minimum 2, varies per database                                    | Latest                                            |
+| Autoscaling                 | Yes                                                               | Future release                                    |
+| Read replicas (SQL only)    | Yes                                                               | Future release                                    |
 {: caption="Feature differentiators" caption-side="bottom"}
 
 Performance differentiators:
