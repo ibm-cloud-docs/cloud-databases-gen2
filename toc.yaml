@@ -11,7 +11,7 @@ toc:
     label: IBM Cloud Databases Gen 2
   entries:
   - navgroup:
-      id: learn
+      id: overview
       topics:
       - overview.md
       - cdb-provision.md
