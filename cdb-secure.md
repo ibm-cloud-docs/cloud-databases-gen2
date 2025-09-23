@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-08-07"
+  years: 2025
+lastupdated: "2025-09-23"
 
-keywords: 
+keywords: disaster recovery, restrict, context-based restrictions
 
 subcollection: cloud-databases
 
@@ -24,18 +24,6 @@ subcollection: cloud-databases
 
 You've now provisioned a {{site.data.keyword.databases-for}} service instance, set up notifications and monitoring, and secured it. Next, jump into the specific Getting Started documentation for your chosen service.
 
-- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-getting-started){: external}
+- [{{site.data.keyword.databases-for-postgresql}}](update link){: external}
 
-- [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-getting-started-new){: external}
-
-- [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis?topic=databases-for-redis-getting-started){: external}
-
-- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-getting-started){: external}
-
-- [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-getting-started){: external}
-
-- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started){: external}
-
-- [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-getting-started){: external}
-
-- [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-getting-started){: external}
+- [{{site.data.keyword.databases-for-mongodb}}](update link){: external}
