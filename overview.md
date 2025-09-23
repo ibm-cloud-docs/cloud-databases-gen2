@@ -11,7 +11,7 @@ subcollection: cloud-databases-gen2
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Gen 1 (Classic) versus Gen 2 (VPC)
+# Overview of Gen 1 (Classic) and Gen 2 (VPC)
 {: #overview-gen1-gen2}
 
 {{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across all industries. The following page outlines the key differences between {{site.data.keyword.databases-for}} built on IBM’s Classic platform (Gen 1) and the latest VPC based platform (Gen 2). 
@@ -60,5 +60,5 @@ Gen 2 databases are built on IBM’s latest platform, based on highly secure sof
 | User and role management | [Database `admin` user created by IBM](docs/databases-for-mongodb?topic=databases-for-mongodb-user-management&interface=ui) | Database "manager" via service-credential                              |
 | Certificate type       | Signed by IBM Cloud Database Certificate Authority                    | Certificates signed by a Certificate Authority (Let's encrypt)         |
 | Encryption             | Encryption at Rest <br> Encryptions in Transit <br> Customer-managed encryption - Bring your own key (BYOK) | Encryption at Rest <br> Encryptions in Transit <br> Customer-managed encryption - Bring your own key (BYOK) |
-| Compliance             | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018 <br> SOC 1, SOC 2PCI DSS <br> HIPAA  | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018SOC 1 <br> SOC 2PCI DSS <br> HIPAA      |
+| Compliance             | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018 <br> SOC 1, SOC 2 <br> PCI DSS <br> HIPAA  | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018SOC 1 <br> SOC 2 <br> PCI DSS <br> HIPAA      |
 {: caption="Access, compliance, and security differentiators" caption-side="bottom"}
