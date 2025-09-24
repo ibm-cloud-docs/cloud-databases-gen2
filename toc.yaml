@@ -29,7 +29,7 @@ toc:
       - topicgroup:
           label: Observability
           topics:
-          - cdb-logging-monitoring.md
+          - set-up-logging-monitoring.md
           - topic: logging.md
             navtitle: Logging
           - topic: reference-monitoring.md
