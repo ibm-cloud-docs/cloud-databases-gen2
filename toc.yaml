@@ -50,6 +50,7 @@ toc:
           - reference-hpcs.md
           - howto-deprovisioning.md
       - scaling.md
+      - backup-restore.md
       - howto-manage-backups.md
       - closures.md
   - navgroup:
@@ -57,11 +58,6 @@ toc:
       topics:
       - hello-world-tutorial.md
       - cbr-tutorial.md
-      - terra-postgres-tutorial.md
-      - k8-tutorial.md
-      - truck-tracker-tutorial.md
-      - disk-util-alerts-tutorial.md
-      - kms-tutorial.md
   - navgroup:
       id: reference
       topics:
@@ -83,24 +79,6 @@ toc:
           - link:
               label: Cloud Databases for MongoDB
               href: https://cloud.ibm.com/docs/databases-for-mongodb
-          - link:
-              label: Cloud Databases for Redis
-              href: https://cloud.ibm.com/docs/databases-for-redis              
-          - link:
-              label: Cloud Databases for Elasticsearch
-              href: https://cloud.ibm.com/docs/databases-for-elasticsearch
-          - link:
-              label: Cloud Databases for MySQL
-              href: https://cloud.ibm.com/docs/databases-for-mysql
-          - link:
-              label: Messages for RabbitMQ
-              href: https://cloud.ibm.com/docs/messages-for-rabbitmq
-          - link:
-              label: Cloud Databases for EnterpriseDB
-              href: https://cloud.ibm.com/docs/databases-for-enterprisedb              
-          - link:
-              label: Cloud Databases for etcd
-              href: https://cloud.ibm.com/docs/databases-for-etcd
   - navgroup:
       id: help
       topics:
