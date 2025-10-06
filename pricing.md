@@ -1,120 +1,88 @@
 ---
-
 copyright:
   years: 2025
-lastupdated: "2025-09-23"
+lastupdated: "2025-10-06"
 
-subcollection: cloud-databases-gen2
+keywords: gen 2, pricing
 
-keywords: isolated compute, pricing, cost, charges
+subcollection: cloud-databases
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Pricing
+# Pricing for Gen 2 Databases
 {: #pricing}
-
-The following pricing information is for the purpose of understanding the estimated monthly charges for a range of {{site.data.keyword.databases-for}} instance types. 
-
-The estimated charges are for information purposes only and are subject to change without notice. Actual charges may vary.
-{: note}
-
-The following table shows the approximate **monthly** charges for {{site.data.keyword.databases-for}} instances with the lowest charge configurations available:
-
-| PostgreSQL | MongoDB Standard Edition | Elasticsearch Enterprise Edition| Redis | etcd | MySQL | RabbitMQ | EnterpriseDB [^tabletext1] |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| $82 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 2 members | $202 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $252 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 3 members | $77 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 1 GB disk <br> 2 members | $151 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 20 GB disk <br> 3 members | $181 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $229 <br><br>  1 vCPU <br> 8 GB RAM <br> 1 GB disk <br> 3 members | $1,929 <br><br> 4 vCPU <br> 16 GB RAM <br> 20 GB disk <br> 3 members |
-{: caption="{{site.data.keyword.databases-for}} approximate monthly charges" caption-side="bottom"}
-
-[^tabletext1]: EnterpriseDB is only available via Isolated Compute, which requires more resources than the Shared Compute configurations used for all other databases in this table.
-
-<br>
 
 The charge for an {{site.data.keyword.databases-for}} instance is determined by the following five factors:
 
-- Database type: PostgreSQL, MongoDB, Elasticsearch, Redis, etcd, MySQL, EnterpriseDB, and RabbitMQ
-- Database edition when applicable: MongoDB Standard versus Enterprise and Elasticsearch Enterprise versus Platinum
+- Database type: PostgreSQL, MongoDB
 - Quantity of vCPU allocated per database instance member
 - GB of RAM allocated per database instance member
 - GB of disk storage allocated per database instance member
 
-Each database instance consists of two or three members, depending on the database type, with each member holding a copy of the data to provide resiliency and high availability. The estimated monthly charges in this example are for one instance, including all of its members.
+Each database instance consists of two or thre members, depending on the database type, with each member holding a copy of the data to provide resiliency and high availability. {{site.data.keyword.databases-for}} instances are only available with [Isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui) hosting. Isolated compute offers a choice of six standard vCPU x RAM resource profiles that are hosted on single-tenant compute instances for maximum workload isolation and security. Disk storage capacity per member is specified independently of the vCPU x RAM profile selected. Gen 2 deployments start with 4 vCPU x 16 GB RAM profiles as the smallest and 48 vCPU x 240 GB RAM as the largest profiles, depending on [regional availability](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui#isolated-compute-sizing-ui).
 
-When deploying a database instance, you can select between Shared Compute hosting and Isolated Compute hosting. Shared Compute offers the lowest minimum resource allocations resulting in lower charges, and extensive flexibility in specifying vCPU, RAM, and storage resources. Isolated compute offers a choice of six standard vCPU x RAM resource profiles that are hosted on single-tenant compute instances for maximum workload isolation and security. Disk storage capacity per member is specified independently of the vCPU x RAM profile selected.
+The total cost of your {{site.data.keyword.databases-for}} deployment will consist of the the cost of each vCPU x RAM profile, disk storage in GB and backup storage (for all members), prorated hourly. 
 
-MongoDB Enterprise Edition, Elasticsearch Platinum Edition, and EnterpriseDB require Isolated Compute hosting.
-{: note}
+## Using the pricing calculator
+{: #pricing-calc}
 
-The following tables provide estimated monthly charges for a range of configurations. Actual billing for usage is done on an hourly basis, so database instances that exist for less than a full month will be charged based on the number of hours they existed.
+For pricing estimation, use the **Add to estimate** button on the catalog page of each service. Input your total consumption across each data members into the calculator. This is equal to the number of members because your data is replicated to all members. For example, a 2 member PostgreSQL deployment with 5 GB of disk on a 4 vCPU x 20 GB RAM profile would have a total bill for 10 GB of disk and the total cost of 2 members. 
 
-## Estimated monthly charges - Shared Compute
-{: #hosting-pricing}
+## Backups pricing for Gen 2 instances
+{: #pricing-backup}
 
-| vCPUs | GB RAM | GB disk | PostgreSQL | MongoDB <br> Standard Edition | Elasticsearch <br> Enterprise Edition |
-| --- | --- | --- | --- | --- | --- |
-| 0.5 | 4 | 40 | $126 | $258 | $318 |
-| 1 | 8 | 80 | $252 | $516 | $636 |
-| 2 | 8 | 80 | $317 | $661 | $733 |
-| 2 | 16 | 160 | $503 | $1,032 | $1,272 |
-| 4 | 16 | 160 | $633 | $1,322 | $1,466 |
-{: caption="Estimated monthly charges - Shared Compute" caption-side="bottom"}
+Gen 2 {{site.data.keyword.databases-for}} uses a snapshot based backup model, with pricing aligned to the size of your provisioned database storage. Snapshots differ from traditional backups in that they are block-level incremental copies, therefore you are billed based on how much data has changed since the last snapshot, not just the total size of your database. 
 
-<br>
+By default, all Gen 2 {{site.data.keyword.databases-for}} provides a daily backup that is stored for 30 days. These backups, and any on-demand backups you make, all count toward the above allocation.
 
-| vCPUs | GB RAM | GB disk | Redis |etcd | MySQL | RabbitMQ |
-| --- | --- | --- | --- | --- | --- | --- |
-| 0.5 | 4 | 40 | $126 | $189 | $237 | N/A |
-| 1 | 8 | 80 | $252 | $378 | $474 | $378 |
-| 2 | 8 | 80 | $317 | $475 | $603 | $475 |
-| 2 | 16 | 160 | $503 | $755 | $948 |$755 |
-| 4 | 16 | 160 | $633 | $949 | $1,206 | $949 |
-{: caption="Estimated monthly charges - Shared Compute" caption-side="bottom"}
+## Backup storage
+{: #pricing-storage}
 
-## Estimated monthly charges - Isolated Compute
-{: #hosting-pricing}
+### Free allocation
+{: #pricing-storage-free}
 
-| vCPUs | GB RAM | GB disk | PostgreSQL | MongoDB Standard Edition | MongoDB Enterprise Edition | Elasticsearch Enterprise Edition | Elasticsearch Platinum Edition |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 4 | 16 | 530 | $1,098 | $2,019 | N/A | $2,164 | $2,600 |
-| 8 | 32 | 320 | $1,265 | $2,644 | $4,734 | $2,932 | $3,845 |
-| 8 | 64 | 640 | $2,012 | $4,125 | $7,918 | $5,088 | $6,936 |
-| 16 | 64 | 640 | $2,529 | $5,287 | $9,468 | $5,864 | $7,690 |
-| 32 | 128 | 1280 | $5,058 | $10,573 | $18,936 | $11,728 | $15,380 |
-| 30 | 240 | 2400 | $7,543 | $15,467 | $29,692 | $19,078 | $26,010 |
-{: caption="Estimated monthly charges - Isolated Compute" caption-side="bottom"}
+- You receive free backup storage equal to the total provisioned disk size of your deployment.
+- This includes both automated daily backups and manual (on-demand) snapshots.
 
-<br>
+To help manage variability in monthly charges, especially during failover events or update events, the free backup storage {{site.data.keyword.databases-for}} with every instance is for each member. This buffer ensures that when a failover or cluster update occurs, resulting in a switch in the database primary, it does not result in unexpected costs. In the rare case where there’s no update or failover activity during a given month, your usage may fall below the free allocation, and you'll be charged less accordingly. This approach gives you predictable pricing while still accounting for the realities of high availability.
 
-| vCPUs | GB RAM | GB disk | Redis | etcd | MySQL | EnterpriseDB | RabbitMQ |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 4 | 16 | 530 | $1,098 | $1,646 | $1,904 | $2,891 | $1,646 |
-| 8 | 32 | 320 | $1,265 | $1,897 | $2,412 | $4,386 | $1,897 |
-| 8 | 64 | 640 | $2,012 | $3,017 | $3,791 | $6,176 | $3,017 |
-| 16 | 64 | 640 | $2,529 | $3,794 | $4,824 | $8,771 | $3,794 |
-| 32 | 128 | 1280 | $5,058 | $7,587 | $9,647 | $17,542 | $7,587 |
-| 30 | 240 | 2400 | $7,543 | $11,314 | $14,213 | $23,157 | $11,314 |
-{: caption="Estimated monthly charges - Isolated Compute" caption-side="bottom"}
+- Example: If a 2 member {{site.data.keyword.databases-for-postgresql}} deployment is provisioned with 100 GB of disk per member, you get 200 GB of backup storage included at no cost.
 
-## Estimated monthly charges for other configurations
-{: #hosting-pricing-other}
+### Overage charges
+{: #pricing-storage-overage}
 
-Use the iformation in the following tables to estimate the monthly charge for combinations of vCPU, RAM, and disk that is not shown in the previous tables. The estimated monthly charges are for one member, so to estimate the charge per instance, multiply by the number of members/instance shown in the table.
+- Overage is billed monthly and applies when your snapshot storage exceeds the included allocation. 
+- Total snapshot storage = (Initial single member snapshot * number of members) + (Daily change × 29 days).
+- Any usage beyond the free allocation is charged at $0.095 per GB per month.
 
-| | PostgreSQL | MongoDB <br> Standard Edition | MongoDB Enterprise Edition | Elasticsearch Enterprise Edition | Elasticsearch Platinum Edition |
-| --- | --- | --- | --- | --- | --- |
-| Members/instance | 2 | 3 | 3 | 3 | 3 |
-| 1 vCPU/month/member | $32.35 | $48.41 | $64.59 | $32.35 | $32.35 |
-| 1 GB RAM/month/member | $5.39 | $9.15 | $26.89 | $16.18 | $26.10 |
-| 1 GB disk/month/member | $0.63 | $0.63 | $0.63| $0.63 | $0.63 |
-{: caption="Estimated monthly charges for other configurations" caption-side="bottom"}
+### Worked example, for a 2-member PostgreSQL deployment with 100 GB of data per member
+{: #pricing-example}
 
-<br>
+- Day 1: A full snapshot is taken from the current primary. This consumes 100 GB of snapshot storage. 
 
-| | Redis | etcd | MySQL | EnterpriseDB | RabbitMQ |
-| --- | --- | --- | --- | --- | --- |
-| Members/instance | 2 | 3 | 3 | 3 | 3 |
-| 1 vCPU/month/member | $32.35 | $32.35 | $43.06 | $107.15 | $32.35 |
-| 1 GB RAM/month/member | $5.39 | $5.39 | $8.08 | $12.36 | $5.39 |
-| 1 GB disk/month/member | $0.63 | $0.63 | $0.63| $0.63 | $0.63 |
-{: caption="Estimated monthly charges for other configurations" caption-side="bottom"}
+This models the worst case scenario where the full snapshot is equal to the file system. In practice, especially for new databases (which will grow over time), the snapshot size is often smaller, reducing your backup bill. 
+{: note} 
+
+- Day 2-16: You write 10 GB of new data per day. Snapshots are incremental and only store changes. Over 15 days, this adds 150 GB, bringing total snapshot usage to 100 GB + 150 GB = 250 GB. 
+- Day 17: A failover occurs, and the secondary becomes the new primary. A full snapshot is taken from this new primary, consuming another 100 GB. This uses up the remaining free allocation and brings total snapshot usage to 350 GB.
+- Day 18-30: You continue writing 10 GB per day, adding 130 GB over 13 days. 
+- Total snapshot = 100 GB (initial) + 150 GB (incremental) + 100 GB (failover snapshot) + 130 GB (post-failover incremental) = 480 GB.
+- Free allocation = 100 GB x 2 members = 200 GB.
+- Overage = 480 GB - 200 GB  = 280 GB.
+- Monthly charge = (480 GB - 200 GB) X $0.095 = $26.6. 
+- With large deployments and frequent writes, you’re more likely to exceed the free tier after the first snapshot, and your snapshot storage costs will grow quickly.
+- Cross-region copies: If you choose to copy snapshots to another region, {{site.data.keyword.databases-for}} charges for the full size of the snapshot in the destination region and continued incremental growth in the original region as new snapshots are taken.
+
+## Scaling per member
+{: #scaling-member}
+
+{{site.data.keyword.databases-for-postgresql}} deployments have minimum and maximum allocation for disk and RAM as shown. Scaling deployments through the API and CLI provides more granularity and also allows you to scale a database instance up to 4 TB of disk per member. Minimum and maximum CPU and RAM combinations vary per region, see [Isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui#isolated-compute-sizing-ui). 
+
+| Resource | Minimum | Maximum | Scaling granularity (API/CLI) |
+| ---------- | ----- | ----- | ------- |
+| Disk | 5 GB per member | 4 TB per member | 1024 MB per member |
+| RAM | 16 GB | 240 GB | Isolated compute – Resource scaling via T-shirt sizes |
+| CPU | 4 vCPU | 48 vCPU| Isolated compute – Resource scaling via T-shirt sizes |
+{: caption="Scaling limits" caption-side="bottom"}
