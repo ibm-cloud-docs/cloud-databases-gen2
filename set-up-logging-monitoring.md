@@ -2,11 +2,11 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-24"
+lastupdated: "2025-10-06"
 
 keywords: logging, monitoring, metrics
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
@@ -15,17 +15,17 @@ subcollection: cloud-databases
 # Set up logging and monitoring
 {: #set-up-logging-monitoring}
 
-## {{site.data.keyword.mon}}
+## {{site.data.keyword.mon_full_notm}}
 {: #set-up-monitoring}
 
 Use {{site.data.keyword.mon_full}} to gain operational visibility into the performance and health of your applications, services, and platforms. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.mon_full}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring).
 
 Add default alerts to your Monitoring instance
-{: tag-new}
+[New]{: tag-new}
 
 {{site.data.keyword.databases-for}} provides a set of common and service specific metrics to help you monitor performance and resource usage. For more information, see [default alerts](add link).
 
-## {{site.data.keyword.logs}}
+## {{site.data.keyword.logs_full_notm}}
 {: #set-up-logging}
 
 Use {{site.data.keyword.logs_full}} to add log management capabilities to your {{site.data.keyword.databases-for}} architecture. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.logs_full}}](/docs/cloud-databases?topic=cloud-databases-logging).

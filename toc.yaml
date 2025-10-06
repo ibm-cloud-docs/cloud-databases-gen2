@@ -1,4 +1,3 @@
----
 toc:
   properties:
     subcollection: cloud-databases-gen2
@@ -75,7 +74,7 @@ toc:
           topics:
           - link:
               label: Cloud Databases for PostgreSQL
-              href: https://cloud.ibm.com/docs/databases-for-postgresql          
+              href: https://cloud.ibm.com/docs/databases-for-postgresql
           - link:
               label: Cloud Databases for MongoDB
               href: https://cloud.ibm.com/docs/databases-for-mongodb
