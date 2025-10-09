@@ -30,7 +30,7 @@ subcollection: cloud-databases-gen2
 {: #sample-checklist}
 
 - [ ] Create a database with the required compute profile and disk. Gen 2 instances are only available with Isolated Compute, which provides hypervisor level isolation with guaraneed vCPU and RAM. 
-- [ ] While these scaling parameters can be changed after the initial provisioning, disks *cannot be scaled down*. 
+- [ ] While these scaling parameters can be changed after the initial provisioning, disks *cannot be scaled down*.< --- might have to be deleted--->
 - [ ] Add users. See the related documentation for your {{site.data.keyword.databases-for}} instance.
 - [ ] Create the `manager` service-credential. You can rotate the `manager` service-credential passwords either directly via the database or via the user management API.
 - [ ] Set up monitoring with {{site.data.keyword.monitoringfull}}, {{site.data.keyword.atracker_full}}, and {{site.data.keyword.logs_full}}. At minimum, set alerts on:
