@@ -13,7 +13,6 @@ toc:
       id: overview
       topics:
       - overview.md
-      - cdb-provision.md
       - isolated-compute.md
       - pricing.md
   - navgroup:
