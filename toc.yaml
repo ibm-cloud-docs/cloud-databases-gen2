@@ -20,6 +20,7 @@ toc:
       topics:
       - index.md
       - learn-getting-to-production.md
+      - private-connections.md
   - navgroup:
       id: howto
       topics:
