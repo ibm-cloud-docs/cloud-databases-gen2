@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-10-23"
 
 subcollection: cloud-databases-gen2
 
@@ -44,7 +44,7 @@ Gen 1 backups can be used to restore a Gen 2 instance. Gen 2 instances cannot be
 | Backup Locality | Fixed | Customer defined per instance (backups can be copied to another region) |
 | Backup Deletion | Automatic deletion after 30 days | Automatic and manual deletion after 30 days |
 | Maximum Backup Retention | 30 days | 90 days TBD |
----->
+---- >
 
 ## Decoupled backups
 {: #decoupled-backups}
