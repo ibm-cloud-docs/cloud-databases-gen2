@@ -33,18 +33,7 @@ Gen 1 backups can be used to restore a Gen 2 instance. Gen 2 instances cannot be
 | Cross-region restore of Gen 2 backups | Not applicable | Gen 2 instances can only be restored in regions they were created in, therefore the backup must be manually copied or automatically configured to copy to the target region or before any restore operation can be performed there. This is due to how backups are managed and stored at the infrastructure and storage-layer level, which is region specific. |
 {: caption="Key feature differences between Gen 1 and Gen 2" caption-side="bottom"}
 
-< ----- not for MPV
-## Beyond MVP or potentially beyond MVP
 
-| Differentiator | Gen 1 | Gen 2 |
-|----------------|-------|-------|
-| Lifecycle | Coupled to the instance | Decoupled from the instance ([find out more](https://cloud.ibm.com/docs)) |
-| Account Level Backup Views | Not supported | All backups in an account can be viewed in a single plane, including on-demand and automatic backups, and backup copied. View your backups in the [Database Hub](https://cloud.ibm.com/docs). |
-| Set Backup Start Time | Not supported | Supported |
-| Backup Locality | Fixed | Customer defined per instance (backups can be copied to another region) |
-| Backup Deletion | Automatic deletion after 30 days | Automatic and manual deletion after 30 days |
-| Maximum Backup Retention | 30 days | 90 days TBD |
----- >
 
 ## Decoupled backups
 {: #decoupled-backups}
