@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-10-23"
 
 keywords: gen 2, pricing
 
@@ -14,16 +14,27 @@ subcollection: cloud-databases
 # Pricing for Gen 2 Databases
 {: #pricing}
 
-The charge for an {{site.data.keyword.databases-for}} instance is determined by the following five factors:
+The charge for an {{site.data.keyword.databases-for}} instance is determined by the following four factors:
 
 - Database type: PostgreSQL, MongoDB
 - Quantity of vCPU allocated per database instance member
 - GB of RAM allocated per database instance member
 - GB of disk storage allocated per database instance member
 
-Each database instance consists of two or thre members, depending on the database type, with each member holding a copy of the data to provide resiliency and high availability. {{site.data.keyword.databases-for}} instances are only available with [Isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui) hosting. Isolated compute offers a choice of six standard vCPU x RAM resource profiles that are hosted on single-tenant compute instances for maximum workload isolation and security. Disk storage capacity per member is specified independently of the vCPU x RAM profile selected. Gen 2 deployments start with 4 vCPU x 16 GB RAM profiles as the smallest and 48 vCPU x 240 GB RAM as the largest profiles, depending on [regional availability](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui#isolated-compute-sizing-ui).
+Each database instance consists of two or three members, depending on the database type, with each member holding a copy of the data to provide resiliency and high availability. {{site.data.keyword.databases-for}} instances are only available with [Isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui) hosting. Isolated compute offers a choice of six standard vCPU x RAM resource profiles that are hosted on single-tenant compute instances for maximum workload isolation and security. Disk storage capacity per member is specified independently of the vCPU x RAM profile selected. Gen 2 deployments start with 4 vCPU x 16 GB RAM profiles as the smallest and 48 vCPU x 240 GB RAM as the largest profiles, depending on [regional availability](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui#isolated-compute-sizing-ui).
+
+| Host size | vCPU x RAM | Best for |
+| --- | --- | --- |
+| 4x16 | 4 vCPU x 16 GB RAM | Getting started |
+| 8x32 | 8 vCPU x 32 GB RAM | |
+| 8x64 | 8 vCPU x 64 GB RAM | Memory intensive usage |
+| 16x64 | 16 vCPU x 64 GB RAM | |
+| 32x128 | 32 vCPU x 128 GB RAM | |
+| 30x240 | 30 vCPU x 240 GB RAM | Memory intensive usage |
+{: caption="Isolated compute UI selections" caption-side="bottom"}
 
 The total cost of your {{site.data.keyword.databases-for}} deployment will consist of the the cost of each vCPU x RAM profile, disk storage in GB and backup storage (for all members), prorated hourly. 
+{: note}
 
 ## Using the pricing calculator
 {: #pricing-calc}
@@ -33,7 +44,7 @@ For pricing estimation, use the **Add to estimate** button on the catalog page o
 ## Backups pricing for Gen 2 instances
 {: #pricing-backup}
 
-Gen 2 {{site.data.keyword.databases-for}} uses a snapshot based backup model, with pricing aligned to the size of your provisioned database storage. Snapshots differ from traditional backups in that they are block-level incremental copies, therefore you are billed based on how much data has changed since the last snapshot, not just the total size of your database. 
+Gen 2 {{site.data.keyword.databases-for}} uses a snapshot based backup model, with pricing aligned to the size of your provisioned database storage. Snapshots differ from native backups in that they are block-level incremental copies, therefore you are billed based on how much data has changed since the last snapshot, not just the total size of your database. 
 
 By default, all Gen 2 {{site.data.keyword.databases-for}} provides a daily backup that is stored for 30 days. These backups, and any on-demand backups you make, all count toward the above allocation.
 
@@ -48,7 +59,7 @@ By default, all Gen 2 {{site.data.keyword.databases-for}} provides a daily backu
 
 To help manage variability in monthly charges, especially during failover events or update events, the free backup storage {{site.data.keyword.databases-for}} with every instance is for each member. This buffer ensures that when a failover or cluster update occurs, resulting in a switch in the database primary, it does not result in unexpected costs. In the rare case where there’s no update or failover activity during a given month, your usage may fall below the free allocation, and you'll be charged less accordingly. This approach gives you predictable pricing while still accounting for the realities of high availability.
 
-- Example: If a 2 member {{site.data.keyword.databases-for-postgresql}} deployment is provisioned with 100 GB of disk per member, you get 200 GB of backup storage included at no cost.
+- Example: If a 2-member {{site.data.keyword.databases-for-postgresql}} deployment is provisioned with 100 GB of disk per member, you get 200 GB of backup storage included at no cost.
 
 ### Overage charges
 {: #pricing-storage-overage}
@@ -83,6 +94,6 @@ This models the worst case scenario where the full snapshot is equal to the file
 | Resource | Minimum | Maximum | Scaling granularity (API/CLI) |
 | ---------- | ----- | ----- | ------- |
 | Disk | 5 GB per member | 4 TB per member | 1024 MB per member |
-| RAM | 16 GB | 240 GB | Isolated compute – Resource scaling via T-shirt sizes |
-| CPU | 4 vCPU | 48 vCPU| Isolated compute – Resource scaling via T-shirt sizes |
+| RAM | 16 GB | 240 GB | Isolated compute – Resource scaling with host sizes |
+| CPU | 4 vCPU | 48 vCPU| Isolated compute – Resource scaling with host sizes |
 {: caption="Scaling limits" caption-side="bottom"}
