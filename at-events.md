@@ -2,11 +2,11 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-11"
+lastupdated: "2025-10-23"
 
 keywords: activity tracker
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
@@ -17,16 +17,13 @@ subcollection: cloud-databases
 # Activity tracking events for {{site.data.keyword.databases-for}}
 {: #at_events}
 
-
-
-{{site.data.keyword.cloud}} services, such as {{site.data.keyword.databases-for}}, generate activity tracking events.
+{{site.data.keyword.cloud}} services, such as {{site.data.keyword.databases-for}}, generate activity tracking events that capture changes to the state of a service. These events help you identify critical actions, investigate unusual activity, and support audit and compliance efforts.
 {: shortdesc}
 
-Activity tracking events report on activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
+With [{{site.data.keyword.atracker_full}}](/docs/atracker?topic=atracker-about), you can direct these events to specific destinations by configuring targets and routes, giving you control over how auditing data is collected and where it is sent. This enables timely investigation of abnormal activity, supports security and compliance needs, and helps meet regulatory audit requirements.
 
-You can use **{{site.data.keyword.atracker_full}}**, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [About {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-about).
-
-You can use **{{site.data.keyword.logs_full}}** to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
+You need an [{{site.data.keyword.logs_full}}](https://cloud.ibm.com/observability/logging) instance to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}}.
+{: note}
 
 ## Locations where activity tracking events are generated
 {: #at-locations}
@@ -85,14 +82,14 @@ Create an {{site.data.keyword.logs_full_notm}} instance and configure {{site.dat
 
 
 
-You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
+Deploy an [{{site.data.keyword.logs_full_notm}}](https://cloud.ibm.com/observability/logging) instance to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
 ### Launching {{site.data.keyword.logs_full_notm}} from the {{site.data.keyword.databases-for}} dashboard
 {: #log-launch-integrated}
 
 
 
-You can visit the {{site.data.keyword.databases-for}} instance. Click on _Overview_ and scroll to the _Observability_ section. Click on *{{site.data.keyword.logs_full_notm}}* to view your logging instances. Click on _Open Dashboard_ to access the logs.
+Select your [{{site.data.keyword.databases-for}}](https://cloud.ibm.com/databases-overview/resources) instance from the databases resource list. Then click on _Overview_ and scroll to the _Observability_ section. Click on *{{site.data.keyword.logs_full_notm}}* to view your logging instances. Click on _Open Dashboard_ to access the logs.
 
 ### Launching {{site.data.keyword.logs_full_notm}} from the Observability page
 {: #log-launch-standalone}
@@ -125,14 +122,3 @@ The following table lists the activity tracking event actions that {{site.data.k
 The `service_name` field indicates the type of {{site.data.keyword.databases-for}} instance. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
 
 Auditing of global events, such as `<service_name>.instance.create`, is covered by the {{site.data.keyword.cloud_notm}} global event. For more resource-related global events, see [Auditing events for service instances](/docs/atracker?topic=atracker-at_events_rc).
-
-
-
-
-
-
-
-
-
-
-
