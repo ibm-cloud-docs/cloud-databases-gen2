@@ -12,11 +12,10 @@ keywords: api
 
 {{site.data.keyword.attribute-definition-list}}
 
-# API
+# {{site.data.keyword.databases-for}} API
 {: #api}
 
-The IBM Cloud Data Services API generally utilizes the [Resource Controller API](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#intro) for operation purposes. 
-This API document is designed to provide users and developers the ability to work with their data services.
+The {{site.data.keyword.databases-for}} API generally utilizes the [Resource Controller API](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#intro) for operation purposes. Use this API document to work with your data services.
 
 ## Authentication
 {: #api-authentication}
@@ -112,7 +111,7 @@ Access Tags:
 
 Gets the full data that is associated with a deployment. This data includes the ID, name, database type, and version.
 
-GET /v2/resource_instances/{id}
+`GET /v2/resource_instances/{id}`
 
 Example request:
 
@@ -120,6 +119,7 @@ curl -X GET https://resource-controller.cloud.ibm.com/v2/resource_instances/8d7a
 
 Example response:
 
+```curl
 [
     {
         "guid": "5aa314a5-76d9-4440-8e84-faa343d40127",
@@ -237,31 +237,16 @@ Example response:
         "target_crn": "crn:v1:staging:public:globalcatalog::::deployment:databases-for-postgresql-cdp-dev-standard-deployment-us-east-72d307a5"
     }
 ]
+```
+{: pre}
 
-Information you can expect to get back:
+### How to manage and update your database configuration
 
-The last task you have conducted is seen under the `last_operation`
-
-Product connection information under connection parameter
-
-Product specific information under the product object (e.g. postgresql)
-
-Creates a user based on user type
-
-TBD
-
-Deletes a user based on user type
-
-TBD
-
-Update your database configuration
-
-How to manage and update your database configuration.
-
-POST /v2/resource_instances
+`POST /v2/resource_instances`
 
 Example request:
 
+```curl
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
     "name": "my-instance",
     "target": "ca-mon",
@@ -328,51 +313,16 @@ Input Parameters
       }
 
    },
+```
+{: pre}
 
-Get the schema of the database configuration
+### How to scale your database
 
-Transition doc
-
-List read-only replica information
-
-N/A for MVP
-
-Resync read-only replica
-
-N/A for MVP
-
-Promote read-only replica to a full deployment
-
-N/A for MVP
-
-Get information about a backup
-
-Getting backup information is only available via our UI
-
-List currently available backups from a deployment
-
-Listing backups is only available via our UI
-
-Initiate an on-demand backup
-
-Creating backups is only available via our UI
-
-Get earliest point-in-time-recovery timestamp
-
-N/A for MVP
-
-List currently available scaling groups from a deployment
-
-Needs documentation from product detailing all the available host flavors and scaling values associated with out products
-
-Set scaling values on a specified product.
-
-How to scale your database.
-
-POST /v2/resource_instances
+`POST /v2/resource_instances`
 
 Example request:
 
+```curl
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
     "name": "my-instance",
     "target": "ca-mon",
@@ -418,59 +368,68 @@ Input Parameters
       },
 
 }
+```
+{: pre}
 
-Get the autoscaling configuration from a deployment
+Get the schema of the database configuration (INFO SEEMS TO BE MISSING)
 
-N/A for MVP
+## Transition doc
 
-Set the autoscaling configuration from a deployment
 
-N/A for MVP
+Information you can expect to get back:
 
-Kill connections to a PostgreSQL or EnterpriseDB deployment
+The last task you have conducted is seen under the `last_operation`
 
-N/A for MVP
+Product connection information under connection parameter
 
-Sync files uploaded to Elasticsearch deployment
+Product specific information under the product object (e.g. postgresql)
 
-N/A for MVP
+Creates a user based on user type - TBD
 
-Create a new logical replication slot
+Deletes a user based on user type - TBD
 
-N/A for MVP
+Update your database configuration (INFO SEEMS TO BE MISSING)
 
-Delete a logical replication slot
 
-N/A for MVP
+### Methods not available for MVP
 
-Retrieve the allowlisted addresses and ranges for a deployment.
+- List read-only replica information
+- Resync read-only replica
+- Promote read-only replica to a full deployment
+- Get information about a backup
+- Get earliest point-in-time-recovery timestamp
+- Get the autoscaling configuration from a deployment
+- Set the autoscaling configuration from a deployment
+- Kill connections to a PostgreSQL or EnterpriseDB deployment
+- Sync files uploaded to Elasticsearch deployment
+- Create a new logical replication slot
+- Delete a logical replication slot
+- Discover capability information from a backup
+- Upgrade your database version
 
-Waiting for CBR implementation
+Waiting for CBR implementation:
 
-Set the allowlist for a deployment.
+- Retrieve the allowlisted addresses and ranges for a deployment.
+- Set the allowlist for a deployment.
+- Add an address or range to the allowlist for a deployment.
+- Delete an address or range from the allowlist of a deployment.
 
-Waiting for CBR implementation
+Migrated to GC: 
 
-Add an address or range to the allowlist for a deployment.
+- Discover capability information.
+- Discover capability information from a deployment.
 
-Waiting for CBR implementation
+Limitations
 
-Delete an address or range from the allowlist of a deployment.
+- Getting backup information is only available via our UI.
+- List currently available backups from a deployment.
+- Listing backups is only available via our UI.
+- Initiate an on-demand backup (INFO SEEMS TO BE MISSING HERE)
+- Creating backups is only available via our UI.
 
-Waiting for CBR implementation
 
-Discover capability information.
+List currently available scaling groups from a deployment
 
-This has been migrated to GC
+Needs documentation from product detailing all the available host flavors and scaling values associated with out products
 
-Discover capability information from a deployment.
-
-This has been migrated to GC
-
-Discover capability information from a backup
-
-N/A for MVP
-
-Upgrade your database version
-
-N/A for MVP
+Set scaling values on a specified product.
