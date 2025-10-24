@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-23"
+lastupdated: "2025-10-24"
 
 subcollection: cloud-databases-gen2
 
@@ -241,6 +241,7 @@ Example response:
 {: pre}
 
 ### How to manage and update your database configuration
+{: #api-manage-config}
 
 `POST /v2/resource_instances`
 
@@ -317,6 +318,7 @@ Input Parameters
 {: pre}
 
 ### How to scale your database
+{: #api-scale-db}
 
 `POST /v2/resource_instances`
 
@@ -373,25 +375,17 @@ Input Parameters
 
 Get the schema of the database configuration (INFO SEEMS TO BE MISSING)
 
-## Transition doc
-
+## Transition documentation
+{: #api-transition-doc}
 
 Information you can expect to get back:
 
-The last task you have conducted is seen under the `last_operation`
-
-Product connection information under connection parameter
-
-Product specific information under the product object (e.g. postgresql)
-
-Creates a user based on user type - TBD
-
-Deletes a user based on user type - TBD
-
-Update your database configuration (INFO SEEMS TO BE MISSING)
-
+- The last task you have conducted is seen under the `last_operation`.
+- Product connection information under connection parameter.
+- Product specific information under the product object (for example postgresql).
 
 ### Methods not available for MVP
+{: #api-limitations}
 
 - List read-only replica information
 - Resync read-only replica
@@ -407,14 +401,14 @@ Update your database configuration (INFO SEEMS TO BE MISSING)
 - Discover capability information from a backup
 - Upgrade your database version
 
-Waiting for CBR implementation:
+Waiting for context-based restrictions (CBR) implementation:
 
 - Retrieve the allowlisted addresses and ranges for a deployment.
 - Set the allowlist for a deployment.
 - Add an address or range to the allowlist for a deployment.
 - Delete an address or range from the allowlist of a deployment.
 
-Migrated to GC: 
+Migrated to the Global Catalog: (NEED INFO TO EXPLAIN WHAT THIS MEANS)
 
 - Discover capability information.
 - Discover capability information from a deployment.
@@ -422,14 +416,18 @@ Migrated to GC:
 Limitations
 
 - Getting backup information is only available via our UI.
-- List currently available backups from a deployment.
+- List currently available backups from a deployment. (ONLY FROM UI, OR NOT AT ALL?)
 - Listing backups is only available via our UI.
-- Initiate an on-demand backup (INFO SEEMS TO BE MISSING HERE)
+- Initiate an on-demand backup. (ONLY FROM UI, OR NOT AT ALL?)
 - Creating backups is only available via our UI.
 
 
-List currently available scaling groups from a deployment
+- List currently available scaling groups from a deployment: Needs documentation from product detailing all the available host flavors and scaling values associated with out products
 
-Needs documentation from product detailing all the available host flavors and scaling values associated with out products
+- Set scaling values on a specified product. (INFO SEEMS TO BE MISSING)
 
-Set scaling values on a specified product.
+- Creates a user based on user type. - TBD
+
+- Deletes a user based on user type. - TBD
+
+- Update your database configuration. (INFO SEEMS TO BE MISSING)
