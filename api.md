@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-24"
+lastupdated: "2025-10-29"
 
 subcollection: cloud-databases-gen2
 
@@ -16,50 +16,53 @@ keywords: api
 {: #api}
 
 The {{site.data.keyword.databases-for}} API generally utilizes the [Resource Controller API](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#intro) for operation purposes. Use this API document to work with your data services.
+{: note}
 
 ## Authentication
 {: #api-authentication}
 
-Access to the API uses token authentication, by using the header Authorization: Bearer <token>. The token must be IAM-issued. You can send in an IAM API key directly as the token 
-or use the API key to generate an IAM Bearer Token.
+Access to the API uses token authentication, by using the header `Authorization: Bearer <token>`. The token must be [IAM-issued](/apidocs/iam-identity-token-api). You can send in an IAM API key directly as the token or [use the API key to generate an IAM bearer token](docs/account?topic=account-iamtoken_from_apikey).
 
-To call each method, you'll need to be assigned a role that includes the required IAM actions. Each method lists the associated action. For more information about IAM actions 
-and how they map to roles, see Managing access for IBM Cloud.
+To call each method, you'll need to be [assigned a role](/docs/cloud-databases?topic=cloud-databases-iam) that includes the required IAM actions. Each method lists the associated action. For more information about IAM actions and how they map to roles, see [Managing access for {{site.data.keyword.cloud}}](/docs/cloud-databases?topic=cloud-databases-iam).
 
-## Error Handling
+## Error handling
 {: #api-error-handling}
 
-The API uses standard HTTP response codes to indicate whether a method completed successfully. A 200 response always indicates success. A 4xx type response is some sort of failure, 
-and a 500 type response usually indicates an internal system error. Any of these responses might be accompanied by a JSON formatted body that contains more detailed error information.
+The API uses standard `HTTP` response codes to indicate whether a method completed successfully. A `200` response always indicates success. A `4xx` type response is some sort of failure, and a `500` type response usually indicates an internal system error. Any of these responses might be accompanied by a JSON formatted body that contains more detailed error information.
 
 ## Event tracking
 {: #api-event-tracking}
 
-You can monitor API activity within your account by using the IBM Cloud Activity Tracker service. Whenever an API method is called, an event is generated that you can then track 
-and audit from within Activity Tracker. The specific event type is listed for each individual method.
+You can monitor API activity within your account by using the [{{site.data.keyword.cloudaccesstraillong}}](docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-at_events&interface=terraform) service. Whenever an API method is called, an event is generated that you can then track and audit from within Activity Tracker. The specific event type is listed for each individual method.
 
-For more information about how to track Certificate Manager activity, see [Auditing events for IBM Cloud]() <— THIS LINK IS BROKEN.
+For more information about how to track Certificate Manager activity, see [Auditing events for {{site.data.keyword.cloud_notm}}]() <— THIS LINK IS BROKEN.
 
 ## Deployment IDs and CRNs
 {: #api-deployment}
 
-Deployment IDs are CRNs on the Cloud Data Services platform. When you use the CRN, remember to URL encode the CRN value as it might include the forward-slash (/) %2F character. 
-For example,
+Deployment IDs are CRNs on the Cloud Data Services platform. When you use the CRN, remember to URL encode the CRN value as it might include the forward-slash (/) %2F character.
 
-`crn:v1:bluemix:public:databases-for-redis:us-south:a/274074dce64e9c423ffc238516c755e1:29caf0e7-120f-4da8-9551-3abf57ebcfc7::`
+Example: The following CRN
 
-becomes
+```sh
+   crn:v1:bluemix:public:databases-for-redis:us-south:a/274074dce64e9c423ffc238516c755e1:29caf0e7-120f-4da8-9551-3abf57ebcfc7::
+   ```
+{: pre}
 
-`crn:v1:bluemix:public:databases-for-redis:us-south:a%2F274074dce64e9c423ffc238516c755e1:29caf0e7-120f-4da8-9551-3abf57ebcfc7::`
+becomes as follows when URL encoded.
 
-when URL encoded.
+```sh
+   crn:v1:bluemix:public:databases-for-redis:us-south:a%2F274074dce64e9c423ffc238516c755e1:29caf0e7-120f-4da8-9551-3abf57ebcfc7::
+   ```
+{: pre}
+
 
 ## Pagination
 {: #api-pagination}
 
 No endpoint currently returns paginated data.
 
-## Rate Limiting
+## Rate limiting
 {: #api-rate-limiting}
 
 No endpoint currently implements rate limiting.
@@ -67,23 +70,26 @@ No endpoint currently implements rate limiting.
 ## Methods
 {: #api-methods}
 
-### List all deployed products
+#### List all deployed products
 {: #api-methods-list-deployed}
 
 Returns a list of all deployed cloud services.
 
-`GET /v2/resource_instances`
+```sh
+GET /v2/resource_instances
+```
+{: pre}
 
 Example request:
 
-```curl
+```sh
 curl -X GET https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>"
 ```
 {: pre}
 
 Example response:
 
-```curl
+```sh
 Name:                test-mysql-01
 Location:            us-south
 Family:              resource_controller
@@ -106,20 +112,26 @@ Access Tags:
 ```
 {: pre}
 
-### Get deployment information
+#### Get deployment information
 {: #api-methods-get-deployment}
 
 Gets the full data that is associated with a deployment. This data includes the ID, name, database type, and version.
 
-`GET /v2/resource_instances/{id}`
+```sh
+GET /v2/resource_instances/{id}`
+```
+{: pre}
 
 Example request:
 
+```sh
 curl -X GET https://resource-controller.cloud.ibm.com/v2/resource_instances/8d7af921-b136-4078-9666-081bd8470d94 -H "Authorization: Bearer <IAM token>" \
+```
+{: pre}
 
 Example response:
 
-```curl
+```sh
 [
     {
         "guid": "5aa314a5-76d9-4440-8e84-faa343d40127",
@@ -240,14 +252,17 @@ Example response:
 ```
 {: pre}
 
-### How to manage and update your database configuration
+#### How to manage and update your database configuration
 {: #api-manage-config}
 
-`POST /v2/resource_instances`
+```sh
+POST /v2/resource_instances`
+```
+{: pre}
 
 Example request:
 
-```curl
+```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
     "name": "my-instance",
     "target": "ca-mon",
@@ -317,14 +332,17 @@ Input Parameters
 ```
 {: pre}
 
-### How to scale your database
+#### How to scale your database
 {: #api-scale-db}
 
-`POST /v2/resource_instances`
+```sh
+POST /v2/resource_instances
+```
+{: pre}
 
 Example request:
 
-```curl
+```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
     "name": "my-instance",
     "target": "ca-mon",
@@ -384,7 +402,7 @@ Information you can expect to get back:
 - Product connection information under connection parameter.
 - Product specific information under the product object (for example postgresql).
 
-### Methods not available for MVP
+#### Methods not available for MVP
 {: #api-limitations}
 
 - List read-only replica information
