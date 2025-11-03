@@ -60,7 +60,7 @@ toc:
   - navgroup:
       id: reference
       topics:
-      - icd-cli.md
+      - cloud-databases-cli.md
       - api.md
       - topicgroup:
           label: High availability and disaster recovery
