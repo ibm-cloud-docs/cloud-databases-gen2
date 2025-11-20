@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-09-11"
+  years: 2025
+lastupdated: "2025-11-20"
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 keywords: HA for cloud-databases, DR for cloud-databases, high availability for cloud-databases, disaster recovery for cloud-databases, failover for cloud-databases
 
@@ -15,13 +15,13 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 # Understanding high availability for {{site.data.keyword.databases-for}}
 {: #ha-dr}
 
-This document covers all the {{site.data.keyword.cloud}} Databases, which include {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, {{site.data.keyword.databases-for-enterprisedb}} and {{site.data.keyword.databases-for-etcd}}. 
+This document covers all of the Gen 2 {{site.data.keyword.databases-for}}: {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}. 
 {: .note}
 
 ## Regions
 {: #regions-ha}
 
-{{site.data.keyword.cloud}} Databases instances are deployed in either a multi-zone region (MZR) (for example, Dallas, Frankfurt, London, Sydney, Tokyo, and Washington), or a single-campus multizone region (for example, Chennai). Each instance is deployed in a highly available configuration; that is, data is replicated by each database onto one or more servers, making the data highly available during normal operations.
+{{site.data.keyword.databases-for}} instances are deployed in either a multi-zone region (MZR), or a single-campus multizone region. Each instance is deployed in a highly available configuration; that is, data is replicated by each database onto one or more servers, making the data highly available during normal operations.
 
 - In [MZRs](/docs/overview?topic=overview-locations#table-mzr), database members are distributed across different data centers, or zones.  
 - In [single-campus multizone regions](/docs/overview?topic=overview-locations#single-campus-mzr), database members are distributed across different hosts.
@@ -33,8 +33,8 @@ For more information on how your specific database replicates data among each of
 ## Backups
 {: #backups-ha}
 
-- In addition to the high-availability configuration, for deployments in {{site.data.keyword.cloud}} multi-zone regions, your data is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform and stored in [cross-region Cloud Object Storage buckets](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
-- For most {{site.data.keyword.cloud}} single-campus multizone regions, your data is backed up locally in [Single-campus multizone region Cloud Object Storage buckets](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-zone).
+- In addition to the high-availability configuration, for deployments in {{site.data.keyword.cloud}} multi-zone regions, your data is snapshotted and backed up daily by the {{site.data.keyword.databases-for}} platform and stored in [the same region as VPC Block Storage Snapshots](/docs/vpc?topic=vpc-snapshots-vpc-create&interface=ui).
+- For most {{site.data.keyword.cloud}} single-campus multizone regions, your data is backed up locally in single-campus multizone region VPC Block Storage Snapshots. 
 
 If a complete region failure occurs, the database servers in the region might not be accessible, but the backup data remains available. You can initiate a restore from these backups into an available region from the service management console. For more information, see the [{{site.data.keyword.databases-for}} backups documentation](/docs/cloud-databases?topic=cloud-databases-dashboard-backups). 
 
