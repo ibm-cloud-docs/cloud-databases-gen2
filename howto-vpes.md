@@ -1,21 +1,18 @@
 ---
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-09-13"
+  years: 2025
+lastupdated:"2025-11-20"
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 keywords: pDNS, private endpoints, private networking, vpe, virtual private endpoints
 
 ---
 
-{{site.data.keyword.mon_full}}
-
-
 # Virtual Private Endpoints 
 {: #vpes}
 
-This document covers all the IBM Cloud Databases: {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, {{site.data.keyword.databases-for-enterprisedb}} and {{site.data.keyword.databases-for-etcd}}. 
+This document covers all of the Gen 2 {{site.data.keyword.databases}}: {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}. 
 {: .note}
 
 {{site.data.keyword.cloud}} Virtual Private Endpoint (VPE) provides connection points to IBM services on the IBM private network from your VPC network.
@@ -29,7 +26,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 ### Before you begin
 {: #vpes-before-begin}
 
-- Log in to the IBM Cloud console.
+- Log in to the {{site.data.keyword.databases-cloud}} console.
 - You need to have a {{site.data.keyword.databases-for}} deployment. You can [provision](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog). Give your deployment a memorable name that appears in your account's Resource List.
 
 ### Setting up your VPE
