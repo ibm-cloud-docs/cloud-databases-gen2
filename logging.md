@@ -1,18 +1,18 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-09-11"
+  years: 2025
+lastupdated: "2025-11-20"
 
 keywords: logging
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Logging for {{site.data.keyword.databases-for}}
+# Logging for Gen 2 {{site.data.keyword.databases-for}}
 {: #logging}
 
 {{site.data.keyword.cloud}} services, such as {{site.data.keyword.databases-for}}, generate platform logs that you can use to investigate abnormal activity and critical actions in your account, and troubleshoot problems.
@@ -21,6 +21,9 @@ subcollection: cloud-databases
 You can use **{{site.data.keyword.logs_routing_full}}**, a platform service, to route platform logs in your account to a destination of your choice by configuring a tenant that defines where platform logs are sent. For more information, see [About logs routing](/docs/logs-router?topic=logs-router-about).
 
 You can use **{{site.data.keyword.logs_full}}** to visualize and alert on platform logs that are generated in your account and routed by {{site.data.keyword.logs_routing_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
+
+Platform logs for Gen 2 instances differ from Gen 1. {{site.data.keyword.databases-for}} Gen 2 logs have been expanded to include more database process level logs, some non-database related logs have been removed. As a result, log content may not match exactly between generations.
+{: note}
 
 ## Locations where platform logs are generated
 {: #log-locations}
