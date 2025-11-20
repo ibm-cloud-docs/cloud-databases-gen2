@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-27"
+lastupdated: "2025-11-20"
 
 keywords: gen 2, pricing
 
@@ -66,7 +66,6 @@ To help manage variability in monthly charges, especially during failover events
 
 - Overage is billed monthly and applies when your snapshot storage exceeds the included allocation. 
 - Total snapshot storage = (Initial single member snapshot * number of members) + (Daily change × 29 days).
-- 
 - Any usage beyond the free allocation is charged at $0.095 per GB per month.
 
 ### Worked example, for a 2-member PostgreSQL deployment with 100 GB of data per member
