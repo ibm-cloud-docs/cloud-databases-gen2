@@ -15,6 +15,8 @@ subcollection: cloud-databases-gen2
 {: #overview-gen1-gen2}
 
 [Gen 2]{: tag-purple}
+
+TEXT TO BE DRAFTED
 {: beta}
 
 {{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across all industries. The following page outlines the key differences between {{site.data.keyword.databases-for}} built on IBM’s Classic platform (Gen 1) and the latest VPC based platform (Gen 2). 
