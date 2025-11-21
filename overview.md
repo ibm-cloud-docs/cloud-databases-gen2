@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-23"
+lastupdated: "2025-11-21"
 
 keywords: cloud databases gen 2
 
@@ -13,6 +13,9 @@ subcollection: cloud-databases-gen2
 
 # Overview of Gen 1 (Classic) and Gen 2 (VPC)
 {: #overview-gen1-gen2}
+
+[Gen 2]{: tag-purple}
+{: beta}
 
 {{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across all industries. The following page outlines the key differences between {{site.data.keyword.databases-for}} built on IBM’s Classic platform (Gen 1) and the latest VPC based platform (Gen 2). 
 
