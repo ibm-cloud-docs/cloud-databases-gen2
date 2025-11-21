@@ -13,7 +13,6 @@ subcollection: cloud-databases-gen2
 
 # Overview of Gen 1 (Classic) and Gen 2 (VPC)
 {: #overview-gen1-gen2}
-[Gen 2]{: tag-purple}
 
 [Gen 2]{: tag-purple}
 
