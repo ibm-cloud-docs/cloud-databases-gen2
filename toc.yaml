@@ -42,7 +42,6 @@ toc:
           - manage-scc.md
           - howto-cbr.md
           - howto-allowlists.md
-          - reference-service-endpoints.md
           - howto-vpes.md
           - reference-iam.md
           - reference-key-protect.md
