@@ -1,12 +1,12 @@
 ---
  
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-11-20"
+  years: 2025
+lastupdated: "2025-11-25"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
@@ -15,8 +15,10 @@ subcollection: cloud-databases
 # {{site.data.keyword.databases-for}} CLI
 {: #cdb-reference}
 
-To interact with Cloud Data Services on VPC via the CLI you must utilize the IBM Cloud Resource Controller's CLI. For more info please see [General IBM Cloud CLI (ibmcloud) commands](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_cli).
+To interact with {{site.data.keyword.databases-for}} on Gen 2 via the CLI you must utilize the IBM Cloud Resource Controller's CLI. For more info please see [General {{site.data.keyword.cloud}} CLI (ibmcloud) commands](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_cli). 
 
+The {{site.data.keyword.databases-for}} plugin supports only Gen 1 instances. For Gen 2 instances, use the Resource Controller CLI.
+{: note}
 
 ## Getting started - Create an instance
 {: #ibmcloud-cdb-help-create}
@@ -28,8 +30,8 @@ ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVIC
 ```
 {: .pre}
 
+Example of full command for {{site.data.keyword.databases-for-postgresql}}:
 
-Example of Full command for Postgresql
 ```sh
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> -g <RESOURCE_GROUP>  -p '{
    "dataservices":{
@@ -50,8 +52,8 @@ ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVIC
 ```
 {: .pre}
 
+Example of full command for {{site.data.keyword.databases-for-mongodb}}:
 
-Example of Full command for MongoDB
 ```sh
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> -g <RESOURCE_GROUP> -p '{
    "dataservices":{
@@ -71,8 +73,8 @@ ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVIC
 ```
 {: .pre}
 
+Full command for {{site.data.keyword.messagehub}}:
 
-Full command for Event Streams
 ```sh
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> -g <RESOURCE_GROUP> -p '{
    "dataservices":{
@@ -91,8 +93,8 @@ ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVIC
 ```
 {: .pre}
 
-## Getting Information About Your Instance
-
+## Getting information about your instance
+{: #ibmcloud-cdb-getting-info}
 
 You can get instance information using the following command: 
 
@@ -101,15 +103,18 @@ ibmcloud resource service-instance <INSTANCE_NAME> -o JSON
 ```
 {: .pre}
 
-## Update Your Instance
+## Update your instance
+{: #ibmcloud-cdb-update-instance}
 
-To update your instance (this includes operations like scaling and modifying other parts of your service), use the following command:
+To update your instance (this includes operations, such as scaling and modifying other parts of your service), use the following command:
 
 ```sh
 ibmcloud resource service-instance-update <INSTANCE_NAME> -p '<{FIELDS_TO_UPDATE}>'
 ```
+{: .pre}
 
-Example of Full Updates for Postgresql
+Example of full updates for {{site.data.keyword.databases-for-postgresql}}:
+
 ```sh
 ibmcloud resource service-instance-update <INSTANCE_NAME> -p'{
    "dataservices":{
@@ -123,7 +128,8 @@ ibmcloud resource service-instance-update <INSTANCE_NAME> -p'{
 ```
 {: .pre}
 
-Example of Full Updates for MongoDB
+Example of full updates for {{site.data.keyword.databases-for-mongodb}}:
+
 ```sh
 ibmcloud resource service-instance-update <INSTANCE_NAME> -p'{
    "dataservices":{
@@ -136,7 +142,8 @@ ibmcloud resource service-instance-update <INSTANCE_NAME> -p'{
 ```
 {: .pre}
 
-Example of Full Updates for Event Streams
+Example of full updates for {{site.data.keyword.messagehub}}:
+
 ```sh
 ibmcloud resource service-instance-update <INSTANCE_NAME> -p'{
    "dataservices":{
@@ -149,18 +156,22 @@ ibmcloud resource service-instance-update <INSTANCE_NAME> -p'{
 ```
 {: .pre}
 
-## Restoring a Postgresql or MongoDB Instance
+## Restore an {{site.data.keyword.databases-for-postgresql}} or {{site.data.keyword.databases-for-mongodb}} instance
+{: #ibmcloud-cdb-restore-instance}
 
-See creating an instance. It follows the same flow.
+See [creating an instance](#ibmcloud-cdb-help-create).
 
-## Creating and Listing Backups
+## Create and list backups
+{: #ibmcloud-cdb-create-backups}
 
-This is not available via the CLI at the time being. To create or list a backup please utilize the UI
+This is currently not available via the CLI. To create or list a backup, use the UI.
 
-## Manage Users
+## Manage users
+{: #ibmcloud-cdb-manage-users}
 
 !!!!Reach out to Doug Cowie and David Piteria to understand if this is possible via the CLI!!!
 
-## Managing IP Addresses (aka Allowlisting)
+## Manage IP addresses (Allowlisting)
+{: #ibmcloud-cdb-allowlisting}
 
-Cloud Data Services utilizes Context-based restrictions for its allowlisting needs. To manage your IP address via the CLI please see [Context-based restrictions CLI plug-in](https://cloud.ibm.com/docs/account?topic=account-cbr-plugin).
+{{site.data.keyword.databases-for}} utilizes context-based restrictions for its allowlisting needs. To manage your IP address via the CLI, see [Context-based restrictions CLI plug-in](/docs/account?topic=account-cbr-plugin).
