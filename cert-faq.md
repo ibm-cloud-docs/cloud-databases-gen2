@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-09-11"
+  years: 2025
+lastupdated: "2025-11-26"
 
 keywords: certificate, cert, tls, ssl, mutual tls, client certificates
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
@@ -16,6 +16,10 @@ subcollection: cloud-databases
 {: #faq-cert}
 {: faq}
 {: support}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 
 {{site.data.keyword.databases-for}} certificates are authenticated by unique TLS certificates. To verify this, you can inspect the certificate that your service presents when opening a connection. The certificate contains the hostname for a single instance. {{site.data.keyword.databases-for}} data plane clusters possess their own distinctive root certificate. When you're engaged in certificate validation procedures, exercise caution and select the correct root certificate for each instance. For more information, see [Connecting an external application](#faq-cert-external-app).
 
