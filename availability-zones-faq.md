@@ -19,20 +19,15 @@ keywords: data center, multizone regions, cloud status, viewing cloud status, in
 [Gen 2]{: tag-purple}
 
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
+{: beta}
 
 You can create a {{site.data.keyword.databases-for}} instance on {{site.data.keyword.cloud_notm}} in a multi-zone or single-zone region.
 {: shortdesc}
 
 See the documentation for provisioning a specific service {{site.data.keyword.databases-for}} instance: 
 
-- Provisioning [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-provisioning)
-- Provisioning [{{site.data.keyword.databases-for-mongodb_full}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-provisioning)
-- Provisioning [{{site.data.keyword.databases-for-redis_full}}](/docs/databases-for-redis?topic=databases-for-redis-provisioning)
-- Provisioning [{{site.data.keyword.databases-for-elasticsearch_full}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-provisioning)
-- Provisioning [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-provisioning)
-- Provisioning [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning)
-- Provisioning [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-provisioning)
-- Provisioning [{{site.data.keyword.databases-for-etcd_full}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning)
+- Provisioning [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-provisioning&interface=ui)
+- Provisioning [{{site.data.keyword.databases-for-mongodb_full}}](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-provisioning&interface=ui)
 
 ## What is an availability zone?
 {: #what-availability-zone}
