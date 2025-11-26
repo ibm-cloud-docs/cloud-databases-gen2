@@ -7,6 +7,10 @@
   "section_topics": {
     "links": [
       {
+        "title": "Beta reference",
+        "href": "/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta"
+      },
+      {
         "title": "IBM Cloud\u00ae Databases for PostgreSQL",
         "href": "/docs/databases-for-postgresql-gen2"
       },
