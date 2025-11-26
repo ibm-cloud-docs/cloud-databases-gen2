@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-09-11"
+lastupdated: "2025-11-26"
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
@@ -12,6 +12,11 @@ subcollection: cloud-databases
 
 # Shared responsibilities for {{site.data.keyword.databases-for}}
 {: #responsibilities-cloud-databases}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
+{: beta}
 
 Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.cloud}} {{site.data.keyword.databases-for}}. For a high-level view of the service types in {{site.data.keyword.cloud_notm}} and the breakdown of responsibilities between the client and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} offerings](/docs/overview?topic=overview-shared-responsibilities).
 {: shortdesc}
@@ -59,4 +64,3 @@ For new hosting models, PITR is currently available through the CLI, API, and Te
 |Backups and restore| {{site.data.keyword.databases-for}} is responsible for automatic daily backups, as well as monitoring the state of client backups.| The Client is responsible for restoration, timeliness, validity of backups, and alerting of failed backups via [{{site.data.keyword.atracker_full}}](/docs/cloud-databases?topic=cloud-databases-at_events). For more information, see [Managing Cloud Databases backups](/docs/cloud-databases?topic=cloud-databases-dashboard-backups).|
 |Read-only replicas (_{{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-enterprisedb}}, and {{site.data.keyword.databases-for-mysql}} ONLY_)| {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-enterprisedb}}, and {{site.data.keyword.databases-for-mysql}} are responsible for providing the capability of deploying read-only replicas across regions (except for replicating data into or outside of `eu-de`). | The Client is responsible for provisioning, configuring, monitoring, and promoting read-only replicas. |
 {: caption="Responsibilities for disaster recovery" caption-side="top"}
-
