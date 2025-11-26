@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-09"
+lastupdated: "2025-11-26"
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
@@ -12,6 +12,10 @@ subcollection: cloud-databases
 
 # Choose your service
 {: #cdb-offerings}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 
 {{site.data.keyword.databases-for}} are managed databases, and a messaging queue, that are hosted in {{site.data.keyword.cloud_notm}} and integrated with other {{site.data.keyword.cloud_notm}} services. Gen 2 {{site.data.keyword.databases-for}} support the same data technologies as Gen 1 instances with a richer feature set, enhanced security and networking, and is more suitable for cloud-native workloads. For more information, see [Overview of Gen 1 and Gen 2](/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2&interface=ui). 
 {: shortdesc}
