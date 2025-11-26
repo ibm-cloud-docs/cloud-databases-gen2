@@ -1,19 +1,23 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-11-26"
 
 keywords: monitoring
 
-subcollection: cloud-databases, gen 2
+subcollection: cloud-databases-gen 2
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Monitoring integration
 {: #monitoring}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
+{: beta}
 
 Monitoring for Gen 2 {{site.data.keyword.databases-for}} is provided through integration with the {{site.data.keyword.monitoringfull}} service. Your instances forward select information so that you can monitor instance health and resource usage. To start collecting and viewing monitoring data, follow the instructions to enable [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling). Platform Metrics need to be enabled in the same region as your instance. Use the Metrics Router to configure which Sysdig instance your platform metrics flows to. For more information, see [IBM Cloud Metrics Routing](https://cloud.ibm.com/docs/metrics-router).
 
