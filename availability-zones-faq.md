@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-07-26"
+  years: 2025
+lastupdated: "2025-11-26"
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 keywords: data center, multizone regions, cloud status, viewing cloud status, incident
 
@@ -15,6 +15,10 @@ keywords: data center, multizone regions, cloud status, viewing cloud status, in
 {: #faq-availability-zones}
 {: faq}
 {: support}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 
 You can create a {{site.data.keyword.databases-for}} instance on {{site.data.keyword.cloud_notm}} in a multi-zone or single-zone region.
 {: shortdesc}
