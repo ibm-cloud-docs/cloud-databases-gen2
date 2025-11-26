@@ -1,23 +1,22 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-09-13"
+  years: 2025
+lastupdated: "2025-11-26"
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: .external target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:note: .note} 
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Identity and Access Management integration
 {: #iam}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
+{: beta}
 
 Access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-cloudaccess). 
 
