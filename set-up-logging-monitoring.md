@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-08"
+lastupdated: "2025-11-26"
 
 keywords: logging, monitoring, metrics
 
@@ -14,6 +14,11 @@ subcollection: cloud-databases-gen2
 
 # Set up logging and monitoring
 {: #set-up-logging-monitoring}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
+{: beta}
 
 1. Use **{{site.data.keyword.mon_full}}** to gain operational visibility into the performance and health of your applications, services, and platforms. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.mon_full}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring).
 
