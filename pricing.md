@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-11-26"
 
 keywords: gen 2, pricing
 
@@ -13,6 +13,11 @@ subcollection: cloud-databases-gen2
 
 # Pricing for Gen 2 Databases
 {: #pricing}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
+{: beta}
 
 The charge for an {{site.data.keyword.databases-for}} instance is determined by the following five factors:
 
