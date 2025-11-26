@@ -20,6 +20,7 @@ subcollection: cloud-databases-gen2
 [Gen 2]{: tag-purple}
 
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
+{: beta}
 
 ## What happens to the backups if I accidentally delete an instance?
 {: #faq-backups-data-deletion}

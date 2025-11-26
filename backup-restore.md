@@ -18,6 +18,7 @@ keywords: backup, snapshot
 [Gen 2]{: tag-purple}
 
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
+{: beta}
 
 Backups with Gen 1 instances and backups (snapshots) with Gen 2 instances differ in both scope and mechanism. Traditional backups (Gen 1) operate at the file level, capturing database files and write-ahead logs (WAL). This method relies on deep integration with the database engine to ensure transactional consistency and data integrity. In contrast, Gen 2 uses infrastructure-level snapshots, leveraging IBM VPC’s block storage capabilities. These snapshots create near-instant volume-level copies that are fast, scalable, and minimally impact performance, even for large datasets. Similar to Gen 1 backups, every instance has scheduled backups that are automatically run daily during backup windows. You can view a list of backups for your instances and trigger on-demand backups and it is possible to restore backups into new instances. Backups are automatically deleted after 30 days.
 
