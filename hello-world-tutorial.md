@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-09-11"
+  years: {CURRENT_YEAR}]
+lastupdated: "2025-11-26"
 
 keywords: instance tutorial, provision tutorial, docker
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
@@ -14,6 +14,10 @@ subcollection: cloud-databases
 
 # Deploying and connecting a {{site.data.keyword.databases-for}} instance 
 {: #create-instance-tutorial}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta)
 
 ## Objectives
 {: #create-instance-tutorial-objectives}
