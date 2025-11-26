@@ -2,7 +2,7 @@
  
 copyright:
   years: 2025
-lastupdated: "2025-11-25"
+lastupdated: "2025-11-26"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
@@ -14,6 +14,10 @@ subcollection: cloud-databases-gen2
 
 # {{site.data.keyword.databases-for}} CLI
 {: #cdb-reference}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 
 To interact with {{site.data.keyword.databases-for}} on Gen 2 via the CLI you must utilize the IBM Cloud Resource Controller's CLI. For more info please see [General {{site.data.keyword.cloud}} CLI (ibmcloud) commands](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_cli). 
 

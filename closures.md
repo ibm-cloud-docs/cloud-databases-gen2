@@ -1,21 +1,22 @@
 ---
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-05-05"
+  years: 2025
+lastupdated: "2025-11-26"
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 keywords: migrating cloud-databases, data center cloud-databases
+
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Migrating resources to a different data center
 {: #migrate-data-center}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 
 {{site.data.keyword.cloud}}'s investments in data center infrastructure include rolling out newer data centers and multizone regions (MZRs) and closing older data centers that are unsuitable for upgrading. 
 
