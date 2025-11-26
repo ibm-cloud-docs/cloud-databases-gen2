@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2023, 2025
+  years: 2025
 lastupdated: 2025-11-26
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 keywords: data center, multizone regions, cloud status, viewing cloud status, incident, information, notification, find, updates, incident report, rss, status
 
@@ -14,6 +14,11 @@ keywords: data center, multizone regions, cloud status, viewing cloud status, in
 # {{site.data.keyword.cloud}} platform and service FAQ
 {: #ibm-cloud-status}
 {: faq}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
+{: beta}
 
 The {{site.data.keyword.cloud}} [Status page](https://cloud.ibm.com/status){: external} is the central place to find details about major incidents that affect the {{site.data.keyword.cloud}} platform and services. Other incidents, planned maintenance, announcements, release notes, and security bulletins are posted on the Notifications page, where you can easily view them.
 
