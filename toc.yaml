@@ -11,7 +11,8 @@ toc:
   - navgroup:
       id: overview
       topics:
-      - gen2-beta.md
+      - topic: gen2-beta.md
+        navtitle: Beta reference
       - overview.md
       - isolated-compute.md
       - pricing.md
