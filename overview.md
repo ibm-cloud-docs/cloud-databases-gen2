@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-11-26"
 
 keywords: cloud databases gen 2
 
@@ -16,7 +16,7 @@ subcollection: cloud-databases-gen2
 
 [Gen 2]{: tag-purple}
 
-TEXT TO BE DRAFTED
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 {: beta}
 
 {{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across all industries. The following page outlines the key differences between {{site.data.keyword.databases-for}} built on IBM’s Classic platform (Gen 1) and the latest VPC based platform (Gen 2). 
