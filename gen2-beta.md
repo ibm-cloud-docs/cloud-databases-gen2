@@ -14,13 +14,17 @@ subcollection: cloud-databases-gen2
 # {{site.data.keyword.databases-for}} Beta reference
 {: #icd-gen2-beta}
 
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta)
+
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. This page explains what Beta means and what you can expect during the program.
 
 ## What does Beta mean for you?
 {: #icd-gen2-beta-meaning}
 
 - Evaluation only: Beta instances are for testing and feedback, not for production use.
-- {{site.data.cloud}} SLA does not apply.
+- {{site.data.keyword.cloud}} SLA does not apply.
 - Visibility and access: Beta will start as closed (invite-only) in stages 1 and 2, and become public in stage 3.
 - Billing: Beta services are not billable.
 - Feature gaps: {{site.data.keyword.databases-for}} Beta plans will not include key features, including Bring Your Own Key (BYOK) and context-based restrictions.
@@ -55,4 +59,3 @@ For more information, see [IBM Cloud Lifecycle phases](/docs/service-framework?t
 - Beta close: February 22, 2026 (no new instances can be provisioned)
 - Instance deletion: February 23–26, 2026 (including customer data)
 - General availability: February 27, 2026
-
