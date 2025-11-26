@@ -8,11 +8,11 @@
     "links": [
       {
         "title": "IBM Cloud\u00ae Databases for PostgreSQL",
-        "href": "/docs/databases-for-postgresql"
+        "href": "/docs/databases-for-postgresql-gen2"
       },
       {
         "title": "IBM Cloud\u00ae Databases for MongoDB",
-        "href": "/docs/databases-for-mongodb"
+        "href": "/docs/databases-for-mongodb-gen2"
       }
     ]
   },
