@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-24"
+lastupdated: "2025-11-26"
 
 keywords: postgresql, databases, gen 2, postgresql connection strings, postgresql connection ibm application
 
@@ -30,7 +30,7 @@ This document covers all of the Gen 2 {{site.data.keyword.databases-for}}: {{sit
 
 You can access your instance from your local device or non-VPC client via private endpoints. Connect to VPE for VPC to provide a secure connectivity to services and instances originating from your VPC network. The instructions to connect to your Gen 2 (VPC) instance depend on where you're connecting from and where your application is running.
 
-1. VPE via VSI (Client to Site) - This method uses a Virtual Server Instance (VSI) that resides in your Virtual Private Cloud (VPC) and leverages the Virtual Private Endpoint (VPE) to provide secure, private connectivity between resources within the VPC and external {{site.data.keyword.cloud_notm}} services. For more information, see [Client to Site](ADD LINK).
+1. VPE via VSI (Client to Site) - This method uses a Virtual Server Instance (VSI) that resides in your Virtual Private Cloud (VPC) and leverages the Virtual Private Endpoint (VPE) to provide secure, private connectivity between resources within the VPC and external {{site.data.keyword.cloud_notm}} services. For more information, see [Client to Site](/docs/vpc?topic=vpc-vpn-client-to-site-overview).
 1. Use VPN connection established through a VPE. The VPN lets you connect and manage from a local laptop or client via the VPC/VPE.
 1. Use a VPC/VPN gateway for secure and private on-premises access to cloud resources. For more information, see [Site to Site](/docs/solution-tutorials?topic=solution-tutorials-vpc-site2site-vpn).
 
