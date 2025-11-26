@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-20"
+lastupdated: "2025-11-26"
 
 subcollection: cloud-databases-gen2
 
@@ -14,6 +14,10 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 
 # Understanding high availability for {{site.data.keyword.databases-for}}
 {: #ha-dr}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta)
 
 This document covers all of the Gen 2 {{site.data.keyword.databases-for}}: {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}. 
 {: .note}
