@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-07-31"
+  years: 2025
+lastupdated: "2025-11-26"
 
 keywords: cbr, context based restrictions, security, cbr scenario, cloud databases
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 content-type: tutorial
 services: cloud-databases
@@ -22,6 +22,10 @@ completion-time: 30m
 {: toc-content-type="tutorial"}
 {: toc-services="cloud-databases"}
 {: toc-completion-time="30m"}
+
+[Gen 2]{: tag-purple}
+
+{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 
 With context-based restrictions, account owners and administrators can define and enforce access restrictions for {{site.data.keyword.cloud}} resources, based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management policies. For more information, see [Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).
 {: shortdesc}
