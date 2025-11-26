@@ -54,11 +54,6 @@ toc:
       - howto-manage-backups.md
       - closures.md
   - navgroup:
-      id: tutorial
-      topics:
-      - hello-world-tutorial.md
-      - cbr-tutorial.md
-  - navgroup:
       id: reference
       topics:
       - cloud-databases-cli.md
