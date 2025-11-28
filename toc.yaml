@@ -25,7 +25,7 @@ toc:
   - navgroup:
       id: howto
       topics:
-      - cdb-notifications.md
+      - notifications.md
       - topicgroup:
           label: Observability
           topics:
@@ -40,7 +40,7 @@ toc:
       - topicgroup:
           label: Enhancing security
           topics:
-          - cdb-secure.md
+          - secure.md
           - manage-scc.md
           - howto-cbr.md
           - howto-allowlists.md
