@@ -56,7 +56,7 @@ toc:
   - navgroup:
       id: reference
       topics:
-      - cloud-databases-cli.md
+      - cli.md
       - api.md
       - topicgroup:
           label: High availability and disaster recovery
