@@ -42,7 +42,6 @@ toc:
           topics:
           - secure.md
           - manage-scc.md
-          - howto-cbr.md
           - howto-allowlists.md
           - howto-vpes.md
           - reference-iam.md
