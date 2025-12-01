@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-28"
+lastupdated: "2025-12-01"
 
 subcollection: cloud-databases-gen2
 
@@ -20,7 +20,7 @@ keywords: version for cloud-databases, database version, end of life, major vers
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 {: beta}
 
-When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud_notm}}. Find the latest versions from the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show){: external}, or the [{{site.data.keyword.databases-for}} API](new link){: external}.
+When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud}}. Currently, only the latest versions are available for Gen 2 {{site.data.keyword.databases-for}} and this is shown in the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference&interface=ui), or the [{{site.data.keyword.databases-for}} API](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-api).
 
 ## Major versions defined
 {: #version-definitions}
@@ -29,7 +29,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 |----|----|----|----|----|
 | {{site.data.keyword.databases-for-mongodb}} | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v6, 30 July 2025, <br> v7, 26 Aug 2026 |   v7.0   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-postgresql}} | The major version is defined by the first number in the version number. | v13, 22 October 2025 |   v17 | Automatically upgraded in place to next major version |
-{: caption="Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
+{: caption="Major versions for Gen 2 {{site.data.keyword.databases-for}}" caption-side="top"}
 
 ## Subscribe for version updates
 {: #version-updates-subscribe}
@@ -39,15 +39,15 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 ## Deprecation of major versions
 {: #version-deprecation}
 
-{{site.data.keyword.databases-for}} tries to support a major version for 3 years from its release. If a version is deprecated or marked end of life by the open source project owners, {{site.data.keyword.databases-for}} takes steps to deprecate that version.
+{{site.data.keyword.databases-for}} aims to support a major version for approximately 3 years from its release. If a version is deprecated or marked end of life by the upstream open source maintainers, {{site.data.keyword.databases-for}} will initiate its own deprecation process. 
 
-When a major version is deprecated, a six-month transition window is opened for current users of the deprecated version. At the beginning of the period, we seek to contact users affected by the deprecation. During the six-month transition window, users are able to initiate an upgrade to a supported major version. Existing instances continue to run as normal.
+When a major version is deprecated, a six-month transition window is opened for current users of the deprecated version. At the beginning of the period, we contact users affected by the deprecation. During the six-month transition window, users are able to initiate an upgrade to a supported major version. Existing instances continue to run as normal.
 
 Restoration of existing instances into new instances of the deprecated major version is available during the six-month deprecation, although we recommend upgrading to a nondeprecated major version as soon as possible.
 
 At the end of the transition window, deprecated major versions cannot be deployed on {{site.data.keyword.databases-for}}. A backup of the instance is taken and access to instances that are running a deprecated version is removed or instances are automatically upgraded to the next major version. The backup is available to be restored into a new supported version.
 
-Backups are retained for 30 days only. Requests to reenable disabled formations of end-of-life versions are not accommodated.
+Backups are retained for 30 days only. Requests to re-enable disabled formations of end-of-life versions cannot not accommodated.
 
 Failure to act can result in compatibility issues with your apps when IBM upgrades in-place. On rare occasions, failure can result, impacting your availability. If a failure occurs, the instance is disabled, and you need to restore from backup. We recommend self-migrating before the end of support date.
 {: important}
@@ -55,6 +55,9 @@ Failure to act can result in compatibility issues with your apps when IBM upgrad
 
 ## Version tags
 {: #version-tags}
+
+Currently, only one version per Gen 2 {{site.data.keyword.databases-for}} service is supported. As new versions become available, the following version tags will apply. 
+{: .note}
 
 | Version tag | Description|
 |-------------|-------------|
@@ -76,7 +79,7 @@ Failure to act can result in compatibility issues with your apps when IBM upgrad
 You receive multiple notifications when a major version reaches its end of life. You can typically expect:
 
 * A Cloud status page announcement, for example: [End of support notices](https://cloud.ibm.com/status/announcement?query=End+of+Support+Notices){: external}.
-* An announcement in your service's Release Notes, for example: [IBM Cloud® Databases for PostgreSQL version 12 end of life on January 22, 2025](https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-postgresql-relnotes#databases-for-postgresql-18jan2023){: external}.
+* An announcement in your service's release notes, for example: [IBM Cloud® Databases for PostgreSQL version 12 end of life on January 22, 2025](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-postgresql-relnotes#databases-for-postgresql-15Dec2025).
 * A notification by email through the {{site.data.keyword.IBM_notm}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up distribution lists for IBM Cloud notifications](https://cloud.ibm.com/docs/account?topic=account-add-users-distribution-list)){:external}.
 * Ensure that your account is enabled to receive notifications and announcements. You **must** enable toggle to receive platform and resource updates. Turn on major and minor toggle under the Platform tab > Announcements > Major and Minor, and service updates under the Resource tab > Resource Activity > Service Updates. For more information, see [Setting email preferences for notifications](https://cloud.ibm.com/docs/account?topic=account-email-prefs).
 
