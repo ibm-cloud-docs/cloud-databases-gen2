@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-26"
+lastupdated: "2025-12-02"
 
 keywords: postgresql, databases, gen 2, postgresql connection strings, postgresql connection ibm application
 
@@ -160,7 +160,7 @@ Ensure the VPC is in the same region as your database deployment.
 ### Step 2: Create a VPE
 {: #howto-privateendpoints-vpn2}
 
-1. In the {{site.data.keyword.cloud_notm}} console, click the menu icon and select -> VPC Infrastructure -> Network -> Virtual private endpoint gateways. Create a VPE for your {{site.data.keyword.databases-for}} instances with [these instructions](/docs/vpc?topic=vpc-about-vpe).
+1. In the {{site.data.keyword.cloud_notm}} console, click the menu icon and select **VPC Infrastructure > Network > Virtual private endpoint gateways**. Create a VPE for your {{site.data.keyword.databases-for}} instances with [these instructions](/docs/vpc?topic=vpc-about-vpe).
 1. Bind the VPE to your VPC and subnet.
 
 ### Step 3: Update VPC security groups
