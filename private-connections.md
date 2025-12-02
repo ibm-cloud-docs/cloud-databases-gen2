@@ -53,7 +53,7 @@ Use {{site.data.keyword.cloud_notm}} instructions to [create a Virtual Private C
 1. Provision a VSI within the VPC using [instructions for creating virtual server instances](/docs/vpc?topic=vpc-creating-virtual-servers&interface=ui) in the [Virtual server instances for VPC UI](/infrastructure/compute/vs). Assign a public IP to the VSI to allow external SSH access (optional for testing).
 2. Generate and attach an SSH key for secure login. For detailed instructions on how to create an SSH key, see [Getting started with VPC](/docs/vpc?topic=vpc-ssh-keys&interface=ui).
 3. Once the key is ready, move it into the .ssh directory on your local machine to follow best practises for secure SSH key management.
-4. Log in to your VSI and change the permissions of the key. This makes the key read-only to the file owner. On Unix-like systems such as macOS, run the following command:
+4. Change the permissions of the key. This makes the key read-only to the file owner. On Unix-like systems such as macOS, run the following command:
 
     `$ chmod 400 <COPY_LOCAL_LOCATION_OF_THE_SSH_KEY>`
    
@@ -160,7 +160,7 @@ Ensure the VPC is in the same region as your database deployment.
 ### Step 2: Create a VPE
 {: #howto-privateendpoints-vpn2}
 
-1. In the {{site.data.keyword.cloud_notm}} console, click the menu icon and select **VPC Infrastructure > Network > Virtual private endpoint gateways**. Create a VPE for your {{site.data.keyword.databases-for}} instances with [these instructions](/docs/vpc?topic=vpc-about-vpe).
+1. In the {{site.data.keyword.cloud_notm}} console, click the menu icon and select -> VPC Infrastructure -> Network -> Virtual private endpoint gateways. Create a VPE for your {{site.data.keyword.databases-for}} instances with [these instructions](/docs/vpc?topic=vpc-about-vpe).
 1. Bind the VPE to your VPC and subnet.
 
 ### Step 3: Update VPC security groups
