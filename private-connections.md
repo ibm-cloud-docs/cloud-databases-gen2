@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-02"
+lastupdated: "2025-12-03"
 
 keywords: postgresql, databases, gen 2, postgresql connection strings, postgresql connection ibm application
 
@@ -35,8 +35,8 @@ This document covers all of the Gen 2 {{site.data.keyword.databases-for}}: {{sit
 
 You can access your instance from your local device or non-VPC client via private endpoints. Connect to VPE for VPC to provide a secure connectivity to services and instances originating from your VPC network. The instructions to connect to your Gen 2 (VPC) instance depend on where you're connecting from and where your application is running.
 
-1. VPE via VSI (Client to Site) - This method uses a Virtual Server Instance (VSI) that resides in your Virtual Private Cloud (VPC) and leverages the Virtual Private Endpoint (VPE) to provide secure, private connectivity between resources within the VPC and external {{site.data.keyword.cloud_notm}} services. For more information, see [Client to Site](/docs/vpc?topic=vpc-vpn-client-to-site-overview).
-1. Use VPN connection established through a VPE. The VPN lets you connect and manage from a local laptop or client via the VPC/VPE.
+1. VPE via VSI - This method uses a Virtual Server Instance (VSI) that resides in your Virtual Private Cloud (VPC) and leverages the Virtual Private Endpoint (VPE) to provide secure, private connectivity between resources within the VPC and external {{site.data.keyword.cloud_notm}} services.
+1. Use VPN connection established through a VPE (Client to Site). The VPN lets you connect and manage from a local laptop or client via the VPC/VPE. For more information, see [Client to Site](/docs/vpc?topic=vpc-vpn-client-to-site-overview).
 1. Use a VPC/VPN gateway for secure and private on-premises access to cloud resources. For more information, see [Site to Site](/docs/solution-tutorials?topic=solution-tutorials-vpc-site2site-vpn).
 
 ## Establishing Virtual Private Endpoints through a VSI
@@ -50,16 +50,16 @@ Use {{site.data.keyword.cloud_notm}} instructions to [create a Virtual Private C
 ### Step 2: Create a VSI and an SSH key
 {: #howto-privateendpoints-vsi2}
 
-1. Provision a VSI within the VPC using [instructions for creating virtual server instances](/docs/vpc?topic=vpc-creating-virtual-servers&interface=ui) in the [Virtual server instances for VPC UI](/infrastructure/compute/vs). Assign a public IP to the VSI to allow external SSH access (optional for testing).
-2. Generate and attach an SSH key for secure login. For detailed instructions on how to create an SSH key, see [Getting started with VPC](/docs/vpc?topic=vpc-ssh-keys&interface=ui).
-3. Once the key is ready, move it into the .ssh directory on your local machine to follow best practises for secure SSH key management.
-4. Change the permissions of the key. This makes the key read-only to the file owner. On Unix-like systems such as macOS, run the following command:
+1. Provision a VSI within the VPC using [instructions for creating virtual server instances](/docs/vpc?topic=vpc-creating-virtual-servers&interface=ui) in the [Virtual server instances for VPC UI](/infrastructure/compute/vs). Assign a floating IP to the VSI to allow external SSH access (optional for testing).
+2. Generate and attach an SSH key for secure login. For detailed instructions on how to create an SSH key pair, see [Getting started with SSH Keys](/docs/vpc?topic=vpc-ssh-keys&interface=ui).
+3. Once the key pair is ready, move the private key into the `~/.ssh` directory on your local machine to follow best practises for secure SSH key management.
+4. Change the permissions of the private key. This makes the key read-only to the file owner. On Unix-like systems such as macOS, run the following command:
 
-    `$ chmod 400 <COPY_LOCAL_LOCATION_OF_THE_SSH_KEY>`
-   
+    `$ chmod 400 ~/.ssh/<NAME_OF_THE_SSH_KEY>`
+
 5. SSH into your VSI using the following command:
 
-    `$ ssh -i ~/.ss/<NAME_OF_THE_SSH_KEY> root@<FLOATING_IP_ADDRESS>`
+    `$ ssh -i ~/.ssh/<NAME_OF_THE_SSH_KEY> root@<FLOATING_IP_ADDRESS>`
 
 ### Step 3: Create a VPE
 {: #howto-privateendpoints-vsi3}
@@ -73,27 +73,15 @@ Bind the VPE to your VPC and subnet.
 
 Modify the security group to allow outbound traffic from your VSI to the database instance. Ensure ports required by your database (for example, Postgresql or MongoDB) are open.
 
-### Step 5: Bind database deployment to VSI
+### Step 5: Create a service key for your database
 {: #howto-privateendpoints-vsi5}
 
-Use {{site.data.keyword.cloud_notm}} CLI or UI to bind your database deployment to your VSI. This stores the connection strings in a secret.
+Use {{site.data.keyword.cloud_notm}} CLI or UI to create a service key for the database. The service key contains the information that is needed to access the database.
 
-### Step 6: Configure application
-{: #howto-privateendpoints-vsi6}
-
-1. Retrieve the connection string from the secret.
-1. Update your application configuration to use the private endpoint connection string. This stores the connection strings in a secret.
-
-### Step 7: Install Client tools on VSI
-{: #howto-privateendpoints-vsi7}
-
-1. Use {{site.data.keyword.cloud}} CLI or UI to bind your database deployment to your VSI. This stores the connection strings in a secret.
-1. SSH into your VSI.
-
-### Step 8: Connect to your database with private endpoints
+### Step 6: Connect to your database with private endpoints
 {: #howto-privateendpoints-vsi8}
 
-Install and verify the required client. Connect to the VSI from a local environment by sending a root certificate from a local machine to a VSI. This command will vary depending on the database service and the client. The instructions required per database arelisted in the table below.
+Install and verify the required database client, and connect to the database using the connection details from the service key. This command will vary depending on the database. The instructions required per database are listed in the table below.
 
 | Service   | Client tool | Sample command                                                                 |
 |-----------------------------|------------------|-------------------------------------------------------------------------------------|
@@ -104,7 +92,7 @@ Install and verify the required client. Connect to the VSI from a local environm
 ## Establishing Virtual Private Endpoints using a VPN connection
 {: #howto-privateendpoints-vpn}
 
-Use a VPN connection established through a VPE. The VPN lets you connect and manage your instance from a local laptop or client via the virtual private endpoint in your VPE.
+Use a VPN to connect to a VPC and access a VPE. The VPN lets you connect and manage your instance from a local laptop or client via the virtual private endpoint in your VPC.
 
 ### Step 1: Create a VPC
 {: #howto-privateendpoints-vpn1}
@@ -120,24 +108,24 @@ Use {{site.data.keyword.cloud_notm}} instructions to [create a Virtual Private C
 ### Step 3: Update VPC security groups
 {: #howto-privateendpoints-vpn3}
 
-Modify the security group to allow outbound traffic from your VSI to the database instance. Ensure ports required by your database (for example, Postgresql or MongoDB) are open. Check `allow SSH` in default security groups.
+Modify the security group to allow outbound traffic from your VSI to the database instance. Ensure ports required by your database (for example, Postgresql or MongoDB) are open.
 
-### Step 4: Build your connection by creating a VPN
+### Step 4: Create the VPN server
 {: #howto-privateendpoints-vpn4}
 
 1. Create an {{site.data.keyword.cloud_notm}} [secrets manager instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui).
-1. Create certificates for VPN server (using a third party certificate authority).
-1. Create IAM service to service authorisation for the VPN to secrets manager to enable the VPN server to securely retrieve credentials and configuration data.
-1. Create VPN server and configure the VPN server to use the credentials from secrets manager.
+1. Create a certificate engine in secrets mananger and generate a certificate for the VPN server.
+1. Create IAM service to service authorisation for the VPN server to secrets manager to enable the VPN server to securely retrieve the certificate.
+1. Create a VPN server for VPC, specifying the VPC created in step 1. Configure it to use the certificate stored in secrets manager.
 
-You have now set up a secure connection path to allow the VPN to establish a secure tunnel.
+You have now set up a VPN server that allows you to establish a secure tunnel to the VPC.
 
-### Step 5: Connect to the VPN and login to the network
+### Step 5: Connect to the VPN
 {: #howto-privateendpoints-vpn5}
 
-Download the client file to connect to the VPN and log into the network.
+Download the VPN client file and use a VPN client to connect to the VPN.
 
-### Step 7: Connect to your database with private endpoints
+### Step 6: Connect to your database with private endpoints
 {: #howto-privateendpoints-vpn7}
 
 | Service   | Client tool | Sample command                                                                 |
