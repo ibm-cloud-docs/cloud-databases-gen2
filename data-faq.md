@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-28"
+lastupdated: "2025-12-04"
 
 keywords: cos bucket, data deletion, data security, password
 
@@ -35,7 +35,7 @@ For more information on bucket deletions, see [Object Storage data deletion](/do
 
 In accordance with GDPR and other regulations, {{site.data.keyword.databases-for}} retains instance logs for 30 days. After 30 days, it is deleted through the same process as a COS bucket.
 
-Instances that are configured with the optional bring your own key (BYOK) capability have their data shredded. The data is inaccessible when the customer-owned encryption key is deleted from the Key Protect or Hyperprotect Crypto Services instance. For more information, see [Deleting your deployment and removing your data](/docs/cloud-databases?topic=cloud-databases-deprovisioning).
+Instances that are configured with the optional bring your own key (BYOK) capability have their data shredded. The data is inaccessible when the customer-owned encryption key is deleted from the Key Protect or Hyperprotect Crypto Services instance. For more information, see [Deleting your deployment and removing your data](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-deprovisioning&interface=ui).
 
 ## What are user password requirements?
 {: #faq-data-security-password}

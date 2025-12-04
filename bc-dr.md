@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-26"
+lastupdated: "2025-12-04"
 
 subcollection: cloud-databases-gen2
 
@@ -31,7 +31,7 @@ keywords: DR for cloud-databases, high availability for cloud-databases, disaste
 
 - To find out more about responsibility ownership for using {{site.data.keyword.cloud}} products between **{{site.data.keyword.IBM_notm}}** and customer see [Shared responsibilities for {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities).
 
-- For more information about your responsibilities when using **{{site.data.keyword.databases-for}}**, see [Shared responsibilities for {{site.data.keyword.databases-for}}](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases).
+- For more information about your responsibilities when using **{{site.data.keyword.databases-for}}**, see [Shared responsibilities for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-responsibilities-cloud-databases&interface=ui).
 
 ## Disaster recovery strategy
 {: #bc-dr-strategy}

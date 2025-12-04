@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-28"
+lastupdated: "2025-12-04"
 
 keywords: certificate, cert, tls, ssl, mutual tls, client certificates
 
@@ -31,8 +31,8 @@ subcollection: cloud-databases-gen2
 
 Choose the appropriate service documentation for connecting an external application:
 
-- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-external-app){: external}
-- [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-mongodb-external-app){: external}
+- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-external-app){: external}
+- [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-mongodb-external-app){: external}
 - [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis?topic=databases-for-redis-external-app){: external}
 - [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-external-app){: external}
 - [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-external-app){: external}
