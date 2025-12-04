@@ -2,7 +2,7 @@
  
 copyright:
   years: 2025
-lastupdated: "2025-11-28"
+lastupdated: "2025-12-04"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
@@ -20,7 +20,7 @@ subcollection: cloud-databases-gen2
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 {: beta}
 
-To interact with {{site.data.keyword.databases-for}} on Gen 2 via the CLI you must utilize the IBM Cloud Resource Controller's CLI. For more info please see [General {{site.data.keyword.cloud}} CLI (ibmcloud) commands](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_cli). 
+To interact with {{site.data.keyword.databases-for}} on Gen 2 via the CLI you must utilize the IBM Cloud Resource Controller's CLI. For more info please see [General {{site.data.keyword.cloud}} CLI (ibmcloud) commands](/docs/cli?topic=cli-ibmcloud_cli). 
 
 The {{site.data.keyword.databases-for}} plugin supports only Gen 1 instances. For Gen 2 instances, use the Resource Controller CLI.
 {: note}
@@ -164,7 +164,14 @@ ibmcloud resource service-instance-update <INSTANCE_NAME> -p'{
 ## Restore an {{site.data.keyword.databases-for-postgresql}} or {{site.data.keyword.databases-for-mongodb}} instance
 {: #ibmcloud-cdb-restore-instance}
 
-See [creating an instance](#ibmcloud-cdb-help-create).
+```sh
+ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> -g <RESOURCE_GROUP>  -p '{
+   "dataservices":{
+      "restore_backup_id": "crn:v1...123-456-7890"
+   }
+}'
+```
+{: .pre}
 
 ## Create and list backups
 {: #ibmcloud-cdb-create-backups}
@@ -174,7 +181,22 @@ This is currently not available via the CLI. To create or list a backup, use the
 ## Manage users
 {: #ibmcloud-cdb-manage-users}
 
-!!!!Reach out to Doug Cowie and David Piteria to understand if this is possible via the CLI!!!
+To create a user:
+
+```sh
+ibmcloud resource service-key-create NAME [ROLE_NAME] ( --instance-id SERVICE_INSTANCE_ID | --instance-name SERVICE_INSTANCE_NAME) [--service-id SERVICE_ID]
+```
+{: .pre}
+
+To delete a user:
+
+```sh
+ibmcloud resource service-key-delete ( NAME | ID ) [-g RESOURCE_GROUP]
+```
+{: .pre}
+
+Updating a user is not possible for Gen 2 instances.
+{: note}
 
 ## Manage IP addresses (Allowlisting)
 {: #ibmcloud-cdb-allowlisting}
