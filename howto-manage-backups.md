@@ -24,7 +24,7 @@ An automatically scheduled backup is taken of your database every day. You can a
 
 To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups and restore* tab.
 
-Gen 2 {{site.data.keyword.databases-for}} backups can only be restored within the same region where they were created. 
+Gen 2 {{site.data.keyword.databases-for}} backups can only be restored within the same region where they were created.
 {: .note}
 
 Here is some additional general information about backups:
@@ -33,20 +33,11 @@ Here is some additional general information about backups:
 - Backups cannot be deleted.
 - If you delete your instance, its backups are deleted automatically.
 - Daily backup scheduling is not configurable.
-<<<<<<< Updated upstream
 - Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
 
 For information on taking an on-demand backup, see [Managing Gen 2 backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui).
-=======
-- Backups are restorable to other regions, except for `eu-de`, `eu-es`, and `par-01`, which can restore backups only between each other. For example, `par-01` backups can be restored to and between `eu-de` and `eu-es`.
-- Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect&interface=ui#key-byok). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
-- Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
-- {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
-
-For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui#backup-ui).
->>>>>>> Stashed changes
 
 ## Backups in the UI
 {: #backup-ui}
@@ -144,12 +135,7 @@ To restore a backup to a new service instance,
 2. Click **Restore**.
 3. On the **Provisioning** page, select from some available options.
     - The new instance is automatically named `<name>-restore-[timestamp]`, but you can rename it.
-<<<<<<< Updated upstream
-    - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. Note that if you decrease your resource amount, it may lead to provision failure or your database not functioning properly. 
-=======
-    - You can also select the region where the new instance is located. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
-    - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. You can also enable or disable dedicated cores. Note that if you decrease your resource amount, it may lead to provision failure or your database not functioning properly.
->>>>>>> Stashed changes
+    - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. Note that if you decrease your resource amount, it may lead to provision failure or your database not functioning properly.
 4. Click **Restore backup**. A "restore from backup started" message appears. Clicking **Your new instance is available now** takes you to your _Resources List_.
 
 ### Restoring a backup in the CLI
@@ -297,16 +283,16 @@ For more information, see the [{{site.data.keyword.databases-for}} Terraform Reg
 ## Backup locations
 {: #backup-locations}
 
-Gen 2 Backups are only in the region of the instance. 
+Gen 2 Backups are only in the region of the instance.
 
 ## Business continuity and disaster recovery
 {: #backup-locations}
 
-{{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. For more information (including [Backup Storage Regions](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr&interface=ui#bc-dr-single-region-backups){: external}), see [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr){: external}.
+{{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. For more information (including [Backup Storage Regions](/docs/cloud-databases?topic=cloud-databases-bc-dr#bc-dr-single-region-backups){: external}), see [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases?topic=cloud-databases-bc-dr){: external}.
 
 
 
 ## Backups FAQ
 {: #backup-faq-reference}
 
-For frequently asked questions about backups, see the [Backups FAQ](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-faq-backups){: external}.
+For frequently asked questions about backups, see the [Backups FAQ](/docs/cloud-databases?topic=cloud-databases-faq-backups){: external}.
