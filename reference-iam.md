@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-26"
+lastupdated: "2025-12-05"
 
 subcollection: cloud-databases-gen2
 
@@ -10,7 +10,7 @@ subcollection: cloud-databases-gen2
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Identity and Access Management integration
+# Identity and Access Management integration (IAM)
 {: #iam}
 
 [Gen 2]{: tag-purple}
@@ -18,29 +18,37 @@ subcollection: cloud-databases-gen2
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 {: beta}
 
-Access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-cloudaccess). 
+Management access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-cloudaccess). 
 
-This document covers the integration of IAM with Cloud Databases: {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, {{site.data.keyword.databases-for-enterprisedb}} and {{site.data.keyword.databases-for-etcd}}. 
+This document covers the integration of IAM with Cloud Databases: {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}.
 {: .note}
 
-IAM is only integrated with high-level service access, which governs privileges and operations available in the [Cloud Databases API](/apidocs/cloud-databases-api/cloud-databases-api-v5) and the [Cloud Databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference). It does not govern database-level users and privileges. Database access is governed by the standard access controls provided by the database. IAM does not control database users.
+IAM is only integrated with high-level service access, which governs privileges and operations to perform management functions. It does not govern database-level users and privileges. Database access is governed by the standard access controls provided by the database. IAM does not control database users.
 
 For more information about assigning user roles in {{site.data.keyword.cloud_notm}}, see [Managing IAM access](/docs/account?topic=account-assign-access-resources).
 
-The following table provides a general overview of actions that are mapped to service management roles. Service management roles enable users to perform tasks on service resources at the service level. For example, assign user access for the service, create or delete service IDs, create instances, and bind instances to applications.
+Gen 2 {{site.data.keyword.databases-for}} use service credentials for access management. This means:
 
-| Service management role | Description of actions | Example actions |
+- Instance/deployment passwords no longer exist and all credentials surfaced are {{site.data.keyword.cloud}} service credentials, which can have different roles (for example, Admin, Writer, Reader).
+- You can create new service credentials through the platform, but updating an existing password is not supported.
+- For database-level user management, you are advised to create and manage users directly within the database using your preferred method. 
+
+The following table provides a general overview of actions that are mapped to platform. Service management roles enable you to perform tasks on service resources at the service level. For example, assign user access for the service, create or delete service IDs, create instances, and bind instances to applications.
+
+| Platform roles | Description of actions | Example actions |
 | ----------------- | ----------------- | ----------------- |
-| Viewer | As a viewer, you can view database instances but you can't make configuration changes. | View service overview and view alerts. |
-| Operator | As an operator, you can view database instances and make configuration changes that include managing database credentials. | Scale a deployment and change a deployment's password. |
-| Editor | As an editor, you can perform all platform actions (including making configuration changes and managing credentials) except for managing the account and assigning access policies. | Scale a deployment and change a deployment's password. |
-| Administrator | As an administrator, you can perform all platform actions, including assigning access policies to other users. | Scale a deployment, change a deployment's password, and assign access policies. |
+| Viewer | As a Viewer, you can view database instances but you can't make configuration changes. | View service overview and view alerts. |
+| Operator | As an operator, you can view database instances and make configuration changes that include managing database credentials. | Scale a deployment, create a new user password/service credential. |
+| Editor | As an Editor, you can perform all platform actions (including making configuration changes and managing credentials) except for managing the account and assigning access policies. | Scale a deployment, create a new user password/ service credential. |
+| Administrator | As an Administrator, you can perform all platform actions, including assigning access policies to other users. | Scale a deployment, create a new service credential, create and delete access policies. |
 {: caption="IAM user roles and actions" caption-side="top"}
 
 ## Actions for {{site.data.keyword.databases-for}} API
 {: #actions}
 
-Access to certain API endpoints and requests is governed by role. The following lists the access policy for each role for {{site.data.keyword.cloud}} Databases. 
+IAM access for Gen 2 {{site.data.keyword.databases-for}} is no longer managed through the {{site.data.keyword.databases-for}} API or CLI plug in; it is now handled via IBM Cloud Resource Controller. 
+
+Access to certain API endpoints and requests is governed by role. The following lists the access policy for each role for {{site.data.keyword.databases-for}}. 
 
 ### Viewer 
 {: #viewer}
