@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-26"
+lastupdated: "2025-12-05"
 
 keywords: logging
 
@@ -62,7 +62,7 @@ Platform logs for Gen 2 instances differ from Gen 1. {{site.data.keyword.databas
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |  Paris (`eu-par01`) | 
+| Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |  Paris (`eu-par01`) |
 |---------------------------------------------------------------|---------------------|------------------|-------|
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |  [No]{: tag-red}  |
 {: caption="Regions where platform logs are sent in Europe locations" caption-side="top"}
@@ -142,7 +142,7 @@ For information about fields included in every platform log, see [Fields for pla
 | `messageID`       | Required   | ID of the log that is generated. |
 {: caption="Log record fields" caption-side="bottom"}
 
-{{site.data.keyword.databases-for}} sends audit events as platform logs. For more information, see [Activity tracking for Cloud Databases](/docs/cloud-databases?topic=cloud-databases-at_events).
+{{site.data.keyword.databases-for}} sends audit events as platform logs. For more information, see [Activity tracking for Cloud Databases](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-at_events).
 
 
 

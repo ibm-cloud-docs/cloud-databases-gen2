@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-26"
+lastupdated: "2025-12-05"
 
 keywords: cloud databases gen 2
 
@@ -19,17 +19,17 @@ subcollection: cloud-databases-gen2
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 {: beta}
 
-{{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across all industries. The following page outlines the key differences between {{site.data.keyword.databases-for}} built on IBM’s Classic platform (Gen 1) and the latest VPC based platform (Gen 2). 
+{{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across all industries. The following page outlines the key differences between {{site.data.keyword.databases-for}} built on IBM’s Classic platform (Gen 1) and the latest VPC based platform (Gen 2).
 
 ## Generation  1 (Classic)
 {: #gen1}
 
-IBM’s original platform consisting of all databases across all regions and a rich feature set. Gen 1 Databases support both private and public endpoints, with options for isolated and shared compute. This environment is best suited for workloads that benefit from simpler networking and isolation features. 
+IBM’s original platform consisting of all databases across all regions and a rich feature set. Gen 1 Databases support both private and public endpoints, with options for isolated and shared compute. This environment is best suited for workloads that benefit from simpler networking and isolation features.
 
 ## Generation 2 (VPC)
 {: #gen2}
 
-Gen 2 databases are built on IBM’s latest platform, based on highly secure software-defined networking architecture and ideal for cloud-native applications. Gen 2 Databases currently are only available in select regions only and support private endpoints and isolated compute options. This environment is ideal for modern applications that demand advanced networking and secure, software-defined isolation. 
+Gen 2 databases are built on IBM’s latest platform, based on highly secure software-defined networking architecture and ideal for cloud-native applications. Gen 2 Databases currently are only available in select regions only and support private endpoints and isolated compute options. This environment is ideal for modern applications that demand advanced networking and secure, software-defined isolation.
 
 ## Feature differentiators
 {: #feature-differentiators}
@@ -62,7 +62,7 @@ Gen 2 databases are built on IBM’s latest platform, based on highly secure sof
 
 | Category               | Gen 1                                                                 | Gen 2                                              |
 |------------------------|-----------------------------------------------------------------------|----------------------------------------------------|
-| User and role management | [Database `admin` user created by IBM](docs/databases-for-mongodb?topic=databases-for-mongodb-user-management&interface=ui) | Database "manager" via service-credential                              |
+| User and role management | [Database `admin` user created by IBM](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-user-management&interface=ui) | Database "manager" via service-credential                              |
 | Certificate type       | Signed by IBM Cloud Database Certificate Authority                    | Certificates signed by a Certificate Authority (Let's encrypt)         |
 | Encryption             | Encryption at Rest <br> Encryptions in Transit <br> Customer-managed encryption - Bring your own key (BYOK) | Encryption at Rest <br> Encryptions in Transit <br> Customer-managed encryption - Bring your own key (BYOK) |
 | Compliance             | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018 <br> SOC 1, SOC 2 <br> PCI DSS <br> HIPAA  | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018SOC 1 <br> SOC 2 <br> PCI DSS <br> HIPAA      |
