@@ -25,6 +25,7 @@ An automatically scheduled backup is taken of your database every day. You can a
 To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups and restore* tab. 
 
 Gen 2 {{site.data.keyword.databases-for}} backups can only be restored within the same region where they were created. 
+{: .note}
 
 Here is some additional general information about backups:
 
@@ -32,7 +33,6 @@ Here is some additional general information about backups:
 - Backups cannot be deleted.
 - If you delete your instance, its backups are deleted automatically.
 - Daily backup scheduling is not configurable.
-- Gen 2 {{site.data.keyword.databases-for}} Backups can only be restored within the same region where they were created. 
 - Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
@@ -283,15 +283,7 @@ For more information, see the [{{site.data.keyword.databases-for}} Terraform Reg
 ## Backup locations
 {: #backup-locations}
 
-Backup location differs per database region. Ensure that the backup region location matches your data location requirements.
-
-| Instance region | Backup region |
-|----------|---------|
-| Montreal |	Montreal VPC Block Storage Snapshots |
-| Chennai |	Chennai VPC Block Storage Snapshots |
-{: caption="Instance and backup regions" caption-side="bottom"}
-
-For more details about {{site.data.keyword.databases-for}} Object Storage locations, review the location's [documentation](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
+Gen 2 Backups are only in the region of the instance. 
 
 ## Business continuity and disaster recovery
 {: #backup-locations}
