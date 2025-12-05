@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-01"
+lastupdated: "2025-12-05"
 
 subcollection: cloud-databases-gen2
 
@@ -20,7 +20,7 @@ keywords: version for cloud-databases, database version, end of life, major vers
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 {: beta}
 
-When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud}}. Currently, only the latest versions are available for Gen 2 {{site.data.keyword.databases-for}} and this is shown in the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference&interface=ui), or the [{{site.data.keyword.databases-for}} API](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-api).
+When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud}}. Currently, only the latest versions are available for Gen 2 {{site.data.keyword.databases-for}} and this is shown in the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference&interface=ui), or the [{{site.data.keyword.databases-for}} API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api).
 
 ## Major versions defined
 {: #version-definitions}
@@ -39,7 +39,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 ## Deprecation of major versions
 {: #version-deprecation}
 
-{{site.data.keyword.databases-for}} aims to support a major version for approximately 3 years from its release. If a version is deprecated or marked end of life by the upstream open source maintainers, {{site.data.keyword.databases-for}} will initiate its own deprecation process. 
+{{site.data.keyword.databases-for}} aims to support a major version for approximately 3 years from its release. If a version is deprecated or marked end of life by the upstream open source maintainers, {{site.data.keyword.databases-for}} will initiate its own deprecation process.
 
 When a major version is deprecated, a six-month transition window is opened for current users of the deprecated version. At the beginning of the period, we contact users affected by the deprecation. During the six-month transition window, users are able to initiate an upgrade to a supported major version. Existing instances continue to run as normal.
 
@@ -56,7 +56,7 @@ Failure to act can result in compatibility issues with your apps when IBM upgrad
 ## Version tags
 {: #version-tags}
 
-Currently, only one version per Gen 2 {{site.data.keyword.databases-for}} service is supported. As new versions become available, the following version tags will apply. 
+Currently, only one version per Gen 2 {{site.data.keyword.databases-for}} service is supported. As new versions become available, the following version tags will apply.
 {: .note}
 
 | Version tag | Description|
@@ -85,7 +85,7 @@ You receive multiple notifications when a major version reaches its end of life.
 
 For more information, see [Programmatic methods for checking version status](#-major-version-eol-check-version-status). Customers are encouraged to use **programatic ways**, via CLI or API, to get updated about database version status. For more information, see [Programmatic methods for checking version status](#-major-version-eol-check-version-status).
 
-Any actions taken after an EOL date happen over several days after the EOL date. We try, but cannot guarantee, to make these upgrades outside of business hours in the local regions. If you want more control over the upgrade process of your instance, we recommend that you upgrade following our [backup and restore process](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) before the EOL date of your version.
+Any actions taken after an EOL date happen over several days after the EOL date. We try, but cannot guarantee, to make these upgrades outside of business hours in the local regions. If you want more control over the upgrade process of your instance, we recommend that you upgrade following our [backup and restore process](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui) before the EOL date of your version.
 {: .note}
 
 ### Programmatic methods for checking version status
@@ -117,5 +117,5 @@ GET /v5/ibm/deployables
 ### Major versions and Terraform
 {: #-major-version-eol-terraform}
 
-Note that you cannot currently upgrade to a new major version using Terraform. Changing the version number on a Terraform script could lead to your data being destroyed. The recommended method of version upgrade is restoring a backup into a new deployment with the latest version. For more information, see [Restoring a backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#restore-backup).
+Note that you cannot currently upgrade to a new major version using Terraform. Changing the version number on a Terraform script could lead to your data being destroyed. The recommended method of version upgrade is restoring a backup into a new deployment with the latest version. For more information, see [Restoring a backup](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui#restore-backup).
 {: important}

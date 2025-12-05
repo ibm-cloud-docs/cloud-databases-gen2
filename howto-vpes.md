@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-28"
+lastupdated: "2025-12-05"
 
 subcollection: cloud-databases-gen2
 
@@ -9,7 +9,7 @@ keywords: pDNS, private endpoints, private networking, vpe, virtual private endp
 
 ---
 
-# Virtual Private Endpoints 
+# Virtual Private Endpoints
 {: #vpes}
 
 [Gen 2]{: tag-purple}
@@ -17,7 +17,7 @@ keywords: pDNS, private endpoints, private networking, vpe, virtual private endp
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 {: beta}
 
-This document covers all of the Gen 2 {{site.data.keyword.databases-for}}: {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}. 
+This document covers all of the Gen 2 {{site.data.keyword.databases-for}}: {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}.
 {: .note}
 
 {{site.data.keyword.cloud}} Virtual Private Endpoint (VPE) provides connection points to IBM services on the IBM private network from your VPC network.
@@ -25,27 +25,27 @@ This document covers all of the Gen 2 {{site.data.keyword.databases-for}}: {{sit
 ## Using Virtual Private Endpoints
 {: #using-vpes}
 
-Virtual Private Endpoints (VPEs) are generally available in all regions. 
+Virtual Private Endpoints (VPEs) are generally available in all regions.
 {: .note}
 
 ### Before you begin
 {: #vpes-before-begin}
 
 - Log in to the {{site.data.keyword.cloud}} console.
-- You need to have a {{site.data.keyword.databases-for}} deployment. You can [provision](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog). Give your deployment a memorable name that appears in your account's Resource List.
+- You need to have a {{site.data.keyword.databases-for}} deployment. You can [provision](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-offerings) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog). Give your deployment a memorable name that appears in your account's Resource List.
 
 ### Setting up your VPE
 {: #vpes-setup}
 
-1. Create an {{site.data.keyword.vpc_full}}. Follow the [getting started instructions](/docs/vpc?topic=vpc-getting-started). 
+1. Create an {{site.data.keyword.vpc_full}}. Follow the [getting started instructions](/docs/vpc?topic=vpc-getting-started).
 
 2. Make sure that your VPC has at least one virtual server instance (VSI), and that the VPC can connect to the VSI. You can use the UI, CLI, and API to provision a VSI. Follow the [getting started instructions](/docs/vpc?topic=vpc-creating-virtual-servers).
 
 3. Make sure your {{site.data.keyword.databases-for}} deployment's [private endpoint is enabled](/docs/cloud-databases?topic=cloud-databases-service-endpoints).
 
-4. In the {{site.data.keyword.cloud_notm}} console, click the menu icon and select -> VPC Infrastructure -> Network -> Virtual private endpoint gateways. Create a VPE for your {{site.data.keyword.databases-for}} instances with [these instructions](/docs/vpc?topic=vpc-about-vpe). 
+4. In the {{site.data.keyword.cloud_notm}} console, click the menu icon and select -> VPC Infrastructure -> Network -> Virtual private endpoint gateways. Create a VPE for your {{site.data.keyword.databases-for}} instances with [these instructions](/docs/vpc?topic=vpc-about-vpe).
 
-5. After you create your VPE, it might take a few minutes for the new VPE and pDNS to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) of the VPE. 
+5. After you create your VPE, it might take a few minutes for the new VPE and pDNS to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) of the VPE.
 
 6. To make sure pDNS is functioning for your VPE, `ssh` into your VSI and run the following:
 
@@ -63,7 +63,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
    Name:	host-0.private.databases.appdomain.cloud
    Address: 10.240.64.6
    ```
-   
+
    ```bash
    root@test-vpc-vsi:~# nslookup host-1.private.databases.appdomain.cloud
    Server:		127.0.0.53
@@ -72,7 +72,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
    Name:	host-1.private.databases.appdomain.cloud
    Address: 10.240.64.6
    ```
-   
+
    ```bash
    root@test-vpc-vsi:~# nslookup host-2.private.databases.appdomain.cloud
    Server:		127.0.0.53
@@ -93,7 +93,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 
 Following the previous steps results in a database instance with private endpoints that is reachable with the Virtual Private Endpoints from your VPC network.
 
-Database instances with private endpoints are reachable from any account within the private network and access to each instance requires authentication. To restrict this access to specific IP addresses, or ranges of IP addresses, configure [Context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr) or [allowlisting](/docs/cloud-databases?topic=cloud-databases-allowlisting). 
+Database instances with private endpoints are reachable from any account within the private network and access to each instance requires authentication. To restrict this access to specific IP addresses, or ranges of IP addresses, configure [Context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr) or [allowlisting](docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-allowlisting).
 {: .important}
 
 A MongoDB deployment cannot support both [public and private endpoints simultaneously](/docs/cloud-databases?topic=cloud-databases-service-endpoints&interface=ui). *This cannot be changed after provisioning*.
@@ -107,4 +107,4 @@ For more information, see [Secure access to services by using service endpoints]
 
 - [Planning for virtual private endpoint gateways](/docs/vpc?topic=vpc-planning-considerations).
 - [Creating an endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway).
-- For further assistance, see the [FAQs for virtual private endpoints](/docs/vpc?topic=vpc-faqs-vpe), and the **Troubleshooting VPE gateways** documentation that includes [how to fix communications issues](/docs/vpc?topic=vpc-troubleshoot-cannot-communicate). 
+- For further assistance, see the [FAQs for virtual private endpoints](/docs/vpc?topic=vpc-faqs-vpe), and the **Troubleshooting VPE gateways** documentation that includes [how to fix communications issues](/docs/vpc?topic=vpc-troubleshoot-cannot-communicate).
