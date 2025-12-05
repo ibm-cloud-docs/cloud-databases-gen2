@@ -22,7 +22,7 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 
 An automatically scheduled backup is taken of your database every day. You can also trigger on-demand backups at any time. Backups are encrypted either with an automatic key or your own key if you use Bring Your Own Key (BYOK).  If BYOK is set up for a Gen 2 {{site.data.keyword.databases-for}} instance, the backups will be created using the key. You can restore a backup to a new instance of {{site.data.keyword.databases-for}}.
 
-To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups and restore* tab. 
+To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups and restore* tab.
 
 Gen 2 {{site.data.keyword.databases-for}} backups can only be restored within the same region where they were created. 
 {: .note}
@@ -33,21 +33,30 @@ Here is some additional general information about backups:
 - Backups cannot be deleted.
 - If you delete your instance, its backups are deleted automatically.
 - Daily backup scheduling is not configurable.
+<<<<<<< Updated upstream
 - Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
 
 For information on taking an on-demand backup, see [Managing Gen 2 backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui).
+=======
+- Backups are restorable to other regions, except for `eu-de`, `eu-es`, and `par-01`, which can restore backups only between each other. For example, `par-01` backups can be restored to and between `eu-de` and `eu-es`.
+- Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect&interface=ui#key-byok). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
+- Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
+- {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
+
+For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui#backup-ui).
+>>>>>>> Stashed changes
 
 ## Backups in the UI
 {: #backup-ui}
 {: ui}
 
-In the UI, navigate to the *Backups and restore* tab where you see a table with all available backups for your database. 
+In the UI, navigate to the *Backups and restore* tab where you see a table with all available backups for your database.
 
 The backup types can be either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken.
 
-Click the backup to reveal information for that specific backup, including its full ID. A **Restore** button or a pre-formatted CLI command is there for restore options. 
+Click the backup to reveal information for that specific backup, including its full ID. A **Restore** button or a pre-formatted CLI command is there for restore options.
 
 ## Backups in the CLI
 {: #backup-ui-cli}
@@ -135,7 +144,12 @@ To restore a backup to a new service instance,
 2. Click **Restore**.
 3. On the **Provisioning** page, select from some available options.
     - The new instance is automatically named `<name>-restore-[timestamp]`, but you can rename it.
+<<<<<<< Updated upstream
     - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. Note that if you decrease your resource amount, it may lead to provision failure or your database not functioning properly. 
+=======
+    - You can also select the region where the new instance is located. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
+    - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. You can also enable or disable dedicated cores. Note that if you decrease your resource amount, it may lead to provision failure or your database not functioning properly.
+>>>>>>> Stashed changes
 4. Click **Restore backup**. A "restore from backup started" message appears. Clicking **Your new instance is available now** takes you to your _Resources List_.
 
 ### Restoring a backup in the CLI
@@ -150,13 +164,13 @@ ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-ID> standard 
 {: .pre}
 
 * Change the value of `instance_name` to the name that you want for your new instance.
-* The `service-id` is the type of instance, such as _databases-for-postgresql_ or _messages-for-rabbitmq_. 
+* The `service-id` is the type of instance, such as _databases-for-postgresql_ or _messages-for-rabbitmq_.
 * The `region` is where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring to or from `eu-de` by using another region.
 * `backup_id` is the backup that you want to restore.
 
 The previous command will restore a backup to a machine of the same configuration and on the same [hosting model](/docs/databases-for-mongodb?topic=databases-for-mongodb-hosting-models&interface=cli) as your original deployment.
 
-#### Optional parameters 
+#### Optional parameters
 {: #hosting-model-cli}
 {: cli}
 
@@ -174,7 +188,7 @@ The `members_host_flavor` value can be either "multitenant" or an appropriate-si
 A pre-formatted command for a specific backup is available in detailed view of the backup on the _Backups and restore_ tab of your instance's dashboard.
 {: .tip}
 
-By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding the version in the parameters object, as in the following example. 
+By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding the version in the parameters object, as in the following example.
 
 ```sh
 `ibmcloud resource service-instance-create <INSTANCE_NAME> databases-for-mysql standard us-south -p '{"backup_id":"<BACKUP_ID>", "version": "<VERSION>"}'
@@ -209,13 +223,13 @@ The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are al
 {: important}
 
 * Change the value of `name` to the name that you want for your new instance.
-* The `resource_plan_id` is the type of instance, such as _databases-for-postgresql_ or _messages-for-rabbitmq_. 
+* The `resource_plan_id` is the type of instance, such as _databases-for-postgresql_ or _messages-for-rabbitmq_.
 * The `target` is the region where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
 * `backup_id` is the backup that you want to restore.
 
 The above command will restore a backup to a machine of the same configuration and on the same [hosting model](/docs/databases-for-mongodb?topic=databases-for-mongodb-hosting-models&interface=cli) as your original deployment.
 
-#### Optional parameters 
+#### Optional parameters
 {: #hosting-model-api}
 {: api}
 
@@ -288,11 +302,11 @@ Gen 2 Backups are only in the region of the instance.
 ## Business continuity and disaster recovery
 {: #backup-locations}
 
-{{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. For more information (including [Backup Storage Regions](/docs/cloud-databases?topic=cloud-databases-bc-dr#bc-dr-single-region-backups){: external}), see [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases?topic=cloud-databases-bc-dr){: external}.
+{{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. For more information (including [Backup Storage Regions](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr&interface=ui#bc-dr-single-region-backups){: external}), see [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr){: external}.
 
 
 
 ## Backups FAQ
 {: #backup-faq-reference}
 
-For frequently asked questions about backups, see the [Backups FAQ](/docs/cloud-databases?topic=cloud-databases-faq-backups){: external}.
+For frequently asked questions about backups, see the [Backups FAQ](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-faq-backups){: external}.
