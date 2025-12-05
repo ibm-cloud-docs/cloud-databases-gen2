@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-28"
+lastupdated: "2025-12-05"
 
 subcollection: cloud-databases-gen2
 
@@ -12,7 +12,7 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing {{site.data.keyword.databases-for}} backups
+# Managing Gen 2 {{site.data.keyword.databases-for}} backups
 {: #dashboard-backups}
 
 [Gen 2]{: tag-purple}
@@ -20,10 +20,11 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 {: beta}
 
-An automatically scheduled backup is taken of your database every day. You can also do on-demand backups. Backups are encrypted either with an automatic key or your own key if you use Bring Your Own Key (BYOK). You can restore a backup to a new instance of {{site.data.keyword.databases-for}}.
+An automatically scheduled backup is taken of your database every day. You can also trigger on-demand backups at any time. Backups are encrypted either with an automatic key or your own key if you use Bring Your Own Key (BYOK).  If BYOK is set up for a Gen 2 {{site.data.keyword.databases-for}} instance, the backups will be created using the key. You can restore a backup to a new instance of {{site.data.keyword.databases-for}}.
 
 To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups and restore* tab. 
 
+Gen 2 {{site.data.keyword.databases-for}} backups can only be restored within the same region where they were created. 
 
 Here is some additional general information about backups:
 
@@ -31,12 +32,12 @@ Here is some additional general information about backups:
 - Backups cannot be deleted.
 - If you delete your instance, its backups are deleted automatically.
 - Daily backup scheduling is not configurable.
-- Backups are restorable to other regions, except for `eu-de`, `eu-es`, and `par-01`, which can restore backups only between each other. For example, `par-01` backups can be restored to and between `eu-de` and `eu-es`.
+- Gen 2 {{site.data.keyword.databases-for}} Backups can only be restored within the same region where they were created. 
 - Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
 
-For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=cli#ondemand-backup).
+For information on taking an on-demand backup, see [Managing Gen 2 backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui).
 
 ## Backups in the UI
 {: #backup-ui}
@@ -134,8 +135,7 @@ To restore a backup to a new service instance,
 2. Click **Restore**.
 3. On the **Provisioning** page, select from some available options.
     - The new instance is automatically named `<name>-restore-[timestamp]`, but you can rename it.
-    - You can also select the region where the new instance is located. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
-    - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. You can also enable or disable dedicated cores. Note that if you decrease your resource amount, it may lead to provision failure or your database not functioning properly. 
+    - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. Note that if you decrease your resource amount, it may lead to provision failure or your database not functioning properly. 
 4. Click **Restore backup**. A "restore from backup started" message appears. Clicking **Your new instance is available now** takes you to your _Resources List_.
 
 ### Restoring a backup in the CLI
@@ -287,17 +287,8 @@ Backup location differs per database region. Ensure that the backup region locat
 
 | Instance region | Backup region |
 |----------|---------|
-| Dallas | US cross regional Object Storage |
-| Washington D.C. | US cross regional Object Storage |
-| London |	EU cross regional Object Storage |
-| Frankfurt |	EU cross regional Object Storage |
-| Tokyo	| AP cross regional Object Storage |
-| Osaka	| AP cross regional Object Storage |
-| Sydney	| AP cross regional Object Storage |
-| Toronto |	Montreal Object Storage |
-| Chennai |	Chennai Object Storage |
-| Sao Paolo | Sao Paolo Object Storage |
-| Madrid | EU cross regional Object Storage |
+| Montreal |	Montreal VPC Block Storage Snapshots |
+| Chennai |	Chennai VPC Block Storage Snapshots |
 {: caption="Instance and backup regions" caption-side="bottom"}
 
 For more details about {{site.data.keyword.databases-for}} Object Storage locations, review the location's [documentation](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
@@ -307,15 +298,7 @@ For more details about {{site.data.keyword.databases-for}} Object Storage locati
 
 {{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. For more information (including [Backup Storage Regions](/docs/cloud-databases?topic=cloud-databases-bc-dr#bc-dr-single-region-backups){: external}), see [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases?topic=cloud-databases-bc-dr){: external}.
 
-## Point-in-Time Recovery
-{: #pitr-recovery-options}
 
-With Point-in-Time Recovery (PITR), the instance continuously backs up incrementally and can replay transactions to bring a new instance that is restored from a backup to any point in the last 7 days. {{site.data.keyword.databases-for}} offers Point-In-Time Recovery (PITR) for the following services:
-
-- [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr)
-- [{{site.data.keyword.databases-for-mongodb_full}}](https://cloud.ibm.com/docs/databases-for-mongodb?topic=databases-for-mongodb-pitr&interface=ui)
-- [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr)
-- [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-pitr&interface=ui)
 
 ## Backups FAQ
 {: #backup-faq-reference}
