@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-01"
+lastupdated: "2025-12-06"
 
 subcollection: cloud-databases-gen2
 
@@ -28,7 +28,7 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |
 |----------|-----------------------|--------|
-|Monitoring| {{site.data.keyword.databases-for}} is responsible for hosting monitoring and health services. | The Client is responsible for integrating with the [{{site.data.keyword.monitoringfull}}](/docs/cloud-databases?topic=cloud-databases-monitoring), [{{site.data.keyword.atracker_full}}](/docs/cloud-databases?topic=cloud-databases-at_events), or [{{site.data.keyword.logs_full}}](/docs/cloud-databases?topic=cloud-databases-logging). |
+|Monitoring| {{site.data.keyword.databases-for}} is responsible for hosting monitoring and health services. | The Client is responsible for integrating with the [{{site.data.keyword.monitoringfull}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring), [{{site.data.keyword.atracker_full}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events), or [{{site.data.keyword.logs_full}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-logging). |
 |High availability| {{site.data.keyword.databases-for}} is responsible for deploying databases across availability zones in a multizone region (MZR), or across hosts in a single-campus multizone region, and storing backups in {{site.data.keyword.block_storage_is_short}} instances for Gen 2 {{site.data.keyword.databases-for}}. {{site.data.keyword.databases-for}} provides replication, fail-over features, and infrastructure maintenance or updates. High availability varies based on each database type, refer to database-specific documentation for details. | The Client is responsible for designing application logic to retry connections caused by temporary connection failures (during regular database maintenance and updates).|
 |Database performance | {{site.data.keyword.databases-for}} is responsible for hosting and maintaining database infrastructure. | The Client is responsible for the data model and performance, including tuning the data model, queries, and scaling the database as necessary for application needs. |
 |Operating System | {{site.data.keyword.databases-for}} is responsible for hosting and maintaining database Operating System infrastructure. | The Client is not responsible for, nor has access to, Operating System level activities. |
@@ -56,11 +56,11 @@ Review the following sections for the specific responsibilities for you and for 
 ## Disaster recovery
 {: #disaster-recovery-responsibilities}
 
-PITR is not currently available for Gen 2 {{site.data.keyword.databases-for}} instances. 
+PITR is not currently available for Gen 2 {{site.data.keyword.databases-for}} instances.
 {: note}
 
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |
 |----------|-----------------------|--------|
-|Backups and restore| {{site.data.keyword.databases-for}} is responsible for automatic daily backups, as well as monitoring the state of client backups.| The Client is responsible for restoration, timeliness, validity of backups, and alerting of failed backups via [{{site.data.keyword.atracker_full}}](/docs/cloud-databases?topic=cloud-databases-at_events). For more information, see [Managing Cloud Databases backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui).|
+|Backups and restore| {{site.data.keyword.databases-for}} is responsible for automatic daily backups, as well as monitoring the state of client backups.| The Client is responsible for restoration, timeliness, validity of backups, and alerting of failed backups via [{{site.data.keyword.atracker_full}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events). For more information, see [Managing Cloud Databases backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui).|
 |Read-only replicas (_{{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mysql}} ONLY_)| {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mysql}} are responsible for providing the capability of deploying read-only replicas across regions (except for replicating data into or outside of `eu-de`). | The Client is responsible for provisioning, configuring, monitoring, and promoting read-only replicas. |
 {: caption="Responsibilities for disaster recovery" caption-side="top"}
