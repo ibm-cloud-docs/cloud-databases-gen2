@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-26"
+lastupdated: "2025-12-06"
 
 keywords: gen 2, pricing
 
@@ -45,18 +45,18 @@ Each database instance consists of two or three members, depending on the databa
 | 48x240 | 48 vCPU x 240 GB RAM | Memory intensive usage |
 {: caption="Isolated compute UI selections - exact configurations vary by region " caption-side="bottom"}
 
-The total cost of your {{site.data.keyword.databases-for}} deployment will consist of the the cost of each vCPU x RAM profile, disk storage in GB and backup storage (for all members), prorated hourly. 
+The total cost of your {{site.data.keyword.databases-for}} deployment will consist of the the cost of each vCPU x RAM profile, disk storage in GB and backup storage (for all members), prorated hourly.
 {: note}
 
 ## Using the pricing calculator
 {: #pricing-calc}
 
-For pricing estimation, use the **Add to estimate** button on the provisioning page of each service. Input your total consumption across each data members into the calculator. This is equal to the number of members because your data is replicated to all members. For example, a 2-member {{site.data.keyword.databases-for}} deployment with 5 GB of disk on a 4 vCPU x 20 GB RAM profile would have a total bill for 10 GB of disk and the total cost of 2 members. 
+For pricing estimation, use the **Add to estimate** button on the provisioning page of each service. Input your total consumption across each data members into the calculator. This is equal to the number of members because your data is replicated to all members. For example, a 2-member {{site.data.keyword.databases-for}} deployment with 5 GB of disk on a 4 vCPU x 20 GB RAM profile would have a total bill for 10 GB of disk and the total cost of 2 members.
 
 ## Backups pricing for Gen 2 instances
 {: #pricing-backup}
 
-Gen 2 {{site.data.keyword.databases-for}} uses a snapshot based backup model, with pricing aligned to the size of your provisioned database storage. Snapshots differ from traditional backups in that they are block-level incremental copies, therefore you are billed based on how much data has changed since the last snapshot that is currently maintained, not just the total size of your database. 
+Gen 2 {{site.data.keyword.databases-for}} uses a snapshot based backup model, with pricing aligned to the size of your provisioned database storage. Snapshots differ from traditional backups in that they are block-level incremental copies, therefore you are billed based on how much data has changed since the last snapshot that is currently maintained, not just the total size of your database.
 
 By default, all Gen 2 {{site.data.keyword.databases-for}} provides a daily backup that is stored for 30 days. These backups, and any on-demand backups you make, all count toward the above allocation.
 
@@ -76,31 +76,31 @@ To help manage variability in monthly charges, especially during failover events
 ### Overage charges
 {: #pricing-storage-overage}
 
-- Overage is billed monthly and applies when your snapshot storage exceeds the included allocation. 
+- Overage is billed monthly and applies when your snapshot storage exceeds the included allocation.
 - Total snapshot storage = (Initial single member snapshot * number of members) + (Daily change × 29 days).
 - Any usage beyond the free allocation is charged at $0.095 per GB per month.
 
 ### Worked example, for a 3-member {{site.data.keyword.databases-for}} deployment with 100 GB of data per member
 {: #pricing-example}
 
-- Day 1: A full snapshot is taken from the current primary. This consumes 100 GB of snapshot storage. 
+- Day 1: A full snapshot is taken from the current primary. This consumes 100 GB of snapshot storage.
 
-This models the worst case scenario where the full snapshot is equal to the file system. In practice, especially for new databases (which will grow over time), the snapshot size is often smaller, reducing your backup bill. 
-{: note} 
+This models the worst case scenario where the full snapshot is equal to the file system. In practice, especially for new databases (which will grow over time), the snapshot size is often smaller, reducing your backup bill.
+{: note}
 
-- Day 2-16: You write 10 GB of new data per day. Snapshots are incremental and only store changes. Over 15 days, this adds 150 GB, bringing total snapshot usage to 100 GB + 150 GB = 250 GB. 
+- Day 2-16: You write 10 GB of new data per day. Snapshots are incremental and only store changes. Over 15 days, this adds 150 GB, bringing total snapshot usage to 100 GB + 150 GB = 250 GB.
 - Day 17: A failover occurs, and one secondary member becomes the new primary. A full snapshot is taken from this new primary, consuming another 100 GB. This uses up the remaining free allocation and brings total snapshot usage to 350 GB.
-- Day 18-30: You continue writing 10 GB per day, adding 130 GB over 13 days. 
+- Day 18-30: You continue writing 10 GB per day, adding 130 GB over 13 days.
 - Total snapshot = 100 GB (initial) + 150 GB (incremental) + 100 GB (failover snapshot) + 130 GB (post-failover incremental) = 480 GB.
 - Free allocation = 100 GB x 3 members = 300 GB.
 - Overage = 480 GB - 300 GB  = 180 GB.
-- Monthly charge = (480 GB - 300 GB) X $0.095 = $17.1. 
-- With large deployments and frequent writes, you’re more likely to exceed the free tier after the first snapshot. 
+- Monthly charge = (480 GB - 300 GB) X $0.095 = $17.1.
+- With large deployments and frequent writes, you’re more likely to exceed the free tier after the first snapshot.
 
 ## Scaling per member
 {: #scaling-member}
 
-{{site.data.keyword.databases-for}} deployments have minimum and maximum allocation for disk and RAM as shown. Scaling deployments through the [UI](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui),  [API](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ap) and [CLI](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli). You can scale database storage up to 4 TB of disk per member, minimum and maximum CPU and RAM combinations vary per region, see [Isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui#isolated-compute-sizing-ui). 
+{{site.data.keyword.databases-for}} deployments have minimum and maximum allocation for disk and RAM as shown. Scaling deployments through the [UI](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui),  [API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ap) and [CLI](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli). You can scale database storage up to 4 TB of disk per member, minimum and maximum CPU and RAM combinations vary per region, see [Isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui#isolated-compute-sizing-ui).
 
 | Resource | Minimum | Maximum | Scaling granularity |
 | ---------- | ----- | ----- | ------- |

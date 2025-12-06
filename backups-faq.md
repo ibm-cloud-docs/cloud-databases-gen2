@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-06"
 
 keywords: backups, new service instance, deleted resource, undelete, pending backup
 
@@ -34,7 +34,7 @@ If an instance is deleted, the backup is deleted as well. However, {{site.data.k
 {: faq}
 {: support}
 
-{{site.data.keyword.databases-for}} backups are restored in a new service instance. For more information, see [Managing {{site.data.keyword.databases-for}} backups](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups).
+{{site.data.keyword.databases-for}} backups are restored in a new service instance. For more information, see [Managing {{site.data.keyword.databases-for}} backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups).
 
 Point-in-Time Recovery (PITR) is available for [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr){: external} and [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr){: external} but only if there is an instance that the backup is related to.
 

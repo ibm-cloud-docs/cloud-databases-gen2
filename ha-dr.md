@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-28"
+lastupdated: "2025-12-06"
 
 subcollection: cloud-databases-gen2
 
@@ -20,7 +20,7 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 {: beta}
 
-This document reflects general availability for Gen 2 {{site.data.keyword.databases-for}}, which are progressively rolling out across new regions. You can track regional availability [here](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2).
+This document reflects general availability for Gen 2 {{site.data.keyword.databases-for}}, which are progressively rolling out across new regions. You can track regional availability [here](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2).
 {: .note}
 
 ## Regions
@@ -28,10 +28,10 @@ This document reflects general availability for Gen 2 {{site.data.keyword.databa
 
 {{site.data.keyword.databases-for}} instances are deployed in either a multi-zone region (MZR), or a single-campus multizone region. Each instance is deployed in a highly available configuration; that is, data is replicated by each database onto one or more servers, making the data highly available during normal operations.
 
-- In [MZRs](/docs/overview?topic=overview-locations#table-mzr), database members are distributed across different data centers, or zones.  
+- In [MZRs](/docs/overview?topic=overview-locations#table-mzr), database members are distributed across different data centers, or zones.
 - In [single-campus multizone regions](/docs/overview?topic=overview-locations#single-campus-mzr), database members are distributed across different hosts.
 
-If a single-campus multizone region failure in an MZR or a hardware failure in any region occurs, your data is still accessible as it is replicated onto other fully functioning database servers. Such issues are addressed by {{site.data.keyword.cloud}} Specialists in place. 
+If a single-campus multizone region failure in an MZR or a hardware failure in any region occurs, your data is still accessible as it is replicated onto other fully functioning database servers. Such issues are addressed by {{site.data.keyword.cloud}} Specialists in place.
 
 For more information on how your specific database replicates data among each of its members, see your {{site.data.keyword.databases-for}} documentation.
 
@@ -39,9 +39,9 @@ For more information on how your specific database replicates data among each of
 {: #backups-ha}
 
 - In addition to the high-availability configuration, for deployments in {{site.data.keyword.cloud}} multi-zone regions, your data is snapshotted and backed up daily by the {{site.data.keyword.databases-for}} platform and stored in [the same region as VPC Block Storage Snapshots](/docs/vpc?topic=vpc-snapshots-vpc-create&interface=ui).
-- For most {{site.data.keyword.cloud}} single-campus multizone regions, your data is backed up locally in single-campus multizone region VPC Block Storage Snapshots. 
+- For most {{site.data.keyword.cloud}} single-campus multizone regions, your data is backed up locally in single-campus multizone region VPC Block Storage Snapshots.
 
-If a complete region failure occurs, the database servers in the region might not be accessible, but the backup data remains available. You can initiate a restore from these backups into an available region from the service management console. For more information, see the [{{site.data.keyword.databases-for}} backups documentation](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui). 
+If a complete region failure occurs, the database servers in the region might not be accessible, but the backup data remains available. You can initiate a restore from these backups into an available region from the service management console. For more information, see the [{{site.data.keyword.databases-for}} backups documentation](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui).
 
 It is your responsibility to [create a new service instance](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-offerings&interface=ui) in which to restore when the {{site.data.keyword.databases-for}} platform is restored. You are also responsible for testing the validity and restore time of your backups. For more information, see the [Disaster recovery section](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr) in the *Shared responsibilities for Cloud Databases* page.
 
