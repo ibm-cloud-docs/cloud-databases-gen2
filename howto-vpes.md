@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-06"
+lastupdated: "2025-12-07"
 
 subcollection: cloud-databases-gen2
 
@@ -93,7 +93,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 
 Following the previous steps results in a database instance with private endpoints that is reachable with the Virtual Private Endpoints from your VPC network.
 
-Database instances with private endpoints are reachable from any account within the private network and access to each instance requires authentication. To restrict this access to specific IP addresses, or ranges of IP addresses, configure [Context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr) or [allowlisting](docs/cloud-databases-gen2?topic=cloud-databases-gen2-allowlisting).
+Database instances with private endpoints are reachable from any account within the private network and access to each instance requires authentication. To restrict this access to specific IP addresses, or ranges of IP addresses, configure [Context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr) or [allowlisting](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-allowlisting).
 {: .important}
 
 A MongoDB deployment cannot support both [public and private endpoints simultaneously](/docs/cloud-databases?topic=cloud-databases-service-endpoints&interface=ui). *This cannot be changed after provisioning*.
