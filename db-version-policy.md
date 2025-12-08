@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-08"
 
 subcollection: cloud-databases-gen2
 
@@ -20,7 +20,7 @@ keywords: version for cloud-databases, database version, end of life, major vers
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 {: beta}
 
-When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud}}. Currently, only the latest versions are available for Gen 2 {{site.data.keyword.databases-for}} and this is shown in the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference&interface=ui), or the [{{site.data.keyword.databases-for}} API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api).
+When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud}}. Currently, only the latest versions are available for Gen 2 {{site.data.keyword.databases-for}} and this is shown in the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference), or the [{{site.data.keyword.databases-for}} API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api).
 
 ## Major versions defined
 {: #version-definitions}
@@ -91,7 +91,7 @@ Any actions taken after an EOL date happen over several days after the EOL date.
 ### Programmatic methods for checking version status
 {: #-major-version-eol-check-version-status}
 
-**On the CLI** the following [{{site.data.keyword.databases-for}} `deployables-show` command](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show) shows deployable service types, specifically the available versions and their `preferred` or `stable` status.
+**On the CLI** the following [{{site.data.keyword.databases-for}} `deployables-show` command](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api) shows deployable service types, specifically the available versions and their `preferred` or `stable` status.
 
 ```sh
 ibmcloud cdb deployables-show [--stable] [--preferred] [--json]
@@ -107,7 +107,7 @@ Version   Status       Preferred
 6       deprecated   false
 ```
 
-**On the {{site.data.keyword.databases-for}} API** the [`deployables` endpoint](/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeployables){: external} returns all deployable services. Use the `version` parameter to return the version number.
+**On the {{site.data.keyword.databases-for}} API** the [`deployables` endpoint](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api){: external} returns all deployable services. Use the `version` parameter to return the version number.
 
 ```sh
 GET /v5/ibm/deployables

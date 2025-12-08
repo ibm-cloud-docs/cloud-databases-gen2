@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-08"
 
 subcollection: cloud-databases-gen2
 
@@ -33,7 +33,7 @@ Here is some additional general information about backups:
 - Backups cannot be deleted.
 - If you delete your instance, its backups are deleted automatically.
 - Daily backup scheduling is not configurable.
-- Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
+- Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect&interface=ui#key-byok). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
 
@@ -55,7 +55,7 @@ Click the backup to reveal information for that specific backup, including its f
 
 You can access the list of backups and individual backup information from the {{site.data.keyword.databases-for}} CLI plug-in and the {{site.data.keyword.databases-for}} API.
 
-Use the [`cdb deployment-backups-list`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-backups-list) command to view the list of all available backups for your instance. To get details about a specific backup, use the [`cdb backup-show`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#backup-show) command.
+Use the [`cdb deployment-backups-list`](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference) command to view the list of all available backups for your instance. To get details about a specific backup, use the [`cdb backup-show`](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference) command.
 
 For example, to view the backups for an instance named "example-instance", use the following command:
 
@@ -75,7 +75,7 @@ ibmcloud cdb backup-show crn:v1:staging:public:cloud-databases:us-south:a/628401
 {: #backup-ui-api}
 {: api}
 
-For backups information in the {{site.data.keyword.databases-for}} API, use the [`/deployments/{id}/backups`](/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeploymentbackups) endpoint to list the instance's backups. To get information about a specific backup, use the [`/backups/{backup_id}`](/apidocs/cloud-databases-api/cloud-databases-api-v5#getbackupinfo) endpoint.
+For backups information in the {{site.data.keyword.databases-for}} API, use the [`/deployments/{id}/backups`](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api) endpoint to list the instance's backups. To get information about a specific backup, use the [`/backups/{backup_id}`](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api) endpoint.
 
 ### Taking an on-demand backup in the UI
 {: #ondemand-backup-ui}
@@ -113,7 +113,7 @@ If you plan to make major changes to your instance, like scaling or removing dat
 Instances come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage of $0.03/month. Backups are compressed, so even if you use on-demand backups, most instances do not exceed the allotted credit.
 {: .tip}
 
-In the API, sending a POST to the [`/deployments/{id}/backups`](/apidocs/cloud-databases-api/cloud-databases-api-v5#startondemandbackup) endpoint triggers an on-demand backup.
+In the API, sending a POST to the [`/deployments/{id}/backups`](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api) endpoint triggers an on-demand backup.
 
 ## Restoring a backup
 {: #restore-backup}
@@ -186,7 +186,7 @@ To see a list of versions available, run `ibmcloud cdb deployables`.
 {: #restore-backup-api}
 {: api}
 
-The [Resource Controller API](/apidocs/resource-controller/resource-controller){: external} supports provisioning and restoring database instances. The create request is a `POST` to the [`/resource_instances`](/apidocs/resource-controller/resource-controller#create-resource-instance) endpoint.
+The [Resource Controller API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api){: external} supports provisioning and restoring database instances. The create request is a `POST` to the [`/resource_instances`](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api) endpoint.
 
 ```sh
 curl -X POST \
@@ -277,7 +277,7 @@ For more information, see the [{{site.data.keyword.databases-for}} Terraform Reg
 {: #backup-restoration}
 
 * {{site.data.keyword.databases-for}} are not responsible for restoration, timeliness, or validity of said backups.
-* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups are successful by using the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent-scheduled backup details from the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#backup-show) and the [{{site.data.keyword.databases-for}} API](/apidocs/cloud-databases-api/cloud-databases-api-v5#getbackupinfo).
+* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups are successful by using the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent-scheduled backup details from the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference) and the [{{site.data.keyword.databases-for}} API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api).
 * As a managed service, {{site.data.keyword.databases-for}} monitors the state of your backups and can attempt to remediate when possible. If you encounter issues from which you cannot recover, contact support for more help.
 
 ## Backup locations
@@ -288,11 +288,11 @@ Gen 2 Backups are only in the region of the instance.
 ## Business continuity and disaster recovery
 {: #backup-locations}
 
-{{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. For more information (including [Backup Storage Regions](/docs/cloud-databases?topic=cloud-databases-bc-dr#bc-dr-single-region-backups){: external}), see [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases?topic=cloud-databases-bc-dr){: external}.
+{{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. For more information (including [Backup Storage Regions](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr&interface=ui#bc-dr-single-region-backups){: external}), see [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr){: external}.
 
 
 
 ## Backups FAQ
 {: #backup-faq-reference}
 
-For frequently asked questions about backups, see the [Backups FAQ](/docs/cloud-databases?topic=cloud-databases-faq-backups){: external}.
+For frequently asked questions about backups, see the [Backups FAQ](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-faq-backups){: external}.
