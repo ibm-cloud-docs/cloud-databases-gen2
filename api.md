@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-09"
 
 subcollection: cloud-databases-gen2
 
@@ -406,51 +406,3 @@ Information you can expect to get back:
 - The last task you have conducted is seen under the `last_operation`.
 - Product connection information under connection parameter.
 - Product specific information under the product object (for example postgresql).
-
-#### Methods not available for MVP
-{: #api-limitations}
-
-- List read-only replica information
-- Resync read-only replica
-- Promote read-only replica to a full deployment
-- Get information about a backup
-- Get earliest point-in-time-recovery timestamp
-- Get the autoscaling configuration from a deployment
-- Set the autoscaling configuration from a deployment
-- Kill connections to a PostgreSQL or EnterpriseDB deployment
-- Sync files uploaded to Elasticsearch deployment
-- Create a new logical replication slot
-- Delete a logical replication slot
-- Discover capability information from a backup
-- Upgrade your database version
-
-Waiting for context-based restrictions (CBR) implementation:
-
-- Retrieve the allowlisted addresses and ranges for a deployment.
-- Set the allowlist for a deployment.
-- Add an address or range to the allowlist for a deployment.
-- Delete an address or range from the allowlist of a deployment.
-
-Migrated to the Global Catalog: (NEED INFO TO EXPLAIN WHAT THIS MEANS)
-
-- Discover capability information.
-- Discover capability information from a deployment.
-
-Limitations
-
-- Getting backup information is only available via our UI.
-- List currently available backups from a deployment. (ONLY FROM UI, OR NOT AT ALL?)
-- Listing backups is only available via our UI.
-- Initiate an on-demand backup. (ONLY FROM UI, OR NOT AT ALL?)
-- Creating backups is only available via our UI.
-
-
-- List currently available scaling groups from a deployment: Needs documentation from product detailing all the available host flavors and scaling values associated with out products
-
-- Set scaling values on a specified product. (INFO SEEMS TO BE MISSING)
-
-- Creates a user based on user type. - TBD
-
-- Deletes a user based on user type. - TBD
-
-- Update your database configuration. (INFO SEEMS TO BE MISSING)
