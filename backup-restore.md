@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-09"
 
 subcollection: cloud-databases-gen2
 
@@ -43,4 +43,4 @@ Gen 1 backups can be used to restore a Gen 2 instance. Gen 2 instances cannot be
 ## Managing Gen 2 backups
 {: #managing-backups}
 
-To find out how to manage your Gen 2 backup, visit [Managing {{site.data.keyword.databases-for}} backups](//docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui).
+To find out how to manage your Gen 2 backup, visit [Managing {{site.data.keyword.databases-for}} backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui).
