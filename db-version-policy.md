@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-08"
+lastupdated: "2025-12-09"
 
 subcollection: cloud-databases-gen2
 
@@ -20,7 +20,7 @@ keywords: version for cloud-databases, database version, end of life, major vers
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 {: beta}
 
-When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud}}. Currently, only the latest versions are available for Gen 2 {{site.data.keyword.databases-for}} and this is shown in the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference), or the [{{site.data.keyword.databases-for}} API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api).
+When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud}}. Currently, only the latest versions are available for Gen 2 {{site.data.keyword.databases-for}} and this is shown in the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [Resource Controller CLI](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference), or the [Resource Controller API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api).
 
 ## Major versions defined
 {: #version-definitions}
@@ -52,7 +52,6 @@ Backups are retained for 30 days only. Requests to re-enable disabled formations
 Failure to act can result in compatibility issues with your apps when IBM upgrades in-place. On rare occasions, failure can result, impacting your availability. If a failure occurs, the instance is disabled, and you need to restore from backup. We recommend self-migrating before the end of support date.
 {: important}
 
-
 ## Version tags
 {: #version-tags}
 
@@ -63,10 +62,10 @@ Currently, only one version per Gen 2 {{site.data.keyword.databases-for}} servic
 |-------------|-------------|
 | **Preferred** | The recommended and default version for all new instances. It's the most stable, up-to-date version from both an instance-level and service-level perspective.|
 | **Preview** | A preview version is released for a limited time to try available functions. Often it is the newest available version available from the project maintainers in preparation for making it the "Preferred" version. While deployable, preview versions are not suitable for production, as they are excluded from service-level agreements and support. Also, a preview version isn't guaranteed to become a production-level release. IBM reserves the right to ask a customer to delete an instance that uses a preview version. |
-| **Deprecated** | Old versions and versions near their end of life dates are marked as "Deprecated". Provisions and restores of instances that run a deprecated version are still available and instances that run a deprecated version continue to be supported. However, you are encouraged to upgrade to the new "Preferred" version as deprecated versions are eventually removed from {{site.data.keyword.cloud_notm}} and are no longer provisionable, restorable, or supported.                                                              |
+| **Deprecated** | Old versions and versions near their end of life dates are marked as "Deprecated". Provisions and restores of instances that run a deprecated version are still available and instances that run a deprecated version continue to be supported. However, you are encouraged to upgrade to the new "Preferred" version as deprecated versions are eventually removed from {{site.data.keyword.cloud_notm}} and are no longer provisionable, restorable, or supported. |
 | **Untagged** | Untagged versions are fully supported and deployable versions. They are usually slightly older than the current preferred version, but they are still supported by the project maintainers. They continue to be supported on {{site.data.keyword.databases-for}} instances until their deprecation is announced.|
 | **Hidden** | A hidden version cannot be provisioned. Existing instances that are using a version marked as hidden are still able to be restored to the hidden version. |
-{: caption="{{site.data.keyword.databases-for}} Version Tags" caption-side="bottom"}
+{: caption="{{site.data.keyword.databases-for}} Version tags" caption-side="bottom"}
 
 ## Minor versions
 {: #minor-versions}
@@ -91,31 +90,18 @@ Any actions taken after an EOL date happen over several days after the EOL date.
 ### Programmatic methods for checking version status
 {: #-major-version-eol-check-version-status}
 
-**On the CLI** the following [{{site.data.keyword.databases-for}} `deployables-show` command](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api) shows deployable service types, specifically the available versions and their `preferred` or `stable` status.
+ 
+
+**Via an API** Gen 2 {site.data.keyword.databases-for} utilize the Resource Controller API for operation purposes. The following command gets the full data that is associated with a deployment. This data includes the ID, name, database type, and version.
 
 ```sh
-ibmcloud cdb deployables-show [--stable] [--preferred] [--json]
+GET /v2/resource_instances/{id}`
 ```
 {: pre}
 
-Check the status of a major version by reviewing the output of the `deployable` command, specifically *Status* and *Preferred*. The following output example shows that version 7 is the `Preferred` version and version 6 *Status* is `deprecated`.
-
-```text
-Service Type:  mongodb
-Version   Status       Preferred
-7       stable       true
-6       deprecated   false
-```
-
-**On the {{site.data.keyword.databases-for}} API** the [`deployables` endpoint](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api){: external} returns all deployable services. Use the `version` parameter to return the version number.
+Example request:
 
 ```sh
-GET /v5/ibm/deployables
+curl -X GET https://resource-controller.cloud.ibm.com/v2/resource_instances/8d7af921-b136-4078-9666-081bd8470d94 -H "Authorization: Bearer <IAM token>" \
 ```
 {: pre}
-
-### Major versions and Terraform
-{: #-major-version-eol-terraform}
-
-Note that you cannot currently upgrade to a new major version using Terraform. Changing the version number on a Terraform script could lead to your data being destroyed. The recommended method of version upgrade is restoring a backup into a new deployment with the latest version. For more information, see [Restoring a backup](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui#restore-backup).
-{: important}
