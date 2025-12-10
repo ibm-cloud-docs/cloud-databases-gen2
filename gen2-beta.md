@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-09"
+lastupdated: "2025-12-10"
 
 keywords: gen 2, beta
 
@@ -33,7 +33,7 @@ subcollection: cloud-databases-gen2
 {: #icd-beta-inscope}
 
 - Montreal region only
-- [Private only connectivity via VP](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-private-endpoints-gen2&interface=ui)
+- [Private only connectivity via VPE](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-private-endpoints-gen2&interface=ui)
 - [BYOK via Key Protect integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect&interface=ui)
 - [Customer metrics and logs](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring)
 - [Integration with Activity Tracker](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events)

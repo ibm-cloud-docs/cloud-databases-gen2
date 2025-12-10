@@ -34,7 +34,6 @@ toc:
             navtitle: Logging
           - topic: reference-monitoring.md
             navtitle: Monitoring
-          - include: ../cloud-databases/default-alerts.md
           - topic: at-events.md
             navtitle: Activity tracking events
       - topicgroup:
