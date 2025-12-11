@@ -42,7 +42,6 @@ toc:
           - secure.md
           - manage-scc.md
           - howto-allowlists.md
-          - howto-vpes.md
           - reference-iam.md
           - reference-key-protect.md
           - reference-hpcs.md
