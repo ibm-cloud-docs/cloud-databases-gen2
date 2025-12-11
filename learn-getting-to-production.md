@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-10"
+lastupdated: "2025-12-11"
 
 keywords: guidance, recommendations, best practices, initial steps, setup
 
@@ -23,7 +23,7 @@ subcollection: cloud-databases-gen2
 {: #before-starting}
 
 - [ ] To ensure cloud-native alignment, complete your data modeling and architectural reviews. For help with data modeling and architecture, contact the [IBM Garage](https://www.ibm.com/garage){: .external}.
-- [ ] Determine the best method for your initial setup, including [Terraform, API, CLI, or UI methods](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-offerings).
+- [ ] Determine the best method for your initial setup, including [Terraform, API, CLI, or UI methods](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-gen2-offerings).
 - [ ] Determine the [compute profile](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui), selecting from available isolated configurations that define performance characteristics and resource allocation.
 - [ ] To manage your database's encryption key for data-at-rest, you must [Bring your own encryption key (BYOK)](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect) when creating your database. This setup cannot be changed after your instance is provisioned.
 - [ ] Make sure that [IAM access policies and resource groups](/docs/account?topic=account-iamoverview) are set up correctly for your business protocols.

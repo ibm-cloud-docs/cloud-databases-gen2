@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-28"
+lastupdated: "2025-12-11"
 
 subcollection: cloud-databases-gen2
 
@@ -32,19 +32,19 @@ All user-data management agents are also isolated, ensuring that your resources 
 
 In the isolated compute model, CPU and RAM resources are fixed at the time of provisioning. You can manually scale your deployment using the IBM Cloud UI, CLI, API, or Terraform. Disk autoscaling will be supported soon, while CPU and RAM autoscaling are unavailable.
 
-[{{site.data.keyword.monitoringfull}}](/docs/cloud-databases-gen2?topic=cloud-databases-monitoring) can be integrated to help you track memory, disk space, and disk I/O utilization.
+[{{site.data.keyword.monitoringfull}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring) can be integrated to help you track memory, disk space, and disk I/O utilization.
 
 ## Isolated compute capacity
 {: #isolated-compute-capacity}
 
-These management containers take up some overhead in your isolated compute instance, consuming a portion of the machine's CPU and RAM, with the remainder available for your database to use. A portion of the database capacity will be allocated to essential operations such as security, ensuring data integrity and protection. 
+These management containers take up some overhead in your isolated compute instance, consuming a portion of the machine's CPU and RAM, with the remainder available for your database to use. A portion of the database capacity will be allocated to essential operations such as security, ensuring data integrity and protection.
 
 ## Compute sizing
 {: #isolated-compute-sizing}
 
-Each machine profile offers size options with defined CPU and RAM. This machine will be exclusively assigned to running your database instance. Storage is configured separately, allowing disk and IOPS customization. 
+Each machine profile offers size options with defined CPU and RAM. This machine will be exclusively assigned to running your database instance. Storage is configured separately, allowing disk and IOPS customization.
 
-Scale your database and change your machine size using your preferred method: the [Cloud Databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [Cloud Databases API](new link), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database).
+Scale your database and change your machine size using your preferred method: the [Cloud Databases CLI plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference), the [Cloud Databases API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database).
 
 ## Size selections in the UI
 {: #isolated-compute-sizing-ui}

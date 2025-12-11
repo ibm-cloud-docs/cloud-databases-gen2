@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-07"
+lastupdated: "2025-12-11"
 
 subcollection: cloud-databases-gen2
 
@@ -32,7 +32,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 {: #vpes-before-begin}
 
 - Log in to the {{site.data.keyword.cloud}} console.
-- You need to have a {{site.data.keyword.databases-for}} deployment. You can [provision](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-offerings) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog). Give your deployment a memorable name that appears in your account's Resource List.
+- You need to have a {{site.data.keyword.databases-for}} deployment. You can [provision](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-gen2-offerings&interface=ui) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog). Give your deployment a memorable name that appears in your account's Resource List.
 
 ### Setting up your VPE
 {: #vpes-setup}
@@ -105,6 +105,6 @@ For more information, see [Secure access to services by using service endpoints]
 ### More resources
 {: #vpes-resources}
 
-- [Planning for virtual private endpoint gateways](/docs/vpc?topic=vpc-planning-considerations).
+- [Planning for virtual private endpoint gateways](/docs/vpc?topic=vpc-vpe-planning-considerations).
 - [Creating an endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway).
 - For further assistance, see the [FAQs for virtual private endpoints](/docs/vpc?topic=vpc-faqs-vpe), and the **Troubleshooting VPE gateways** documentation that includes [how to fix communications issues](/docs/vpc?topic=vpc-troubleshoot-cannot-communicate).

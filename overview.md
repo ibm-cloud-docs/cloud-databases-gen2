@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-11"
 
 keywords: cloud databases gen 2
 
@@ -54,7 +54,7 @@ Gen 2 databases are built on IBM’s latest platform, based on highly secure sof
 | Availability           | High availability                                                     | High availability                                   |
 | Deployment timeframe   | Minutes                                                               | Seconds                                             |
 | Pricing                | Hourly and monthly billing                                            | Hourly and monthly billing                          |
-| Backup and restore     | Timing depends on size of backup and performance impact during backup | Consistent, fast [add link](link to Backup/restore gen 2 page)|
+| Backup and restore     | Timing depends on size of backup and performance impact during backup | Consistent, fast [Comparison of Gen 1 and Gen 2 backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-comparison-backups&interface=ui)|
 {: caption="Performance differentiators" caption-side="bottom"}
 
 ## Access, compliance, and security differentiators

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-06"
+lastupdated: "2025-12-11"
 
 subcollection: cloud-databases-gen2
 
@@ -43,7 +43,7 @@ For more information on how your specific database replicates data among each of
 
 If a complete region failure occurs, the database servers in the region might not be accessible, but the backup data remains available. You can initiate a restore from these backups into an available region from the service management console. For more information, see the [{{site.data.keyword.databases-for}} backups documentation](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui).
 
-It is your responsibility to [create a new service instance](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-offerings&interface=ui) in which to restore when the {{site.data.keyword.databases-for}} platform is restored. You are also responsible for testing the validity and restore time of your backups. For more information, see the [Disaster recovery section](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr) in the *Shared responsibilities for Cloud Databases* page.
+It is your responsibility to [create a new service instance](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-gen2-offerings&interface=ui) in which to restore when the {{site.data.keyword.databases-for}} platform is restored. You are also responsible for testing the validity and restore time of your backups. For more information, see the [Disaster recovery section](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr) in the *Shared responsibilities for Cloud Databases* page.
 
 ## Application-level high availability
 {: #application-ha}

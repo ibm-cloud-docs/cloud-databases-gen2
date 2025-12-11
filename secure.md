@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-06"
+lastupdated: "2025-12-11"
 
 keywords: disaster recovery, restrict, context-based restrictions
 
@@ -29,6 +29,6 @@ subcollection: cloud-databases-gen2
 
 You've now provisioned a {{site.data.keyword.databases-for}} service instance, set up notifications and monitoring, and secured it. Next, jump into the specific Getting Started documentation for your chosen service.
 
-- [{{site.data.keyword.databases-for-postgresql}}](update link){: external}
+- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-getting-started){: external}
 
-- [{{site.data.keyword.databases-for-mongodb}}](update link){: external}
+- [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-getting-started-gen2){: external}
