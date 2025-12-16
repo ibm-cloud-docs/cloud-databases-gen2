@@ -60,6 +60,7 @@ toc:
           topics:
           - ha-dr.md
           - bc-dr.md
+      - db-version-policy.md
       - reference-responsibilities.md
       - service-dependency.md
       - topicgroup:
