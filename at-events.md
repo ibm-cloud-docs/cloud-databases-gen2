@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-11-26"
+  years: 2025
+lastupdated: "2025-12-19"
 
 keywords: activity tracker
 
@@ -112,16 +112,9 @@ The following table lists the activity tracking event actions that {{site.data.k
 
 | Action name | Legacy action name | Description |
 | ------- | ------- | ------- |
-| `<service_name>.deployment-backup.create`|`<service_id>.backup-ondemand.create` | An on-demand backup of your instance was created. If the backup failed, a "-failure" flag is included in the message. |
-|`<service_name>.deployment-backup-scheduled.create`| `<service_id>.backup-scheduled.create`| A scheduled backup of your instance was created. If the backup failed, a "-failure" flag is included in the message. |
-|`<service_name>.deployment-user.update`|`<service_id>.user-password.update`| A user's password was updated. A "-failure" flag is included in the message if the attempt to update a user's password failed. |
-|`<service_name>.deployment-user.create`|`<service_id>.user.create` | A user was created. A "-failure" flag is included in the message if the attempt to create a user failed. |
-|`<service_name>.deployment-user.delete`|`<service_id>.user.delete` | A user was deleted. A "-failure" flag is included in the message if the attempt to delete a user failed. |
-|`<service_name>.deployment-group.update`|`<service_id>.resources.scale` | A scaling operation was performed. If the scaling operation failed, a "-failure" flag is included in the message. |
-|`<service_name>.deployment-allowlist-ip-addresses.update` | `<service_id>.whitelisted-ips-list.update`|The allowlist was modified. A "-failure" flag is included in the message if the attempt to modify the allowlist failed. |
-|`<service_name>.deployment.update`|`<service_id>.serviceendpoints.update` | A change was made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message. |
-|`<service_name>.deployment-group-autoscaling.update` | `<service_id>.autoscaling.update` | An autoscaling configuration change or an autoscaling operation was performed. If an autoscaling operation was performed the message includes `autoscale resources for instance <deployment-id>`. If the autoscaling operation or the configuration change failed, a "-failure" flag is included in the message. |
-|`<service_name>.deployment-volumes.update`|`<service_id>.volumes.update` | An activity was performed on the encryption key that is used by the database, such as rotation or shredding. Details of the action are in the event. |
+| `<service_name>.deployment-backup.create` | `<service_id>.backup-ondemand.create` | A backup of your instance was created. The message contains the database version along with size, id, status and type of the backup. |
+| `<service_name>.deployment-backup.delete` | `<service_id>.backup-ondemand.delete` | A backup of your instance was deleted. The message contains the type of the database. |
+| `<service_name>.restore.hydrate` | `<service_id>.restore-ondemand.hydrate` | A restore of a backup to a new service instance was created. The message contains the status of the hydration of the restored instance. |
 {: caption="List of events and event descriptions by {{site.data.keyword.databases-for}}" caption-side="bottom"}
 
 The `service_name` field indicates the type of {{site.data.keyword.databases-for}} instance. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
