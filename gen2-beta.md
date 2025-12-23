@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-10"
+lastupdated: "2025-12-23"
 
 keywords: gen 2, beta
 
@@ -26,7 +26,7 @@ subcollection: cloud-databases-gen2
 - {{site.data.keyword.cloud}} SLA does not apply.
 - Visibility and access: Beta will start as closed (invite-only) in stages 1 and 2, and become public in stage 3.
 - Billing: Beta services are not billable.
-- Feature gaps: {{site.data.keyword.databases-for}} Beta plans will not include key features, including Bring Your Own Key (BYOK) and context-based restrictions.
+- Feature gaps: {{site.data.keyword.databases-for}} Beta plans will not include context-based restrictions.
 - Lifecycle: Beta instances will be removed at the end of the program, and {{site.data.keyword.databases-for}} can remove instances at any point if too many instances are provisioned by a single user.
 
 ## What capabilities are supported? 
