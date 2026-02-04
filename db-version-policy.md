@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-16"
+  years: 2026
+lastupdated: "2026-02-04"
 
 subcollection: cloud-databases-gen2
 
@@ -92,7 +92,7 @@ Any actions taken after an EOL date happen over several days after the EOL date.
 
  
 
-**Via an API** Gen 2 {site.data.keyword.databases-for} utilize the Resource Controller API for operation purposes. The following command gets the full data that is associated with a deployment. This data includes the ID, name, database type, and version.
+**Via an API** Gen 2 {{site.data.keyword.databases-for}} utilize the Resource Controller API for operation purposes. The following command gets the full data that is associated with a deployment. This data includes the ID, name, database type, and version.
 
 ```sh
 GET /v2/resource_instances/{id}`
@@ -105,6 +105,3 @@ Example request:
 curl -X GET https://resource-controller.cloud.ibm.com/v2/resource_instances/8d7af921-b136-4078-9666-081bd8470d94 -H "Authorization: Bearer <IAM token>" \
 ```
 {: pre}
-
-
-

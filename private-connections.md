@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-03"
+  years: 2026
+lastupdated: "2026-02-04"
 
 keywords: postgresql, databases, gen 2, postgresql connection strings, postgresql connection ibm application
 
@@ -21,7 +21,7 @@ subcollection: cloud-databases-gen2
 {{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
 {: beta}
 
-[Gen 2 {{site.data.keyword.databases-for}}](https://github.ibm.com/cloud-docs-solutions/cloud-databases-gen2/wiki) enable a secure by default approach using private connections enabled by Virtual Private Endpoints (VPE).
+Gen 2 {{site.data.keyword.databases-for}} enable a secure by default approach using private connections enabled by Virtual Private Endpoints (VPE).
 
 {{site.data.keyword.cloud}} recommends private endpoints that restrict access to your internal network, protecting your data and applications from unwanted access and security vulnerabilities.
 

@@ -16,6 +16,7 @@ toc:
       - overview.md
       - isolated-compute.md
       - pricing.md
+      - db-version-policy.md
   - navgroup:
       id: plan
       topics:
@@ -26,6 +27,10 @@ toc:
       id: howto
       topics:
       - notifications.md
+      - scaling.md
+      - closures.md
+      - backup-restore.md
+      - howto-manage-backups.md
       - topicgroup:
           label: Observability
           topics:
@@ -46,10 +51,6 @@ toc:
           - reference-key-protect.md
           - reference-hpcs.md
           - howto-deprovisioning.md
-      - scaling.md
-      - backup-restore.md
-      - howto-manage-backups.md
-      - closures.md
   - navgroup:
       id: reference
       topics:
@@ -60,7 +61,6 @@ toc:
           topics:
           - ha-dr.md
           - bc-dr.md
-      - db-version-policy.md
       - reference-responsibilities.md
       - service-dependency.md
       - topicgroup:
@@ -76,16 +76,6 @@ toc:
       id: help
       topics:
       - topicgroup:
-          label: Troubleshoot
-          topics:
-          - ts-terraform.md
-      - topicgroup:
           label: FAQs
           topics:
-          - availability-zones-faq.md
-          - status-page-faq.md
-          - resource-config-faq.md
-          - data-faq.md
-          - ha-faq.md
-          - cert-faq.md
-          - backups-faq.md
+          - faq.md
