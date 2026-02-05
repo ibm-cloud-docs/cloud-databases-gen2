@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-10"
+  years: 2026
+lastupdated: "2026-02-05"
 
 subcollection: cloud-databases-gen2
 
@@ -80,7 +80,7 @@ To restore a backup to a new service instance,
 1. Click in the corresponding row to expand the options for the backup that you want to restore.
 2. Click **Restore**.
 3. On the **Provisioning** page, select from some available options.
-    - You provide the name of the new service instance. 
+    - You provide the name of the new service instance.
     - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. Note that if you decrease your resource amount, it may lead to provision failure or your database not functioning properly.
 4. Click **Restore backup**. A "restore from backup started" message appears. Clicking **Your new instance is available now** takes you to your _Resources List_.
 
@@ -128,7 +128,7 @@ A pre-formatted command for a specific backup is available in detailed view of t
 
 By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. Gen 2 {{site.data.keyword.databases-for}} currently only support one version per database. Over time, new versions will be released, and when a new version becomes available, you can move to that version with a restore from a backup.
 
- 
+
 
 ### Restoring a backup through the API
 {: #restore-backup-api}
@@ -163,7 +163,7 @@ The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are al
 
 The previous command will restore a backup to a machine of the same configuration and on the same [hosting model](/docs/databases-for-mongodb?topic=databases-for-mongodb-hosting-models&interface=cli) as your original deployment.
 
-#### Optional parameters in the API 
+#### Optional parameters in the API
 {: #restore-api}
 {: api}
 
@@ -219,4 +219,4 @@ Gen 2 backups are only in the region of the instance.
 ## Backups FAQ
 {: #backup-faq-reference}
 
-For frequently asked questions about backups, see the [Backups FAQ](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-faq-backups){: external}.
+For frequently asked questions about backups, see the [Backups FAQ](/docs/cloud-databases?topic=cloud-databases-faq-backups){: external}.
