@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-05"
+lastupdated: "2026-02-10"
 
 subcollection: cloud-databases-gen2
 
@@ -213,10 +213,3 @@ Gen 2 backups are only in the region of the instance.
 {: #backup-locations}
 
 {{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. For more information (including [Backup Storage Regions](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr&interface=ui#bc-dr-single-region-backups){: external}), see [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr){: external}.
-
-
-
-## Backups FAQ
-{: #backup-faq-reference}
-
-For frequently asked questions about backups, see the [Backups FAQ](/docs/cloud-databases?topic=cloud-databases-faq-backups){: external}.
