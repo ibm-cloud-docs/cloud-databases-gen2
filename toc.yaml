@@ -79,3 +79,5 @@ toc:
           label: FAQs
           topics:
           - faq.md
+          - availability-zones-faq.md
+          - resource-config-faq.md
