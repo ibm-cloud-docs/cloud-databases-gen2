@@ -71,9 +71,7 @@ Yes, the following limitations exist at this point:
 
 |  Shared Compute (multi-tenant) | Isolated Compute (single-tenant)|
 |---------------|------------------|
-| Flexible CPU/RAM selections |  Dedicated compute | 
-| Small or custom presets | Best for production workloads requiring isolation| 
-| Ideal for dev/test or cost-efficient workloads |  | 
+| - Flexible CPU/RAM selections  /n - Small or custom presets  /n - Ideal for dev/test or cost-efficient workloads |  - Dedicated compute  /n - Best for production workloads requiring isolation | 
 {: caption="Differences in hosting models" caption-side="bottom"}
 
 
