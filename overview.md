@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2025
-lastupdated: "2025-12-16"
+  years: 2026
+lastupdated: "2026-02-11"
 
-keywords: cloud databases gen 2
+keywords: cloud databases gen 2 overview
 
 subcollection: cloud-databases-gen2
 
