@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-12"
+lastupdated: "2026-02-13"
 
 keywords: ICD Gen 2 FAQ
 
@@ -12,7 +12,7 @@ subcollection: cloud-databases-gen2
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Cloud Databases Gen 2 – Frequently Asked Questions (FAQ)
+# {{site.data.keyword.databases-for}} Gen 2 – Frequently Asked Questions (FAQ)
 {: #faq}
 {: faq}
 {: support}
@@ -38,10 +38,11 @@ Classic services run on **Classic IaaS**, while Gen 2 runs on **VPC (Virtual Pri
 | Area | Classic | Gen 2 |
 |------|------------------|--------------|
 | **Infrastructure** | VLAN-based Classic data-center model | Modern, software-defined VPC regional model |
-| **Performance** | Network speeds up to ~50 Gbps | Network speeds up to 200 Gbps | <! -- Uche, pls. confirm these numbers -->
+| **Performance** | Network speeds up to ~50 Gbps | Network speeds up to 200 Gbps |
+| **Availability** | Limited use of zone architecture | Strong multi-zone availability |
 | **Security** | Older networking/security approach | VPEs, better IAM integration, cloud-native networking |
-| **Provisioning** | Slower provisioning | Faster provisioning |
-| **Scaling** | Scaling through Shared and Isolated Compute models | Flexible scaling through Isolated Compute models |
+| **Provisioning** | More static system | Faster provisioning, API/CLI/Terraform-first model |
+| **Scaling** | Constrained | Flexible scaling through Shared & Isolated Compute models |
 {: caption="Key differences" caption-side="bottom"}
 
 
@@ -63,16 +64,10 @@ Yes, the following limitations exist at this point:
 
 - Montreal region only
 - Context-based restrictions (CBR) is not yet supported
-- Lack of public endpoints
-- No autoscaling
-- No Shared Compute
 
 
 ### 4. Are there differences in hosting models between Gen 1 and Gen 2?
 {: #faq-4}
-
-- Gen 1: Shared and Isolated hosting models
-- Gen 2: Isolated hosting model
 
 |  Shared Compute (multi-tenant) | Isolated Compute (single-tenant)|
 |---------------|------------------|
@@ -87,6 +82,7 @@ Gen 2 offers:
 
 - Up to 200 Gbps networking
 - Improved CPU/memory profiles
+- IOPS-based scalable storage performance
 
 
 ### 6. What about security differences?
@@ -99,11 +95,24 @@ Gen 2 delivers:
 - Consistent encryption at rest/in transit
 
 
+### 7. How do networking and connectivity differ?
+{: #faq-7}
+
+|  Classic | Gen 2 |
+|---------------|------------------|
+| POD-based constructs |  Regional VPC (no PODs) | 
+| VLAN dependencies | Built-in NAT, routing, VPN, load balancers | 
+| Customer-managed appliances for routing/NAT | Larger subnets and simplified connectivity | 
+{: caption="Differences in networking and connectivity" caption-side="bottom"}
+
+
 ### 8. Does Gen 2 change backup and restore capabilities?
 {: #faq-8}
 
 Yes, with:
-- [Snapshot-based backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-comparison-backups)
+- IOPS-based scalable storage
+- Snapshot-based backups
+- PITR enhancements
 
 
 ### 9. How does high availability differ?
@@ -120,7 +129,7 @@ Gen 2 provides:
 
 Yes:
 - IOPS-based storage pricing
-- Flexible compute pricing
+- Flexible compute pricing (Shared vs Isolated)
 - VPC sustained usage discounts
 
 
@@ -128,6 +137,7 @@ Yes:
 {: #faq-11}
 
 Yes:
+- Improved Terraform integration
 - Stronger API alignment
 - Faster provisioning
 
