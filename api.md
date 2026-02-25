@@ -12,8 +12,6 @@ keywords: api
 
 {{site.data.keyword.attribute-definition-list}}
 
-[Gen 2]{: tag-purple}
-
 # {{site.data.keyword.databases-for}} API
 {: #api}
 
