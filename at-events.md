@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-19"
+  years: 2026
+lastupdated: "2026-02-25"
 
 keywords: activity tracker
 
@@ -19,8 +19,6 @@ subcollection: cloud-databases-gen2
 
 [Gen 2]{: tag-purple}
 
-{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
-{: beta}
 
 {{site.data.keyword.cloud}} services, such as {{site.data.keyword.databases-for}}, generate activity tracking events that capture changes to the state of a service. These events help you identify critical actions, investigate unusual activity, and support audit and compliance efforts.
 {: shortdesc}
