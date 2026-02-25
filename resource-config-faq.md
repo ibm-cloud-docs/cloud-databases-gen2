@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-02-25"
 
 subcollection: cloud-databases-gen2
 
@@ -15,6 +15,8 @@ keywords: resource config, resource configuration
 {: #faq-resource-config}
 {: faq}
 {: support}
+
+[Gen 2]{: tag-purple}
 
 ## How do I retrieve the resource configuration for a {{site.data.keyword.databases-for}} instance?
 {: #faq-resource-config-retrieve}

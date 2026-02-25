@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-11"
+  years: 2026
+lastupdated: "2026-02-25"
 
 keywords: disaster recovery, restrict, context-based restrictions
 
@@ -17,8 +17,6 @@ subcollection: cloud-databases-gen2
 
 [Gen 2]{: tag-purple}
 
-{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
-{: beta}
 
 1. Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud_notm}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and Identity and Access Management (IAM) policies. For more information, see [Protecting your {{site.data.keyword.databases-for}} instance with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).
 1. To restrict access to your databases, allowlist specific IP addresses or ranges of IP addresses on your deployment. Using IBM Cloud's native context-based restrictions is recommended over using the allowlist, which is deprecated. For more information, see [Allowlisting](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-allowlisting).
