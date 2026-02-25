@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-09"
+  years: 2026
+lastupdated: "2026-02-25"
 
 subcollection: cloud-databases-gen2
 
@@ -12,13 +12,13 @@ keywords: api
 
 {{site.data.keyword.attribute-definition-list}}
 
+[Gen 2]{: tag-purple}
+
 # {{site.data.keyword.databases-for}} API
 {: #api}
 
 [Gen 2]{: tag-purple}
 
-{{site.data.keyword.databases-for}} Gen 2 is currently in Beta. The Beta plan is provided exclusively for evaluation and testing purposes. It is not covered by warranties, SLAs, or support, and is not intended for production use. For more information, see [Beta reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-icd-gen2-beta).
-{: beta}
 
 The {{site.data.keyword.databases-for}} API generally utilizes the [Resource Controller API](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#intro) for operation purposes. Use this API document to work with your data services.
 {: note}
