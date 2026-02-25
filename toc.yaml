@@ -60,7 +60,6 @@ toc:
           - ha-dr.md
           - bc-dr.md
       - reference-responsibilities.md
-      - service-dependency.md
       - topicgroup:
           label: Related product guides
           topics:

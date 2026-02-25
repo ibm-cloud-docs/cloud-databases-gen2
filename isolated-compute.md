@@ -17,7 +17,6 @@ keywords: isolated compute, host size, vcpu, ram
 
 [Gen 2]{: tag-purple}
 
-
 {{site.data.keyword.databases-for}} (on Gen 2 platform) offers an isolated compute hosting model designed for enterprise-grade workloads that demand high performance, security, and dedicated resources.
 {: shortdesc}
 
