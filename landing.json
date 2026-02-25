@@ -17,6 +17,10 @@
       {
         "title": "IBM Cloud® Databases for MongoDB",
         "href": "/docs/databases-for-mongodb-gen2"
+      },
+      {
+        "title": "Gen 1 docs",
+        "href": "/docs/cloud-databases"
       }
     ]
   },
