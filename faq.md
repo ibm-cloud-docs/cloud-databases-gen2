@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-13"
+lastupdated: "2026-02-26"
 
 keywords: ICD Gen 2 FAQ
 
@@ -22,27 +22,27 @@ subcollection: cloud-databases-gen2
 ## Overview
 {: #faq-overview}
 
-{{site.data.keyword.databases-for}} Gen 2 is built on **IBM Cloud VPC infrastructure**, replacing the older Classic infrastructure used by Gen 1 services. VPC provides higher performance, improved availability, modernized networking, and better operational controls for managed databases. 
+{{site.data.keyword.databases-for}} Gen 2 is built on **IBM Cloud VPC infrastructure**, replacing the older Classic infrastructure used by Gen 1 services. VPC provides stronger performance, enhanced security, modernized networking, and better operational controls for managed databases. 
 
-This FAQ summarizes the key differences you encounter when transitioning from Classic/Gen 1 to the new Gen 2 platform.
+This FAQ summarizes the key differences for {{site.data.keyword.databases-for}} Gen 2 (VPC) and how it differs from the Classic (Gen 1) version. 
 
 ---
 ### 1. What is the biggest difference between Classic and Gen 2?
 {: #faq-1}
 
-Classic services run on **Classic IaaS**, while Gen 2 runs on **VPC (Virtual Private Cloud)**.
+Classic services run on IBM's Original **Classic Platform**, while Gen 2 runs on **VPC (Virtual Private Cloud)** with software-defined networking.
 
-#### Key differences
+#### Classic Gen 1 vs VPC Gen 2: Architectural differences
 {: #faq-1-differences}
 
 | Area | Classic | Gen 2 |
 |------|------------------|--------------|
 | **Infrastructure** | VLAN-based Classic data-center model | Modern, software-defined VPC regional model |
 | **Performance** | Network speeds up to ~50 Gbps | Network speeds up to 200 Gbps |
-| **Availability** | Limited use of zone architecture | Strong multi-zone availability |
-| **Security** | Older networking/security approach | VPEs, better IAM integration, cloud-native networking |
-| **Provisioning** | More static system | Faster provisioning, API/CLI/Terraform-first model |
-| **Scaling** | Constrained | Flexible scaling through Shared & Isolated Compute models |
+| **Zone architecture** | Limited use of zone architecture | Strong multi-zone availability |
+| **Security** | Older networking/security approach | VPEs, IAM-native integration, modern cloud networking |
+| **Provisioning** | Less flexibile provisioning model, slower to modify | Fast, API/CLI/Terraform-first model |
+| **Scaling** | Fixed instance profiles with Isolated and Shared Compute models| Faster, more flexible scaling with modern isolated compute profiles  |
 {: caption="Key differences" caption-side="bottom"}
 
 
@@ -51,10 +51,10 @@ Classic services run on **Classic IaaS**, while Gen 2 runs on **VPC (Virtual Pri
 
 Gen 2 provides:
 
-- Modern networking with higher throughput
-- Better multi-zone availability
-- Stronger security with VPEs and IAM integration
-- Faster provisioning and automation alignment
+- Modern networking with higher throughput.
+- Better multi-zone availability.
+- Stronger security with Private only connections and IAM integration.
+- Faster provisioning and automation alignment.
 - Long-term strategic alignment with {{site.data.keyword.cloud}}
 
 ### 3. Does Gen 2 have any limitations compared to Classic?
@@ -62,100 +62,103 @@ Gen 2 provides:
 
 Yes, the following limitations exist at this point:
 
-- Montreal region only
-- Context-based restrictions (CBR) is not yet supported
+- Montreal region only.
+- Context-based restrictions (CBR) is not yet supported.
 
 
 ### 4. Are there differences in hosting models between Gen 1 and Gen 2?
 {: #faq-4}
 
+Gen 2 instances currently offer fixed, Isolated Compute profiles only. These profiles run on newer hardware built on 4th Gen Intel® Xeon® Scalable processors (Sapphire Rapids). 
+
+Gen 1 instances use a previous generation of hardware (Intel® Xeon® Platinum 8260 Cascade Lake) and support both shared and isolated hosting models. 
+
+The following table explains the differences between Shared Compute and Isolated Compute in Gen 1. 
+
 |  Shared Compute (multi-tenant) | Isolated Compute (single-tenant)|
 |---------------|------------------|
-| - Flexible CPU/RAM selections /n - Small or custom presets /n - Ideal for dev/test or cost-efficient workloads |  - Dedicated compute /n - Best for production workloads requiring isolation | 
+| - Flexible CPU/RAM selections  /n - Small or custom presets  /n - Ideal for dev/test or cost-efficient workloads |  - Dedicated compute  /n - Best for production workloads requiring isolation | 
 {: caption="Differences in hosting models" caption-side="bottom"}
 
 
 ### 5. How does performance differ between Classic and Gen 2?
 {: #faq-5}
 
-Gen 2 offers:
+Gen 2 is built on newer underlying infrastructure that provides higher baseline capabilities, such as: 
 
-- Up to 200 Gbps networking
-- Improved CPU/memory profiles
-- IOPS-based scalable storage performance
+- Up to 200 Gbps networking.
+- Improved CPU/memory profiles.
+- IOPS-based scalable storage performance.
+
+However, application-level performance improvements will vary depending on workload characteristics, data access patterns and service configuration. While Gen 2 offers a more powerful platform, performance outcomes are not guaranteed and may differ based on your specific workload. 
 
 
 ### 6. What about security differences?
 {: #faq-6}
 
 Gen 2 delivers:
-- VPEs for private access
-- Cloud-native networking (VPN, LBaaS, NAT)
-- Unified IAM integration
-- Consistent encryption at rest/in transit
+
+- Private only access via Virtual Private Endpoints (VPEs). 
+- Cloud-native networking (VPN, LBaaS, NAT).
+- Unified IAM integration.
+- Consistent encryption at rest/in transit. 
 
 
-### 7. How do networking and connectivity differ?
+### 7. Does Gen 2 change backup and restore capabilities?
 {: #faq-7}
 
-|  Classic | Gen 2 |
-|---------------|------------------|
-| POD-based constructs |  Regional VPC (no PODs) | 
-| VLAN dependencies | Built-in NAT, routing, VPN, load balancers | 
-| Customer-managed appliances for routing/NAT | Larger subnets and simplified connectivity | 
-{: caption="Differences in networking and connectivity" caption-side="bottom"}
+Yes, with:
+
+- Snapshot-based bakups.
+- Enhanced point-in-time recovery (PITR).
+- More performant and predictable backup and restore performance due to newer Gen 2 storage architecture. 
+
+For more information, see [Comparison of Gen 1 and Gen 2 backups](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-comparison-backups).
 
 
-### 8. Does Gen 2 change backup and restore capabilities?
+### 8. How does high availability differ?
 {: #faq-8}
 
-Yes, with:
-- IOPS-based scalable storage
-- Snapshot-based backups
-- PITR enhancements
+Gen 2 provides:
+
+- Multi-zone deployments.
+- Faster failover.
+- Up to 2 HA nodes + 1 DR replica in some database offerings.
 
 
-### 9. How does high availability differ?
+### 9. Are there pricing changes?
 {: #faq-9}
 
-Gen 2 provides:
-- Multi-zone deployments
-- Faster failover
-- Up to 2 HA nodes + 1 DR replica in some database offerings
+Yes. {{site.data.keyword.cloud}} Gen 2 Databases use the same pricing model as Gen 1, but the overall pricing structure is more aligned with broader market expectations. Backup-related pricing now follows a snapshot-based model consistent with standard database-industry practices. Storage costs are also approximately 60% lower. The exact impact on your workload depends on the your service and configuration. 
 
-
-### 10. Are there pricing changes?
+### 10. Do Gen 2 database services integrate better with automation tools?
 {: #faq-10}
 
-Yes:
-- IOPS-based storage pricing
-- Flexible compute pricing (Shared vs Isolated)
-- VPC sustained usage discounts
+Yes. Gen 2 Databases provide stronger integration with {{site.data.keyword.cloud}} automation tooling through:
+
+- Improved Terraform support.
+- Stronger API alignment across services.
+- Resource Controller API for instance lifecycle management.
+- {{site.data.keyword.cloud}} CLI support through Resource Controller CLI.
 
 
-### 11. Do Gen 2 database services integrate better with automation tools?
+### 11. How does the CLI differ between Gen 1 and Gen 2?
 {: #faq-11}
 
-Yes:
-- Improved Terraform integration
-- Stronger API alignment
-- Faster provisioning
+|  Classic CLI | Gen 2 CLI|
+|---------------|------------------|
+| Based on Classic infrastructure |  New CLI plugin required | 
+| Commands tied to Classic networking and resource constructs | VPC-native command model | 
+| **Does not work** with Gen 2 services | Works with Gen 2 compute models and VPE networking | 
+{: caption="Differences in CLI" caption-side="bottom"}
+
+Gen 2 does not currently support the Databases CLI (CDB) plugin. For Gen 2 instances, you must use the IBM Cloud Resource Controller CLI commands. This includes operations like creating instances, updating configurations, and managing service credentials. See the [CLI reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference) documentation for Gen 2-specific commands.
 
 
 ### 12. Do monitoring and logging tools change?
 {: #faq-12}
 
-Gen 2 integrates with:
+No. Both Gen 1 and Gen 2 instances fully integrate with:
+
 - [{{site.data.keyword.logs_full}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-logging)
 - [{{site.data.keyword.monitoringlong}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring)
-
-
-### 13. How does the CLI differ between Gen 1 and Gen 2?
-{: #faq-13}
-
-|  Classic CLI | Gen 2 CLI|
-|---------------|------------------|
-| Based on Classic infrastructure |  New CLI plugin required | 
-| Commands tied to Classic networking & resource constructs | VPC-native command model | 
-| **Does not work** with Gen 2 services | Works with Gen 2 compute models and VPE networking | 
-{: caption="Differences in CLI" caption-side="bottom"}
