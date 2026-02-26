@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-09-11"
+  years: 2026
+lastupdated: "2026-02-25"
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 keywords: deprovision cloud databases, databases with terraform, deprovisioning parameters, delete cloud databases, soft delete
 
@@ -14,6 +14,9 @@ keywords: deprovision cloud databases, databases with terraform, deprovisioning 
 
 # Deleting your deployment and removing your data
 {: #deprovisioning}
+
+[Gen 2]{: tag-purple}
+
 
 When an {{site.data.keyword.cloud}} Databases deployment is deleted, it is put in a soft-deleted state for 3 days after which it is removed. Soft-deleted deployments can be recovered by following the steps below.
 

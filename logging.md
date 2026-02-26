@@ -1,19 +1,22 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-09-11"
+  years: 2026
+lastupdated: "2026-02-25"
 
 keywords: logging
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Logging for {{site.data.keyword.databases-for}}
+# Logging for Gen 2 {{site.data.keyword.databases-for}}
 {: #logging}
+
+[Gen 2]{: tag-purple}
+
 
 {{site.data.keyword.cloud}} services, such as {{site.data.keyword.databases-for}}, generate platform logs that you can use to investigate abnormal activity and critical actions in your account, and troubleshoot problems.
 {: shortdesc}
@@ -21,6 +24,9 @@ subcollection: cloud-databases
 You can use **{{site.data.keyword.logs_routing_full}}**, a platform service, to route platform logs in your account to a destination of your choice by configuring a tenant that defines where platform logs are sent. For more information, see [About logs routing](/docs/logs-router?topic=logs-router-about).
 
 You can use **{{site.data.keyword.logs_full}}** to visualize and alert on platform logs that are generated in your account and routed by {{site.data.keyword.logs_routing_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
+
+Platform logs for Gen 2 instances differ from Gen 1. {{site.data.keyword.databases-for}} Gen 2 logs have been expanded to include more database process level logs, some non-database related logs have been removed. As a result, log content may not match exactly between generations.
+{: note}
 
 ## Locations where platform logs are generated
 {: #log-locations}
@@ -54,7 +60,7 @@ You can use **{{site.data.keyword.logs_full}}** to visualize and alert on platfo
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |  Paris (`eu-par01`) | 
+| Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |  Paris (`eu-par01`) |
 |---------------------------------------------------------------|---------------------|------------------|-------|
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |  [No]{: tag-red}  |
 {: caption="Regions where platform logs are sent in Europe locations" caption-side="top"}
@@ -134,7 +140,7 @@ For information about fields included in every platform log, see [Fields for pla
 | `messageID`       | Required   | ID of the log that is generated. |
 {: caption="Log record fields" caption-side="bottom"}
 
-{{site.data.keyword.databases-for}} sends audit events as platform logs. For more information, see [Activity tracking for Cloud Databases](/docs/cloud-databases?topic=cloud-databases-at_events).
+{{site.data.keyword.databases-for}} sends audit events as platform logs. For more information, see [Activity tracking for Cloud Databases](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events).
 
 
 

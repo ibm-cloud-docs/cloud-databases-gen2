@@ -1,31 +1,44 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-08-07"
+  years: 2026
+lastupdated: "2026-02-25"
 
-subcollection: cloud-databases
+keywords: postgresql gen 2, mongodb gen 2, provision service, choose service
+
+subcollection: cloud-databases-gen2
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Choose your service
-{: #cdb-offerings}
+{: #gen2-offerings}
 
-{{site.data.keyword.databases-for}} are managed databases, and a messaging queue, that are hosted in {{site.data.keyword.cloud_notm}} and integrated with other {{site.data.keyword.cloud_notm}} services.
+[Gen 2]{: tag-purple}
+
+
+{{site.data.keyword.databases-for}} are managed databases, and a messaging queue, that are hosted in {{site.data.keyword.cloud_notm}} and integrated with other {{site.data.keyword.cloud_notm}} services. Gen 2 {{site.data.keyword.databases-for}} support the same data technologies as Gen 1 instances with a richer feature set, enhanced security and networking, and is more suitable for cloud-native workloads. For more information, see [Overview of Gen 1 and Gen 2](/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2&interface=ui). 
 {: shortdesc}
 
 - **{{site.data.keyword.databases-for-postgresql}}** is a powerful, open source object-relational database that is highly customizable. For more information, see [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql){: external}.
-- **{{site.data.keyword.databases-for-mongodb}}** is a JSON document store with a rich query and aggregation framework. For more information, see [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb){: external}. {{site.data.keyword.databases-for-mongodb}} offers two plans: **Standard** and **Enterprise**.
-- **{{site.data.keyword.databases-for-redis}}** is a blazingly fast, in-memory data structure store. For more information, see [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis){: external}.
-- **{{site.data.keyword.databases-for-elasticsearch}}** combines the power of a full text search engine with the indexing strengths of a JSON document database. For more information, see [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch){: external}. {{site.data.keyword.databases-for-elasticsearch}} offers two plans: **Enterprise** and **Platinum**.
-- **{{site.data.keyword.databases-for-mysql}}** is fully managed MySQL relational database service. For more information, see [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql){: external}.
-- **{{site.data.keyword.messages-for-rabbitmq}}** is an open source multi-protocol messaging broker. For more information, see [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq){: external}.
-- **{{site.data.keyword.databases-for-enterprisedb}}** is a PostgreSQL-based database engine optimized for performance, developer productivity, and compatibility with Oracle. For more information, see [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb){: external}.
-- **{{site.data.keyword.databases-for-etcd}}** is a distributed reliable key-value store for the most critical data of a distributed system. For more information, see [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd){: external}.
+- **{{site.data.keyword.databases-for-mongodb}} Standard** is a JSON document store with a rich query and aggregation framework. For more information, see [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb){: external}.
+
+## Provision an instance
+{: #gen2-provision}
+
+Follow the steps for provisioning a {{site.data.keyword.databases-for}} instance of your preferred service. Provision through the [catalog](https://cloud.ibm.com/catalog){: external}, the [Resource Controller API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api), or the [Resource Controller CLI](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference).
+
+
+
+Gen 2 {{site.data.keyword.databases-for}} provides isolated compute, a secure, single-tenant compute environment that serves as the foundation for complex, high-performance enterprise workloads. For more information, see [Gen 2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui).
+
+Follow these steps to get started with each database service:
+
+- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-provisioning){: external}
+- [{{site.data.keyword.databases-for-mongodb}} Standard](/docs/databases-for-mongodb?topic=databases-for-mongodb-provisioning){: external} 
 
 ## Next steps
-{: #cdb-offerings-next-steps}
+{: #provision-instance-next-steps}
 
-When you decided which {{site.data.keyword.databases-for}} service suits your needs, [provision an instance](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance).
+After provisioning a {{site.data.keyword.databases-for}} service intance, [set up notifications](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-setup-notifs).

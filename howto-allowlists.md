@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-11-13"
+  years: 2026
+lastupdated: "2026-02-25"
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowlist
 
@@ -14,6 +14,9 @@ keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowli
 
 # Allowlisting
 {: #allowlisting}
+
+[Gen 2]{: tag-purple}
+
 
 {{site.data.keyword.databases-for}} now supports context-based restrictions, which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [Context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).
 {: deprecated}
@@ -59,7 +62,7 @@ The _Description_ can be any user-significant text for identifying the allowlist
 {: #set-allowlist-cli}
 {: cli}
 
-The {{site.data.keyword.databases-for}} CLI plug-in offers a set of commands for managing allowlists. Use [`cdb deployment-whitelist-add`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-add) to add an allowlist.
+The {{site.data.keyword.databases-for}} CLI plug-in offers a set of commands for managing allowlists. Use [`cdb deployment-whitelist-add`](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference) to add an allowlist.
 
 To add a single IP address, use a command like:
 
@@ -75,7 +78,7 @@ ibmcloud cdb deployment-whitelist-add <INSTANCE_NAME_OR_CRN> 198.51.100.0/24 "Te
 ```
 {: .pre}
 
-The [`cdb deployment-whitelist-list`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-list) command allows you to view the current allowlist.
+The [`cdb deployment-whitelist-list`](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference) command allows you to view the current allowlist.
 
 Use a command like:
 
@@ -84,13 +87,13 @@ ibmcloud cdb deployment-whitelist-list <INSTANCE_NAME_OR_CRN>
 ```
 {: .pre}
 
-For more information, see the [{{site.data.keyword.databases-for}} CLI plug-in reference page](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference).
+For more information, see the [{{site.data.keyword.databases-for}} CLI plug-in reference page](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference).
 
 ### Setting an allowlist through the API
 {: #set-allowlist-api}
 {: api}
 
-Manage your allowlist with the {{site.data.keyword.databases-for}} API [Authorization endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#getallowlist){: external}. Retrieve the current allowlist, add entries to the allowlist, and also bulk upload IP addresses to the allowlist from the API with this endpoint.
+Manage your allowlist with the {{site.data.keyword.databases-for}} API [Authorization endpoint](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api){: external}. Retrieve the current allowlist, add entries to the allowlist, and also bulk upload IP addresses to the allowlist from the API with this endpoint.
 
 To add an address, use a command like:
 
@@ -99,7 +102,7 @@ curl -X POST https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id
 ```
 {: pre}
 
-For more information, see [{{site.data.keyword.databases-for}} API Security](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#getallowlist){: external}.
+For more information, see [{{site.data.keyword.databases-for}} API Security](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api){: external}.
 
 ### Removing an allowlist in the UI
 {: #remove-allowlist-ui}
@@ -126,7 +129,7 @@ When all entries on the allowlist are removed, the allowlist is disabled and all
 {: #remove-allowlist-api}
 {: api}
 
-Delete an IP address or range with the {{site.data.keyword.databases-for}} API [Authorization endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#deleteallowlistentry){: external}.
+Delete an IP address or range with the {{site.data.keyword.databases-for}} API [Authorization endpoint](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api){: external}.
 
 The command looks like:
 

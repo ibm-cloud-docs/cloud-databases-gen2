@@ -1,11 +1,11 @@
 ---
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-09-11"
+  years: 2026
+lastupdated: "2026-02-25"
 
 keywords: bring your own key, byok, cryptoshredding, hpcs, hyper protect crypto services
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
@@ -13,6 +13,9 @@ subcollection: cloud-databases
 
 # Hyper Protect Crypto Services integration
 {: #hpcs}
+
+[Gen 2]{: tag-purple}
+
 
 The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started), and use one of your own keys to encrypt your databases. Take note that {{site.data.keyword.hscrypto}} for {{site.data.keyword.cloud}} Databases backups is currently not supported for the majority of regions and not recommended to be used without careful considerations of the impact to disaster recovery. 
 

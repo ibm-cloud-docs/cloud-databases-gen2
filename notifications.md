@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-10-05"
+  years: 2026
+lastupdated: "2026-02-25"
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
@@ -13,11 +13,15 @@ subcollection: cloud-databases
 # Set up notifications
 {: #getting-started-cdb-setup-notifs}
 
+[Gen 2]{: tag-purple}
+
+
 Set up [{{site.data.keyword.cloud_notm}} email notifications](https://cloud.ibm.com/docs/account?topic=account-email-prefs){: external} to stay up-to-date with announcements, billing and usage, additional notification preferences, and ordering.
 
 Set up [resource notifications](https://cloud.ibm.com/docs/account?topic=account-email-prefs#setting-resource-notifications){: external}. {{site.data.keyword.databases-for}} directly notifies you when your database version is approaching end of life. For more information, see the {{site.data.keyword.databases-for}} [Database Version Lifecycle](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}.
 
+
 ## Next Steps
 {: #getting-started-cdb-setup-notifs-next-steps}
 
-Now that you've set up {{site.data.keyword.cloud_notm}} notifications, you should [set up logging and monitoring](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-logging-monitoring) for your {{site.data.keyword.databases-for}} service instance.
+Now that you've set up {{site.data.keyword.cloud_notm}} notifications, you should [set up logging and monitoring](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-set-up-logging-monitoring) for your {{site.data.keyword.databases-for}} service instance.

@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-09-11"
+  years: 2026
+lastupdated: "2026-02-25"
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 keywords: HA for cloud-databases, DR for cloud-databases, high availability for cloud-databases, disaster recovery for cloud-databases, failover for cloud-databases
 
@@ -15,30 +15,33 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 # Understanding high availability for {{site.data.keyword.databases-for}}
 {: #ha-dr}
 
-This document covers all the {{site.data.keyword.cloud}} Databases, which include {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, {{site.data.keyword.databases-for-enterprisedb}} and {{site.data.keyword.databases-for-etcd}}. 
+[Gen 2]{: tag-purple}
+
+
+This document reflects general availability for Gen 2 {{site.data.keyword.databases-for}}, which are progressively rolling out across new regions. You can track regional availability [here](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2).
 {: .note}
 
 ## Regions
 {: #regions-ha}
 
-{{site.data.keyword.cloud}} Databases instances are deployed in either a multi-zone region (MZR) (for example, Dallas, Frankfurt, London, Sydney, Tokyo, and Washington), or a single-campus multizone region (for example, Chennai). Each instance is deployed in a highly available configuration; that is, data is replicated by each database onto one or more servers, making the data highly available during normal operations.
+{{site.data.keyword.databases-for}} instances are deployed in either a multi-zone region (MZR), or a single-campus multizone region. Each instance is deployed in a highly available configuration; that is, data is replicated by each database onto one or more servers, making the data highly available during normal operations.
 
-- In [MZRs](/docs/overview?topic=overview-locations#table-mzr), database members are distributed across different data centers, or zones.  
+- In [MZRs](/docs/overview?topic=overview-locations#table-mzr), database members are distributed across different data centers, or zones.
 - In [single-campus multizone regions](/docs/overview?topic=overview-locations#single-campus-mzr), database members are distributed across different hosts.
 
-If a single-campus multizone region failure in an MZR or a hardware failure in any region occurs, your data is still accessible as it is replicated onto other fully functioning database servers. Such issues are addressed by {{site.data.keyword.cloud}} Specialists in place. 
+If a single-campus multizone region failure in an MZR or a hardware failure in any region occurs, your data is still accessible as it is replicated onto other fully functioning database servers. Such issues are addressed by {{site.data.keyword.cloud}} Specialists in place.
 
 For more information on how your specific database replicates data among each of its members, see your {{site.data.keyword.databases-for}} documentation.
 
 ## Backups
 {: #backups-ha}
 
-- In addition to the high-availability configuration, for deployments in {{site.data.keyword.cloud}} multi-zone regions, your data is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform and stored in [cross-region Cloud Object Storage buckets](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
-- For most {{site.data.keyword.cloud}} single-campus multizone regions, your data is backed up locally in [Single-campus multizone region Cloud Object Storage buckets](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-zone).
+- In addition to the high-availability configuration, for deployments in {{site.data.keyword.cloud}} multi-zone regions, your data is snapshotted and backed up daily by the {{site.data.keyword.databases-for}} platform and stored in [the same region as VPC Block Storage Snapshots](/docs/vpc?topic=vpc-snapshots-vpc-create&interface=ui).
+- For most {{site.data.keyword.cloud}} single-campus multizone regions, your data is backed up locally in single-campus multizone region VPC Block Storage Snapshots.
 
-If a complete region failure occurs, the database servers in the region might not be accessible, but the backup data remains available. You can initiate a restore from these backups into an available region from the service management console. For more information, see the [{{site.data.keyword.databases-for}} backups documentation](/docs/cloud-databases?topic=cloud-databases-dashboard-backups). 
+If a complete region failure occurs, the database servers in the region might not be accessible, but the backup data remains available. You can initiate a restore from these backups into an available region from the service management console. For more information, see the [{{site.data.keyword.databases-for}} backups documentation](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui).
 
-It is your responsibility to [create a new service instance](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance) in which to restore when the {{site.data.keyword.cloud}} Databases platform is restored. You are also responsible for testing the validity and restore time of your backups. For more information, see the [Disaster recovery section](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases#disaster-recovery-responsibilities) in the *Shared responsibilities for Cloud Databases* page.
+It is your responsibility to [create a new service instance](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-gen2-offerings&interface=ui) in which to restore when the {{site.data.keyword.databases-for}} platform is restored. You are also responsible for testing the validity and restore time of your backups. For more information, see the [Disaster recovery section](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr) in the *Shared responsibilities for Cloud Databases* page.
 
 ## Application-level high availability
 {: #application-ha}
@@ -51,11 +54,11 @@ Your applications must be designed to handle temporary interruptions to the data
 
 Several minutes of database unavailability or connection interruptions are not expected. Open a [support ticket](https://cloud.ibm.com/unifiedsupport/cases/add) with details if you have time periods longer than a minute with no connectivity so we can investigate.
 
-If you have deployments in more than one region, you must provision {{site.data.keyword.monitoringlong}} and enable platform metrics in each region. For more information, see [{{site.data.keyword.monitoringlong_notm}}](/docs/cloud-databases?topic=cloud-databases-monitoring) integration.
+If you have deployments in more than one region, you must provision {{site.data.keyword.monitoringlong}} and enable platform metrics in each region. For more information, see [{{site.data.keyword.monitoringlong_notm}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring) integration.
 
 ## SLAs
 {: #sla}
 
 - See [How IBM Cloud ensures high availability and disaster recovery](/docs/resiliency?topic=resiliency-ha-redundancy) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}.
-- All {{site.data.keyword.cloud}} Databases general availability (GA) offerings conform to the {{site.data.keyword.cloud}} [Service Level Agreement](/docs/overview?topic=overview-slas) (SLA) terms.
-- For more information, see the [Responsibilities for Cloud Databases](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases) page.
+- All {{site.data.keyword.cloud}} Gen 2 Databases general availability (GA) offerings conform to the {{site.data.keyword.cloud}} [Service Level Agreement](/docs/overview?topic=overview-slas) (SLA) terms.
+- For more information, see the [Responsibilities for Cloud Databases](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-responsibilities-cloud-databases) page.

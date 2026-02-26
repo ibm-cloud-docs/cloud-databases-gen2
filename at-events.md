@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-09-11"
+  years: 2026
+lastupdated: "2026-02-25"
 
 keywords: activity tracker
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
@@ -17,16 +17,16 @@ subcollection: cloud-databases
 # Activity tracking events for {{site.data.keyword.databases-for}}
 {: #at_events}
 
+[Gen 2]{: tag-purple}
 
 
-{{site.data.keyword.cloud}} services, such as {{site.data.keyword.databases-for}}, generate activity tracking events.
+{{site.data.keyword.cloud}} services, such as {{site.data.keyword.databases-for}}, generate activity tracking events that capture changes to the state of a service. These events help you identify critical actions, investigate unusual activity, and support audit and compliance efforts.
 {: shortdesc}
 
-Activity tracking events report on activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
+With [{{site.data.keyword.atracker_full}}](/docs/atracker?topic=atracker-about), you can direct these events to specific destinations by configuring targets and routes, giving you control over how auditing data is collected and where it is sent. This enables timely investigation of abnormal activity, supports security and compliance needs, and helps meet regulatory audit requirements.
 
-You can use **{{site.data.keyword.atracker_full}}**, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [About {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-about).
-
-You can use **{{site.data.keyword.logs_full}}** to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
+You need an [{{site.data.keyword.logs_full}}](https://cloud.ibm.com/observability/logging) instance to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}}.
+{: note}
 
 ## Locations where activity tracking events are generated
 {: #at-locations}
@@ -85,14 +85,14 @@ Create an {{site.data.keyword.logs_full_notm}} instance and configure {{site.dat
 
 
 
-You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
+Deploy an [{{site.data.keyword.logs_full_notm}}](https://cloud.ibm.com/observability/logging) instance to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
 ### Launching {{site.data.keyword.logs_full_notm}} from the {{site.data.keyword.databases-for}} dashboard
 {: #log-launch-integrated}
 
 
 
-You can visit the {{site.data.keyword.databases-for}} instance. Click on _Overview_ and scroll to the _Observability_ section. Click on *{{site.data.keyword.logs_full_notm}}* to view your logging instances. Click on _Open Dashboard_ to access the logs.
+Select your [{{site.data.keyword.databases-for}}](https://cloud.ibm.com/databases-overview/resources) instance from the databases resource list. Then click on _Overview_ and scroll to the _Observability_ section. Click on *{{site.data.keyword.logs_full_notm}}* to view your logging instances. Click on _Open Dashboard_ to access the logs.
 
 ### Launching {{site.data.keyword.logs_full_notm}} from the Observability page
 {: #log-launch-standalone}
@@ -110,29 +110,11 @@ The following table lists the activity tracking event actions that {{site.data.k
 
 | Action name | Legacy action name | Description |
 | ------- | ------- | ------- |
-| `<service_name>.deployment-backup.create`|`<service_id>.backup-ondemand.create` | An on-demand backup of your instance was created. If the backup failed, a "-failure" flag is included in the message. |
-|`<service_name>.deployment-backup-scheduled.create`| `<service_id>.backup-scheduled.create`| A scheduled backup of your instance was created. If the backup failed, a "-failure" flag is included in the message. |
-|`<service_name>.deployment-user.update`|`<service_id>.user-password.update`| A user's password was updated. A "-failure" flag is included in the message if the attempt to update a user's password failed. |
-|`<service_name>.deployment-user.create`|`<service_id>.user.create` | A user was created. A "-failure" flag is included in the message if the attempt to create a user failed. |
-|`<service_name>.deployment-user.delete`|`<service_id>.user.delete` | A user was deleted. A "-failure" flag is included in the message if the attempt to delete a user failed. |
-|`<service_name>.deployment-group.update`|`<service_id>.resources.scale` | A scaling operation was performed. If the scaling operation failed, a "-failure" flag is included in the message. |
-|`<service_name>.deployment-allowlist-ip-addresses.update` | `<service_id>.whitelisted-ips-list.update`|The allowlist was modified. A "-failure" flag is included in the message if the attempt to modify the allowlist failed. |
-|`<service_name>.deployment.update`|`<service_id>.serviceendpoints.update` | A change was made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message. |
-|`<service_name>.deployment-group-autoscaling.update` | `<service_id>.autoscaling.update` | An autoscaling configuration change or an autoscaling operation was performed. If an autoscaling operation was performed the message includes `autoscale resources for instance <deployment-id>`. If the autoscaling operation or the configuration change failed, a "-failure" flag is included in the message. |
-|`<service_name>.deployment-volumes.update`|`<service_id>.volumes.update` | An activity was performed on the encryption key that is used by the database, such as rotation or shredding. Details of the action are in the event. |
+| `<service_name>.deployment-backup.create` | `<service_id>.backup-ondemand.create` | A backup of your instance was created. The message contains the database version along with size, id, status and type of the backup. |
+| `<service_name>.deployment-backup.delete` | `<service_id>.backup-ondemand.delete` | A backup of your instance was deleted. The message contains the type of the database. |
+| `<service_name>.restore.hydrate` | `<service_id>.restore-ondemand.hydrate` | A restore of a backup to a new service instance was created. The message contains the status of the hydration of the restored instance. |
 {: caption="List of events and event descriptions by {{site.data.keyword.databases-for}}" caption-side="bottom"}
 
 The `service_name` field indicates the type of {{site.data.keyword.databases-for}} instance. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
 
 Auditing of global events, such as `<service_name>.instance.create`, is covered by the {{site.data.keyword.cloud_notm}} global event. For more resource-related global events, see [Auditing events for service instances](/docs/atracker?topic=atracker-at_events_rc).
-
-
-
-
-
-
-
-
-
-
-

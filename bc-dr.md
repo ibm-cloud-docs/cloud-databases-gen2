@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-09-13"
+  years: 2026
+lastupdated: "2026-02-25"
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 keywords: DR for cloud-databases, high availability for cloud-databases, disaster recovery for cloud-databases, failover for cloud-databases
 
@@ -17,6 +17,9 @@ keywords: DR for cloud-databases, high availability for cloud-databases, disaste
 # Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}
 {: #bc-dr}
 
+[Gen 2]{: tag-purple}
+
+
 [Disaster recovery](#x2113280){: term} involves a set of policies, tools, and procedures for returning a system, an application, or an entire data center to full operation after a catastrophic interruption. It includes procedures for copying and storing an installed system's essential data in a secure location, and for recovering that data to restore normalcy of operation.
 {: shortdesc}
 
@@ -26,7 +29,7 @@ keywords: DR for cloud-databases, high availability for cloud-databases, disaste
 
 - To find out more about responsibility ownership for using {{site.data.keyword.cloud}} products between **{{site.data.keyword.IBM_notm}}** and customer see [Shared responsibilities for {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities).
 
-- For more information about your responsibilities when using **{{site.data.keyword.databases-for}}**, see [Shared responsibilities for {{site.data.keyword.databases-for}}](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases).
+- For more information about your responsibilities when using **{{site.data.keyword.databases-for}}**, see [Shared responsibilities for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-responsibilities-cloud-databases&interface=ui).
 
 ## Disaster recovery strategy
 {: #bc-dr-strategy}
