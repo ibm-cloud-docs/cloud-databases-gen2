@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-26"
+lastupdated: "2026-02-27"
 
 keywords: ICD Gen 2 FAQ
 
@@ -65,9 +65,14 @@ Yes, the following limitations exist at this point:
 - Montreal region only.
 - Context-based restrictions (CBR) is not yet supported.
 
-
-### 4. Are there differences in hosting models between Gen 1 and Gen 2?
+### 4. Do Gen 2 databases support the same features as Gen 1?
 {: #faq-4}
+
+Gen 2 supports the same core database engines and delivers improved performance, security, and operational capabilities on VPC. Some Gen 1 features and use cases are still being added to Gen 2 as the platform expands, but coverage is increasing rapidly. Most workloads will run normally on Gen 2 today, and full use case parity will continue to grow over time. To track the differences between Gen 1 and Gen 2 Databases, check out the [Overview page](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-overview-gen1-gen2cloud.ibm.com).
+
+
+### 5. Are there differences in hosting models between Gen 1 and Gen 2?
+{: #faq-5}
 
 Gen 2 instances currently offer fixed, Isolated Compute profiles only. These profiles run on newer hardware built on 4th Gen Intel® Xeon® Scalable processors (Sapphire Rapids). 
 
@@ -77,24 +82,29 @@ The following table explains the differences between Shared Compute and Isolated
 
 |  Shared Compute (multi-tenant) | Isolated Compute (single-tenant)|
 |---------------|------------------|
-| - Flexible CPU/RAM selections  /n - Small or custom presets  /n - Ideal for dev/test or cost-efficient workloads |  - Dedicated compute  /n - Best for production workloads requiring isolation | 
+| - Flexible CPU/RAM selections /n - Small or custom presets /n - Ideal for dev/test or cost-efficient workloads | - Dedicated compute /n - Best for production workloads requiring isolation | 
 {: caption="Differences in hosting models" caption-side="bottom"}
 
 
-### 5. How does performance differ between Classic and Gen 2?
-{: #faq-5}
+### 6. How does performance differ between Classic and Gen 2?
+{: #faq-6}
 
 Gen 2 is built on newer underlying infrastructure that provides higher baseline capabilities, such as: 
 
 - Up to 200 Gbps networking.
 - Improved CPU/memory profiles.
 - IOPS-based scalable storage performance.
+- Higher bandwidth with dedicated bandwidth for storage.
+- Lower latency on the network level.
+- Ability to select the CPU generation.
+- Snapshot-based backups that do not impact database performance.
+- Restores in the background while you can use the database. Thus, restore times are less dependent on database size.
 
 However, application-level performance improvements will vary depending on workload characteristics, data access patterns and service configuration. While Gen 2 offers a more powerful platform, performance outcomes are not guaranteed and may differ based on your specific workload. 
 
 
-### 6. What about security differences?
-{: #faq-6}
+### 7. What about security differences?
+{: #faq-7}
 
 Gen 2 delivers:
 
@@ -104,8 +114,8 @@ Gen 2 delivers:
 - Consistent encryption at rest/in transit. 
 
 
-### 7. Does Gen 2 change backup and restore capabilities?
-{: #faq-7}
+### 8. Does Gen 2 change backup and restore capabilities?
+{: #faq-8}
 
 Yes, with:
 
@@ -116,8 +126,8 @@ Yes, with:
 For more information, see [Comparison of Gen 1 and Gen 2 backups](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-comparison-backups).
 
 
-### 8. How does high availability differ?
-{: #faq-8}
+### 9. How does high availability differ?
+{: #faq-9}
 
 Gen 2 provides:
 
@@ -126,13 +136,13 @@ Gen 2 provides:
 - Up to 2 HA nodes + 1 DR replica in some database offerings.
 
 
-### 9. Are there pricing changes?
-{: #faq-9}
+### 10. Are there pricing changes?
+{: #faq-10}
 
 Yes. {{site.data.keyword.cloud}} Gen 2 Databases use the same pricing model as Gen 1, but the overall pricing structure is more aligned with broader market expectations. Backup-related pricing now follows a snapshot-based model consistent with standard database-industry practices. Storage costs are also approximately 60% lower. The exact impact on your workload depends on the your service and configuration. 
 
-### 10. Do Gen 2 database services integrate better with automation tools?
-{: #faq-10}
+### 11. Do Gen 2 database services integrate better with automation tools?
+{: #faq-11}
 
 Yes. Gen 2 Databases provide stronger integration with {{site.data.keyword.cloud}} automation tooling through:
 
@@ -142,8 +152,8 @@ Yes. Gen 2 Databases provide stronger integration with {{site.data.keyword.cloud
 - {{site.data.keyword.cloud}} CLI support through Resource Controller CLI.
 
 
-### 11. How does the CLI differ between Gen 1 and Gen 2?
-{: #faq-11}
+### 12. How does the CLI differ between Gen 1 and Gen 2?
+{: #faq-12}
 
 |  Classic CLI | Gen 2 CLI|
 |---------------|------------------|
@@ -155,8 +165,8 @@ Yes. Gen 2 Databases provide stronger integration with {{site.data.keyword.cloud
 Gen 2 does not currently support the Databases CLI (CDB) plugin. For Gen 2 instances, you must use the IBM Cloud Resource Controller CLI commands. This includes operations like creating instances, updating configurations, and managing service credentials. See the [CLI reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference) documentation for Gen 2-specific commands.
 
 
-### 12. Do monitoring and logging tools change?
-{: #faq-12}
+### 13. Do monitoring and logging tools change?
+{: #faq-13}
 
 No. Both Gen 1 and Gen 2 instances fully integrate with:
 
