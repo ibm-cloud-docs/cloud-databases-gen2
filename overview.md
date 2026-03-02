@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-03-02"
 
 keywords: cloud databases gen 2 overview
 
@@ -15,7 +15,6 @@ subcollection: cloud-databases-gen2
 {: #overview-gen1-gen2}
 
 [Gen 2]{: tag-purple}
-
 
 {{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across all industries. The following page outlines the key differences between {{site.data.keyword.databases-for}} built on IBM’s Classic platform (Gen 1) and the latest VPC based platform (Gen 2).
 
@@ -34,7 +33,7 @@ Gen 2 databases are built on IBM’s latest platform, based on highly secure sof
 
 | Category                     | Gen 1                                                            | Gen 2                                             |
 |-----------------------------|-------------------------------------------------------------------|---------------------------------------------------|
-| Regions                     | Multizone location (MZR) <br> Dallas (us-south) <br> Sao Paulo (br-sao) <br> Toronto (ca-tor) <br> Washington (us-east) <br> Frankfurt (eu-de) <br> London (eu-gb) <br> Madrid (eu-es) <br> Osaka (jp-osa) <br> Sydney (au-syd) <br> Tokyo (jp-tok) | Single-campus MZR (SC-MZR) <br> Montreal (ca-mon)   |
+| Regions                     | Multizone location (MZR) <br> Dallas (us-south) <br> Sao Paulo (br-sao) <br> Toronto (ca-tor) <br> Washington (us-east) <br> Frankfurt (eu-de) <br> London (eu-gb) <br> Madrid (eu-es) <br> Osaka (jp-osa) <br> Sydney (au-syd) <br> Tokyo (jp-tok) | Single-campus MZR (SC-MZR) <br> Montreal (ca-mon) <br> Chennai - Airtel (in-che) |
 | Database editions           | PostgreSQL <br> MongoDB (Standard and Enterprise) <br> MySQL <br> ElasticSearch (Enterprise and Platinum) <br> RabbitMQ <br> Redis              | PostgreSQL <br> MongoDB (Standard)     |
 | Endpoints                   | Private endpoints <br> Public endpoints                           | Private endpoints                                 |
 | Hosting models              | Isolated compute <br> Shared compute                              | Isolated compute                                  |
