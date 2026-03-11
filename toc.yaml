@@ -14,7 +14,7 @@ toc:
       - overview.md
       - isolated-compute.md
       - topic: pricing.md
-        navtitle: Pricing Gen 2
+        navtitle: Pricing
       - db-version-policy.md
       - link:
           label: Gen 1 docs
