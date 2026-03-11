@@ -13,7 +13,8 @@ toc:
       topics:
       - overview.md
       - isolated-compute.md
-      - pricing.md
+      - topic: pricing.md
+        navtitle: Pricing Gen 2
       - db-version-policy.md
       - link:
           label: Gen 1 docs
@@ -22,8 +23,10 @@ toc:
       id: plan
       topics:
       - index.md
-      - learn-getting-to-production.md
-      - private-connections.md
+      - topic: learn-getting-to-production.md
+        navtitle: Getting to production
+      - topic: private-connections.md
+        navtitle: Virtual Private Endpoints
   - navgroup:
       id: howto
       topics:
@@ -31,7 +34,8 @@ toc:
       - scaling.md
       - closures.md
       - backup-restore.md
-      - howto-manage-backups.md
+      - topic: howto-manage-backups.md
+        navtitle: Managing Gen 2 backups
       - topicgroup:
           label: Observability
           topics:
@@ -46,7 +50,8 @@ toc:
           label: Enhancing security
           topics:
           - secure.md
-          - manage-scc.md
+          - topic: manage-scc.md
+            navtitle: Managing security and compliance
           - howto-allowlists.md
           - reference-iam.md
           - reference-key-protect.md
@@ -60,9 +65,12 @@ toc:
       - topicgroup:
           label: High availability and disaster recovery
           topics:
-          - ha-dr.md
-          - bc-dr.md
-      - reference-responsibilities.md
+          - topic: ha-dr.md
+            navtitle: Understanding high availability
+          - topic: bc-dr.md
+            navtitle: Understanding business continuity and disaster recovery
+      - topic: reference-responsibilities.md
+        navtitle: Shared responsibilities
       - topicgroup:
           label: Related product guides
           topics:
@@ -78,6 +86,7 @@ toc:
       - topicgroup:
           label: FAQs
           topics:
-          - faq.md
+          - topic: faq.md
+            navtitle: Gen 2 FAQ
           - availability-zones-faq.md
           - resource-config-faq.md
