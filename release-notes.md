@@ -43,6 +43,6 @@ security, networking, and more performant snapshot‑based backups.
 {: #cloud-databases-15dec2025}
 {: release-note}
 
-{{site.data.keyword.databases-fo}} Gen 2 is now in beta
+{{site.data.keyword.databases-for}} Gen 2 is now in beta
 : Support for Mongo v8: Built on VPC architecture with software-defined networking, delivering enhanced security and flexibility. 
 : Now available in the Montreal region, giving developers early access to next-generation database innovation.
