@@ -34,7 +34,7 @@ see [Overview of Gen 1 and Gen 2{{site.data.keyword.databases-for}}](/docs/datab
 {: #cloud-databases-26feb2026}
 {: release-note}
 
-{{site.data.keyword.databases-for}} Gen 2 GA
+{{site.data.keyword.databases-for}} Gen 2 is now generally available (GA)
 : {{site.data.keyword.databases-for}} Gen 2 is now available, offering the same fully managed {{site.data.keyword.databases-for}} engine on newer VPC‑based infrastructure with improved 
 security, networking, and more performant snapshot‑based backups. 
 [Try {{site.data.keyword.databases-for}} Gen 2 now](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-provisioning).
@@ -43,7 +43,6 @@ security, networking, and more performant snapshot‑based backups.
 {: #cloud-databases-15dec2025}
 {: release-note}
 
-{{site.data.keyword.databases-fo}} Gen 2 Beta
+{{site.data.keyword.databases-fo}} Gen 2 is now in beta
 : Support for Mongo v8: Built on VPC architecture with software-defined networking, delivering enhanced security and flexibility. 
 : Now available in the Montreal region, giving developers early access to next-generation database innovation.
-
