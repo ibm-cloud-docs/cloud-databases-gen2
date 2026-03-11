@@ -16,6 +16,7 @@ toc:
       - topic: pricing.md
         navtitle: Pricing
       - db-version-policy.md
+      - release-notes.md
       - link:
           label: Gen 1 docs
           href: https://cloud.ibm.com/docs/cloud-databases
