@@ -2,4 +2,4 @@
 
 
 
-Documentation source repository for content published at https://cloud.ibm.com/docs/services/cloud-databases.
+Documentation source repository for content published at https://cloud.ibm.com/docs/services/cloud-databases-gen2.
