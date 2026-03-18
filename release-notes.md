@@ -27,7 +27,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 Deprecation of {{site.data.keyword.hscrypto}}
-: {{site.data.keyword.cloud}} is changing dedicated key management services from {{site.data.keyword.hscrypto}} to {{site.data.keyword.keymanagementservicelong}} Dedicated. {{site.data.keyword.hscrypto}} (HPCS) will reach End of Life (EOL) in Q1 2027 and will no longer be supported for use with this service after that time. For more information, see [Migrating from Hyper Protect Crypto Services (HPCS) to Key Protect Dedicated (KP-ST)](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-hpcs&interface=ui).
+: {{site.data.keyword.cloud}} is changing dedicated key management services from {{site.data.keyword.hscrypto}} to {{site.data.keyword.keymanagementservicelong}} Dedicated. {{site.data.keyword.hscrypto}} (HPCS) will reach End of Life (EOL) in Q1 2027 and will no longer be supported for use with this service after that time. For more information on how to migrate your encryption keys, see [Migrating from Hyper Protect Crypto Services (HPCS) to Key Protect Dedicated (KP-ST)](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-hpcs&interface=ui).
 
 ## 02 March 2026
 {: #cloud-databases-02mar2026}
