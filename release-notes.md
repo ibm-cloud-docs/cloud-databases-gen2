@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-03-11"
+lastupdated: "2026-03-18"
 
 keywords: cloud databases release notes
 
@@ -21,6 +21,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 19 March 2026
+{: #cloud-databases-19mar2026}
+{: release-note}
+
+Deprecation of {{site.data.keyword.hscrypto}}
+: {{site.data.keyword.cloud}} is changing dedicated key management services from {{site.data.keyword.hscrypto}} to {{site.data.keyword.keymanagementservicelong}} Dedicated. {{site.data.keyword.hscrypto}} (HPCS) will reach End of Life (EOL) in Q1 2027 and will no longer be supported for use with this service after that time. For more information, see [Migrating from Hyper Protect Crypto Services (HPCS) to Key Protect Dedicated (KP-ST)](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-hpcs&interface=ui).
 
 ## 02 March 2026
 {: #cloud-databases-02mar2026}
