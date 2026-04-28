@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-04-28"
 
 subcollection: cloud-databases-gen2
 
@@ -38,7 +38,7 @@ The API uses standard `HTTP` response codes to indicate whether a method complet
 
 You can monitor API activity within your account by using the [{{site.data.keyword.cloudaccesstraillong}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events&interface=terraform) service. Whenever an API method is called, an event is generated that you can then track and audit from within Activity Tracker. The specific event type is listed for each individual method.
 
-For more information about how to track Certificate Manager activity, see [Auditing events for {{site.data.keyword.cloud_notm}}]() <— THIS LINK IS BROKEN.
+For more information about how to track Certificate Manager activity, see [Auditing events for {{site.data.keyword.cloud_notm}}]() 
 
 ## Deployment IDs and CRNs
 {: #api-deployment}
@@ -394,7 +394,7 @@ Input Parameters
 ```
 {: pre}
 
-Get the schema of the database configuration (INFO SEEMS TO BE MISSING)
+Get the schema of the database configuration 
 
 ## Transition documentation
 {: #api-transition-doc}
