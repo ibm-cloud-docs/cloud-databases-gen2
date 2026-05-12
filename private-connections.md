@@ -13,7 +13,7 @@ subcollection: cloud-databases-gen2
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Set up private endpoints for {{site.data.keyword.databases-for}} Gen 2
+# Set up private endpoints
 {: #private-endpoints-gen2}
 
 [Gen 2]{: tag-purple}
