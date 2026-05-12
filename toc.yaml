@@ -36,7 +36,6 @@ toc:
       - backup-restore.md
       - topic: howto-manage-backups.md
         navtitle: Managing Gen 2 backups
-      - independent-backups.md
       - topicgroup:
           label: Observability
           topics:
