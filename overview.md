@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-03-02"
+lastupdated: "2026-05-12"
 
 keywords: cloud databases gen 2 overview
 
@@ -26,7 +26,7 @@ IBM’s original platform consisting of all databases across all regions and a r
 ## Generation 2 (VPC)
 {: #gen2}
 
-Gen 2 databases are built on IBM’s latest platform, based on highly secure software-defined networking architecture and ideal for cloud-native applications. Gen 2 Databases currently are only available in select regions only and support private endpoints and isolated compute options. This environment is ideal for modern applications that demand advanced networking and secure, software-defined isolation.
+Gen 2 databases are built on {{site.data.keyword.cloud}}’s latest platform, based on highly secure software-defined networking architecture and ideal for cloud-native applications. Gen 2 Databases currently are only available in select regions only and support private endpoints and isolated compute options. This environment is ideal for modern applications that demand advanced networking and secure, software-defined isolation.
 
 ## Feature differentiators
 {: #feature-differentiators}
@@ -60,7 +60,7 @@ Gen 2 databases are built on IBM’s latest platform, based on highly secure sof
 | Category               | Gen 1                                                                 | Gen 2                                              |
 |------------------------|-----------------------------------------------------------------------|----------------------------------------------------|
 | User and role management | [Database `admin` user created by IBM](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-user-management&interface=ui) | Database "manager" via service-credential                              |
-| Certificate type       | Signed by IBM Cloud Database Certificate Authority                    | Certificates signed by a Certificate Authority (Let's encrypt)         |
-| Encryption             | Encryption at Rest <br> Encryptions in Transit <br> Customer-managed encryption - Bring your own key (BYOK) | Encryption at Rest <br> Encryptions in Transit <br> Customer-managed encryption - Bring your own key (BYOK) |
+| Certificate type       | Signed by IBM Cloud Database Certificate Authority                    | Certificates signed by a Certificate Authority (Let's Encrypt)         |
+| Encryption             | Encryption at Rest <br> Encryption in Transit <br> Customer-managed encryption - Bring your own key (BYOK) | Encryption at Rest <br> Encryption in Transit <br> Customer-managed encryption - Bring your own key (BYOK) |
 | Compliance             | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018 <br> SOC 1, SOC 2 <br> PCI DSS <br> HIPAA  | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018SOC 1 <br> SOC 2 <br> PCI DSS <br> HIPAA      |
 {: caption="Access, compliance, and security differentiators" caption-side="bottom"}
