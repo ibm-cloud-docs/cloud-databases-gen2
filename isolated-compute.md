@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-12"
 
 subcollection: cloud-databases-gen2
 
@@ -51,24 +51,24 @@ Isolated compute offers six size options across legacy and [newer-generation ins
 
 | Host size | vCPU x RAM | Regional availability |
 | --- | --- | --- |
-| 4x16 | 4 vCPU x 16 GB RAM | |
-| 8x32 | 8 vCPU x 32 GB RAM | |
-| 8x64 | 8 vCPU x 64 GB RAM | |
-| 16x64 | 16 vCPU x 64 GB RAM | |
-| 32x128 | 32 vCPU x 128 GB RAM | |
-| 30x240 | 30 vCPU x 240 GB RAM | |
+| 4x16 | 4 vCPU x 16 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
+| 8x32 | 8 vCPU x 32 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
+| 8x64 | 8 vCPU x 64 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
+| 16x64 | 16 vCPU x 64 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
+| 32x128 | 32 vCPU x 128 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
+| 30x240 | 30 vCPU x 240 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
 {: caption="Isolated compute UI selections" caption-side="bottom"}
 
 {: note}
 
 | Host size | vCPU x RAM | Regional availability |
 | --- | --- | --- |
-| 4x20 | 4 vCPU x 20 GB RAM | |
-| 8x40 | 8 vCPU x 40 GB RAM | |
-| 8x80 | 8 vCPU x 80 GB RAM | |
-| 16x80 | 16 vCPU x 80 GB RAM | |
-| 32x160 | 32 vCPU x 160 GB RAM | |
-| 48x240 | 48 vCPU x 240 GB RAM | |
+| 4x20 | 4 vCPU x 20 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
+| 8x40 | 8 vCPU x 40 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
+| 8x80 | 8 vCPU x 80 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
+| 16x80 | 16 vCPU x 80 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
+| 32x160 | 32 vCPU x 160 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
+| 48x240 | 48 vCPU x 240 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
 {: caption="Isolated compute UI selections for Intel 8474C processor" caption-side="bottom"}
 
 
@@ -118,7 +118,7 @@ The host_flavor parameter defines your Compute sizing. Input the appropriate val
 | 16x64     | 16 vCPU x 64 GB RAM  | b3c.16x64.encrypted       |
 | 32x128    | 32 vCPU x 128 GB RAM | b3c.32x128.encrypted      |
 | 30x240    | 30 vCPU x 240 GB RAM | m3c.30x240.encrypted      |
-{: caption="Isolated compute CLI selections" caption-side="bottom"}
+{: caption="Isolated compute API selections" caption-side="bottom"}
 
 
 | Host size | vCPU x RAM           | host_flavor value         |
@@ -129,7 +129,7 @@ The host_flavor parameter defines your Compute sizing. Input the appropriate val
 | 16x80     | 16 vCPU x 80 GB RAM  | bx3d.16x80.encrypted       |
 | 32x160    | 32 vCPU x 160 GB RAM | bx3d.32x160.encrypted      |
 | 48x240    | 48 vCPU x 240 GB RAM | bx3d.48x240.encrypted      |
-{: caption="Isolated compute CLI selections" caption-side="bottom"}
+{: caption="Isolated compute API selections" caption-side="bottom"}
 
 ## Size selections in Terraform
 {: #isolated-compute-sizing-terraform}
@@ -147,7 +147,7 @@ The host_flavor parameter defines your Compute sizing. Input the appropriate val
 | 16x64     | 16 vCPU x 64 GB RAM  | b3c.16x64.encrypted       |
 | 32x128    | 32 vCPU x 128 GB RAM | b3c.32x128.encrypted      |
 | 30x240    | 30 vCPU x 240 GB RAM | m3c.30x240.encrypted      |
-{: caption="Isolated compute CLI selections" caption-side="bottom"}
+{: caption="Isolated compute Terraform selections" caption-side="bottom"}
 
 
 | Host size | vCPU x RAM           | host_flavor value         |
@@ -158,4 +158,4 @@ The host_flavor parameter defines your Compute sizing. Input the appropriate val
 | 16x80     | 16 vCPU x 80 GB RAM  | bx3d.16x80.encrypted       |
 | 32x160    | 32 vCPU x 160 GB RAM | bx3d.32x160.encrypted      |
 | 48x240    | 48 vCPU x 240 GB RAM | bx3d.48x240.encrypted      |
-{: caption="Isolated compute CLI selections" caption-side="bottom"}
+{: caption="Isolated compute Terraform selections" caption-side="bottom"}

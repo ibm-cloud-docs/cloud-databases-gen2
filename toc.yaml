@@ -27,7 +27,6 @@ toc:
       - topic: learn-getting-to-production.md
         navtitle: Getting to production
       - topic: private-connections.md
-        navtitle: Virtual Private Endpoints
   - navgroup:
       id: howto
       topics:

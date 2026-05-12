@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-12"
 
 keywords: postgresql, databases, gen 2, postgresql connection strings, postgresql connection ibm application
 
@@ -13,7 +13,7 @@ subcollection: cloud-databases-gen2
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Virtual Private Endpoints for Gen 2 {{site.data.keyword.databases-for}}
+# Set up private endpoints
 {: #private-endpoints-gen2}
 
 [Gen 2]{: tag-purple}
