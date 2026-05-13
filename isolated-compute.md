@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-05-13"
 
 subcollection: cloud-databases-gen2
 
@@ -36,6 +36,17 @@ In the isolated compute model, CPU and RAM resources are fixed at the time of pr
 
 These management containers take up some overhead in your isolated compute instance, consuming a portion of the machine's CPU and RAM, with the remainder available for your database to use. A portion of the database capacity will be allocated to essential operations such as security, ensuring data integrity and protection.
 
+## Compute profile types
+{: #isolated-compute-profile-types}
+
+{{site.data.keyword.databases-for}} Gen 2 offers two types of compute profiles to match your workload requirements:
+
+- **Fixed profiles**: Predefined vCPU and RAM combinations optimized for common workload patterns. These profiles provide a simplified selection process with proven resource ratios, making them ideal for quick deployment and standardized configurations.
+
+- **Flex profiles**: Custom vCPU and RAM allocation that allows you to fine-tune your resource configuration. Flex profiles offer granular control over compute resources, enabling you to optimize performance and cost for your specific workload requirements.
+
+Both profile types run on single-tenant compute instances with hypervisor-level isolation. Storage is configured independently of the compute profile, allowing separate disk and IOPS customization.
+
 ## Compute sizing
 {: #isolated-compute-sizing}
 
@@ -47,8 +58,9 @@ Scale your database and change your machine size using your preferred method: th
 {: #isolated-compute-sizing-ui}
 {: ui}
 
-Isolated compute offers six size options across legacy and [newer-generation instance profiles](/docs/vpc?topic=vpc-profiles&interface=ui#next-gen-profiles). Newer-generation profiles are [available only in selected regions](/docs/vpc?topic=vpc-profiles&interface=ui#vhmemory).
+Isolated compute offers two profile types: Fixed profiles with predefined configurations and Flex profiles with customizable resource allocation.
 
+<<<<<<< Updated upstream
 | Host size | vCPU x RAM | Regional availability |
 | --- | --- | --- |
 | 4x16 | 4 vCPU x 16 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
@@ -58,9 +70,21 @@ Isolated compute offers six size options across legacy and [newer-generation ins
 | 32x128 | 32 vCPU x 128 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
 | 30x240 | 30 vCPU x 240 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
 {: caption="Isolated compute UI selections" caption-side="bottom"}
+=======
+### Fixed profiles
+{: #isolated-compute-fixed-ui}
+>>>>>>> Stashed changes
 
-{: note}
+| Host size | vCPU x RAM |
+| --- | --- |
+| 4x20 | 4 vCPU x 20 GB RAM |
+| 8x40 | 8 vCPU x 40 GB RAM |
+| 8x80 | 8 vCPU x 80 GB RAM |
+| 32x160 | 32 vCPU x 160 GB RAM |
+| 48x240 | 48 vCPU x 240 GB RAM |
+{: caption="Fixed profile UI selections" caption-side="bottom"}
 
+<<<<<<< Updated upstream
 | Host size | vCPU x RAM | Regional availability |
 | --- | --- | --- |
 | 4x20 | 4 vCPU x 20 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
@@ -70,46 +94,63 @@ Isolated compute offers six size options across legacy and [newer-generation ins
 | 32x160 | 32 vCPU x 160 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
 | 48x240 | 48 vCPU x 240 GB RAM | Single-campus MZR (SC-MZR), Montreal (ca-mon), Chennai - Airtel (in-che) |
 {: caption="Isolated compute UI selections for Intel 8474C processor" caption-side="bottom"}
+=======
+### Flex profiles
+{: #isolated-compute-flex-ui}
+
+| Host size | vCPU x RAM |
+| --- | --- |
+| 4x16 | 4 vCPU x 16 GB RAM |
+| 8x32 | 8 vCPU x 32 GB RAM |
+| 16x64 | 16 vCPU x 64 GB RAM |
+| 32x128 | 32 vCPU x 128 GB RAM |
+| 48x192 | 48 vCPU x 192 GB RAM |
+{: caption="Flex profile UI selections" caption-side="bottom"}
+>>>>>>> Stashed changes
 
 
 ## Size selections in the CLI
 {: #isolated-compute-sizing-cli}
 {: cli}
 
-Isolated compute offers six size options across legacy and [newer-generation instance profiles](/docs/vpc?topic=vpc-profiles&interface=ui#next-gen-profiles). Newer-generation profiles are [available only in selected regions](/docs/vpc?topic=vpc-profiles&interface=ui#vhmemory).
+Isolated compute offers two profile types: Fixed profiles with predefined configurations and Flex profiles with customizable resource allocation.
 
 The host_flavor parameter defines your Compute sizing. Input the appropriate value for your desired size.
 
-| Host size | vCPU x RAM           | host_flavor value         |
-|-----------|----------------------|---------------------------|
-| 4x16      | 4 vCPU x 16 GB RAM   | b3c.4x16.encrypted        |
-| 8x32      | 8 vCPU x 32 GB RAM   | b3c.8x32.encrypted        |
-| 8x64      | 8 vCPU x 64 GB RAM   | m3c.8x64.encrypted        |
-| 16x64     | 16 vCPU x 64 GB RAM  | b3c.16x64.encrypted       |
-| 32x128    | 32 vCPU x 128 GB RAM | b3c.32x128.encrypted      |
-| 30x240    | 30 vCPU x 240 GB RAM | m3c.30x240.encrypted      |
-{: caption="Isolated compute CLI selections" caption-side="bottom"}
-
+### Fixed profiles
+{: #isolated-compute-fixed-cli}
 
 | Host size | vCPU x RAM           | host_flavor value         |
 |-----------|----------------------|---------------------------|
 | 4x20      | 4 vCPU x 20 GB RAM   | bx3d.4x20.encrypted        |
 | 8x40      | 8 vCPU x 40 GB RAM   | bx3d.8x40.encrypted        |
 | 8x80      | 8 vCPU x 80 GB RAM   | mx3d.8x80.encrypted        |
-| 16x80     | 16 vCPU x 80 GB RAM  | bx3d.16x80.encrypted       |
 | 32x160    | 32 vCPU x 160 GB RAM | bx3d.32x160.encrypted      |
 | 48x240    | 48 vCPU x 240 GB RAM | bx3d.48x240.encrypted      |
-{: caption="Isolated compute CLI selections" caption-side="bottom"}
+{: caption="Fixed profile CLI selections" caption-side="bottom"}
+
+### Flex profiles
+{: #isolated-compute-flex-cli}
+
+| Host size | vCPU x RAM           | host_flavor value         |
+|-----------|----------------------|---------------------------|
+| 4x16      | 4 vCPU x 16 GB RAM   | b3c.4x16.encrypted        |
+| 8x32      | 8 vCPU x 32 GB RAM   | b3c.8x32.encrypted        |
+| 16x64     | 16 vCPU x 64 GB RAM  | b3c.16x64.encrypted       |
+| 32x128    | 32 vCPU x 128 GB RAM | b3c.32x128.encrypted      |
+| 48x192    | 48 vCPU x 192 GB RAM | b3c.48x192.encrypted      |
+{: caption="Flex profile CLI selections" caption-side="bottom"}
 
 
 ## Size selections in the API
 {: #isolated-compute-sizing-api}
 {: api}
 
-Isolated compute offers six size options across legacy and [newer-generation instance profiles](/docs/vpc?topic=vpc-profiles&interface=ui#next-gen-profiles). Newer-generation profiles are [available only in selected regions](/docs/vpc?topic=vpc-profiles&interface=ui#vhmemory).
+Isolated compute offers two profile types: Fixed profiles with predefined configurations and Flex profiles with customizable resource allocation.
 
 The host_flavor parameter defines your Compute sizing. Input the appropriate value for your desired size.
 
+<<<<<<< Updated upstream
 | Host size | vCPU x RAM           | host_flavor value         |
 |-----------|----------------------|---------------------------|
 | 4x16      | 4 vCPU x 16 GB RAM   | b3c.4x16.encrypted        |
@@ -120,25 +161,45 @@ The host_flavor parameter defines your Compute sizing. Input the appropriate val
 | 30x240    | 30 vCPU x 240 GB RAM | m3c.30x240.encrypted      |
 {: caption="Isolated compute API selections" caption-side="bottom"}
 
+=======
+### Fixed profiles
+{: #isolated-compute-fixed-api}
+>>>>>>> Stashed changes
 
 | Host size | vCPU x RAM           | host_flavor value         |
 |-----------|----------------------|---------------------------|
 | 4x20      | 4 vCPU x 20 GB RAM   | bx3d.4x20.encrypted        |
 | 8x40      | 8 vCPU x 40 GB RAM   | bx3d.8x40.encrypted        |
 | 8x80      | 8 vCPU x 80 GB RAM   | mx3d.8x80.encrypted        |
-| 16x80     | 16 vCPU x 80 GB RAM  | bx3d.16x80.encrypted       |
 | 32x160    | 32 vCPU x 160 GB RAM | bx3d.32x160.encrypted      |
 | 48x240    | 48 vCPU x 240 GB RAM | bx3d.48x240.encrypted      |
+<<<<<<< Updated upstream
 {: caption="Isolated compute API selections" caption-side="bottom"}
+=======
+{: caption="Fixed profile API selections" caption-side="bottom"}
+
+### Flex profiles
+{: #isolated-compute-flex-api}
+
+| Host size | vCPU x RAM           | host_flavor value         |
+|-----------|----------------------|---------------------------|
+| 4x16      | 4 vCPU x 16 GB RAM   | b3c.4x16.encrypted        |
+| 8x32      | 8 vCPU x 32 GB RAM   | b3c.8x32.encrypted        |
+| 16x64     | 16 vCPU x 64 GB RAM  | b3c.16x64.encrypted       |
+| 32x128    | 32 vCPU x 128 GB RAM | b3c.32x128.encrypted      |
+| 48x192    | 48 vCPU x 192 GB RAM | b3c.48x192.encrypted      |
+{: caption="Flex profile API selections" caption-side="bottom"}
+>>>>>>> Stashed changes
 
 ## Size selections in Terraform
 {: #isolated-compute-sizing-terraform}
 {: terraform}
 
-Isolated compute offers six size options across legacy and [newer-generation instance profiles](/docs/vpc?topic=vpc-profiles&interface=ui#next-gen-profiles). Newer-generation profiles are [available only in selected regions](/docs/vpc?topic=vpc-profiles&interface=ui#vhmemory).
+Isolated compute offers two profile types: Fixed profiles with predefined configurations and Flex profiles with customizable resource allocation.
 
 The host_flavor parameter defines your Compute sizing. Input the appropriate value for your desired size.
 
+<<<<<<< Updated upstream
 | Host size | vCPU x RAM           | host_flavor value         |
 |-----------|----------------------|---------------------------|
 | 4x16      | 4 vCPU x 16 GB RAM   | b3c.4x16.encrypted        |
@@ -149,13 +210,32 @@ The host_flavor parameter defines your Compute sizing. Input the appropriate val
 | 30x240    | 30 vCPU x 240 GB RAM | m3c.30x240.encrypted      |
 {: caption="Isolated compute Terraform selections" caption-side="bottom"}
 
+=======
+### Fixed profiles
+{: #isolated-compute-fixed-terraform}
+>>>>>>> Stashed changes
 
 | Host size | vCPU x RAM           | host_flavor value         |
 |-----------|----------------------|---------------------------|
 | 4x20      | 4 vCPU x 20 GB RAM   | bx3d.4x20.encrypted        |
 | 8x40      | 8 vCPU x 40 GB RAM   | bx3d.8x40.encrypted        |
 | 8x80      | 8 vCPU x 80 GB RAM   | mx3d.8x80.encrypted        |
-| 16x80     | 16 vCPU x 80 GB RAM  | bx3d.16x80.encrypted       |
 | 32x160    | 32 vCPU x 160 GB RAM | bx3d.32x160.encrypted      |
 | 48x240    | 48 vCPU x 240 GB RAM | bx3d.48x240.encrypted      |
+<<<<<<< Updated upstream
 {: caption="Isolated compute Terraform selections" caption-side="bottom"}
+=======
+{: caption="Fixed profile Terraform selections" caption-side="bottom"}
+
+### Flex profiles
+{: #isolated-compute-flex-terraform}
+
+| Host size | vCPU x RAM           | host_flavor value         |
+|-----------|----------------------|---------------------------|
+| 4x16      | 4 vCPU x 16 GB RAM   | b3c.4x16.encrypted        |
+| 8x32      | 8 vCPU x 32 GB RAM   | b3c.8x32.encrypted        |
+| 16x64     | 16 vCPU x 64 GB RAM  | b3c.16x64.encrypted       |
+| 32x128    | 32 vCPU x 128 GB RAM | b3c.32x128.encrypted      |
+| 48x192    | 48 vCPU x 192 GB RAM | b3c.48x192.encrypted      |
+{: caption="Flex profile Terraform selections" caption-side="bottom"}
+>>>>>>> Stashed changes

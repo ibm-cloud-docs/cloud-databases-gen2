@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-13"
 
 keywords: gen 2, pricing
 
@@ -33,15 +33,40 @@ The charge for an {{site.data.keyword.databases-for}} instance is determined by 
 
 Each database instance consists of two or three members, depending on the database type, with each member holding a copy of the data to provide resiliency and high availability. {{site.data.keyword.databases-for}} instances are only available with [Isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui) hosting. Isolated compute offers a choice of standard vCPU x RAM resource profiles that are hosted on single-tenant compute instances for maximum workload isolation and security. Disk storage capacity per member is specified independently of the vCPU x RAM profile selected. Gen 2 deployments depend on regional availability, for more information, see [Isolated Compute sizing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui#isolated-compute-sizing-ui).
 
+## Compute profile options
+{: #pricing-profile-options}
+
+Gen 2 offers two types of compute profiles to accommodate different workload needs:
+
+- **Fixed profiles**: Predefined vCPU and RAM combinations (shown in the table below) that provide simplified selection with optimized resource ratios. Fixed profiles are ideal for quick deployment and standardized configurations.
+
+- **Flex profiles**: Custom vCPU and RAM allocation that allows granular control over compute resources. Flex profiles enable you to fine-tune your configuration to optimize both performance and cost for your specific workload requirements.
+
+Both profile types are priced based on the allocated vCPU and RAM resources, with costs calculated per member and prorated hourly.
+
+### Fixed profiles
+{: #pricing-fixed-profiles}
+
 | Host size | vCPU x RAM | Best for |
 | --- | --- | --- |
 | 4x20 | 4 vCPU x 20 GB RAM | Getting started |
-| 8x40 | 8 vCPU x 40 GB RAM | |
+| 8x40 | 8 vCPU x 40 GB RAM | Standard workloads |
 | 8x80 | 8 vCPU x 80 GB RAM | Memory intensive usage |
-| 16x80 | 16 vCPU x 80 GB RAM | |
-| 32x160 | 32 vCPU x 160 GB RAM | |
+| 32x160 | 32 vCPU x 160 GB RAM | Large workloads |
 | 48x240 | 48 vCPU x 240 GB RAM | Memory intensive usage |
-{: caption="Isolated compute UI selections - exact configurations vary by region " caption-side="bottom"}
+{: caption="Fixed profile selections" caption-side="bottom"}
+
+### Flex profiles
+{: #pricing-flex-profiles}
+
+| Host size | vCPU x RAM | Best for |
+| --- | --- | --- |
+| 4x16 | 4 vCPU x 16 GB RAM | Custom configurations |
+| 8x32 | 8 vCPU x 32 GB RAM | Balanced workloads |
+| 16x64 | 16 vCPU x 64 GB RAM | Compute intensive |
+| 32x128 | 32 vCPU x 128 GB RAM | Large custom workloads |
+| 48x192 | 48 vCPU x 192 GB RAM | High-performance custom |
+{: caption="Flex profile selections" caption-side="bottom"}
 
 The total cost of your {{site.data.keyword.databases-for}} deployment will consist of the the cost of each vCPU x RAM profile, disk storage in GB and backup storage (for all members), prorated hourly.
 {: note}
