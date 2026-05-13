@@ -1,6 +1,6 @@
 ---
 copyright:
-  years: 2026
+  years: 2025, 2026
 lastupdated: "2026-05-13"
 
 keywords: gen 2, pricing
@@ -51,9 +51,9 @@ Both profile types are priced based on the allocated vCPU and RAM resources, wit
 | --- | --- | --- |
 | 4x20 | 4 vCPU x 20 GB RAM | Getting started |
 | 8x40 | 8 vCPU x 40 GB RAM | Standard workloads |
-| 8x80 | 8 vCPU x 80 GB RAM | Memory intensive usage |
+| 8x80 | 8 vCPU x 80 GB RAM | Memory-intensive usage |
 | 32x160 | 32 vCPU x 160 GB RAM | Large workloads |
-| 48x240 | 48 vCPU x 240 GB RAM | Memory intensive usage |
+| 48x240 | 48 vCPU x 240 GB RAM | Memory-intensive usage |
 {: caption="Fixed profile selections" caption-side="bottom"}
 
 ### Flex profiles
