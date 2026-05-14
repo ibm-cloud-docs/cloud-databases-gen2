@@ -27,6 +27,10 @@
         "href": "/docs/databases-for-mongodb-gen2"
       },
       {
+        "title": "IBM Cloud® Databases for Valkey",
+        "href": "/docs/databases-for-valkey-gen2"
+      },
+      {
         "title": "Gen 1 docs",
         "href": "/docs/cloud-databases"
       }
