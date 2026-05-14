@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-14"
 
 subcollection: cloud-databases-gen2
 
@@ -22,6 +22,10 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 ## Major versions defined
 {: #version-definitions}
+
+**Reminder from Manushree**
+This page needs to be updated for Valkey
+{: note}
 
 | Service | Versioning schema| Next known end of life version and date | Preferred major version | End of life procedure |
 |----|----|----|----|----|
@@ -88,7 +92,7 @@ Any actions taken after an EOL date happen over several days after the EOL date.
 ### Programmatic methods for checking version status
 {: #-major-version-eol-check-version-status}
 
- 
+
 
 **Via an API** Gen 2 {{site.data.keyword.databases-for}} utilize the Resource Controller API for operation purposes. The following command gets the full data that is associated with a deployment. This data includes the ID, name, database type, and version.
 
