@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-18"
 
 subcollection: cloud-databases-gen2
 
@@ -83,6 +83,9 @@ To restore a backup to a new service instance,
 ### Restoring a backup in the CLI
 {: #restore-backup-cli}
 {: cli}
+
+
+
 The Resource Controller supports provisioning of database instances, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command.
 
 ```sh
@@ -149,6 +152,8 @@ curl -X POST \
 ```
 {: .pre}
 
+
+
 The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `restore_backup_id` is the backup that you want to restore.
 {: important}
 
@@ -186,11 +191,15 @@ curl -X POST \
 ```
 {: .pre}
 
+
+
 The `host_flavor` value must be an appropriate-sized isolated compute host. For more information, see [the list of available values](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui)).
 {: note}
 
 By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding a `version` value in the parameters object.
 {: note}
+
+
 
 
 ## Backups and restoration
