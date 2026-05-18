@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-18"
 
 subcollection: cloud-databases-gen2
 
@@ -23,7 +23,7 @@ When an {{site.data.keyword.cloud}} Databases deployment is deleted, it is put i
 After the 3-day soft-deletion period has ended, or if a hard deletion is issued, deployments are no longer recoverable.
 {: note}
 
-## Deleting your deployment in the user interface 
+## Deleting your deployment in the user interface
 {: #delete-deployment-ui}
 {: ui}
 
@@ -75,6 +75,10 @@ Restoring an {{site.data.keyword.cloud}} Databases deployment from a soft-delete
 ## Cryptoshredding keys
 {: #cryptoshred}
 
+**Comment from Manushree for Valkey**
+Have not checked this use case - we may need to test
+{: note}
+
 {{site.data.keyword.keymanagementserviceshort}} provides cryptoshredding, which is [deletion](/docs/key-protect?topic=key-protect-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments.
 
 Cryptoshredding is a destructive action. When the key is deleted, your data is unrecoverable even from a soft delete state.
@@ -83,4 +87,4 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 ## Backups removal
 {: #backup-remove}
 
-Backups cannot be manually deleted or removed. However, if you delete your deployment, its backups are deleted automatically. 
+Backups cannot be manually deleted or removed. However, if you delete your deployment, its backups are deleted automatically.
