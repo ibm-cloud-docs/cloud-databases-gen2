@@ -26,9 +26,10 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: #cloud-databases-18may2026}
 {: release-note}
 
-Update: Introduction of Flex profiles for {{site.data.keyword.databases-for}} Gen 2 (on VPC)
-: Flex profiles are introduced as the new baseline pricing option for {{site.data.keyword.databases-for}} Gen 2 (on VPC) in the Chennai and Montreal regions. As part of this change, non-Flex profiles are repositioned as a premium offering and are subject to a price increase.
-In addition, billing for compute and the new software-defined storage moves to a true hourly pricing model.
+Introduction of Flex profiles for {{site.data.keyword.databases-for}} Gen 2 (on VPC), pricing and billing changes
+: Flex profiles are introduced as the new baseline pricing option for {{site.data.keyword.databases-for}} Gen 2 (on VPC). Non-Flex (Fixed) profiles are repositioned as a premium offering and are subject to a price increase in existing regions. 
+
+: Billing for compute and the software-defined storage transitions from monthly prorated pricing to true hourly pricing model.
 
 ## 27 March 2026
 {: #cloud-databases-27mar2026}
