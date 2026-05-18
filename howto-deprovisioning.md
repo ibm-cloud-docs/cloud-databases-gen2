@@ -75,9 +75,7 @@ Restoring an {{site.data.keyword.cloud}} Databases deployment from a soft-delete
 ## Cryptoshredding keys
 {: #cryptoshred}
 
-**Comment from Manushree for Valkey**
-Have not checked this use case - we may need to test
-{: note}
+
 
 {{site.data.keyword.keymanagementserviceshort}} provides cryptoshredding, which is [deletion](/docs/key-protect?topic=key-protect-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments.
 

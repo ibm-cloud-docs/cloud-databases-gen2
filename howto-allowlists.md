@@ -43,9 +43,7 @@ Even if not explicitly allowlisted, {{site.data.keyword.cloud_notm}} management 
 {: #set-allowlist-ui}
 {: ui}
 
-**Comment from Manushree for Valkey**
-No such option present in UI
-{: note}
+
 
 The UI for managing allowlists is on the _Settings_ tab of your _Deployment Overview_.
 
@@ -62,10 +60,7 @@ IPv6 is not currently supported.
 
 The _Description_ can be any user-significant text for identifying the allowlist entry - a customer name, project identifier, or employee number, for example. The description field is required.
 
-**Comment from Manushree for Valkey**
-CLI and API
-ibmcloud cdb and API commands did not work
-{: note}
+
 
 ### Setting an allowlist through the CLI
 {: #set-allowlist-cli}
@@ -102,10 +97,7 @@ For more information, see the [{{site.data.keyword.databases-for}} CLI plug-in r
 {: #set-allowlist-api}
 {: api}
 
-**Comment from Manushree for Valkey**
-CLI and API
-ibmcloud cdb and API commands did not work
-{: note}
+
 
 Manage your allowlist with the {{site.data.keyword.databases-for}} API [Authorization endpoint](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api){: external}. Retrieve the current allowlist, add entries to the allowlist, and also bulk upload IP addresses to the allowlist from the API with this endpoint.
 
