@@ -102,6 +102,6 @@ You can view all independent backups in the [Database Hub](https://cloud.ibm.com
 ### Coupled backups (legacy)
 {: #coupled-backup-removal}
 
-Coupled backups from before the independent backups migration are automatically deleted when the database instance is deleted. These backups cannot be manually deleted.
+Coupled backups are automatically deleted when the database instance is deleted. These backups cannot be manually deleted.
 
 For more information about backup types, see [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
