@@ -97,7 +97,7 @@ ibmcloud resource service-instance-delete <BACKUP_CRN> --force
 ```
 {: pre}
 
-You can view all independent backups in the [Database Hub](https://cloud.ibm.com/databases/hub) under the "independent backups" tab to identify backups whose source instance has been deleted.
+You can view all independent backups in the [Database Hub](https://cloud.ibm.com/databases/hub) under the **Independent backups** tab to identify backups whose source instance has been deleted.
 
 ### Coupled backups (legacy)
 {: #coupled-backup-removal}
