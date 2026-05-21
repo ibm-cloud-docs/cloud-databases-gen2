@@ -27,19 +27,19 @@ For a comprehensive overview of independent backups, see [Understanding independ
 
 You can access backups in multiple locations:
 
-- **Instance UI**: Go to your database instance's Dashboard and see the *Backups and restore* tab
-- **Database Hub**: View all backups across your account in a centralized location
-- **Resource List**: independent backups appear as separate service instances
+- **Instance UI**: Go to your database instance's Dashboard and see the **Backups and restore** tab.
+- **Database Hub**: View all backups across your account in a centralized location.
+- **Resource List**: independent backups appear as separate service instances.
 
-Gen 2 {{site.data.keyword.databases-for}} backups can only be restored within the same region where they were created, unless you create a cross-region copy (available Q2 2026).
+Gen 2 {{site.data.keyword.databases-for}} backups can only be restored within the same region where they were created, unless you create a cross-region copy.
 {: .note}
 
-## Independent backups vs coupled backups
+## Independent backups versus coupled backups
 {: #independent-vs-coupled}
 
-{{site.data.keyword.databases-for}} is transitioning from coupled backups to independent backups. Key differences:
+{{site.data.keyword.databases-for}} is transitioning from coupled backups to independent backups.
 
-| Feature | Coupled backups (Legacy) | Independent backups |
+| Feature | Coupled backups | Independent backups |
 |---------|-------------------------|---------------------|
 | Lifecycle | Deleted with instance | Persist after instance deletion |
 | Management | Database APIs | Resource Controller |
@@ -292,7 +292,7 @@ curl -X POST \
 ## Cross-region backup copies
 {: #cross-region-copies}
 
-Starting in Q2 2026, you can create copies of independent backups in different {{site.data.keyword.cloud_notm}} regions for enhanced disaster recovery.
+You can create copies of independent backups in different {{site.data.keyword.cloud_notm}} regions for enhanced disaster recovery.
 
 ### Creating a cross-region copy using CLI
 {: #create-cross-region-copy-cli}
@@ -361,7 +361,7 @@ By default, restoring from a backup provisions an instance with the preferred ve
 ## Backup locations
 {: #backup-locations}
 
-By default, independent backups are stored in the same region as the source database instance. Starting in Q2 2026, you can create cross-region copies of backups for enhanced disaster recovery. For more information, see [Cross-region backup copies](#cross-region-copies).
+By default, independent backups are stored in the same region as the source database instance. You can create cross-region copies of backups for enhanced disaster recovery. For more information, see [Cross-region backup copies](#cross-region-copies).
 
 ## Business continuity and disaster recovery
 {: #backup-locations}
