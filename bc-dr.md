@@ -52,12 +52,11 @@ For more information about service availability within regions and data centers,
 ## Backup storage regions
 {: #bc-dr-single-region-backups}
 
-
 With independent backups, you have additional disaster recovery options:
 
-- **Cross-region backup copies**: Starting in Q2 2026, you can create copies of backups in different regions for enhanced disaster recovery
-- **Persistent backups**: Independent backups persist after instance deletion, ensuring data availability even if the source instance is lost
-- **Centralized management**: View all backups across your account in the Database Hub
+- **Cross-region backup copies**: You can create copies of backups in different regions for enhanced disaster recovery.
+- **Persistent backups**: Independent backups persist after instance deletion, ensuring data availability even if the source instance is lost.
+- **Centralized management**: View all backups across your account in the Database Hub.
 
 For more information, see [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
 The purpose of the {{site.data.keyword.databases-for}} regional Disaster Recovery (DR) policy is to make {{site.data.keyword.cos_full}} backups available from the downed region available for you to restore.
