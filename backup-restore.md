@@ -33,7 +33,7 @@ Gen 2 instances cannot be used to restore a Gen 1 instance because the volume sn
 | Recovery Time Objective (RTO) | Slower RTO. Restoring access to the data scales almost linearly as data volume grows and that can take hours for large databases. | Fast RTO: Restoring access to data takes only minutes and is independent of data volume. However, I/O performance may temporarily degrade during the restore process, with the impact scaling based on data size. |
 | Recovery Point Objective (RPO) | Scheduled at fixed intervals creating potential data loss windows. | Can be taken frequently with minimal performance impact. |
 | Point-in-time recovery (PITR)| Yes | Future release. |
-| Cross-region restore | Supported| Supported via cross-region backup copies (Q2 2026). Independent backups can be copied to other regions and restored there. |
+| Cross-region restore | Supported| Supported via cross-region backup copies. Independent backups can be copied to other regions and restored there. |
 {: caption="Key feature differences between Gen 1 and Gen 2" caption-side="bottom"}
 
 ## Independent backups features
@@ -46,7 +46,7 @@ Gen 2 introduces independent backups, which provide additional capabilities beyo
 | Lifecycle | Coupled to instance | Coupled to instance | Independent of instance |
 | Account Level Views | Not supported | Not supported | Database Hub with centralized view |
 | Backup Deletion | Automatic only | Automatic only | Manual and automatic |
-| Cross-region Copies | Supported | Not supported | Supported (Q2 2026) |
+| Cross-region Copies | Supported | Not supported | Supported |
 | Backup Locality | Fixed | Region-locked | Can be copied to other regions |
 | Persistence | Deleted with instance | Deleted with instance | Persists after instance deletion |
 | Management | Database APIs | Database APIs | Resource Controller |
@@ -57,7 +57,7 @@ For more information about independent backups, see [Understanding independent b
 ## Cross-region copies
 {: #cross-region-copies}
 
-Starting in Q2 2026, independent backups support cross-region copies, allowing you to replicate backups to another region for redundancy or compliance. When you copy a backup, {{site.data.keyword.databases-for}} charges for the full size of the backup in the destination region. Each copy is billed as a separate backup instance.
+Independent backups support cross-region copies, allowing you to replicate backups to another region for redundancy or compliance. When you copy a backup, {{site.data.keyword.databases-for}} charges for the full size of the backup in the destination region. Each copy is billed as a separate backup instance.
 
 The size of a backup in each region depends on its snapshot lineage and the number of predecessor snapshots present in that region. As a result, the same backup can have different sizes across regions, affecting both storage usage and cost.
 
