@@ -88,10 +88,10 @@ By default, all Gen 2 {{site.data.keyword.databases-for}} provides a daily backu
 
 Independent backups are billed as separate service instances:
 
-- Each backup instance appears as a separate line item in your billing statement
-- Free allocation applies per database deployment (not per backup)
-- Cross-region backup copies are billed separately in each region
-- Manual deletion of backups stops billing immediately
+- Each backup instance appears as a separate line item in your billing statement.
+- Free allocation applies per database deployment (not per backup).
+- Cross-region backup copies are billed separately in each region.
+- Manual deletion of backups stops billing immediately.
 
 For more information about independent backups, see [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
 
@@ -136,10 +136,10 @@ This models the worst case scenario where the full snapshot is equal to the file
 
 When you create a cross-region copy of an independent backup:
 
-- The copy is billed as a separate backup instance in the target region
-- You are charged for the full size of the backup in the destination region
-- Each region's backup size may differ based on snapshot lineage
-- Free allocation applies separately in each region based on the database deployment size
+- The copy is billed as a separate backup instance in the target region.
+- You are charged for the full size of the backup in the destination region.
+- Each region's backup size may differ based on snapshot lineage.
+- Free allocation applies separately in each region based on the database deployment size.
 
 Example: If you have a 100 GB backup in `us-east` and copy it to `eu-gb`, you are billed for backup storage in both regions, with each region's free allocation calculated based on the database deployment size in that region.
 - With large deployments and frequent writes, you’re more likely to exceed the free tier after the first snapshot.
