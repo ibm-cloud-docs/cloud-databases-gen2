@@ -127,9 +127,9 @@ Independent backups can be restored even if the source database instance has bee
 
 The Database Hub provides a centralized view of all backups across your account:
 
-1. Navigate to the [Database Hub](https://cloud.ibm.com/databases/hub)
-2. Select the **Backups** tab to view backups whose source database still exists
-3. Select the **independent backups** tab to view backups whose source database has been deleted
+1. Navigate to the [Database Hub](https://cloud.ibm.com/databases/hub).
+2. Select the **Backups** tab to view backups whose source database still exists.
+3. Select the **Independent backups** tab to view backups whose source database has been deleted.
 
 This separation helps you identify orphaned backups that may need cleanup or long-term retention.
 
@@ -139,9 +139,9 @@ This separation helps you identify orphaned backups that may need cleanup or lon
 
 Independent backups appear as separate service instances in your {{site.data.keyword.cloud_notm}} Resource List:
 
-1. Navigate to your [Resource List](https://cloud.ibm.com/resources)
-2. Filter by service type to show backup instances
-3. Click on a backup instance to view details and manage its lifecycle
+1. Navigate to your [Resource List](https://cloud.ibm.com/resources).
+2. Filter by service type to show backup instances.
+3. Click on a backup instance to view details and manage its lifecycle.
 
 ## Backups in the instance UI
 {: #backup-ui}
@@ -166,7 +166,6 @@ Instances come with backup storage equal to their total disk space at no cost. I
 {: .tip}
 
 To create a manual backup in the UI, go to the _Backups and restore_ tab of your instance then click **Create backup**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
-
 
 ## Restoring a backup
 {: #restore-backup}
