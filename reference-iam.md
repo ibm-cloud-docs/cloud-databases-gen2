@@ -273,7 +273,6 @@ POST /v5/ibm/deployments/:deployment_id/elasticsearch/file_syncs
 Create elasticsearch file sync
 ```
 
-
 ## Independent backups IAM permissions
 {: #independent-backups-iam}
 
@@ -292,7 +291,7 @@ Independent backups require Resource Controller permissions in addition to datab
 
 Independent backups require a service-to-service (S2S) authorization between:
 
-- Source: Database service (e.g., `databases-for-postgresql`)
+- Source: Database service (for example, `databases-for-postgresql`)
 - Target: Resource group service
 - Role: Viewer
 
