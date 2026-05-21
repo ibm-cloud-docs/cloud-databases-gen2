@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-21"
 
 keywords: activity tracker
 
@@ -78,7 +78,7 @@ You need an [{{site.data.keyword.logs_full}}](https://cloud.ibm.com/observabilit
 
 
 
-Create an {{site.data.keyword.logs_full_notm}} instance and configure {{site.data.keyword.atracker_full_notm}} by setting the routing rule between the {{site.data.keyword.databases-for}} instance and the {{site.data.keyword.logs_full_notm}} target instance. 
+Create an {{site.data.keyword.logs_full_notm}} instance and configure {{site.data.keyword.atracker_full_notm}} by setting the routing rule between the {{site.data.keyword.databases-for}} instance and the {{site.data.keyword.logs_full_notm}} target instance.
 
 ## Viewing activity tracking events for {{site.data.keyword.databases-for}}
 {: #at-viewing}
@@ -112,6 +112,10 @@ The following table lists the activity tracking event actions that {{site.data.k
 | ------- | ------- | ------- |
 | `<service_name>.deployment-backup.create` | `<service_id>.backup-ondemand.create` | A backup of your instance was created. The message contains the database version along with size, id, status and type of the backup. |
 | `<service_name>.deployment-backup.delete` | `<service_id>.backup-ondemand.delete` | A backup of your instance was deleted. The message contains the type of the database. |
+| `<service_name>.independent-backup.create` | `<service_id>.independent-backup.create` | An independent backup was provisioned. The message contains the backup CRN and source database CRN. |
+| `<service_name>.independent-backup.delete` | `<service_id>.independent-backup.delete` | An independent backup was deleted. The message contains the backup CRN. |
+| `<service_name>.backup-copy.create` | `<service_id>.backup-copy.create` | A cross-region backup copy was created. The message contains source and target backup CRNs. |
+| `<service_name>.backup-copy.delete` | `<service_id>.backup-copy.delete` | A cross-region backup copy was deleted. The message contains the backup copy CRN. |
 | `<service_name>.restore.hydrate` | `<service_id>.restore-ondemand.hydrate` | A restore of a backup to a new service instance was created. The message contains the status of the hydration of the restored instance. |
 {: caption="List of events and event descriptions by {{site.data.keyword.databases-for}}" caption-side="bottom"}
 

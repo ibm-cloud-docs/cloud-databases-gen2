@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-21"
 
 subcollection: cloud-databases-gen2
 
@@ -19,7 +19,7 @@ keywords: bring your own key, byok, cryptoshredding, key rotation, key rotation 
 
 The data that you store in {{site.data.keyword.databases-for}} is encrypted by default by using randomly generated keys. To control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-integrate-services) and use one of your own keys to encrypt your databases and backups.
 
-This document covers the integration of {{site.data.keyword.keymanagementserviceshort}} with Gen 2 {{site.data.keyword.databases-for}}, which includes {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}. 
+This document covers the integration of {{site.data.keyword.keymanagementserviceshort}} with Gen 2 {{site.data.keyword.databases-for}}, which includes {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}.
 {: .note}
 
 To get started, provision [{{site.data.keyword.keymanagementserviceshort}}](https://cloud.ibm.com/catalog/services/key-protect) on your {{site.data.keyword.cloud_notm}} account.
@@ -45,7 +45,7 @@ Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.da
 8. Select or retain the default value **Account** as the resource group for the **Target Service**
 9. In the Target service **Instance ID** menu, select the service instances to authorize.
 10. Enable the **Reader** role.
-11. To use "Bring your own key" (BYOK), Select the **Enable authorizations to be delegated** box in the **Authorize dependent services** section.  
+11. To use "Bring your own key" (BYOK), Select the **Enable authorizations to be delegated** box in the **Authorize dependent services** section.
 12. Click **Authorize**.
 
 If the service authorization is not present before provisioning your deployment with a key, the provision fails.
@@ -202,12 +202,37 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 ## Bring your own key for backups
 {: #key-byok}
 
-If you use {{site.data.keyword.keymanagementserviceshort}}, when you provision a database you can also designate a key to encrypt the {{site.data.keyword.block_storage_is_full}} disk that holds your deployment's backups. 
+If you use {{site.data.keyword.keymanagementserviceshort}}, when you provision a database you can also designate a key to encrypt the {{site.data.keyword.block_storage_is_full}} disk that holds your deployment's backups.
 
-BYOK for backups is available only in select regions. 
+BYOK for backups is available only in select regions.
 {: .note}
 
 Only keys in the select regions are durable to region failures. To ensure that your backups are available even if a region failure occurs, you must use a key from these select regions, regardless of your deployment's location.
+
+## Encryption for cross-region backup copies
+{: #cross-region-encryption}
+
+When creating cross-region copies of independent backups, you can specify a different encryption key for the target region:
+
+```sh
+ibmcloud resource service-instance-create \
+  <BACKUP_COPY_NAME> \
+  <BACKUP_SERVICE_NAME> \
+  <BACKUP_SERVICE_PLAN_NAME> \
+  <TARGET_REGION> \
+  -g <RESOURCE_GROUP> \
+  -p '{
+    "dataservices": {
+      "source_backup_crn": "<SOURCE_BACKUP_CRN>",
+      "encryption": {
+        "disk": "<TARGET_REGION_KEY_PROTECT_KEY_CRN>"
+      }
+    }
+  }'
+```
+{: pre}
+
+This allows you to use region-specific encryption keys for compliance or security requirements.
 {: .important}
 
 ### Granting the delegation authorization

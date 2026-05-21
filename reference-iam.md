@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-21"
 
 subcollection: cloud-databases-gen2
 
@@ -16,7 +16,7 @@ subcollection: cloud-databases-gen2
 [Gen 2]{: tag-purple}
 
 
-Management access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-cloudaccess). 
+Management access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-cloudaccess).
 
 This document covers the integration of IAM with Cloud Databases: {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}.
 {: .note}
@@ -29,7 +29,7 @@ Gen 2 {{site.data.keyword.databases-for}} use service credentials for access man
 
 - Instance/deployment passwords no longer exist and all credentials surfaced are {{site.data.keyword.cloud}} service credentials, which can have different roles (for example, Admin, Writer, Reader).
 - You can create new service credentials through the platform, but updating an existing password is not supported.
-- For database-level user management, you are advised to create and manage users directly within the database using your preferred method. 
+- For database-level user management, you are advised to create and manage users directly within the database using your preferred method.
 
 The following table provides a general overview of actions that are mapped to platform. Service management roles enable you to perform tasks on service resources at the service level. For example, assign user access for the service, create or delete service IDs, create instances, and bind instances to applications.
 
@@ -44,11 +44,11 @@ The following table provides a general overview of actions that are mapped to pl
 ## Actions for {{site.data.keyword.databases-for}} API
 {: #actions}
 
-IAM access for Gen 2 {{site.data.keyword.databases-for}} is no longer managed through the {{site.data.keyword.databases-for}} API or CLI plug in; it is now handled via IBM Cloud Resource Controller. 
+IAM access for Gen 2 {{site.data.keyword.databases-for}} is no longer managed through the {{site.data.keyword.databases-for}} API or CLI plug in; it is now handled via IBM Cloud Resource Controller.
 
-Access to certain API endpoints and requests is governed by role. The following lists the access policy for each role for {{site.data.keyword.databases-for}}. 
+Access to certain API endpoints and requests is governed by role. The following lists the access policy for each role for {{site.data.keyword.databases-for}}.
 
-### Viewer 
+### Viewer
 {: #viewer}
 
 The allowed actions for the Viewer role.
@@ -272,3 +272,28 @@ Bulk allowlist IP addresses
 POST /v5/ibm/deployments/:deployment_id/elasticsearch/file_syncs
 Create elasticsearch file sync
 ```
+
+
+## Independent backups IAM permissions
+{: #independent-backups-iam}
+
+Independent backups require Resource Controller permissions in addition to database-specific permissions:
+
+| Action | Required Role |
+|--------|--------------|
+| Create independent backup | Editor or Administrator on database service |
+| View independent backup | Viewer, Operator, Editor, or Administrator on backup service |
+| Delete independent backup | Editor or Administrator on backup service |
+| Restore from independent backup | Editor or Administrator on database service |
+{: caption="Independent backups IAM permissions" caption-side="bottom"}
+
+### Service-to-Service authorization
+{: #s2s-authorization-backups}
+
+Independent backups require a service-to-service (S2S) authorization between:
+
+- Source: Database service (e.g., `databases-for-postgresql`)
+- Target: Resource group service
+- Role: Viewer
+
+This authorization allows the database service to create backup instances in your resource group. For more information about setting up S2S authorizations, see [Using authorizations to grant access between services](/docs/account?topic=account-serviceauth).

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-21"
 
 keywords: gen 2, pricing
 
@@ -79,9 +79,21 @@ For pricing estimation, use the **Add to estimate** button on the provisioning p
 ## Backups pricing for Gen 2 instances
 {: #pricing-backup}
 
-Gen 2 {{site.data.keyword.databases-for}} uses a snapshot based backup model, with pricing aligned to the size of your provisioned database storage. Snapshots differ from traditional backups in that they are block-level incremental copies, therefore you are billed based on how much data has changed since the last snapshot that is currently maintained, not just the total size of your database.
+Gen 2 {{site.data.keyword.databases-for}} uses independent backups with a snapshot-based model. Pricing is aligned to the size of your provisioned database storage. Snapshots are block-level incremental copies, so you are billed based on how much data has changed since the last snapshot, not just the total size of your database.
 
-By default, all Gen 2 {{site.data.keyword.databases-for}} provides a daily backup that is stored for 30 days. These backups, and any on-demand backups you make, all count toward the above allocation.
+By default, all Gen 2 {{site.data.keyword.databases-for}} provides a daily backup that is stored for 30 days. These backups, and any on-demand backups you make, all count toward the free allocation.
+
+### Independent backups billing
+{: #independent-backups-billing}
+
+Independent backups are billed as separate service instances:
+
+- Each backup instance appears as a separate line item in your billing statement
+- Free allocation applies per database deployment (not per backup)
+- Cross-region backup copies are billed separately in each region
+- Manual deletion of backups stops billing immediately
+
+For more information about independent backups, see [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
 
 ## Backup storage
 {: #pricing-storage}
@@ -118,6 +130,18 @@ This models the worst case scenario where the full snapshot is equal to the file
 - Free allocation = 100 GB x 3 members = 300 GB.
 - Overage = 480 GB - 300 GB  = 180 GB.
 - Monthly charge = (480 GB - 300 GB) X $0.095 = $17.1.
+
+### Cross-region backup copy pricing
+{: #cross-region-copy-pricing}
+
+When you create a cross-region copy of an independent backup:
+
+- The copy is billed as a separate backup instance in the target region
+- You are charged for the full size of the backup in the destination region
+- Each region's backup size may differ based on snapshot lineage
+- Free allocation applies separately in each region based on the database deployment size
+
+Example: If you have a 100 GB backup in `us-east` and copy it to `eu-gb`, you are billed for backup storage in both regions, with each region's free allocation calculated based on the database deployment size in that region.
 - With large deployments and frequent writes, you’re more likely to exceed the free tier after the first snapshot.
 
 ## Scaling per member
