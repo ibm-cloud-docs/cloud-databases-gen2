@@ -447,6 +447,7 @@ How much memory is used as a percentage of total memory available
 | [PostgreSQL IO utilization in percent 60-minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_60m) |
 | [PostgreSQL IOPS read & write total count for an instance](#ibm_databases_for_postgresql_disk_iops_read_write_total) |
 | [PostgreSQL Maximum allowed memory for an instance](#ibm_databases_for_postgresql_memory_limit_bytes) |
+| [PostgreSQL Out-of-memory rate](#ibm_databases_for_postgresql_out_of_memory_rate) |
 | [PostgreSQL Read replica replication lag](#ibm_databases_for_postgresql_read_replica_replication_lag_bytes) |
 | [PostgreSQL Successful archive rate](#ibm_databases_for_postgresql_successful_archive_rate) |
 | [PostgreSQL Temporary files size in bytes](#ibm_databases_for_postgresql_temp_bytes_count) |
