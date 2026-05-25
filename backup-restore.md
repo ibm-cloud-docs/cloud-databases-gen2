@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-05-25"
 
 subcollection: cloud-databases-gen2
 
@@ -33,10 +33,17 @@ Gen 2 instances cannot be used to restore a Gen 1 instance because the volume sn
 | Recovery Time Objective (RTO) | Slower RTO. Restoring access to the data scales almost linearly as data volume grows and that can take hours for large databases. | Fast RTO: Restoring access to data takes only minutes and is independent of data volume. However, I/O performance may temporarily degrade during the restore process, with the impact scaling based on data size. |
 | Recovery Point Objective (RPO) | Scheduled at fixed intervals creating potential data loss windows. | Can be taken frequently with minimal performance impact. |
 | Point-in-time recovery (PITR)| Yes | Future release. |
-| Cross-region restore | Supported| Not supported as a built-in capability. Gen 2 instances can only be restored in regions they were created in, therefore the backup must be manually copied or automatically configured to copy to the target Gen 2 region or before any restore operation can be performed there. This is due to how backups are managed and stored at the infrastructure and storage-layer level, which is region specific. |
+| Cross-region restore | Supported| Supported via cross-region backup copies. |
 {: caption="Key feature differences between Gen 1 and Gen 2" caption-side="bottom"}
 
 
+
+## Cross-region copies
+{: #cross-region-copies}
+
+Independent backups support cross-region copies, allowing you to replicate backups to another region for redundancy or compliance. When you copy a backup, {{site.data.keyword.databases-for}} charges for the full size of the backup in the destination region. Each copy is billed as a separate backup instance.
+
+The size of a backup in each region depends on its snapshot lineage and the number of predecessor snapshots present in that region. As a result, the same backup can have different sizes across regions, affecting both storage usage and cost.
 
 ## Managing Gen 2 backups
 {: #managing-backups}

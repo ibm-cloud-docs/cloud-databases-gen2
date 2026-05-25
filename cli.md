@@ -1,8 +1,8 @@
 ---
- 
+
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-21"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
@@ -18,7 +18,7 @@ subcollection: cloud-databases-gen2
 [Gen 2]{: tag-purple}
 
 
-To interact with {{site.data.keyword.databases-for}} on Gen 2 via the CLI you must utilize the IBM Cloud Resource Controller's CLI. For more info please see [General {{site.data.keyword.cloud}} CLI (ibmcloud) commands](/docs/cli?topic=cli-ibmcloud_cli). 
+To interact with {{site.data.keyword.databases-for}} on Gen 2 via the CLI you must utilize the IBM Cloud Resource Controller's CLI. For more info please see [General {{site.data.keyword.cloud}} CLI (ibmcloud) commands](/docs/cli?topic=cli-ibmcloud_cli).
 
 The {{site.data.keyword.databases-for}} plugin supports only Gen 1 instances. For Gen 2 instances, use the Resource Controller CLI.
 {: note}
@@ -26,7 +26,7 @@ The {{site.data.keyword.databases-for}} plugin supports only Gen 1 instances. Fo
 ## Getting started - Create an instance
 {: #ibmcloud-cdb-help-create}
 
-You can create an instance by using the following command: 
+You can create an instance by using the following command:
 
 ```sh
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> -g <RESOURCE_GROUP>
@@ -99,7 +99,7 @@ ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVIC
 ## Getting information about your instance
 {: #ibmcloud-cdb-getting-info}
 
-You can get instance information using the following command: 
+You can get instance information using the following command:
 
 ```sh
 ibmcloud resource service-instance <INSTANCE_NAME> -o JSON

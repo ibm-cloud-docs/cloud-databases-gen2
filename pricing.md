@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2026
-lastupdated: "2026-02-25"
+  years: 2025, 2026
+lastupdated: "2026-05-25"
 
 keywords: gen 2, pricing
 
@@ -33,30 +33,14 @@ The charge for an {{site.data.keyword.databases-for}} instance is determined by 
 
 Each database instance consists of two or three members, depending on the database type, with each member holding a copy of the data to provide resiliency and high availability. {{site.data.keyword.databases-for}} instances are only available with [Isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui) hosting. Isolated compute offers a choice of standard vCPU x RAM resource profiles that are hosted on single-tenant compute instances for maximum workload isolation and security. Disk storage capacity per member is specified independently of the vCPU x RAM profile selected. Gen 2 deployments depend on regional availability, for more information, see [Isolated Compute sizing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui#isolated-compute-sizing-ui).
 
-| Host size | vCPU x RAM | Best for |
-| --- | --- | --- |
-| 4x20 | 4 vCPU x 20 GB RAM | Getting started |
-| 8x40 | 8 vCPU x 40 GB RAM | |
-| 8x80 | 8 vCPU x 80 GB RAM | Memory intensive usage |
-| 16x80 | 16 vCPU x 80 GB RAM | |
-| 32x160 | 32 vCPU x 160 GB RAM | |
-| 48x240 | 48 vCPU x 240 GB RAM | Memory intensive usage |
-{: caption="Isolated compute UI selections - exact configurations vary by region " caption-side="bottom"}
 
-The total cost of your {{site.data.keyword.databases-for}} deployment will consist of the the cost of each vCPU x RAM profile, disk storage in GB and backup storage (for all members), prorated hourly.
-{: note}
 
 ## Using the pricing calculator
 {: #pricing-calc}
 
 For pricing estimation, use the **Add to estimate** button on the provisioning page of each service. Input your total consumption across each data members into the calculator. This is equal to the number of members because your data is replicated to all members. For example, a 2-member {{site.data.keyword.databases-for}} deployment with 5 GB of disk on a 4 vCPU x 20 GB RAM profile would have a total bill for 10 GB of disk and the total cost of 2 members.
 
-## Backups pricing for Gen 2 instances
-{: #pricing-backup}
 
-Gen 2 {{site.data.keyword.databases-for}} uses a snapshot based backup model, with pricing aligned to the size of your provisioned database storage. Snapshots differ from traditional backups in that they are block-level incremental copies, therefore you are billed based on how much data has changed since the last snapshot that is currently maintained, not just the total size of your database.
-
-By default, all Gen 2 {{site.data.keyword.databases-for}} provides a daily backup that is stored for 30 days. These backups, and any on-demand backups you make, all count toward the above allocation.
 
 ## Backup storage
 {: #pricing-storage}
@@ -93,6 +77,18 @@ This models the worst case scenario where the full snapshot is equal to the file
 - Free allocation = 100 GB x 3 members = 300 GB.
 - Overage = 480 GB - 300 GB  = 180 GB.
 - Monthly charge = (480 GB - 300 GB) X $0.095 = $17.1.
+
+### Cross-region backup copy pricing
+{: #cross-region-copy-pricing}
+
+When you create a cross-region copy of an independent backup:
+
+- The copy is billed as a separate backup instance in the target region.
+- You are charged for the full size of the backup in the destination region.
+- Each region's backup size may differ based on snapshot lineage.
+- Free allocation applies separately in each region based on the database deployment size.
+
+Example: If you have a 100 GB backup in `us-east` and copy it to `eu-gb`, you are billed for backup storage in both regions, with each region's free allocation calculated based on the database deployment size in that region.
 - With large deployments and frequent writes, you’re more likely to exceed the free tier after the first snapshot.
 
 ## Scaling per member

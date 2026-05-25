@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-25"
 
 subcollection: cloud-databases-gen2
 
@@ -18,32 +18,29 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 [Gen 2]{: tag-purple}
 
 
-An automatically scheduled backup is taken of your database every day. You can also trigger on-demand backups at any time. Backups are encrypted either with an automatic key or your own key if you use Bring Your Own Key (BYOK).  If BYOK is set up for a Gen 2 {{site.data.keyword.databases-for}} instance, the backups will be created using the key. You can restore a backup to a new instance of {{site.data.keyword.databases-for}}.
 
-To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups and restore* tab.
+## Accessing your backups
+{: #accessing-backups}
 
-Gen 2 {{site.data.keyword.databases-for}} backups can only be restored within the same region where they were created.
+You can access backups in multiple locations:
+
+- **Instance UI**: Go to your database instance's Dashboard and see the **Backups and restore** tab.
+- **Database Hub**: View all backups across your account in a centralized location.
+- **Resource List**: independent backups appear as separate service instances.
+
+Gen 2 {{site.data.keyword.databases-for}} backups can only be restored within the same region where they were created, unless you create a cross-region copy.
 {: .note}
 
-Here is some additional general information about backups:
 
-- Automatic backups are performed daily and kept with a simple retention schedule of 30 days.
-- Backups cannot be deleted.
-- If you delete your instance, its backups are deleted automatically.
+
+Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
+{: important}
 - Daily backup scheduling is not configurable.
 - Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
 
-## Backups in the UI
-{: #backup-ui}
-{: ui}
 
-In the UI, navigate to the *Backups and restore* tab where you see a table with all available backups for your database.
-
-The backup types can be either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken.
-
-Click the backup to reveal information for that specific backup, including its full ID. A **Restore** button or a pre-formatted CLI command is there for restore options.
 
 ### Taking an on-demand backup in the UI
 {: #ondemand-backup-ui}
@@ -55,7 +52,6 @@ Instances come with backup storage equal to their total disk space at no cost. I
 {: .tip}
 
 To create a manual backup in the UI, go to the _Backups and restore_ tab of your instance then click **Create backup**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
-
 
 ## Restoring a backup
 {: #restore-backup}
@@ -83,6 +79,9 @@ To restore a backup to a new service instance,
 ### Restoring a backup in the CLI
 {: #restore-backup-cli}
 {: cli}
+
+
+
 The Resource Controller supports provisioning of database instances, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command.
 
 ```sh
@@ -149,6 +148,8 @@ curl -X POST \
 ```
 {: .pre}
 
+
+
 The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `restore_backup_id` is the backup that you want to restore.
 {: important}
 
@@ -172,25 +173,19 @@ curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
   -H 'Authorization: Bearer <>' \
   -H 'Content-Type: application/json' \
-    -d '{
-    "name": "<INSTANCE_NAME>",
-    "target": "<REGION>",
-    "resource_group": "<YOUR-RESOURCE-GROUP>",
-    "resource_plan_id": "<SERVICE-ID>",
-    "parameters":{
-      "restore_backup_id": "<BACKUP_ID>",
-      "host_flavor": "<host_flavor_value>",
-      "version": "<VERSION_NUMBER>"
-    }
-  }'
 ```
-{: .pre}
+
+
+
+
 
 The `host_flavor` value must be an appropriate-sized isolated compute host. For more information, see [the list of available values](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui)).
 {: note}
 
 By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding a `version` value in the parameters object.
 {: note}
+
+
 
 
 ## Backups and restoration
@@ -200,10 +195,7 @@ By default, restoring from a backup provisions an instance with the preferred ve
 * Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups are successful by using the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent-scheduled backup details from the [{{site.data.keyword.databases-for}} Resource Controller CLI](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference) and the [{{site.data.keyword.databases-for}} Resource Controller API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api).
 * As a managed service, {{site.data.keyword.databases-for}} monitors the state of your backups and can attempt to remediate when possible. If you encounter issues from which you cannot recover, contact support for more help.
 
-## Backup locations
-{: #backup-locations}
 
-Gen 2 backups are only in the region of the instance.
 
 ## Business continuity and disaster recovery
 {: #backup-locations}

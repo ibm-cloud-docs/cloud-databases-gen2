@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-18"
 
 subcollection: cloud-databases-gen2
 
@@ -43,6 +43,8 @@ Even if not explicitly allowlisted, {{site.data.keyword.cloud_notm}} management 
 {: #set-allowlist-ui}
 {: ui}
 
+
+
 The UI for managing allowlists is on the _Settings_ tab of your _Deployment Overview_.
 
 #### IP addresses
@@ -57,6 +59,8 @@ IPv6 is not currently supported.
 {: #set-allowlist-desc}
 
 The _Description_ can be any user-significant text for identifying the allowlist entry - a customer name, project identifier, or employee number, for example. The description field is required.
+
+
 
 ### Setting an allowlist through the CLI
 {: #set-allowlist-cli}
@@ -92,6 +96,8 @@ For more information, see the [{{site.data.keyword.databases-for}} CLI plug-in r
 ### Setting an allowlist through the API
 {: #set-allowlist-api}
 {: api}
+
+
 
 Manage your allowlist with the {{site.data.keyword.databases-for}} API [Authorization endpoint](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api){: external}. Retrieve the current allowlist, add entries to the allowlist, and also bulk upload IP addresses to the allowlist from the API with this endpoint.
 

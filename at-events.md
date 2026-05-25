@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-25"
 
 keywords: activity tracker
 
@@ -78,7 +78,7 @@ You need an [{{site.data.keyword.logs_full}}](https://cloud.ibm.com/observabilit
 
 
 
-Create an {{site.data.keyword.logs_full_notm}} instance and configure {{site.data.keyword.atracker_full_notm}} by setting the routing rule between the {{site.data.keyword.databases-for}} instance and the {{site.data.keyword.logs_full_notm}} target instance. 
+Create an {{site.data.keyword.logs_full_notm}} instance and configure {{site.data.keyword.atracker_full_notm}} by setting the routing rule between the {{site.data.keyword.databases-for}} instance and the {{site.data.keyword.logs_full_notm}} target instance.
 
 ## Viewing activity tracking events for {{site.data.keyword.databases-for}}
 {: #at-viewing}

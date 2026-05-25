@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-18"
 
 subcollection: cloud-databases-gen2
 
@@ -15,6 +15,8 @@ keywords: migrating cloud-databases, data center cloud-databases
 {: #migrate-data-center}
 
 [Gen 2]{: tag-purple}
+
+Migrating resources to a different data center
 
 
 {{site.data.keyword.cloud}}'s investments in data center infrastructure include rolling out newer data centers and multizone regions (MZRs) and closing older data centers that are unsuitable for upgrading.

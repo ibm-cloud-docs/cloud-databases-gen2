@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-25"
 
 subcollection: cloud-databases-gen2
 
@@ -49,8 +49,6 @@ keywords: DR for cloud-databases, high availability for cloud-databases, disaste
 
 For more information about service availability within regions and data centers, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).
 
-## Backup storage regions
-{: #bc-dr-single-region-backups}
 
 The purpose of the {{site.data.keyword.databases-for}} regional Disaster Recovery (DR) policy is to make {{site.data.keyword.cos_full}} backups available from the downed region available for you to restore.
 
