@@ -38,12 +38,7 @@ Gen 2 instances cannot be used to restore a Gen 1 instance because the volume sn
 
 
 
-## Cross-region copies
-{: #cross-region-copies}
 
-Independent backups support cross-region copies, allowing you to replicate backups to another region for redundancy or compliance. When you copy a backup, {{site.data.keyword.databases-for}} charges for the full size of the backup in the destination region. Each copy is billed as a separate backup instance.
-
-The size of a backup in each region depends on its snapshot lineage and the number of predecessor snapshots present in that region. As a result, the same backup can have different sizes across regions, affecting both storage usage and cost.
 
 ## Managing Gen 2 backups
 {: #managing-backups}
