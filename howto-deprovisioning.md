@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-05-25"
 
 subcollection: cloud-databases-gen2
 
@@ -86,22 +86,3 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 {: #backup-remove}
 
 The behavior of backup deletion depends on the backup type:
-
-### Independent backups
-{: #independent-backup-removal}
-
-Independent backups persist after the database instance is deleted and must be deleted separately if desired. To manually delete an independent backup:
-
-```sh
-ibmcloud resource service-instance-delete <BACKUP_CRN> --force
-```
-{: pre}
-
-You can view all independent backups in the [Database Hub](https://cloud.ibm.com/databases/hub) under the **Independent backups** tab to identify backups whose source instance has been deleted.
-
-### Coupled backups (legacy)
-{: #coupled-backup-removal}
-
-Coupled backups are automatically deleted when the database instance is deleted. These backups cannot be manually deleted.
-
-For more information about backup types, see [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).

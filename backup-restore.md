@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-05-25"
 
 subcollection: cloud-databases-gen2
 
@@ -33,26 +33,10 @@ Gen 2 instances cannot be used to restore a Gen 1 instance because the volume sn
 | Recovery Time Objective (RTO) | Slower RTO. Restoring access to the data scales almost linearly as data volume grows and that can take hours for large databases. | Fast RTO: Restoring access to data takes only minutes and is independent of data volume. However, I/O performance may temporarily degrade during the restore process, with the impact scaling based on data size. |
 | Recovery Point Objective (RPO) | Scheduled at fixed intervals creating potential data loss windows. | Can be taken frequently with minimal performance impact. |
 | Point-in-time recovery (PITR)| Yes | Future release. |
-| Cross-region restore | Supported| Supported via cross-region backup copies. Independent backups can be copied to other regions and restored there. |
+| Cross-region restore | Supported| Supported via cross-region backup copies. |
 {: caption="Key feature differences between Gen 1 and Gen 2" caption-side="bottom"}
 
-## Independent backups features
-{: #independent-backups-features}
 
-Gen 2 introduces independent backups, which provide additional capabilities beyond traditional coupled backups:
-
-| Feature | Gen 1 | Gen 2 (Coupled) | Gen 2 (Independent) |
-|---------|-------|-----------------|---------------------|
-| Lifecycle | Coupled to instance | Coupled to instance | Independent of instance |
-| Account Level Views | Not supported | Not supported | Database Hub with centralized view |
-| Backup Deletion | Automatic only | Automatic only | Manual and automatic |
-| Cross-region Copies | Supported | Not supported | Supported |
-| Backup Locality | Fixed | Region-locked | Can be copied to other regions |
-| Persistence | Deleted with instance | Deleted with instance | Persists after instance deletion |
-| Management | Database APIs | Database APIs | Resource Controller |
-{: caption="Independent backups feature comparison" caption-side="bottom"}
-
-For more information about independent backups, see [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
 
 ## Cross-region copies
 {: #cross-region-copies}

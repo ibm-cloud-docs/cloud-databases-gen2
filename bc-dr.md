@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-05-25"
 
 subcollection: cloud-databases-gen2
 
@@ -49,16 +49,7 @@ keywords: DR for cloud-databases, high availability for cloud-databases, disaste
 
 For more information about service availability within regions and data centers, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).
 
-## Backup storage regions
-{: #bc-dr-single-region-backups}
 
-With independent backups, you have additional disaster recovery options:
-
-- **Cross-region backup copies**: You can create copies of backups in different regions for enhanced disaster recovery.
-- **Persistent backups**: Independent backups persist after instance deletion, ensuring data availability even if the source instance is lost.
-- **Centralized management**: View all backups across your account in the Database Hub.
-
-For more information, see [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
 The purpose of the {{site.data.keyword.databases-for}} regional Disaster Recovery (DR) policy is to make {{site.data.keyword.cos_full}} backups available from the downed region available for you to restore.
 
 | **Region** |                **Backup storage region**               | Cross-region support |
