@@ -78,18 +78,7 @@ This models the worst case scenario where the full snapshot is equal to the file
 - Overage = 480 GB - 300 GB  = 180 GB.
 - Monthly charge = (480 GB - 300 GB) X $0.095 = $17.1.
 
-### Cross-region backup copy pricing
-{: #cross-region-copy-pricing}
 
-When you create a cross-region copy of an independent backup:
-
-- The copy is billed as a separate backup instance in the target region.
-- You are charged for the full size of the backup in the destination region.
-- Each region's backup size may differ based on snapshot lineage.
-- Free allocation applies separately in each region based on the database deployment size.
-
-Example: If you have a 100 GB backup in `us-east` and copy it to `eu-gb`, you are billed for backup storage in both regions, with each region's free allocation calculated based on the database deployment size in that region.
-- With large deployments and frequent writes, you’re more likely to exceed the free tier after the first snapshot.
 
 ## Scaling per member
 {: #scaling-member}

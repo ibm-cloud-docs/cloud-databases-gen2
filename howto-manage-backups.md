@@ -19,17 +19,7 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 
 
 
-## Accessing your backups
-{: #accessing-backups}
 
-You can access backups in multiple locations:
-
-- **Instance UI**: Go to your database instance's Dashboard and see the **Backups and restore** tab.
-- **Database Hub**: View all backups across your account in a centralized location.
-- **Resource List**: independent backups appear as separate service instances.
-
-Gen 2 {{site.data.keyword.databases-for}} backups can only be restored within the same region where they were created, unless you create a cross-region copy.
-{: .note}
 
 
 
