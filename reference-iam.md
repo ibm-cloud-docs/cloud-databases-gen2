@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-05-25"
 
 subcollection: cloud-databases-gen2
 
@@ -272,27 +272,3 @@ Bulk allowlist IP addresses
 POST /v5/ibm/deployments/:deployment_id/elasticsearch/file_syncs
 Create elasticsearch file sync
 ```
-
-## Independent backups IAM permissions
-{: #independent-backups-iam}
-
-Independent backups require Resource Controller permissions in addition to database-specific permissions:
-
-| Action | Required Role |
-|--------|--------------|
-| Create independent backup | Editor or Administrator on database service |
-| View independent backup | Viewer, Operator, Editor, or Administrator on backup service |
-| Delete independent backup | Editor or Administrator on backup service |
-| Restore from independent backup | Editor or Administrator on database service |
-{: caption="Independent backups IAM permissions" caption-side="bottom"}
-
-### Service-to-Service authorization
-{: #s2s-authorization-backups}
-
-Independent backups require a service-to-service (S2S) authorization between:
-
-- Source: Database service (for example, `databases-for-postgresql`)
-- Target: Resource group service
-- Role: Viewer
-
-This authorization allows the database service to create backup instances in your resource group. For more information about setting up S2S authorizations, see [Using authorizations to grant access between services](/docs/account?topic=account-serviceauth).

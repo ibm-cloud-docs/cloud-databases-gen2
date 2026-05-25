@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-05-25"
 
 subcollection: cloud-databases-gen2
 
@@ -209,31 +209,7 @@ BYOK for backups is available only in select regions.
 
 Only keys in the select regions are durable to region failures. To ensure that your backups are available even if a region failure occurs, you must use a key from these select regions, regardless of your deployment's location.
 
-## Encryption for cross-region backup copies
-{: #cross-region-encryption}
 
-When creating cross-region copies of independent backups, you can specify a different encryption key for the target region:
-
-```sh
-ibmcloud resource service-instance-create \
-  <BACKUP_COPY_NAME> \
-  <BACKUP_SERVICE_NAME> \
-  <BACKUP_SERVICE_PLAN_NAME> \
-  <TARGET_REGION> \
-  -g <RESOURCE_GROUP> \
-  -p '{
-    "dataservices": {
-      "source_backup_crn": "<SOURCE_BACKUP_CRN>",
-      "encryption": {
-        "disk": "<TARGET_REGION_KEY_PROTECT_KEY_CRN>"
-      }
-    }
-  }'
-```
-{: pre}
-
-This allows you to use region-specific encryption keys for compliance or security requirements.
-{: .important}
 
 ### Granting the delegation authorization
 {: #grant-auth}

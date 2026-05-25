@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-25"
 
 subcollection: cloud-databases-gen2
 
@@ -36,16 +36,7 @@ In the isolated compute model, CPU and RAM resources are fixed at the time of pr
 
 These management containers take up some overhead in your isolated compute instance, consuming a portion of the machine's CPU and RAM, with the remainder available for your database to use. A portion of the database capacity will be allocated to essential operations such as security, ensuring data integrity and protection.
 
-## Compute profile types
-{: #isolated-compute-profile-types}
 
-{{site.data.keyword.databases-for}} Gen 2 offers two types of compute profiles to match your workload requirements:
-
-- **Fixed profiles**: Predefined vCPU and RAM combinations optimized for common workload patterns. These profiles provide a simplified selection process with proven resource ratios, making them ideal for quick deployment and standardized configurations.
-
-- **Flex profiles**: Custom vCPU and RAM allocation that allows you to fine-tune your resource configuration. Flex profiles offer granular control over compute resources, enabling you to optimize performance and cost for your specific workload requirements.
-
-Both profile types run on single-tenant compute instances with hypervisor-level isolation. Storage is configured independently of the compute profile, allowing separate disk and IOPS customization.
 
 ## Compute sizing
 {: #isolated-compute-sizing}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-05-25"
 
 subcollection: cloud-databases-gen2
 
@@ -17,10 +17,7 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 
 [Gen 2]{: tag-purple}
 
-{{site.data.keyword.databases-for}} Gen 2 uses independent backups, which are separate service instances with their own lifecycle, independent from your database instance. An automatically scheduled backup is taken of your database every day, and you can also trigger on-demand backups at any time. Backups are encrypted either with an automatic key or your own key if you use Bring Your Own Key (BYOK). You can restore a backup to a new instance of {{site.data.keyword.databases-for}}.
 
-For a comprehensive overview of independent backups, see [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
-{: tip}
 
 ## Accessing your backups
 {: #accessing-backups}
@@ -34,82 +31,7 @@ You can access backups in multiple locations:
 Gen 2 {{site.data.keyword.databases-for}} backups can only be restored within the same region where they were created, unless you create a cross-region copy.
 {: .note}
 
-## Independent backups versus coupled backups
-{: #independent-vs-coupled}
 
-{{site.data.keyword.databases-for}} is transitioning from coupled backups to independent backups.
-
-| Feature | Coupled backups | Independent backups |
-|---------|-------------------------|---------------------|
-| Lifecycle | Deleted with instance | Persist after instance deletion |
-| Management | Database APIs | Resource Controller |
-| Deletion | Automatic only | Manual and automatic |
-| Visibility | Instance UI only | Database Hub, Resource List, Instance UI |
-{: caption="Backup type comparison" caption-side="bottom"}
-
-During the 30-day migration period, both backup types coexist. After 30 days, all coupled backups are automatically deleted.
-{: important}
-
-Here is some additional general information about independent backups:
-
-- Automatic backups are performed daily and kept with a simple retention schedule of 30 days.
-- Independent backups can be manually deleted before expiration.
-- If you delete your instance, independent backups persist and must be deleted separately if desired.
-
-### Creating an independent backup using CLI
-{: #create-independent-backup-cli}
-{: cli}
-
-To create an on-demand independent backup using the {{site.data.keyword.cloud_notm}} CLI:
-
-```sh
-ibmcloud resource service-instance-create \
-  <BACKUP_INSTANCE_NAME> \
-  <BACKUP_SERVICE_NAME> \
-  <BACKUP_SERVICE_PLAN_NAME> \
-  <REGION> \
-  -g <RESOURCE_GROUP> \
-  -p '{
-    "dataservices": {
-      "source_dataservice_crn": "<DATABASE_INSTANCE_CRN>"
-    }
-  }'
-```
-{: pre}
-
-Example:
-
-```sh
-ibmcloud resource service-instance-create \
-  my-postgres-backup-20260429 \
-  databases-for-postgresql-backup \
-  standard \
-  us-east \
-  -g Default \
-  -p '{
-    "dataservices": {
-      "source_dataservice_crn": "crn:v1:bluemix:public:databases-for-postgresql:us-east:a/1234567890:abcd-1234-efgh-5678::"
-    }
-  }'
-```
-{: pre}
-
-### Deleting an independent backup
-{: #delete-independent-backup}
-
-Unlike coupled backups, independent backups can be manually deleted before their expiration:
-
-```sh
-ibmcloud resource service-instance-delete <BACKUP_CRN> --force
-```
-{: pre}
-
-Example:
-
-```sh
-ibmcloud resource service-instance-delete e318275d-f860-4e4e-a63b-271fb4400c26 --force
-```
-{: pre}
 
 Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
 {: important}
@@ -118,43 +40,7 @@ Deleting a backup is permanent and cannot be undone. Ensure you no longer need t
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
 
-## Viewing backups in Database Hub
-{: #database-hub}
 
-Independent backups can be restored even if the source database instance has been deleted, providing greater flexibility for disaster recovery and data retention scenarios.
-{: tip}
-{: ui}
-
-The Database Hub provides a centralized view of all backups across your account:
-
-1. Navigate to the [Database Hub](https://cloud.ibm.com/databases/hub).
-2. Select the **Backups** tab to view backups whose source database still exists.
-3. Select the **Independent backups** tab to view backups whose source database has been deleted.
-
-This separation helps you identify orphaned backups that may need cleanup or long-term retention.
-
-## Viewing backups in Resource List
-{: #resource-list}
-{: ui}
-
-Independent backups appear as separate service instances in your {{site.data.keyword.cloud_notm}} Resource List:
-
-1. Navigate to your [Resource List](https://cloud.ibm.com/resources).
-2. Filter by service type to show backup instances.
-3. Click on a backup instance to view details and manage its lifecycle.
-
-## Backups in the instance UI
-{: #backup-ui}
-{: ui}
-
-In the UI, navigate to the *Backups and restore* tab where you see a table with all available backups for your database, including both coupled backups (during migration period) and independent backups.
-
-The backup types can be either _On-demand_ or _Automatic_. Each backup is listed with its type, when the backup was taken, and whether it's a coupled or independent backup.
-
-Click the backup to reveal information for that specific backup, including its full ID and CRN. A **Restore** button or a pre-formatted CLI command is there for restore options.
-
-During the 30-day migration period, you may see both coupled and independent backups in this view. Coupled backups will be automatically deleted after 30 days.
-{: note}
 
 ### Taking an on-demand backup in the UI
 {: #ondemand-backup-ui}
@@ -287,57 +173,9 @@ curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
   -H 'Authorization: Bearer <>' \
   -H 'Content-Type: application/json' \
-
-## Cross-region backup copies
-{: #cross-region-copies}
-
-You can create copies of independent backups in different {{site.data.keyword.cloud_notm}} regions for enhanced disaster recovery.
-
-### Creating a cross-region copy using CLI
-{: #create-cross-region-copy-cli}
-{: cli}
-
-To copy an independent backup to a different region:
-
-```sh
-ibmcloud resource service-instance-create \
-  <BACKUP_COPY_NAME> \
-  <BACKUP_SERVICE_NAME> \
-  <BACKUP_SERVICE_PLAN_NAME> \
-  <TARGET_REGION> \
-  -g <RESOURCE_GROUP> \
-  -p '{
-    "dataservices": {
-      "source_backup_crn": "<SOURCE_BACKUP_CRN>",
-      "encryption": {
-        "disk": "<KEY_PROTECT_KEY_CRN>"
-      }
-    }
-  }'
 ```
-{: pre}
 
-### Cross-region copy considerations
-{: #cross-region-considerations}
 
-- Copies can only be created in allowed Gen 2 regions
-- Each copy is billed as a separate backup instance
-- You can specify a different encryption key for the target region
-- Bulk copying is not supported
-- Automatic cross-region replication can be configured at the database instance level
-    -d '{
-    "name": "<INSTANCE_NAME>",
-    "target": "<REGION>",
-    "resource_group": "<YOUR-RESOURCE-GROUP>",
-    "resource_plan_id": "<SERVICE-ID>",
-    "parameters":{
-      "restore_backup_id": "<BACKUP_ID>",
-      "host_flavor": "<host_flavor_value>",
-      "version": "<VERSION_NUMBER>"
-    }
-  }'
-```
-{: .pre}
 
 
 
@@ -357,10 +195,7 @@ By default, restoring from a backup provisions an instance with the preferred ve
 * Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups are successful by using the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent-scheduled backup details from the [{{site.data.keyword.databases-for}} Resource Controller CLI](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference) and the [{{site.data.keyword.databases-for}} Resource Controller API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api).
 * As a managed service, {{site.data.keyword.databases-for}} monitors the state of your backups and can attempt to remediate when possible. If you encounter issues from which you cannot recover, contact support for more help.
 
-## Backup locations
-{: #backup-locations}
 
-By default, independent backups are stored in the same region as the source database instance. You can create cross-region copies of backups for enhanced disaster recovery. For more information, see [Cross-region backup copies](#cross-region-copies).
 
 ## Business continuity and disaster recovery
 {: #backup-locations}

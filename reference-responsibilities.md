@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-05-25"
 
 subcollection: cloud-databases-gen2
 
@@ -59,6 +59,6 @@ PITR is not currently available for Gen 2 {{site.data.keyword.databases-for}} in
 
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |
 |----------|-----------------------|--------|
-|Backups and restore| {{site.data.keyword.databases-for}} is responsible for automatic daily backups, as well as monitoring the state of client backups. {{site.data.keyword.databases-for}} provides independent backups that persist after instance deletion.| The Client is responsible for restoration, timeliness, validity of backups, and alerting of failed backups via [{{site.data.keyword.atracker_full}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events). The Client is also responsible for managing independent backup lifecycle, including manual deletion when backups are no longer needed. For more information, see [Managing Cloud Databases backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui) and [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).|
+|Backups and restore| {{site.data.keyword.databases-for}} is responsible for automatic daily backups, as well as monitoring the state of client backups. | The Client is responsible for restoration, timeliness, validity of backups, and alerting of failed backups via [{{site.data.keyword.atracker_full}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events). |
 |Read-only replicas (_{{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mysql}} ONLY_)| {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mysql}} are responsible for providing the capability of deploying read-only replicas across regions (except for replicating data into or outside of `eu-de`). | The Client is responsible for provisioning, configuring, monitoring, and promoting read-only replicas. |
 {: caption="Responsibilities for disaster recovery" caption-side="top"}
