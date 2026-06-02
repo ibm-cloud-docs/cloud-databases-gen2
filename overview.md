@@ -33,7 +33,7 @@ Gen 2 databases are built on {{site.data.keyword.cloud}}’s latest platform, ba
 
 | Category                     | Gen 1                                                            | Gen 2                                             |
 |-----------------------------|-------------------------------------------------------------------|---------------------------------------------------|
-| Regions                     | Multizone location (MZR) <br> Dallas (us-south) <br> Sao Paulo (br-sao) <br> Toronto (ca-tor) <br> Washington (us-east) <br> Frankfurt (eu-de) <br> London (eu-gb) <br> Madrid (eu-es) <br> Osaka (jp-osa) <br> Sydney (au-syd) <br> Tokyo (jp-tok) | Single-campus MZR (SC-MZR) <br> Montreal (ca-mon) <br> Chennai - Airtel (in-che) <br> Mumbai (in-mum) |
+| Regions                     | Multizone location (MZR) <br> Dallas (us-south) <br> Sao Paulo (br-sao) <br> Toronto (ca-tor) <br> Washington (us-east) <br> Frankfurt (eu-de) <br> London (eu-gb) <br> Madrid (eu-es) <br> Osaka (jp-osa) <br> Sydney (au-syd) <br> Tokyo (jp-tok) | Single-campus MZR (SC-MZR) <br> Montreal (ca-mon) <br> Chennai - Airtel (in-che) <br> Mumbai (in-mum) (PostgreSQL only) |
 | Database editions           | PostgreSQL <br> MongoDB (Standard and Enterprise) <br> MySQL <br> ElasticSearch (Enterprise and Platinum) <br> RabbitMQ <br> Redis              | PostgreSQL <br> MongoDB (Standard)     |
 | Endpoints                   | Private endpoints <br> Public endpoints                           | Private endpoints                                 |
 | Hosting models              | Isolated compute <br> Shared compute                              | Isolated compute                                  |
