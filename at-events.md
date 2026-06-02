@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-25"
+lastupdated: "2026-06-02"
 
 keywords: activity tracker
 
@@ -50,9 +50,9 @@ You need an [{{site.data.keyword.logs_full}}](https://cloud.ibm.com/observabilit
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) |
+| Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) | Mumbai (`in-mum`) |
 |---------------------|------------------|------------------|--------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Asia Pacific locations" caption-side="top"}
 {: #atracker-table-2}
 {: tab-title="Asia Pacific"}
