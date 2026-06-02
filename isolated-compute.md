@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-25"
+lastupdated: "2026-06-02"
 
 subcollection: cloud-databases-gen2
 
@@ -58,7 +58,7 @@ Isolated compute offers two profile types: Fixed profiles with predefined config
 | --- | --- |
 | 4x20 | 4 vCPU x 20 GB RAM |
 | 8x40 | 8 vCPU x 40 GB RAM |
-| 8x80 | 8 vCPU x 80 GB RAM |
+| 16x80 | 16 vCPU x 80 GB RAM |
 | 32x160 | 32 vCPU x 160 GB RAM |
 | 48x240 | 48 vCPU x 240 GB RAM |
 {: caption="Fixed profile UI selections" caption-side="bottom"}
