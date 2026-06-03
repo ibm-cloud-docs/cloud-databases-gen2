@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-06-03"
 
 keywords: cloud databases release notes
 
@@ -30,7 +30,14 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 : {{site.data.keyword.databases-for}} Gen 2 is now also available in Mumbai (in-mum), in addition to Chennai - Airtel (in-che) and Montreal (ca-mon). For more information,
 see [Overview of Gen 1 and Gen 2{{site.data.keyword.databases-for}}](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-overview-gen1-gen2#feature-differentiators).
 
+## 29 May 2026
+{: #cloud-databases-18may2026}
+{: release-note}
 
+Introduction of Flex profiles for {{site.data.keyword.databases-for}} Gen 2 (on VPC), pricing and billing changes
+: Flex profiles are introduced as the new baseline pricing option for {{site.data.keyword.databases-for}} Gen 2 (on VPC). Non-Flex (Fixed) profiles are repositioned as a premium offering and are subject to a price increase in existing regions.
+
+: Billing for compute and the software-defined storage transitions from monthly prorated pricing to true hourly pricing model.
 
 ## 27 March 2026
 {: #cloud-databases-27mar2026}
