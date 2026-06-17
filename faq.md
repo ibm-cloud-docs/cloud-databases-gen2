@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-27"
+lastupdated: "2026-06-17"
 
 keywords: ICD Gen 2 FAQ
 
@@ -62,7 +62,7 @@ Gen 2 provides:
 
 Yes, the following limitations exist at this point:
 
-- Montreal region only.
+- Montreal, Chennai, and Mumbai region only.
 - Context-based restrictions (CBR) is not yet supported.
 
 ### 4. Do Gen 2 databases support the same features as Gen 1?
@@ -82,7 +82,7 @@ The following table explains the differences between Shared Compute and Isolated
 
 |  Shared Compute (multi-tenant) | Isolated Compute (single-tenant)|
 |---------------|------------------|
-| - Flexible CPU/RAM selections /n - Small or custom presets /n - Ideal for dev/test or cost-efficient workloads | - Dedicated compute /n - Best for production workloads requiring isolation | 
+| - Flexible CPU/RAM selections   /n - Small or custom presets   /n - Ideal for dev/test or cost-efficient workloads | - Dedicated compute   /n - Best for production workloads requiring isolation | 
 {: caption="Differences in hosting models" caption-side="bottom"}
 
 

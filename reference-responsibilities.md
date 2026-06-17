@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-25"
+lastupdated: "2026-06-17"
 
 subcollection: cloud-databases-gen2
 
@@ -27,7 +27,7 @@ Review the following sections for the specific responsibilities for you and for 
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |
 |--------|-----------------------|-----------------------|
 |Monitoring| {{site.data.keyword.databases-for}} is responsible for hosting monitoring and health services. | The Client is responsible for integrating with the [{{site.data.keyword.monitoringfull}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring), [{{site.data.keyword.atracker_full}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events), or [{{site.data.keyword.logs_full}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-logging). |
-|High availability| {{site.data.keyword.databases-for}} is responsible for deploying databases across availability zones in a multizone region (MZR), or across hosts in a single-campus multizone region, and storing backups in {{site.data.keyword.block_storage_is_short}} instances for Gen 2 {{site.data.keyword.databases-for}}. {{site.data.keyword.databases-for}} provides replication, fail-over features, and infrastructure maintenance or updates. High availability varies based on each database type, refer to database-specific documentation for details. | The Client is responsible for designing application logic to retry connections caused by temporary connection failures (during regular database maintenance and updates).|
+|High availability| {{site.data.keyword.databases-for}} is responsible for deploying databases across availability zones in a multizone region (MZR), or across hosts in a single-campus multizone region, and storing backups in {{site.data.keyword.block_storage_is_short}} instances for Gen 2 {{site.data.keyword.databases-for}}. {{site.data.keyword.databases-for}} provides replication, fail-over features, and infrastructure maintenance or updates. High availability varies by database type. See the database-specific documentation for details. | The Client is responsible for designing application logic to retry connections caused by temporary connection failures (during regular database maintenance and updates).|
 |Database performance | {{site.data.keyword.databases-for}} is responsible for hosting and maintaining database infrastructure. | The Client is responsible for the data model and performance, including tuning the data model, queries, and scaling the database as necessary for application needs. |
 |Operating System | {{site.data.keyword.databases-for}} is responsible for hosting and maintaining database Operating System infrastructure. | The Client is not responsible for, nor has access to, Operating System level activities. |
 {: caption="Responsibilities for incident and operations" caption-side="top"}
