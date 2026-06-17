@@ -26,7 +26,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: #cloud-databases-25jun2026}
 {: release-note}
 
-{{site.data.keyword.databases-for-redis} Gen 2, {{site.data.keyword.databases-for-elasticsearch} Gen 2, {{site.data.keyword.databases-for-mysql} Gen 2, and {{site.data.keyword.messages-for-rabbitmq} Gen 2 are now generally available (GA)
+{{site.data.keyword.databases-for-redis}} Gen 2, {{site.data.keyword.databases-for-elasticsearch}} Gen 2, {{site.data.keyword.databases-for-mysql}} Gen 2, and {{site.data.keyword.messages-for-rabbitmq}} Gen 2 are now generally available (GA)
 :  Gen 2 offers the same fully managed {{site.data.keyword.databases-for}} engine on newer VPC‑based infrastructure with improved security, networking, and more performant snapshot‑based backups.
 
 ## 01 June 2026
