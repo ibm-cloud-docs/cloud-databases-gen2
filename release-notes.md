@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-03"
+lastupdated: "2026-06-17"
 
 keywords: cloud databases release notes
 
@@ -26,9 +26,8 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: #cloud-databases-01jun2026}
 {: release-note}
 
-{{site.data.keyword.databases-for-postgresql}} Gen 2 is now availabe in Mumbai
-: {{site.data.keyword.databases-for}} Gen 2 is now also available in Mumbai (in-mum), in addition to Chennai - Airtel (in-che) and Montreal (ca-mon). For more information,
-see [Overview of Gen 1 and Gen 2{{site.data.keyword.databases-for}}](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-overview-gen1-gen2#feature-differentiators).
+{{site.data.keyword.databases-for-postgresql}} Gen 2 and {{site.data.keyword.databases-for-mongodb}} Gen 2 are now availabe in Mumbai
+: {{site.data.keyword.databases-for}} Gen 2 is now also available in Mumbai (in-mum), in addition to Chennai - Airtel (in-che) and Montreal (ca-mon). For more information, see [Overview of Gen 1 and Gen 2](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2&interface=ui#feature-differentiators).
 
 ## 29 May 2026
 {: #cloud-databases-18may2026}
