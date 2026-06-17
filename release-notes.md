@@ -22,6 +22,13 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
+## 25 June 2026
+{: #cloud-databases-25jun2026}
+{: release-note}
+
+{{site.data.keyword.databases-for-redis} Gen 2, {{site.data.keyword.databases-for-elasticsearch} Gen 2, {{site.data.keyword.databases-for-mysql} Gen 2, and {{site.data.keyword.messages-for-rabbitmq} Gen 2 are now generally available (GA)
+:  Gen 2 offers the same fully managed {{site.data.keyword.databases-for}} engine on newer VPC‑based infrastructure with improved security, networking, and more performant snapshot‑based backups.
+
 ## 01 June 2026
 {: #cloud-databases-01jun2026}
 {: release-note}
@@ -59,8 +66,7 @@ see [Overview of Gen 1 and Gen 2{{site.data.keyword.databases-for}}](/docs/datab
 {: release-note}
 
 {{site.data.keyword.databases-for}} Gen 2 is now generally available (GA)
-: {{site.data.keyword.databases-for}} Gen 2 is now available, offering the same fully managed {{site.data.keyword.databases-for}} engine on newer VPC‑based infrastructure with improved
-security, networking, and more performant snapshot‑based backups.
+: {{site.data.keyword.databases-for}} Gen 2 offers the same fully managed {{site.data.keyword.databases-for}} engine on newer VPC‑based infrastructure with improved security, networking, and more performant snapshot‑based backups.
 [Try {{site.data.keyword.databases-for}} Gen 2 now](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-provisioning).
 
 ## 15 December 2025
