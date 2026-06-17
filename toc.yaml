@@ -52,7 +52,6 @@ toc:
           - secure.md
           - topic: manage-scc.md
             navtitle: Managing security and compliance
-          - howto-allowlists.md
           - reference-iam.md
           - reference-key-protect.md
           - reference-hpcs.md
