@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-06-18"
 
 subcollection: cloud-databases-gen2
 
@@ -259,7 +259,7 @@ Example response:
 {: #api-manage-config}
 
 ```sh
-POST /v2/resource_instances`
+POST /v2/resource_instances
 ```
 {: pre}
 
