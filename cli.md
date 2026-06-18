@@ -20,7 +20,7 @@ subcollection: cloud-databases-gen2
 
 To interact with {{site.data.keyword.databases-for}} on Gen 2 via the CLI you must utilize the IBM Cloud Resource Controller's CLI. For more info please see [General {{site.data.keyword.cloud}} CLI (ibmcloud) commands](/docs/cli?topic=cli-ibmcloud_cli).
 
-The {{site.data.keyword.databases-for}} plugin supports only Gen 1 instances. For Gen 2 instances, use the Resource Controller CLI.
+The {{site.data.keyword.databases-for}} plugin supports only Gen 1 instances. For Gen 2 instances, use the Resource Controller CLI as documented in this topic.
 {: note}
 
 ## Getting started - Create an instance

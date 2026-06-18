@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-25"
+lastupdated: "2026-06-18"
 
 subcollection: cloud-databases-gen2
 
@@ -16,14 +16,14 @@ subcollection: cloud-databases-gen2
 [Gen 2]{: tag-purple}
 
 
-Management access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-cloudaccess).
+Management access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/iam?topic=iam-iamoverview).
 
 This document covers the integration of IAM with Cloud Databases: {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}.
 {: .note}
 
 IAM is only integrated with high-level service access, which governs privileges and operations to perform management functions. It does not govern database-level users and privileges. Database access is governed by the standard access controls provided by the database. IAM does not control database users.
 
-For more information about assigning user roles in {{site.data.keyword.cloud_notm}}, see [Managing IAM access](/docs/account?topic=account-assign-access-resources).
+For more information about assigning user roles in {{site.data.keyword.cloud_notm}}, see [Managing IAM access](/docs/secure-enterprise?topic=secure-enterprise-userroles).
 
 Gen 2 {{site.data.keyword.databases-for}} use service credentials for access management. This means:
 

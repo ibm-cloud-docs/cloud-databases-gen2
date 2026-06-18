@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-05-25"
+lastupdated: "2026-06-18"
 
 subcollection: cloud-databases-gen2
 
@@ -146,7 +146,7 @@ If provisioning from the catalog page, select the {{site.data.keyword.keymanagem
 In the CLI, use the `dataservices.encryption.disk` parameter in the parameters JSON object to assign a root key CRN to your service instance.
 
 ```bash
-ibmcloud resource service-instance-create <INSTANCE-NAME> <SERVICE-NAME> <PLAN-NAME> REGION -p '{"dataservices":{"encryption":{"disk":"KMS_KEY_CRN"}}}'
+bx iam resource service-instance-create <INSTANCE-NAME> <SERVICE-NAME> <PLAN-NAME> REGION -p '{"dataservices":{"encryption":{"disk":"KMS_KEY_CRN"}}}'
 ```
 {: codeblock}
 
