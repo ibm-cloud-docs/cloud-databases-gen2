@@ -60,7 +60,7 @@ If you want to set up a more restrictive authorization policy, configure your po
 1. Create an authorization policy to allow the {{site.data.keyword.databases-for}} service to access the {{site.data.keyword.keymanagementserviceshort}} service instance on the CLI. For a full set of arguments, see the [IAM CLI reference](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create).
 
 ```bash
-bx iam authorization-policy-create <SERVICE-NAME> kms "Reader,AuthorizationDelegator"
+ibmcloud iam authorization-policy-create <SERVICE-NAME> kms "Reader,AuthorizationDelegator"
 ```
 {: codeblock}
 
@@ -146,7 +146,7 @@ If provisioning from the catalog page, select the {{site.data.keyword.keymanagem
 In the CLI, use the `dataservices.encryption.disk` parameter in the parameters JSON object to assign a root key CRN to your service instance.
 
 ```bash
-bx iam resource service-instance-create <INSTANCE-NAME> <SERVICE-NAME> <PLAN-NAME> REGION -p '{"dataservices":{"encryption":{"disk":"KMS_KEY_CRN"}}}'
+ibmcloud resource service-instance-create <INSTANCE-NAME> <SERVICE-NAME> <PLAN-NAME> REGION -p '{"dataservices":{"encryption":{"disk":"KMS_KEY_CRN"}}}'
 ```
 {: codeblock}
 
