@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-25"
+lastupdated: "2026-06-19"
 
 subcollection: cloud-databases-gen2
 
@@ -25,9 +25,8 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 
 Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
 {: important}
-- Daily backup scheduling is not configurable.
 - Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
-- Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
+- Backups are restorable across accounts, only if the user that is running the restore has access to the backup along with access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
 
 
@@ -88,7 +87,7 @@ ibmcloud resource service-instance-create postgresql-restore-abc databases-for-p
 
 * Change the value of `instance_name` to the name that you want for your new instance.
 * The `service-id` is the type of instance, such as _databases-for-postgresql_ or _databases-for-mongodb_.
-* The `region` is where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring to or from `eu-de` by using another region.
+* The `region` is where you want the new instance to be located, which can be a different region from the source instance.
 * The `restore_backup_id` is the backup that you want to restore.
 
 The previous command will restore a backup to a machine of the same configuration and on the same [hosting model](/docs/databases-for-mongodb?topic=databases-for-mongodb-hosting-models&interface=cli) as your original deployment.
@@ -164,26 +163,6 @@ curl -X POST \
   -H 'Authorization: Bearer <>' \
   -H 'Content-Type: application/json' \
 ```
-
-
-
-
-
-The `host_flavor` value must be an appropriate-sized isolated compute host. For more information, see [the list of available values](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui)).
-{: note}
-
-By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding a `version` value in the parameters object.
-{: note}
-
-
-
-
-## Backups and restoration
-{: #backup-restoration}
-
-* {{site.data.keyword.databases-for}} are not responsible for restoration, timeliness, or validity of said backups.
-* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups are successful by using the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent-scheduled backup details from the [{{site.data.keyword.databases-for}} Resource Controller CLI](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference) and the [{{site.data.keyword.databases-for}} Resource Controller API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api).
-* As a managed service, {{site.data.keyword.databases-for}} monitors the state of your backups and can attempt to remediate when possible. If you encounter issues from which you cannot recover, contact support for more help.
 
 
 
