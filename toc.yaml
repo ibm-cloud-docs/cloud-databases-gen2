@@ -34,8 +34,9 @@ toc:
       - scaling.md
       - closures.md
       - backup-restore.md
-      - topic: howto-manage-backups.md
-        navtitle: Managing Gen 2 backups
+      - coupled-backups.md
+      - topic: independent-backups.md
+        navtitle: Managing independent backups
       - topicgroup:
           label: Observability
           topics:
