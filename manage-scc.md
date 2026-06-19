@@ -1,11 +1,11 @@
 ---
 copyright:
-  years: 2021, 2023
+  years: 2025, 2026
 lastupdated: "2023-05-11"
 
 keywords: security and compliance for cloud databases, security for cloud databases, compliance for cloud databases, enterprisedb, redis, etcd, elasticsearch, postresgql, datastax, mongodb, rabbitmq, mysql
 
-subcollection: cloud-databases
+subcollection: cloud-databases-gen2
 
 ---
 
@@ -32,5 +32,4 @@ To start monitoring your resources, check out [Getting started with {{site.data.
 {: #cloud-databases-available-goals}
 
 * **Check whether {{site.data.keyword.databases-for}} is enabled with IBM-managed or customer-managed encryption.** All {{site.data.keyword.databases-for}} instances are automatically encrypted at rest with IBM-managed keys. For more information, see [Key Protect Integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect&interface=ui).
-* **Check whether {{site.data.keyword.databases-for}} is accessible only through TLS.** All {{site.data.keyword.databases-for}} connections use TLS/SSL encryption for data in transit. The current supported version of this encryption is TLS 1.2.
-* **Check whether {{site.data.keyword.databases-for}} is accessible only by using private endpoints.** Customers can disable public endpoints at provision time. For more information, see [Service Endpoints Integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-private-endpoints-gen2).
+* **Check whether {{site.data.keyword.databases-for}} is accessible only through TLS.** All {{site.data.keyword.databases-for}} connections use TLS/SSL encryption for data in transit. The current supported versions of this encryption are TLS 1.2 and TLS 1.3.
