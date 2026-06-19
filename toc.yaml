@@ -33,7 +33,6 @@ toc:
       - notifications.md
       - scaling.md
       - closures.md
-      - backup-restore.md
       - topicgroup:
           label: Backups
           topics:
