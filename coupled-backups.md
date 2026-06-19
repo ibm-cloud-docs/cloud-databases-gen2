@@ -209,10 +209,3 @@ For detailed instructions on cross-account restore, see [Cross-account restore](
 {: #backup-bcdr}
 
 {{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. For more information (including [Backup Storage Regions](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr&interface=ui#bc-dr-single-region-backups){: external}), see [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr){: external}.
-
-## Next steps
-{: #backups-next-steps}
-
-- Learn about [backup pricing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing#backups-pricing)
-- Review [backup FAQs](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-backups-faq)
-- Understand [your responsibilities](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-responsibilities-cloud-databases) for managing backups
