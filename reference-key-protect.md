@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-18"
+lastupdated: "2026-06-19"
 
 subcollection: cloud-databases-gen2
 
@@ -204,12 +204,8 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 
 If you use {{site.data.keyword.keymanagementserviceshort}}, when you provision a database you can also designate a key to encrypt the {{site.data.keyword.block_storage_is_full}} disk that holds your deployment's backups.
 
-BYOK for backups is available only in select regions.
+The backup inherits the same encryption key as the database. A different encryption key cannot be provided while creating the backup from the database.
 {: .note}
-
-Only keys in the select regions are durable to region failures. To ensure that your backups are available even if a region failure occurs, you must use a key from these select regions, regardless of your deployment's location.
-
-
 
 ### Granting the delegation authorization
 {: #grant-auth}

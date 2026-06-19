@@ -4,9 +4,9 @@ copyright:
   years: 2026
 lastupdated: "2026-06-19"
 
-subcollection: cloud-databases-gen2
-
 keywords: backups, new deployment, source deployment, backup, back up, ondemand backup, on-demand backup, on-demand back up, instance
+
+subcollection: cloud-databases-gen2
 
 ---
 
@@ -25,8 +25,10 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 
 Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
 {: important}
-- Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
-- Backups are restorable across accounts, only if the user that is running the restore has access to the backup along with access to both the source and destination accounts.
+
+- Daily backup scheduling is not configurable.
+- The backup inherits the same encryption as the database.
+- Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
 
 
@@ -110,7 +112,7 @@ The `host_flavor` should be an appropriate-sized host. For more information, see
 A pre-formatted command for a specific backup is available in detailed view of the backup on the _Backups and restore_ tab of your instance's dashboard.
 {: .tip}
 
-By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. Gen 2 {{site.data.keyword.databases-for}} currently only support one version per database. Over time, new versions will be released, and when a new version becomes available, you can move to that version with a restore from a backup.
+By default, restoring from a backup provisions an instance with the preferred version of the database type, rather than the version of the source instance. Gen 2 {{site.data.keyword.databases-for}} currently support only one version per database. Over time, new versions are released. When a new version becomes available, you can move to that version by restoring from a backup.
 
 
 
