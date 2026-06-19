@@ -12,7 +12,7 @@ keywords: independent backups, decoupled backups, backup lifecycle, backup manag
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding independent backups
+# Managing independent backups
 {: #independent-backups}
 
 [Gen 2]{: tag-purple}
