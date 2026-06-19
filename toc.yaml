@@ -34,13 +34,11 @@ toc:
       - scaling.md
       - closures.md
       - topicgroup:
-          label: Backups
+          label: Managing backups
           topics:
           - backup-restore.md
           - topic: coupled-backups.md
-            navtitle: Managing backups
           - topic: independent-backups.md
-            navtitle: Managing independent backups
       - topicgroup:
           label: Observability
           topics:

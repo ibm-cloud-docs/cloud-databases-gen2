@@ -12,7 +12,7 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing backups
+# Managing coupled backups
 {: #dashboard-backups}
 
 [Gen 2]{: tag-purple}
