@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-25"
+lastupdated: "2026-06-20"
 
 subcollection: cloud-databases-gen2
 
@@ -74,8 +74,6 @@ Restoring an {{site.data.keyword.cloud}} Databases deployment from a soft-delete
 
 ## Cryptoshredding keys
 {: #cryptoshred}
-
-
 
 {{site.data.keyword.keymanagementserviceshort}} provides cryptoshredding, which is [deletion](/docs/key-protect?topic=key-protect-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments.
 
