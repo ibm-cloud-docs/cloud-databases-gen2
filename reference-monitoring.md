@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-20"
+lastupdated: "2026-06-22"
 
 keywords: monitoring
 
@@ -1042,8 +1042,6 @@ How much WAL log file uses, in bytes
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="WAL logs used bytes metric metadata" caption-side="top"}
 
-
-
 ## MySQL Metrics
 {: #metrics-by-plan-mysql}
 
@@ -1977,7 +1975,6 @@ How much memory is used as a percentage of total memory available
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Used memory for an instance metric metadata" caption-side="top"}
-
 
 
 ## Redis metrics
