@@ -177,9 +177,6 @@ ibmcloud resource service-instance-create \
 
 If you plan to make major changes to your instance, like scaling or removing databases, tables, collections, on-demand backups are useful. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days.
 
-Instances come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage of $0.095/month. Backups are compressed, so even if you use on-demand backups, most instances do not exceed the allotted credit.
-{: tip}
-
 To create a manual backup in the UI, go to the **Backups and restore** tab of your instance then click **Create backup**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
 
 Once the backup provisioning is completed, you can see the details of the backup like the Backup CRN, associated database instance and its version, region, status and size.
@@ -244,6 +241,7 @@ ibmcloud resource service-instance --output JSON crn:v1:staging:public:databases
 
 ### Deleting an independent backup
 {: #deleting-independent-backup}
+{: cli}
 
 To manually delete an independent backup before its expiration:
 
