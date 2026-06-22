@@ -210,7 +210,7 @@ The backup inherits the same encryption key as the database. A different encrypt
 ### Granting the delegation authorization
 {: #grant-auth}
 
-To enable your deployment to use the {{site.data.keyword.keymanagementserviceshort}} key, you need to [Enable authorization to be delegated](/docs/account?topic=account-serviceauth){: external} when granting the service authorizations. If the delegation authorization is not present before provisioning your deployment with a key, the provision fails.
+To enable your deployment to use the {{site.data.keyword.keymanagementserviceshort}} key, you need to [Enable authorization to be delegated](/docs/iam?topic=iam-serviceauth&interface=ui){: external} when granting the service authorizations. If the delegation authorization is not present before provisioning your deployment with a key, the provision fails.
 
 After you enable delegation and provisioned your deployment, two entries appear in your _Authorizations_ in IAM. One is the entry for the deployment that lists its status as delegator. It is "User Created".
 
