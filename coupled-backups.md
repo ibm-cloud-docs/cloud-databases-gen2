@@ -182,7 +182,7 @@ Backups are encrypted at rest with the same encryption as the database instance.
 
 When you restore a backup that was encrypted with a {{site.data.keyword.keymanagementserviceshort}} or HPCS key, you can use the same key or a different key. If you use a different key, the new instance is encrypted with the new key.
 
-You will have immediate access to the restored database instance with decreased IO performance until hydration completes. Backups on the restored instance cannot be created till its hydration is completed. You can track the completion of hydration using platform AT events. See [at-events](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events#at_actions_platform) for more information.
+You will have immediate access to the restored database instance with decreased IO performance until hydration completes. Backups on the restored instance cannot be created till its hydration is completed. You can track the completion of hydration using platform Activity tracking events. For more information, see [List of platform events](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events#at_actions_platform).
 
 
 ## Cross-account restore
