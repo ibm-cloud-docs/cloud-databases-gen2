@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-06-22"
 
 keywords: logging
 
@@ -12,7 +12,7 @@ subcollection: cloud-databases-gen2
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Logging for Gen 2 {{site.data.keyword.databases-for}}
+# Logging for Gen 2
 {: #logging}
 
 [Gen 2]{: tag-purple}

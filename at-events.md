@@ -14,7 +14,7 @@ subcollection: cloud-databases-gen2
 
 
 
-# Activity tracking events for {{site.data.keyword.databases-for}}
+# Activity tracking events
 {: #at_events}
 
 [Gen 2]{: tag-purple}
