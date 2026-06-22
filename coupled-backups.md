@@ -35,7 +35,7 @@ This topic covers backup management for all Gen 2 {{site.data.keyword.databases-
 ## Important backup information
 {: #backup-important-info}
 
-- Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
+- Backup storage is encrypted. To manage the encryption keys, see [{{site.data.keyword.keymanagementservicelong}} integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
 - Backups are restorable across accounts, only if the user that is running the restore has access to the backup along with access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: external} is an effective tool for managing PostgreSQL backups.
 
@@ -118,7 +118,7 @@ The previous command will restore a backup to a machine of the same configuratio
 {: #restore-cli-optional}
 {: cli}
 
-Optional parameters are available through the CLI. Use them if you need to customize resources, change the hosting model, or use a Key Protect key for BYOK encryption on the new instance. See the following example:
+Optional parameters are available through the CLI. Use them if you need to customize resources, change the hosting model, or use a {{site.data.keyword.keymanagementserviceshort}} key for BYOK encryption on the new instance. See the following example:
 
 ```sh
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-ID> gen2-<PLAN NAME> <REGION> -p
@@ -171,16 +171,19 @@ The previous command will restore a backup to a machine of the same configuratio
 {: #restore-api-optional}
 {: api}
 
-Optional parameters are available through the Resource Controller API. Use them if you need to customize resources, change the host size, deploy to a specific version, or use a Key Protect key for BYOK encryption on the new instance.
+Optional parameters are available through the Resource Controller API. Use them if you need to customize resources, change the host size, deploy to a specific version, or use a {{site.data.keyword.keymanagementserviceshort}} key for BYOK encryption on the new instance.
 
 If you need to adjust resources, add any of the optional parameters `key_protect_key`, `storage_gb`, `host_flavor` or `version` and their preferred values to the body of the request.
 
 ## Backup encryption
 {: #backup-encryption}
 
-Backups are encrypted at rest with AES-256 encryption. If you use Key Protect or Hyper Protect Crypto Services (HPCS) to manage your encryption keys, your backups are encrypted with your key. For more information, see [Key Protect Integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect) and [Hyper Protect Crypto Services (HPCS) Integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-hpcs).
+Backups are encrypted at rest with the same encryption as the database instance. If you use {{site.data.keyword.keymanagementserviceshort}} or Hyper Protect Crypto Services (HPCS) to manage your encryption for the database, your backups are encrypted with the same key. For more information, see [{{site.data.keyword.keymanagementserviceshort}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect) and [Hyper Protect Crypto Services (HPCS) integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-hpcs).
 
-When you restore a backup that was encrypted with a Key Protect or HPCS key, you can use the same key or a different key. If you use a different key, the new instance is encrypted with the new key.
+When you restore a backup that was encrypted with a {{site.data.keyword.keymanagementserviceshort}} or HPCS key, you can use the same key or a different key. If you use a different key, the new instance is encrypted with the new key.
+
+You will have immediate access to the restored database instance with decreased IO performance until hydration completes. Backups on the restored instance cannot be created till its hydration is completed. You can track the completion of hydration using platform AT events. See [at-events](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events#at_actions_platform) for more information.
+
 
 ## Cross-account restore
 {: #cross-account-restore}

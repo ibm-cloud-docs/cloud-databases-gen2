@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-19"
+lastupdated: "2026-06-22"
 
 subcollection: cloud-databases-gen2
 
@@ -51,14 +51,15 @@ Gen 2 introduces independent backups for {{site.data.keyword.databases-for-postg
 | Account level views | Not supported | Not supported | Database Hub with centralized view |
 | Backup deletion | Automatic only | Automatic only | Manual and automatic |
 | Backup locality | Fixed | Region-locked | Region-locked, future release to support backup copy |
-| Persistence | Deleted with instance | Deleted with instance | Persists after instance deletion |
-| Management | Database APIs | Database APIs | Resource Controller |
+| Persistence | Deleted with instance | Deleted with instance | Can be persisted after instance deletion |
+| Management | Database APIs | UI only | Database Hub, Resource List, Instance UI  |
 {: caption="Independent backups feature comparison" caption-side="bottom"}
 
 Independent backups are currently available only for {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, and {{site.data.keyword.databases-for-mysql}}. All other Gen 2 services use coupled backups.
 {: important}
 
-For more information about independent backups, see [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
+For more information about independent backups, see [Managing independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
+
 
 
 ## Managing Gen 2 backups

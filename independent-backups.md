@@ -41,12 +41,12 @@ This architecture provides greater flexibility in managing your backup data, ena
 | Feature | Coupled backups | Independent backups |
 |---------|-------------------------|---------------------|
 | Lifecycle | Tied to database instance | Independent of database instance |
-| Persistence | Deleted when instance deleted | Persist after instance deletion |
-| Management | Database-specific APIs | {{site.data.keyword.cloud_notm}} Resource Controller |
+| Persistence | Deleted when instance deleted | Can be persisted after instance deletion |
+| Management | UI only | {{site.data.keyword.cloud_notm}} Resource Controller |
 | Visibility | Instance UI only | Database Hub, Resource List, Instance UI |
 | Deletion | Automatic only (30 days) | Manual and automatic |
-| Cross-region copies | Not supported | Supported (Q2 2026) |
-| Provisioning | Automatic only | Automatic and on-demand |
+| Cross-region copies | Not supported | Future release |
+| Provisioning | Automatic and on-demand | Automatic and on-demand |
 | Billing | Included with instance | Separate service billing |
 {: caption="Comparison of coupled and independent backups" caption-side="bottom"}
 
@@ -128,13 +128,13 @@ Independent backups appear as separate service instances in your {{site.data.key
 {: #instance-view}
 {: ui}
 
-In the UI, navigate to the **Backups and restore** tab where you see a table with all available backups for your database, including both coupled backups (during migration period for PostgreSQL and MongoDB) and independent backups.
+In the UI, navigate to the **Backups and restore** tab where you see a table with all available backups for your database, including both coupled backups (during transition period for PostgreSQL and MongoDB) and independent backups.
 
 The backup types can be either _On-demand_ or _Automatic_. Each backup is listed with its type, when the backup was taken, and whether it's a coupled or independent backup.
 
 Click the backup to reveal information for that specific backup, including its full ID and CRN. A **Restore** button or a pre-formatted CLI command is there for restore options.
 
-During the 30-day migration period for PostgreSQL and MongoDB, you may see both coupled and independent backups in this view. Coupled backups will be automatically deleted after 30 days.
+During the 30-day transition period for PostgreSQL and MongoDB, you may see both coupled and independent backups in this view. Coupled backups will be automatically deleted after 30 days.
 {: note}
 
 ## Managing independent backups
@@ -182,6 +182,8 @@ Instances come with backup storage equal to their total disk space at no cost. I
 
 To create a manual backup in the UI, go to the **Backups and restore** tab of your instance then click **Create backup**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
 
+Once the backup provisioning is completed, you can see the details of the backup like the Backup CRN, associated database instance and its version, region, status and size.
+
 ### Creating an independent backup using CLI
 {: #creating-independent-backup-cli}
 {: cli}
@@ -220,6 +222,26 @@ ibmcloud resource service-instance-create \
 ```
 {: pre}
 
+After provisioning completes, you can view backup details, such as the associated database instance and version, region, status, and size, in the **Resource Controller extensions** field of the backup instance.
+
+Following is an example of the output of the command:
+
+```sh
+ibmcloud resource service-instance --output JSON crn:v1:staging:public:databases-independent-backups:ca-mon:a/cf8d4161fa0243b9a2a5494cd7ff66b7:4be73b7d-a395-4613-83dd-315a6e573e00:: | jq '.[0].extensions'
+{
+  "dataservices": {
+    "backup": {
+      "can_be_deleted_after": "<timestamp after which retention duration expires>",
+      "size_gb": <size of the backup in GB>,
+      "source_data_service_crn": "<CRN of the database provided at the time of provisioning the backup>",
+      "type": "<type of the backup, value is either on_demand or automatic>",
+      "version": "major version of the database"
+    }
+  }
+}
+```
+{: pre}
+
 ### Deleting an independent backup
 {: #deleting-independent-backup}
 
@@ -237,6 +259,8 @@ ibmcloud resource service-instance-delete e318275d-f860-4e4e-a63b-271fb4400c26 -
 ```
 {: pre}
 
+Backups use incremental infrastructure-level volume snapshots. As a result, deleting a backup can increase the size of the remaining backups.
+
 Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
 {: important}
 
@@ -250,8 +274,10 @@ Backups are restored to a new instance. After the new instance finishes provisio
 
 By default, the new instance is auto-sized to the default disk size and same host size as the source instance at the time of the backup from which you are restoring. To adjust the resources that are allocated to the new instance, use the optional fields in the UI, CLI, or API to resize the new instance. Be sure to allocate enough for your data and workload; if the instance is not given enough resources or the backup contains more storage than the default disk size and a disk size is not specified, the restore fails.
 
-Do not delete the source instance while the backup is restoring. Before you delete the old instance, wait until the new instance is provisioned and the backup is restored. Deleting an instance also deletes its backups.
+Do not delete the backup while the backup is restoring. Before you delete the backup, wait until the new instance is provisioned and the backup is restored. Deleting the database instance also deletes its backups by default.
 {: tip}
+
+You have immediate access to the restored database instance, but I/O performance is reduced until hydration completes. Backups cannot be created on the restored instance until hydration is complete. You can track hydration progress by using platform Activity Tracker events. For more information, see [at-events](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events#at_actions_platform).
 
 #### Restoring a backup in the UI
 {: #restore-backup-ui}
@@ -263,7 +289,7 @@ To restore a backup to a new service instance:
 2. Click **Restore**.
 3. On the **Provisioning** page, select from some available options.
     - You provide the name of the new service instance.
-    - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. Note that if you decrease your resource amount, it may lead to provision failure or your database not functioning properly.
+    - You can choose the initial resource allocation, or expand the resources on the new instance. Note that if you decrease your resource amount, it may lead to provision failure or your database not functioning properly.
 4. Click **Restore backup**. A "restore from backup started" message appears. Clicking **Your new instance is available now** takes you to your _Resources List_.
 
 #### Restoring a backup in the CLI
@@ -355,7 +381,7 @@ If you need to adjust resources, add any of the optional parameters `key_protect
 ### Backup encryption
 {: #backup-encryption}
 
-Independent backups are encrypted at rest with AES-256 encryption. If you use Key Protect or Hyper Protect Crypto Services (HPCS) to manage your encryption keys, your backups are encrypted with your key. For more information, see [Key Protect Integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect) and [Hyper Protect Crypto Services (HPCS) Integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-hpcs).
+Independent backups are encrypted at rest with the same encryption as the database instance. If you use Key Protect or Hyper Protect Crypto Services (HPCS) to manage your encryption for the database, your backups are encrypted with the same key. For more information, see [Key Protect Integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect) and [Hyper Protect Crypto Services (HPCS) Integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-hpcs).
 
 When you restore a backup that was encrypted with a Key Protect or HPCS key, you can use the same key or a different key. If you use a different key, the new instance is encrypted with the new key.
 
@@ -403,7 +429,7 @@ The transition from coupled backups to independent backups varies by database se
 ### PostgreSQL and MongoDB
 {: #transition-postgresql-mongodb}
 
-{{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} are transitioning from coupled backups to independent backups. During the 30-day migration period:
+{{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} are transitioning from coupled backups to independent backups. During the 30-day transition period:
 
 - Both coupled and independent backups coexist
 - All new backups are created as independent backups
@@ -411,7 +437,7 @@ The transition from coupled backups to independent backups varies by database se
 - The UI displays both backup types
 - No action is required; the system handles the transition automatically
 
-After the 30-day migration period, only independent backups remain.
+After the 30-day transition period, only independent backups remain.
 
 ### MySQL
 {: #transition-mysql}
@@ -445,5 +471,5 @@ Be aware of the following limitations:
 
 - Bulk operations (bulk copy, bulk delete) are not supported.
 - Independent backups cannot be downloaded; use database-specific tools (for example, `mysqldump`, `pg_dump`, or `mongodump`) for local backups.
-- Backup retention policies are not yet configurable (30 days default).
+- Backup retention duration is not yet configurable (30 days default).
 - You can create upto 50 on-demand backups per database instance.
