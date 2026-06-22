@@ -56,7 +56,6 @@ toc:
             navtitle: Managing security and compliance
           - reference-iam.md
           - reference-key-protect.md
-          - reference-hpcs.md
           - howto-deprovisioning.md
   - navgroup:
       id: reference
