@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-06-22"
 
 keywords: guidance, recommendations, best practices, initial steps, setup
 
@@ -24,9 +24,9 @@ subcollection: cloud-databases-gen2
 - [ ] Determine the best method for your initial setup, including [Terraform, API, CLI, or UI methods](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-gen2-offerings).
 - [ ] Determine the [compute profile](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui), selecting from available isolated configurations that define performance characteristics and resource allocation.
 - [ ] To manage your database's encryption key for data-at-rest, you must [Bring your own encryption key (BYOK)](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect) when creating your database. This setup cannot be changed after your instance is provisioned.
-- [ ] Make sure that [IAM access policies and resource groups](/docs/account?topic=account-iamoverview) are set up correctly for your business protocols.
+- [ ] Make sure that [IAM access policies and resource groups](/docs/account?topic=account-access-getstarted) are set up correctly for your business protocols.
 - [ ] Understand your database's high availability model. This is covered in the "High-Availability" section of each database's documentation.
-- [ ] To ensure you receive messages, enroll in [IBM Cloud notifications](/docs/account?topic=account-email-prefs), specifically the "Resource Activity" notification. We directly notify you when your database version is approaching end of life. In addition, you can bookmark our [Database version lifecycle policy](/docs/cloud-databases?topic=cloud-databases-versioning-policy), which is kept up to date with end of life dates and resources for all databases.
+- [ ] To ensure you receive messages, enroll in [IBM Cloud notifications](/docs/account?topic=account-email-prefs){: external}, specifically the "Resource Activity" notification. We directly notify you when your database version is approaching end of life. In addition, you can bookmark our [Database version lifecycle policy](/docs/cloud-databases?topic=cloud-databases-versioning-policy), which is kept up to date with end of life dates and resources for all databases.
 
 
 ## Sample "Getting to production" checklist

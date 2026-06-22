@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-19"
+lastupdated: "2026-06-22"
 
 subcollection: cloud-databases-gen2
 
@@ -106,13 +106,13 @@ Independent backups can be viewed in multiple locations:
 {: #database-hub-view}
 {: ui}
 
-The Database Hub provides a centralized view of all backups across your account:
+The IBM Cloud console provides a centralized view of all backups across your account:
 
-1. Navigate to the [Database Hub](https://cloud.ibm.com/databases/hub).
-2. Select the **Backups** tab to view backups whose source database still exists.
-3. Select the **Independent backups** tab to view backups whose source database has been deleted.
+1. Navigate to the IBM Cloud console and go to **Resource list** > **Databases**.
+2. View your database instances and their associated backups.
+3. Independent backups appear as separate service instances in your resource list.
 
-This separation helps you identify orphaned backups that may need cleanup or long-term retention.
+This helps you identify backups that may need cleanup or long-term retention.
 
 ### Resource List
 {: #resource-list-view}
@@ -373,7 +373,7 @@ To restore a backup to a different account:
 2. Use the backup CRN when creating the new instance in the target account
 3. Ensure the target account has appropriate IAM permissions
 
-For detailed instructions on cross-account restore, see [Cross-account restore](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cross-account-restore).
+For more information about cross-account restore, see [Cross-account restore](#cross-account-restore).
 
 ## Business continuity and disaster recovery
 {: #independent-backups-bcdr}
@@ -391,8 +391,8 @@ For comprehensive information about business continuity and disaster recovery wi
 ## Next steps
 {: #independent-backups-next-steps}
 
-- Learn about [backup pricing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing#backups-pricing).
-- Review [backup FAQs](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-backups-faq).
+- Learn about [backup pricing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing#pricing-backup).
+- Review [backup FAQs](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-faq#faq-backups).
 - Understand [your responsibilities](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-responsibilities-cloud-databases) for managing backups.
 
 ## Transition from coupled backups

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-19"
+lastupdated: "2026-06-22"
 
 subcollection: cloud-databases-gen2
 
@@ -16,7 +16,7 @@ subcollection: cloud-databases-gen2
 [Gen 2]{: tag-purple}
 
 
-Management access to {{site.data.keyword.databases-for}} service instances for users in your account is controlled by [{{site.data.keyword.iamlong}}(IAM)](/docs/account?topic=account-cloudaccess).
+Management access to {{site.data.keyword.databases-for}} service instances for users in your account is controlled by [{{site.data.keyword.iamlong}}(IAM)](/docs/account?topic=account-access-getstarted).
 
 This document covers the integration of {{site.data.keyword.iamshort}} with {{site.data.keyword.databases-for}}: {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}.
 {: .note}

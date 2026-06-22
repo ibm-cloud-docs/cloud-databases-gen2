@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-19"
+lastupdated: "2026-06-22"
 
 subcollection: cloud-databases-gen2
 
@@ -196,7 +196,7 @@ To restore a backup to a different account:
 2. Use the backup CRN when creating the new instance in the target account
 3. Ensure the target account has appropriate IAM permissions
 
-For detailed instructions on cross-account restore, see [Cross-account restore](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cross-account-restore).
+For more information about cross-account restore, see [Cross-account restore](#cross-account-restore).
 
 ## Backups and restoration responsibilities
 {: #backup-restoration}

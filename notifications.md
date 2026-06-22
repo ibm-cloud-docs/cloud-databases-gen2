@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-06-22"
 
 subcollection: cloud-databases-gen2
 
@@ -16,9 +16,9 @@ subcollection: cloud-databases-gen2
 [Gen 2]{: tag-purple}
 
 
-Set up [{{site.data.keyword.cloud_notm}} email notifications](https://cloud.ibm.com/docs/account?topic=account-email-prefs){: external} to stay up-to-date with announcements, billing and usage, additional notification preferences, and ordering.
+Set up [{{site.data.keyword.cloud_notm}} email notifications](/docs/account?topic=account-email-prefs){: external} to stay up-to-date with announcements, billing and usage, additional notification preferences, and ordering.
 
-Set up [resource notifications](https://cloud.ibm.com/docs/account?topic=account-email-prefs#setting-resource-notifications){: external}. {{site.data.keyword.databases-for}} directly notifies you when your database version is approaching end of life. For more information, see the {{site.data.keyword.databases-for}} [Database Version Lifecycle](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}.
+Set up [resource notifications](/docs/account?topic=account-email-prefs#resource-notifications){: external}. {{site.data.keyword.databases-for}} directly notifies you when your database version is approaching end of life. For more information, see the {{site.data.keyword.databases-for}} [Database Version Lifecycle](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}.
 
 
 ## Next Steps

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-18"
+lastupdated: "2026-06-22"
 
 keywords: ICD Gen 2 FAQ
 
@@ -123,7 +123,7 @@ Yes, with:
 - Enhanced point-in-time recovery (PITR).
 - More performant and predictable backup and restore performance due to newer Gen 2 storage architecture.
 
-For more information, see [Comparison of Gen 1 and Gen 2 backups](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-comparison-backups).
+For more information, see [Comparison of Gen 1 and Gen 2 backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-backup-restore).
 
 
 ### 9. How does high availability differ?
