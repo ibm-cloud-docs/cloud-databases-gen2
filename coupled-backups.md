@@ -178,9 +178,9 @@ If you need to adjust resources, add any of the optional parameters `key_protect
 ## Backup encryption
 {: #backup-encryption}
 
-Backups are encrypted at rest with the same encryption as the database instance. If you use {{site.data.keyword.keymanagementserviceshort}} or Hyper Protect Crypto Services (HPCS) to manage your encryption for the database, your backups are encrypted with the same key. For more information, see [{{site.data.keyword.keymanagementserviceshort}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect) and [Hyper Protect Crypto Services (HPCS) integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-hpcs).
+Backups are encrypted at rest with the same encryption as the database instance. If you use {{site.data.keyword.keymanagementserviceshort}} to manage your encryption for the database, your backups are encrypted with the same key. For more information, see [{{site.data.keyword.keymanagementserviceshort}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect).
 
-When you restore a backup that was encrypted with a {{site.data.keyword.keymanagementserviceshort}} or HPCS key, you can use the same key or a different key. If you use a different key, the new instance is encrypted with the new key.
+When you restore a backup that was encrypted with a {{site.data.keyword.keymanagementserviceshort}} key, you can use the same key or a different key. If you use a different key, the new instance is encrypted with the new key.
 
 You will have immediate access to the restored database instance with decreased IO performance until hydration completes. Backups on the restored instance cannot be created till its hydration is completed. You can track the completion of hydration using platform Activity tracking events. For more information, see [List of platform events](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events#at_actions_platform).
 
@@ -189,6 +189,7 @@ You will have immediate access to the restored database instance with decreased 
 {: #cross-account-restore}
 
 Backups can be restored across IBM Cloud accounts, enabling scenarios such as:
+
 - Restoring production data to a development account for testing
 - Migrating databases between organizational units
 - Disaster recovery to a separate account
@@ -198,8 +199,6 @@ To restore a backup to a different account:
 1. The source account must grant the target account access to the backup resource
 2. Use the backup CRN when creating the new instance in the target account
 3. Ensure the target account has appropriate IAM permissions
-
-For more information about cross-account restore, see [Cross-account restore](#cross-account-restore).
 
 ## Backups and restoration responsibilities
 {: #backup-restoration}
