@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-19"
+lastupdated: "2026-06-22"
 
 subcollection: cloud-databases-gen2
 
@@ -12,7 +12,7 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding high availability for {{site.data.keyword.databases-for}}
+# Understanding high availability
 {: #ha-dr}
 
 [Gen 2]{: tag-purple}
