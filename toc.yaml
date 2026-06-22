@@ -46,7 +46,6 @@ toc:
           - topic: logging.md
             navtitle: Logging
           - topic: reference-monitoring.md
-            navtitle: Monitoring metrics
           - topic: at-events.md
             navtitle: Activity tracking events
       - topicgroup:
