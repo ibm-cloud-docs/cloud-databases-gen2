@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-18"
+lastupdated: "2026-06-23"
 
 keywords: postgresql, databases, gen 2, postgresql connection strings, postgresql connection ibm application
 
@@ -23,7 +23,7 @@ Gen 2 {{site.data.keyword.databases-for}} enable a secure by default approach us
 
 {{site.data.keyword.cloud}} uses private endpoints that restrict access to your internal network, protecting your data and applications from unwanted access and security vulnerabilities.
 
-Private endpoints also provide greater control over network traffic to your databases for better visibility and enable you to demonstrate adherence to compliance and regulatory requirements. Gen 2 {{site.data.keyword.databases-for}} support context-based restrictions that allow account owners and administrators to define and enforce access restrictions for {{site.data.keyword.cloud_notm}} resources based on the context of access requests.
+Private endpoints also provide greater control over network traffic to your databases for better visibility and enable you to demonstrate adherence to compliance and regulatory requirements. 
 
 This document covers all of the Gen 2 {{site.data.keyword.databases-for}}: {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}. Setting up Virtual Private Endpoints will incur costs and network transfer charges apply to {{site.data.keyword.cloud_notm}} VPC services using private endpoints. Charges are based on the volume of data transferred and follow a tiered pricing model. Use the [Cost estimator](https://cloud.ibm.com/estimator) to calculate an estimate based on your projected usage.
 {: .note}

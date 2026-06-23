@@ -41,7 +41,7 @@ subcollection: cloud-databases-gen2
    * [{{site.data.keyword.atracker_full_notm}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events) audit events for control plane actions, such as failed backups, IP allowlist updates, and auto scaling.
    * [{{site.data.keyword.logs_full_notm}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-logging) - any particular database-specific logs you want to be notified about, such as slow query logs.
    * If available, turn on granular in-database auditing (only available for {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} Enterprise Edition).
-- [ ] Set up context-based restrictions, which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).
+
 - [ ] Set up [Private endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints#private-endpoints). Gen 2  {{site.data.keyword.databases-for}} only support private endpoints for security.
 - [ ] Make sure that your application uses TLS for connecting to the database. Insecure connections to {{site.data.keyword.databases-for}} are not allowed.
 - [ ] Thoroughly load test, and then load test again.

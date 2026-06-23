@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-18"
+lastupdated: "2026-06-23"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
@@ -195,8 +195,3 @@ ibmcloud resource service-key-delete ( NAME | ID ) [-g RESOURCE_GROUP]
 
 Updating a user is not possible for Gen 2 instances.
 {: note}
-
-## Manage IP addresses
-{: #ibmcloud-cdb-allowlisting}
-
-{{site.data.keyword.databases-for}} utilizes context-based restrictions for its allowlisting needs. To manage your IP address using the CLI, see [Context-based restrictions CLI plug-in](/docs/iam?topic=iam-cbr-plugin).
