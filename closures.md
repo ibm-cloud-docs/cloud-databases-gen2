@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-22"
+lastupdated: "2026-06-23"
 
 subcollection: cloud-databases-gen2
 
@@ -24,7 +24,7 @@ Migrating resources to a different data center
 For a current list of data centers, see [Locations for resource deployment
 ](/docs/overview?topic=overview-locations){: external}.
 
-For information on data center closures, see [Data center migrations](/docs/account?topic=account-dc-migrate){: external}.
+For information on data center closures, see [Data center migrations](/docs/account?topic=account-migrate-data-center){: external}.
 
 ## Migrating your resources
 {: #migrating-your-resources}
