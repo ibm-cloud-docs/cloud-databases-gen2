@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-06-24"
 
 keywords: gen 2, pricing
 
@@ -33,7 +33,59 @@ The charge for an {{site.data.keyword.databases-for}} instance is determined by 
 
 Each database instance consists of two or three members, depending on the database type, with each member holding a copy of the data to provide resiliency and high availability. Gen 2 {{site.data.keyword.databases-for}} instances are only available with [Isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui) hosting. Isolated compute offers a choice of standard vCPU x RAM resource profiles that are hosted on single-tenant compute instances for maximum workload isolation and security. Disk storage capacity per member is specified independently of the vCPU x RAM profile selected. Gen 2 deployments depend on regional availability, for more information, see [Isolated Compute sizing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui#isolated-compute-sizing-ui).
 
+## Compute profile options
+{: #pricing-profile-options}
 
+Gen 2 offers two types of compute profiles designed to meet different workload requirements, with consistent vCPU:RAM ratios across both options and storage configured independently:
+
+- **Fixed profiles**: Predefined vCPU and RAM combinations that run on the newest available CPU generation, delivering the highest level of consistent and predictable performance.
+
+   - Designed for workloads where performance consistency is critical
+   - No variation in underlying CPU generation
+   - Optimized for deterministic, production-grade environments
+
+- **Flex profiles**: Predefined vCPU and RAM profiles designed to run across available CPU generations, with dynamic placement optimized for cost.
+
+   - Aligned to a standard baseline level of CPU performance
+   - May run on different hardware generations over time
+   - Priced at a lower price point while maintaining predictable behavior
+
+### Fixed profiles
+{: #pricing-fixed-profiles}
+
+| Host size | vCPU x RAM |
+| --- | --- |
+| 4x20 | 4 vCPU x 20 GB RAM |
+| 8x40 | 8 vCPU x 40 GB RAM |
+| 16x80 | 16 vCPU x 80 GB RAM |
+| 32x160 | 32 vCPU x 160 GB RAM |
+| 48x240 | 48 vCPU x 240 GB RAM |
+{: caption="Fixed profile selections" caption-side="bottom"}
+
+### Flex profiles
+{: #pricing-flex-profiles}
+
+| Host size | vCPU x RAM |
+| --- | --- |
+| 4x16 | 4 vCPU x 16 GB RAM |
+| 8x32 | 8 vCPU x 32 GB RAM |
+| 16x64 | 16 vCPU x 64 GB RAM |
+| 32x128 | 32 vCPU x 128 GB RAM |
+| 48x192 | 48 vCPU x 192 GB RAM |
+{: caption="Flex profile selections" caption-side="bottom"}
+
+The total cost of your {{site.data.keyword.databases-for}} deployment will consist of the the cost of each vCPU x RAM profile, disk storage in GB and backup storage (for all members), prorated hourly.
+{: note}
+
+### Disk storage
+{: #pricing-storage}
+
+Disk storage is provisioned per member and billed based on the total allocated capacity (GB) across all members in a deployment.
+{{site.data.keyword.databases-for}} uses IBM Cloud VPC Block Storage as the underlying storage layer. Storage capacity can be configured independently of the selected compute profile, allowing customers to scale storage based on workload requirements.
+
+The available storage performance profile is determined by the region in which the service is deployed. Most regions support the latest generation of storage capabilities (SSD Defined Performance (`sdp`)), which provides more flexible and consistent performance characteristics. In Chennai - Airtel (`in-che`), Mumbai - Airtel (`in-mum`), and Montreal (`ca-mon`) regions, storage is delivered using standard profiles with predefined performance levels at 5 IOPS/GB. As a result, both storage performance characteristics and pricing varies by region, reflecting differences in the underlying storage infrastructure.
+
+For customers with specific performance or compliance requirements, it is recommended to validate regional capabilities during deployment planning.
 
 ## Using the pricing calculator
 {: #pricing-calc}
