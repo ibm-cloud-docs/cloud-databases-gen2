@@ -42,10 +42,10 @@ subcollection: cloud-databases-gen2
    * [{{site.data.keyword.logs_full_notm}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-logging) - any particular database-specific logs you want to be notified about, such as slow query logs.
    * If available, turn on granular in-database auditing (only available for {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} Enterprise Edition).
 
-- [ ] Make sure that your application uses TLS for connecting to the database. Insecure connections to {{site.data.keyword.databases-for}} are not allowed.
+- [ ] Make sure that your application uses TLS for connecting to the database. Insecure connections to {{site.data.keyword.databases-for}} are not supported.
 - [ ] Thoroughly load test, and then load test again.
 - [ ] Validate the application's reconnect logic. For some applications retry is not enough and you must reconnect. Review the article, ["Unresponsive Redis Service"](https://developer.ibm.com/articles/error-detection-and-handling-with-redis/) for an example of implementation on {{site.data.keyword.databases-for-redis_full}}.
-- [ ] Set up development and testing environments as separate instances, then work through this checklist again. Depending on your requirements, you might not want to use Isolated Compute for these test environments. Not using Isolated Compute helps to keep costs lower.
+- [ ] Set up development and testing environments as separate instances, then work through this checklist again.
 - [ ] Complete [Disaster recovery](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-ha-dr) testing. Test restoring your application to a different IBM Cloud region. Ensure you are able to connect to a "restored" database with new connection details.
     * Understand your Recovery Point Objective (RPO) and Recovery Time Objective (RTO) requirements and ensure that you can meet them with your database's configuration.
 
