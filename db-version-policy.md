@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-22"
+lastupdated: "2026-06-24"
 
 subcollection: cloud-databases-gen2
 
@@ -17,7 +17,6 @@ keywords: version for cloud-databases, database version, end of life, major vers
 
 [Gen 2]{: tag-purple}
 
-
 When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud}}. Currently, only the latest versions are available for Gen 2 {{site.data.keyword.databases-for}} and this is shown in the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [Resource Controller CLI](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference), or the [Resource Controller API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api).
 
 ## Major versions defined
@@ -25,11 +24,17 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 
 
-| Service | Versioning schema| Next known end of life version and date | Preferred major version | End of life procedure |
+| Service | {{site.data.keyword.databases-for}} versioning schema| Next known end of life version and date | Preferred major version | End of life procedure [^tabletext4] |
 |----|----|----|----|----|
-| {{site.data.keyword.databases-for-mongodb}} | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v6, 30 July 2025, <br> v7, 26 Aug 2026 |   v7.0   | Automatically upgraded in place to next Major version |
-| {{site.data.keyword.databases-for-postgresql}} | The major version is defined by the first number in the version number. | v13, 22 October 2025 |   v17 | Automatically upgraded in place to next major version |
-{: caption="Major versions for Gen 2 {{site.data.keyword.databases-for}}" caption-side="top"}
+| {{site.data.keyword.databases-for-mongodb}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. |  v7, 25 Aug 2027 |   v8.0   | Automatically upgraded in place to next Major version, [Customer-initiated in-place upgrade to the next major version is supported for Standard and Enterprise plans](/docs/databases-for-mongodb?topic=databases-for-mongodb-upgrading&interface=ui#upgrading-in-place) |
+| {{site.data.keyword.databases-for-elasticsearch}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `release.version`.maintenance version number. |  v8.7, v8.10, v8.12, v8.15, 30 June 2026|   v8.19   | Automatically upgraded in-place to next major version, [Customer-initiated in-place upgrade to the version 8.19 is supported](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-upgrading&interface=ui#upgrading-in-place)  |
+| {{site.data.keyword.databases-for-redis}} | {{site.data.keyword.databases-for}} major versions are the first number in a `major.minor.patch` version number. | v7.2, 19 August 2026 |   v8.2   | Automatically upgraded in place to next Major version|
+| {{site.data.keyword.databases-for-postgresql}} | {{site.data.keyword.databases-for}} major version is defined by the first number in the version number. |  v14, 21 October 2026 |   v18 | Automatically upgraded in place to next major version, [Customer-initiated in-place upgrade from v14 to v15 supported](/docs/databases-for-postgresql?topic=databases-for-postgresql-upgrading&interface=ui) |
+| {{site.data.keyword.databases-for-mysql}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. | v8.0, 29 July 2026 |  v8.4 | Backup taken and access removed |
+| {{site.data.keyword.messages-for-rabbitmq}} | {{site.data.keyword.databases-for}} Major versions are the first two numbers in a `major.x.patch` version number. | v3.13, 20 May 2026, <br> v4.1, 12 August 2026 |   v4.2   | Backup taken and access removed until v3.13, <br> Automatically upgraded in place to next Major version starting v4.x |
+{: caption="Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
+
+[^tabletext4]: This column describes the actions that will be taken by the {{site.data.keyword.cloud}} team on database instances that have not been upgraded to a new version prior to the version EoL date. This approach is not recommended. For more information, see [End of life procedure](#version-EOL).
 
 ## Subscribe for version updates
 {: #version-updates-subscribe}
