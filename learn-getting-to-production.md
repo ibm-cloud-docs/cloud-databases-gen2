@@ -42,7 +42,6 @@ subcollection: cloud-databases-gen2
    * [{{site.data.keyword.logs_full_notm}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-logging) - any particular database-specific logs you want to be notified about, such as slow query logs.
    * If available, turn on granular in-database auditing (only available for {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} Enterprise Edition).
 
-- [ ] Set up [Private endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints#private-endpoints). Gen 2  {{site.data.keyword.databases-for}} only support private endpoints for security.
 - [ ] Make sure that your application uses TLS for connecting to the database. Insecure connections to {{site.data.keyword.databases-for}} are not allowed.
 - [ ] Thoroughly load test, and then load test again.
 - [ ] Validate the application's reconnect logic. For some applications retry is not enough and you must reconnect. Review the article, ["Unresponsive Redis Service"](https://developer.ibm.com/articles/error-detection-and-handling-with-redis/) for an example of implementation on {{site.data.keyword.databases-for-redis_full}}.
