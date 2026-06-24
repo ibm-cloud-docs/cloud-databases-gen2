@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-06-24"
 
 keywords: guidance, recommendations, best practices, initial steps, setup
 
@@ -26,14 +26,14 @@ subcollection: cloud-databases-gen2
 - [ ] To manage your database's encryption key for data-at-rest, you must [Bring your own encryption key (BYOK)](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect) when creating your database. This setup cannot be changed after your instance is provisioned.
 - [ ] Make sure that [IAM access policies and resource groups]( /docs/iam?topic=iam-access-getstarted) are set up correctly for your business protocols.
 - [ ] Understand your database's high availability model. This is covered in the "High-Availability" section of each database's documentation.
-- [ ] To ensure you receive messages, enroll in [IBM Cloud notifications](/docs/support?topic=support-email-prefs){: external}, specifically the "Resource Activity" notification. We directly notify you when your database version is approaching end of life. In addition, you can bookmark our [Database version lifecycle policy](/docs/cloud-databases?topic=cloud-databases-versioning-policy), which is kept up to date with end of life dates and resources for all databases.
+- [ ] To ensure you receive messages, enroll in [IBM Cloud notifications](/docs/support?topic=support-email-prefs){: external}, specifically the "Resource Activity" notification. We directly notify you when your database version is approaching end of life. In addition, you can bookmark our [Database version lifecycle policy](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-versioning-policy), which is kept up to date with end of life dates and resources for all databases.
 
 
 ## Sample "Getting to production" checklist
 {: #sample-checklist}
 
 - [ ] Create a database with the required compute profile and disk. Gen 2 instances are only available with Isolated Compute, which provides hypervisor level isolation with guaranteed vCPU and RAM.
-- [ ] While these scaling parameters can be changed after the initial provisioning, disks *cannot be scaled down*.< --- might have to be deleted--->
+- [ ] While these scaling parameters can be changed after the initial provisioning, disks cannot be scaled down.
 - [ ] Add users. See the related documentation for your {{site.data.keyword.databases-for}} instance.
 - [ ] Create the `manager` service-credential. You can rotate the `manager` service-credential passwords either directly via the database or via the user management API.
 - [ ] Set up monitoring with {{site.data.keyword.monitoringfull}}, {{site.data.keyword.atracker_full}}, and {{site.data.keyword.logs_full}}. At minimum, set alerts on:
