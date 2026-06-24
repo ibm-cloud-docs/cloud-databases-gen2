@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-22"
+lastupdated: "2026-06-24"
 
 subcollection: cloud-databases-gen2
 
@@ -379,9 +379,9 @@ If you need to adjust resources, add any of the optional parameters `key_protect
 ### Backup encryption
 {: #backup-encryption}
 
-Independent backups are encrypted at rest with the same encryption as the database instance. If you use Key Protect or Hyper Protect Crypto Services (HPCS) to manage your encryption for the database, your backups are encrypted with the same key. For more information, see [Key Protect Integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect) and [Hyper Protect Crypto Services (HPCS) Integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-hpcs).
+Independent backups are encrypted at rest with the same encryption as the database instance. If you use Key Protect to manage your encryption for the database, your backups are encrypted with the same key. For more information, see [Key Protect Integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect).
 
-When you restore a backup that was encrypted with a Key Protect or HPCS key, you can use the same key or a different key. If you use a different key, the new instance is encrypted with the new key.
+When you restore a backup that was encrypted with a Key Protect key, you can use the same key or a different key. If you use a different key, the new instance is encrypted with the new key.
 
 ### Cross-account restore
 {: #cross-account-restore}
