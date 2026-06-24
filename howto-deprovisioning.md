@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-20"
+lastupdated: "2026-06-24"
 
 subcollection: cloud-databases-gen2
 
@@ -33,7 +33,7 @@ To delete your deployment from the Resource list section dashboard of the {{site
 {: #restore-deployment-ui}
 {: ui}
 
-Soft-deleted instances must be restored using the [CLI](/docs/databases-for-mysql?topic=databases-for-mysql-dashboard-backups&interface=cli#restore-backup-cli).
+Soft-deleted instances must be restored using the [CLI](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups&interface=cli#restore-backup-cli).
 
 ## Deleting your deployment using the CLI
 {: #delete-deployment-cli}
