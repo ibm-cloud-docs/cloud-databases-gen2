@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-24"
+lastupdated: "2026-06-25"
 
 subcollection: cloud-databases-gen2
 
@@ -153,8 +153,8 @@ You can configure the following features on the database instance:
 {: caption="Configuration features" caption-side="bottom"}
 
 You can set the allowed configuration in the provision parameters of the database instance.
-
 For example, the following configuration sets the backups to be preserved even after the database is deleted:
+{: cli}
 
 ```sh
 ibmcloud resource service-instance-create \
@@ -170,6 +170,7 @@ ibmcloud resource service-instance-create \
   }'
 ```
 {: pre}
+{: cli}
 
 ### Taking an on-demand backup in the UI
 {: #ondemand-backup-ui}
