@@ -20,7 +20,7 @@ keywords: independent backups, decoupled backups, backup lifecycle, backup manag
 Independent backups are currently available only for {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, and {{site.data.keyword.databases-for-mysql}}.
 {: important}
 
-Independent backups represent a fundamental shift in how {{site.data.keyword.databases-for}} Gen 2 manages backup data. Unlike traditional backups that are tightly coupled to your database instance lifecycle, independent backups exist as separate, provisionable service instances with their own lifecycle, allowing you to retain backup data even after the source database instance is deleted.
+Independent backups represent a fundamental shift in how {{site.data.keyword.databases-for}} Gen 2 manages backup data. Unlike traditional backups that are tightly coupled to your database instance lifecycle, independent backups exist as separate, provisionable service instances with their own lifecycle, allowing you to retain backup data even after the source database instance is deleted. Independent backups are billed as separate service instances. For more information, see [Independent backups billing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing#independent-backups-billing).
 {: shortdesc}
 
 ## What are independent backups?
