@@ -85,6 +85,11 @@ Independent backups follow this lifecycle:
 
 Unlike coupled backups, independent backups can be manually deleted at any time through the Resource Controller, giving you greater control over your backup data and associated costs.
 
+## Prerequisites
+{: #prerequisites}
+
+Before you use independent backups, ensure that you have the required IAM permissions. For more information, see [Independent backups IAM permissions](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-iam#independent-backups-iam).
+
 ## Accessing your backups
 {: #accessing-backups}
 
