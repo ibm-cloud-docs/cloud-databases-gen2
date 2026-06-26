@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-25"
+lastupdated: "2026-06-26"
 
 subcollection: cloud-databases-gen2
 
@@ -460,7 +460,7 @@ Independent backups are billed as separate service instances:
 For detailed pricing information, see [Pricing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing#pricing-backup).
 
 ## Security and compliance
-{: #security-compliance}
+{: #independent-backups-security}
 
 Independent backups maintain the same security standards as your database instances:
 
@@ -469,7 +469,7 @@ Independent backups maintain the same security standards as your database instan
 - **Access control**: IAM policies control who can create, view, and restore backups
 
 ## Limitations and restrictions
-{: #limitations}
+{: #independent-backups-limitations}
 
 Be aware of the following limitations:
 
