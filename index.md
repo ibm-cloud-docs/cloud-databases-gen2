@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-06-26"
 
 keywords: postgresql gen 2, mongodb gen 2, provision service, choose service
 
@@ -36,7 +36,12 @@ Gen 2 {{site.data.keyword.databases-for}} provides isolated compute, a secure, s
 Follow these steps to get started with each database service:
 
 - [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-provisioning){: external}
-- [{{site.data.keyword.databases-for-mongodb}} Standard](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-provisioning){: external} 
+- [{{site.data.keyword.databases-for-mongodb}} Standard and Enterprise](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-provisioning){: external}
+- [{{site.data.keyword.databases-for-redis}} ](/docs/databases-for-redis-gen2?topic=databases-for-redis-gen2-provisioning){: external}
+- [{{site.data.keyword.databases-for-elasticsearch}} Standard and Enterprise](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-provisioning){: external}
+- [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql-gen2?topic=databases-for-mysql-gen2-provisioning){: external}
+- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq-gen2?topic=messages-for-rabbitmq-provisioning){: external}
+
 
 ## Next steps
 {: #provision-instance-next-steps}
