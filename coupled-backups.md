@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-06-29"
 
 subcollection: cloud-databases-gen2
 
@@ -20,7 +20,7 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 {{site.data.keyword.databases-for}} Gen 2 provides automated daily backups and on-demand backups for your database instances. Backups are encrypted either with an automatic key or your own key if you use Bring Your Own Key (BYOK). You can restore a backup to a new instance of {{site.data.keyword.databases-for}}.
 {: shortdesc}
 
-This topic covers backup management for all Gen 2 {{site.data.keyword.databases-for}} services except {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, and {{site.data.keyword.databases-for-mysql}}, which use [independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
+This topic covers backup management for all Gen 2 {{site.data.keyword.databases-for}} services except {{site.data.keyword.databases-for-mysql}}. For {{site.data.keyword.databases-for-mysql}}, see [independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
 {: important}
 
 ## Key backup characteristics

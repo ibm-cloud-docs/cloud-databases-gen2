@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-22"
+lastupdated: "2026-06-29"
 
 subcollection: cloud-databases-gen2
 
@@ -22,7 +22,7 @@ Backups with Gen 1 instances and backups (snapshots) with Gen 2 instances differ
 
 Gen 2 offers two types of backups: coupled backups (for most services) and independent backups. Independent backups are separate service instances that persist after database deletion, while coupled backups are tied to the database instance lifecycle.
 
-Independent backups are currently available only for {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, and {{site.data.keyword.databases-for-mysql}}. All other Gen 2 services use coupled backups.
+Independent backups are currently available only for {{site.data.keyword.databases-for-mysql}}. All other Gen 2 services use coupled backups.
 {: important}
 
 Gen 2 instances cannot be used to restore a Gen 1 instance because the volume snapshot restoration process requires complete block-level images rather than individual database files.
@@ -43,7 +43,7 @@ Gen 2 instances cannot be used to restore a Gen 1 instance because the volume sn
 ## Independent backups features
 {: #independent-backups-features}
 
-Gen 2 introduces independent backups for {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, and {{site.data.keyword.databases-for-mysql}}, which provide additional capabilities beyond traditional coupled backups:
+Gen 2 introduces independent backups for {{site.data.keyword.databases-for-mysql}}. These backups provide capabilities beyond traditional coupled backups:
 
 | Feature | Gen 1 | Gen 2 (Coupled) | Gen 2 (Independent) |
 |---------|-------|-----------------|---------------------|
@@ -55,7 +55,7 @@ Gen 2 introduces independent backups for {{site.data.keyword.databases-for-postg
 | Management | Database APIs | UI only | Database Hub, Resource List, Instance UI  |
 {: caption="Independent backups feature comparison" caption-side="bottom"}
 
-Independent backups are currently available only for {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, and {{site.data.keyword.databases-for-mysql}}. All other Gen 2 services use coupled backups.
+Independent backups are currently available only for {{site.data.keyword.databases-for-mysql}}. All other Gen 2 services use coupled backups.
 {: important}
 
 For more information about independent backups, see [Managing independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
