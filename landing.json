@@ -15,16 +15,16 @@
         "href": "/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute"
       },
       {
+        "title": "Comparison of Gen 1 and Gen 2 backups",
+        "href": "/docs/cloud-databases-gen2?topic=cloud-databases-gen2-comparison-backups"
+      },
+      {
+        "title": "Choose your service",
+        "href": "/docs/cloud-databases-gen2?topic=cloud-databases-gen2-gen2-offerings"
+      },
+      {
         "title": "Release notes",
         "href": "/docs/cloud-databases-gen2?topic=cloud-databases-gen2-databases-relnotes"
-      },
-      {
-        "title": "IBM Cloud® Databases for PostgreSQL",
-        "href": "/docs/databases-for-postgresql-gen2"
-      },
-      {
-        "title": "IBM Cloud® Databases for MongoDB",
-        "href": "/docs/databases-for-mongodb-gen2"
       },
       {
         "title": "Gen 1 docs",
@@ -53,7 +53,7 @@
         "href": "/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api"
       }
     ],
-    "cli": "/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference&interface=",
+    "cli": "/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
   }
 }
