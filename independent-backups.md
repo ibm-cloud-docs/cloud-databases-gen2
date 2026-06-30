@@ -2,11 +2,11 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-06-30"
 
 subcollection: cloud-databases-gen2
 
-keywords: independent backups, decoupled backups, backup lifecycle, backup management, cross-region backups, mysql backups, postgresql backups, mongodb backups
+keywords: independent backups, decoupled backups, backup lifecycle, backup management, cross-region backups, mysql backups
 
 ---
 
@@ -133,14 +133,13 @@ Independent backups appear as separate service instances in your {{site.data.key
 {: #instance-view}
 {: ui}
 
-In the UI, navigate to the **Backups and restore** tab where you see a table with all available backups for your database, including both coupled backups (during transition period for PostgreSQL and MongoDB) and independent backups.
+In the UI, navigate to the **Backups and restore** tab where you see a table with all available backups for your database, including both coupled backups and independent backups.
 
 The backup types can be either _On-demand_ or _Automatic_. Each backup is listed with its type, when the backup was taken, and whether it's a coupled or independent backup.
 
 Click the backup to reveal information for that specific backup, including its full ID and CRN. A **Restore** button or a pre-formatted CLI command is there for restore options.
 
-During the 30-day transition period for PostgreSQL and MongoDB, you may see both coupled and independent backups in this view. Coupled backups will be automatically deleted after 30 days.
-{: note}
+
 
 ## Managing independent backups
 {: #managing-independent-backups}
@@ -212,14 +211,14 @@ Example:
 
 ```sh
 ibmcloud resource service-instance-create \
-  my-postgres-backup-20260429 \
-  databases-for-postgresql-backup \
+  my-mysql-backup-20260429 \
+  databases-for-mysql-backup \
   standard \
   us-east \
   -g Default \
   -p '{
     "dataservices": {
-      "source_dataservice_crn": "crn:v1:bluemix:public:databases-for-postgresql:us-east:a/1234567890:abcd-1234-efgh-5678::"
+      "source_dataservice_crn": "crn:v1:bluemix:public:databases-for-mysql:us-east:a/1234567890:abcd-1234-efgh-5678::"
     }
   }'
 ```
@@ -310,16 +309,16 @@ ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-ID>-gen2-<PLA
 Example command:
 
 ```sh
-ibmcloud resource service-instance-create postgresql-restore-abc databases-for-postgresql databases-for-postgresql-gen2-standard ca-mon -p  '{"dataservices":{"restore_backup_id":"crn:v1:bluemix:public:databases-for-postgresql:ca-mon:a/26b19aex04da4475b6e31205fa93248d:a1e247d8-01c2-3bbe-a5e6-fdb5eb872d2f:backup:f689275f-7da9-4e90-9055-70b02c575492"}}'
+ibmcloud resource service-instance-create mysql-restore-abc databases-for-mysql databases-for-mysql-gen2-standard ca-mon -p  '{"dataservices":{"restore_backup_id":"crn:v1:bluemix:public:databases-for-mysql:ca-mon:a/26b19aex04da4475b6e31205fa93248d:a1e247d8-01c2-3bbe-a5e6-fdb5eb872d2f:backup:f689275f-7da9-4e90-9055-70b02c575492"}}'
 ```
 {: pre}
 
 * Change the value of `instance_name` to the name that you want for your new instance.
-* The `service-id` is the type of instance, such as _databases-for-postgresql_, _databases-for-mongodb_, or _databases-for-mysql_.
+* The `service-id` is the type of instance (for example, _databases-for-mysql_).
 * The `region` is where you want the new instance to be located, which can be a different region from the source instance.
 * The `restore_backup_id` is the backup that you want to restore.
 
-The previous command will restore a backup to a machine of the same configuration and on the same [hosting model](/docs/databases-for-mongodb?topic=databases-for-mongodb-hosting-models&interface=cli) as your original deployment.
+The previous command will restore a backup to a machine of the same configuration and on the same hosting model as your original deployment.
 
 ##### Optional parameters in the CLI
 {: #restore-cli-optional}
@@ -368,11 +367,11 @@ The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are al
 {: important}
 
 * Change the value of `name` to the name that you want for your new instance.
-* The `resource_plan_id` is the type of instance, such as _databases-for-postgresql_, _databases-for-mongodb_, or _databases-for-mysql_.
+* The `resource_plan_id` is the type of instance (for example, _databases-for-mysql_).
 * The `target` is the region where you want the new instance to be located, which must be a Gen 2 region.
 * The `restore_backup_id` is the backup that you want to restore.
 
-The previous command will restore a backup to a machine of the same configuration and on the same [hosting model](/docs/databases-for-mongodb?topic=databases-for-mongodb-hosting-models&interface=cli) as your original deployment.
+The previous command will restore a backup to a machine of the same configuration and on the same hosting model as your original deployment.
 
 ##### Optional parameters in the API
 {: #restore-api-optional}
@@ -385,7 +384,7 @@ If you need to adjust resources, add any of the optional parameters `key_protect
 ### Backup encryption
 {: #backup-encryption}
 
-Independent backups are encrypted at rest with the same encryption as the database instance. If you use Key Protect to manage your encryption for the database, your backups are encrypted with the same key. For more information, see [Key Protect Integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect).
+Independent backups are encrypted at rest with the same encryption as the database instance. If you use Key Protect to manage your encryption for the database, your backups are encrypted with the same key. For more information, see [Key Protect integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect).
 
 When you restore a backup that was encrypted with a Key Protect key, you can use the same key or a different key. If you use a different key, the new instance is encrypted with the new key.
 
@@ -430,18 +429,7 @@ For comprehensive information about business continuity and disaster recovery wi
 
 The transition from coupled backups to independent backups varies by database service:
 
-### PostgreSQL and MongoDB
-{: #transition-postgresql-mongodb}
 
-{{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} are transitioning from coupled backups to independent backups. During the 30-day transition period:
-
-- Both coupled and independent backups coexist
-- All new backups are created as independent backups
-- Existing coupled backups continue to function and are automatically deleted after 30 days
-- The UI displays both backup types
-- No action is required; the system handles the transition automatically
-
-After the 30-day transition period, only independent backups remain.
 
 ### MySQL
 {: #transition-mysql}
@@ -474,6 +462,6 @@ Independent backups maintain the same security standards as your database instan
 Be aware of the following limitations:
 
 - Bulk operations (bulk copy, bulk delete) are not supported.
-- Independent backups cannot be downloaded; use database-specific tools (for example, `mysqldump`, `pg_dump`, or `mongodump`) for local backups.
+- Independent backups cannot be downloaded; use database-specific tools (for example, `mysqldump`) for local backups.
 - Backup retention duration is not yet configurable (30 days default).
 - You can create upto 50 on-demand backups per database instance.
