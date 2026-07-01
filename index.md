@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-30"
+lastupdated: "2026-07-01"
 
 keywords: postgresql gen 2, mongodb gen 2, provision service, choose service
 
@@ -44,7 +44,7 @@ Follow these steps to get started with each database service:
 - [{{site.data.keyword.databases-for-redis}} ](/docs/databases-for-redis-gen2?topic=databases-for-redis-gen2-provisioning){: external}
 - [{{site.data.keyword.databases-for-elasticsearch}} Standard and Enterprise](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-provisioning){: external}
 - [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql-gen2?topic=databases-for-mysql-gen2-provisioning){: external}
-- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq-gen2?topic=messages-for-rabbitmq-provisioning){: external}
+- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq-gen2?topic=messages-for-rabbitmq-gen2-provisioning){: external}
 
 
 ## Next steps
