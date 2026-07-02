@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-07-02"
 
 keywords: ICD Gen 2 FAQ
 
@@ -62,7 +62,7 @@ Gen 2 provides:
 
 Yes, the following limitations exist at this point:
 
-- Montreal, Chennai, and Mumbai region only.
+- Montreal, Chennai, Mumbai, and Frankfurt region only.
 - Context-based restrictions (CBR) is not yet supported.
 
 ### 4. Do Gen 2 databases support the same features as Gen 1?
@@ -122,6 +122,7 @@ Yes, with:
 - Snapshot-based bakups.
 - Enhanced point-in-time recovery (PITR).
 - More performant and predictable backup and restore performance due to newer Gen 2 storage architecture.
+- Indpenedent backups (currently for {{site.data.keyword.databases-for-mysql}} only).
 
 For more information, see [Comparison of Gen 1 and Gen 2 backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-comparison-backups#independent-backups-features).
 
