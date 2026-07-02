@@ -15,7 +15,6 @@ toc:
       - isolated-compute.md
       - topic: pricing.md
         navtitle: Pricing
-      - db-version-policy.md
       - release-notes.md
       - link:
           label: Gen 1 docs
@@ -38,14 +37,12 @@ toc:
           topics:
           - backup-restore.md
           - topic: coupled-backups.md
-          - topic: independent-backups.md
       - topicgroup:
           label: Observability
           topics:
           - set-up-logging-monitoring.md
           - topic: logging.md
             navtitle: Logging
-          - topic: reference-monitoring.md
           - topic: at-events.md
             navtitle: Activity tracking events
       - topicgroup:
