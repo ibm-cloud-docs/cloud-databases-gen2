@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-25"
+lastupdated: "2026-07-02"
 
 subcollection: cloud-databases-gen2
 
@@ -28,6 +28,6 @@ or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/lat
 
 - [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-resources-scaling&interface=ui){: external}
 
-- [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql-gen2?topic=databases-for-mysql-gen2-resources-scaling&interface=ui)
+- [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql-gen2?topic=databases-for-mysql-gen2-resources-scaling&interface=ui){: external}
 
-- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq-gen2?topic=messages-for-rabbitmq-gen2-resources-scaling&interface=ui)
+- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq-gen2?topic=messages-for-rabbitmq-gen2-resources-scaling&interface=ui){: external}
