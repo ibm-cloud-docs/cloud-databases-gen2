@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-24"
+lastupdated: "2026-07-06"
 
 keywords: gen 2, pricing
 
@@ -71,7 +71,6 @@ Gen 2 offers two types of compute profiles designed to meet different workload r
 | 8x32 | 8 vCPU x 32 GB RAM |
 | 16x64 | 16 vCPU x 64 GB RAM |
 | 32x128 | 32 vCPU x 128 GB RAM |
-| 48x192 | 48 vCPU x 192 GB RAM |
 {: caption="Flex profile selections" caption-side="bottom"}
 
 The total cost of your {{site.data.keyword.databases-for}} deployment will consist of the the cost of each vCPU x RAM profile, disk storage in GB and backup storage (for all members), prorated hourly.
