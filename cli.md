@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-06-23"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
@@ -20,7 +20,7 @@ subcollection: cloud-databases-gen2
 
 To interact with {{site.data.keyword.databases-for}} on Gen 2 via the CLI you must utilize the IBM Cloud Resource Controller's CLI. For more info please see [General {{site.data.keyword.cloud}} CLI (ibmcloud) commands](/docs/cli?topic=cli-ibmcloud_cli).
 
-The {{site.data.keyword.databases-for}} plugin supports only Gen 1 instances. For Gen 2 instances, use the Resource Controller CLI.
+The {{site.data.keyword.databases-for}} plugin supports only Gen 1 instances. For Gen 2 instances, use the Resource Controller CLI as documented in this topic.
 {: note}
 
 ## Getting started - Create an instance
@@ -195,8 +195,3 @@ ibmcloud resource service-key-delete ( NAME | ID ) [-g RESOURCE_GROUP]
 
 Updating a user is not possible for Gen 2 instances.
 {: note}
-
-## Manage IP addresses (Allowlisting)
-{: #ibmcloud-cdb-allowlisting}
-
-{{site.data.keyword.databases-for}} utilizes context-based restrictions for its allowlisting needs. To manage your IP address via the CLI, see [Context-based restrictions CLI plug-in](/docs/account?topic=account-cbr-plugin).

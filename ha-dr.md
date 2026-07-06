@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-06-29"
 
 subcollection: cloud-databases-gen2
 
@@ -12,7 +12,7 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding high availability for {{site.data.keyword.databases-for}}
+# Understanding high availability
 {: #ha-dr}
 
 [Gen 2]{: tag-purple}
@@ -38,6 +38,9 @@ For more information on how your specific database replicates data among each of
 
 - In addition to the high-availability configuration, for deployments in {{site.data.keyword.cloud}} multi-zone regions, your data is snapshotted and backed up daily by the {{site.data.keyword.databases-for}} platform and stored in [the same region as VPC Block Storage Snapshots](/docs/vpc?topic=vpc-snapshots-vpc-create&interface=ui).
 - For most {{site.data.keyword.cloud}} single-campus multizone regions, your data is backed up locally in single-campus multizone region VPC Block Storage Snapshots.
+
+Independent backups are currently available for {{site.data.keyword.databases-for-mysql}} only. For more information about independent backups, see [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
+{: note}
 
 If a complete region failure occurs, the database servers in the region might not be accessible, but the backup data remains available. You can initiate a restore from these backups into an available region from the service management console. For more information, see the [{{site.data.keyword.databases-for}} backups documentation](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups&interface=ui).
 

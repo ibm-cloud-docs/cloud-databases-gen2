@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-06-22"
 
 keywords: activity tracker
 
@@ -14,7 +14,7 @@ subcollection: cloud-databases-gen2
 
 
 
-# Activity tracking events for {{site.data.keyword.databases-for}}
+# Activity tracking events
 {: #at_events}
 
 [Gen 2]{: tag-purple}
@@ -110,9 +110,9 @@ The following table lists the activity tracking event actions that {{site.data.k
 
 | Action name | Legacy action name | Description |
 | ------- | ------- | ------- |
-| `<service_name>.deployment-backup.create` | `<service_id>.backup-ondemand.create` | A backup of your instance was created. The message contains the database version along with size, id, status and type of the backup. |
-| `<service_name>.deployment-backup.delete` | `<service_id>.backup-ondemand.delete` | A backup of your instance was deleted. The message contains the type of the database. |
-| `<service_name>.restore.hydrate` | `<service_id>.restore-ondemand.hydrate` | A restore of a backup to a new service instance was created. The message contains the status of the hydration of the restored instance. |
+| `<service_name>.deployment-backup.create` | `<service_id>.backup-ondemand.create` | A backup of your instance was created. The message contains the database version along with size, id, status and type of the backup. Applicable only for coupled backups. |
+| `<service_name>.deployment-backup.delete` | `<service_id>.backup-ondemand.delete` | A backup of your instance was deleted. The message contains the type of the database. Applicable only for coupled backups. |
+| `<service_name>.restore.hydrate` | `<service_id>.restore-ondemand.hydrate` | A restore of a backup to a new service instance was created. The message contains the status of the hydration of the restored instance. Not applicable for {{site.data.keyword.databases-for-mysql}}. |
 {: caption="List of events and event descriptions by {{site.data.keyword.databases-for}}" caption-side="bottom"}
 
 The `service_name` field indicates the type of {{site.data.keyword.databases-for}} instance. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.

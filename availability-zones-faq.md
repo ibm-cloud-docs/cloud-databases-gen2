@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-07-02"
 
 subcollection: cloud-databases-gen2
 
@@ -24,8 +24,12 @@ You can create a {{site.data.keyword.databases-for}} instance on {{site.data.key
 
 See the documentation for provisioning a specific service {{site.data.keyword.databases-for}} instance: 
 
-- Provisioning [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-provisioning&interface=ui)
-- Provisioning [{{site.data.keyword.databases-for-mongodb_full}}](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-provisioning&interface=ui)
+- Provisioning [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-provisioning){: external}
+- Provisioning [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-provisioning){: external}
+- Provisioning [{{site.data.keyword.databases-for-redis}} ](/docs/databases-for-redis-gen2?topic=databases-for-redis-gen2-provisioning){: external}
+- Provisioning [{{site.data.keyword.databases-for-elasticsearch}} Standard and Enterprise](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-provisioning){: external}
+- Provisioning [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql-gen2?topic=databases-for-mysql-gen2-provisioning){: external}
+- Provisioning [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq-gen2?topic=messages-for-rabbitmq-gen2-provisioning){: external}
 
 ## What is an availability zone?
 {: #what-availability-zone}

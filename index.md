@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-07-01"
 
 keywords: postgresql gen 2, mongodb gen 2, provision service, choose service
 
@@ -23,6 +23,10 @@ subcollection: cloud-databases-gen2
 
 - **{{site.data.keyword.databases-for-postgresql}}** is a powerful, open source object-relational database that is highly customizable. For more information, see [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql-gen2){: external}.
 - **{{site.data.keyword.databases-for-mongodb}} Standard** is a JSON document store with a rich query and aggregation framework. For more information, see [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb-gen2){: external}.
+- **{{site.data.keyword.databases-for-redis}}** is a fully managed, in-memory data store optimized for high-performance caching and real-time applications. For more information, see [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis-gen2){: external}.
+- **{{site.data.keyword.databases-for-elasticsearch}}** is a fully managed search and analytics service for storing, indexing, and querying large volumes of data. For more information, see [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch-gen2){: external}.
+- **{{site.data.keyword.databases-for-mysql}}** is a fully managed MySQL relational database service for building scalable and secure applications. For more information, see [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql-gen2){: external}.
+- **{{site.data.keyword.messages-for-rabbitmq}}** is a fully managed MySQL relational database service for building scalable and secure applications. For more information, see [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq-gen2){: external}.
 
 ## Provision an instance
 {: #gen2-provision}
@@ -36,7 +40,12 @@ Gen 2 {{site.data.keyword.databases-for}} provides isolated compute, a secure, s
 Follow these steps to get started with each database service:
 
 - [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-provisioning){: external}
-- [{{site.data.keyword.databases-for-mongodb}} Standard](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-provisioning){: external} 
+- [{{site.data.keyword.databases-for-mongodb}} Standard and Enterprise](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-provisioning){: external}
+- [{{site.data.keyword.databases-for-redis}} ](/docs/databases-for-redis-gen2?topic=databases-for-redis-gen2-provisioning){: external}
+- [{{site.data.keyword.databases-for-elasticsearch}} Standard and Enterprise](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-provisioning){: external}
+- [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql-gen2?topic=databases-for-mysql-gen2-provisioning){: external}
+- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq-gen2?topic=messages-for-rabbitmq-gen2-provisioning){: external}
+
 
 ## Next steps
 {: #provision-instance-next-steps}

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-05-25"
+lastupdated: "2026-06-22"
 
 subcollection: cloud-databases-gen2
 
@@ -60,7 +60,7 @@ If you want to set up a more restrictive authorization policy, configure your po
 1. Create an authorization policy to allow the {{site.data.keyword.databases-for}} service to access the {{site.data.keyword.keymanagementserviceshort}} service instance on the CLI. For a full set of arguments, see the [IAM CLI reference](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create).
 
 ```bash
-bx iam authorization-policy-create <SERVICE-NAME> kms "Reader,AuthorizationDelegator"
+ibmcloud iam authorization-policy-create <SERVICE-NAME> kms "Reader,AuthorizationDelegator"
 ```
 {: codeblock}
 
@@ -204,17 +204,13 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 
 If you use {{site.data.keyword.keymanagementserviceshort}}, when you provision a database you can also designate a key to encrypt the {{site.data.keyword.block_storage_is_full}} disk that holds your deployment's backups.
 
-BYOK for backups is available only in select regions.
+The backup inherits the same encryption key as the database. A different encryption key cannot be provided while creating the backup from the database.
 {: .note}
-
-Only keys in the select regions are durable to region failures. To ensure that your backups are available even if a region failure occurs, you must use a key from these select regions, regardless of your deployment's location.
-
-
 
 ### Granting the delegation authorization
 {: #grant-auth}
 
-To enable your deployment to use the {{site.data.keyword.keymanagementserviceshort}} key, you need to [Enable authorization to be delegated](/docs/account?topic=account-serviceauth) when granting the service authorizations. If the delegation authorization is not present before provisioning your deployment with a key, the provision fails.
+To enable your deployment to use the {{site.data.keyword.keymanagementserviceshort}} key, you need to [Enable authorization to be delegated](/docs/iam?topic=iam-serviceauth&interface=ui){: external} when granting the service authorizations. If the delegation authorization is not present before provisioning your deployment with a key, the provision fails.
 
 After you enable delegation and provisioned your deployment, two entries appear in your _Authorizations_ in IAM. One is the entry for the deployment that lists its status as delegator. It is "User Created".
 

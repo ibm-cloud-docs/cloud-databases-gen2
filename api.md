@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-06-18"
 
 subcollection: cloud-databases-gen2
 
@@ -24,7 +24,7 @@ The {{site.data.keyword.databases-for}} API generally utilizes the [Resource Con
 ## Authentication
 {: #api-authentication}
 
-Access to the API uses token authentication, by using the header `Authorization: Bearer <token>`. The token must be [IAM-issued](/apidocs/iam-identity-token-api). You can send in an IAM API key directly as the token or [use the API key to generate an IAM bearer token](/docs/account?topic=account-iamtoken_from_apikey).
+Access to the API uses token authentication, by using the header `Authorization: Bearer <token>`. The token must be [IAM-issued](/apidocs/iam-identity-token-api). You can send in an IAM API key directly as the token or [use the API key to generate an IAM bearer token](/docs/iam?topic=iam-iamtoken_from_apikey&interface=ui).
 
 To call each method, you'll need to be [assigned a role](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-iam) that includes the required IAM actions. Each method lists the associated action. For more information about IAM actions and how they map to roles, see [Managing access for {{site.data.keyword.cloud}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-iam).
 
@@ -259,7 +259,7 @@ Example response:
 {: #api-manage-config}
 
 ```sh
-POST /v2/resource_instances`
+POST /v2/resource_instances
 ```
 {: pre}
 
