@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-07-08"
 
 subcollection: cloud-databases-gen2
 
@@ -72,6 +72,7 @@ Isolated compute offers two profile types: Fixed profiles with predefined config
 | 8x32 | 8 vCPU x 32 GB RAM |
 | 16x64 | 16 vCPU x 64 GB RAM |
 | 32x128 | 32 vCPU x 128 GB RAM |
+
 {: caption="Flex profile UI selections" caption-side="bottom"}
 
 ## Size selections in the CLI
@@ -103,6 +104,7 @@ The host_flavor parameter defines your Compute sizing. Input the appropriate val
 | 8x32      | 8 vCPU x 32 GB RAM   | b3c.8x32.encrypted        |
 | 16x64     | 16 vCPU x 64 GB RAM  | b3c.16x64.encrypted       |
 | 32x128    | 32 vCPU x 128 GB RAM | b3c.32x128.encrypted      |
+
 {: caption="Flex profile CLI selections" caption-side="bottom"}
 
 ## Size selections in the API
@@ -134,6 +136,7 @@ The host_flavor parameter defines your Compute sizing. Input the appropriate val
 | 8x32      | 8 vCPU x 32 GB RAM   | b3c.8x32.encrypted        |
 | 16x64     | 16 vCPU x 64 GB RAM  | b3c.16x64.encrypted       |
 | 32x128    | 32 vCPU x 128 GB RAM | b3c.32x128.encrypted      |
+
 {: caption="Flex profile API selections" caption-side="bottom"}
 
 ## Size selections in Terraform
@@ -165,4 +168,5 @@ The host_flavor parameter defines your Compute sizing. Input the appropriate val
 | 8x32      | 8 vCPU x 32 GB RAM   | b3c.8x32.encrypted        |
 | 16x64     | 16 vCPU x 64 GB RAM  | b3c.16x64.encrypted       |
 | 32x128    | 32 vCPU x 128 GB RAM | b3c.32x128.encrypted      |
+
 {: caption="Flex profile Terraform selections" caption-side="bottom"}

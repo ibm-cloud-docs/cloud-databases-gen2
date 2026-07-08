@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-02"
+lastupdated: "2026-07-08"
 
 keywords: cloud databases release notes
 
@@ -22,8 +22,8 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
-## 3 July 2026
-{: #cloud-databases-03jul2026}
+## 6 July 2026
+{: #cloud-databases-06jul2026}
 {: release-note}
 
 {{site.data.keyword.databases-for-redis}} Gen 2, {{site.data.keyword.databases-for-elasticsearch}} Gen 2, {{site.data.keyword.databases-for-mysql}} Gen 2, and {{site.data.keyword.messages-for-rabbitmq}} Gen 2 are now generally available (GA)

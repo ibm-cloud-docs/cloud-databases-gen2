@@ -15,6 +15,7 @@ toc:
       - isolated-compute.md
       - topic: pricing.md
         navtitle: Pricing
+      - db-version-policy.md
       - release-notes.md
       - link:
           label: Gen 1 docs
@@ -36,13 +37,15 @@ toc:
           label: Managing backups
           topics:
           - backup-restore.md
-          - topic: coupled-backups.md
+          - coupled-backups.md
+          - independent-backups.md
       - topicgroup:
           label: Observability
           topics:
           - set-up-logging-monitoring.md
           - topic: logging.md
             navtitle: Logging
+          - topic: reference-monitoring.md
           - topic: at-events.md
             navtitle: Activity tracking events
       - topicgroup:
@@ -73,10 +76,22 @@ toc:
           topics:
           - link:
               label: Cloud Databases for PostgreSQL
-              href: https://cloud.ibm.com/docs/databases-for-postgresql
+              href: https://cloud.ibm.com/docs/databases-for-postgresql-gen2
           - link:
               label: Cloud Databases for MongoDB
-              href: https://cloud.ibm.com/docs/databases-for-mongodb
+              href: https://cloud.ibm.com/docs/databases-for-mongodb-gen2
+          - link:
+              label: Cloud Databases for Redis
+              href: https://cloud.ibm.com/docs/databases-for-redis-
+          - link:
+              label: Cloud Databases for Elasticsearch
+              href: https://cloud.ibm.com/docs/databases-for-elasticsearch-gen2
+          - link:
+              label: Cloud Databases for MySQL
+              href: https://cloud.ibm.com/docs/databases-for-mysql-gen2
+          - link:
+              label: Cloud Messages for RabbitMQ
+              href: https://cloud.ibm.com/docs/messages-for-rabbitmq-gen2
   - navgroup:
       id: help
       topics:
