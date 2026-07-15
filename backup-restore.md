@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-15"
 
 subcollection: cloud-databases-gen2
 
@@ -67,5 +67,5 @@ For more information about independent backups, see [Managing independent backup
 
 To find out how to manage your Gen 2 backups:
 
-- For {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, and {{site.data.keyword.databases-for-mysql}}, see [Managing independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
+- For {{site.data.keyword.databases-for-mysql}}, see [Managing independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
 - For all other Gen 2 services, see [Managing backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-dashboard-backups).
