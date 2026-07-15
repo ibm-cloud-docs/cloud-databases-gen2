@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-18"
+lastupdated: "2026-07-15"
 
 subcollection: cloud-databases-gen2
 
@@ -128,130 +128,161 @@ GET /v2/resource_instances/{id}`
 Example request:
 
 ```sh
-curl -X GET https://resource-controller.cloud.ibm.com/v2/resource_instances/8d7af921-b136-4078-9666-081bd8470d94 -H "Authorization: Bearer <IAM token>" \
+curl -X GET https://resource-controller.cloud.ibm.com/v2/resource_instances/95004d03-9fec-443b-9f6e-083f2b25e73a -H "Authorization: Bearer <IAM token>" \
 ```
 {: pre}
 
 Example response:
 
 ```sh
-[
-    {
-        "guid": "5aa314a5-76d9-4440-8e84-faa343d40127",
-        "id": "crn:v1:staging:public:databases-for-postgresql-cdp-dev:us-east:a/cf8d4161fa0243b9a2a5494cd7ff66b7:5aa314a5-76d9-4440-8e84-faa343d40127::",
-        "url": "/v2/resource_instances/5aa314a5-76d9-4440-8e84-faa343d40127",
-        "created_at": "2025-08-28T16:35:07.650372748Z",
-        "updated_at": "2025-08-28T16:41:53.419092609Z",
-        "deleted_at": null,
-        "name": "omar-pg-cdp-test",
-        "region_id": "us-east",
-        "account_id": "cf8d4161fa0243b9a2a5494cd7ff66b7",
-        "resource_plan_id": "databases-for-postgresql-cdp-dev-standard",
-        "resource_group_id": "97bc590fddc845ee903645bce8771bab",
-        "crn": "crn:v1:staging:public:databases-for-postgresql-cdp-dev:us-east:a/cf8d4161fa0243b9a2a5494cd7ff66b7:5aa314a5-76d9-4440-8e84-faa343d40127::",
-        "extensions": {
-          "dataservices": {
-            "resources": {
-              "database": {
-                "storage_gb": 10,
-                "members": 2,
-                "host_flavor": "b3c.8x32.encrypted"
-              }
-            },
-            "connection": {
-                "cli": {
-                    "arguments": [
-                        "host=5aa314a5-76d9-4440-8e84-faa343d40127.private.axd.us-east.postgresql.dataservices.dev.appdomain.cloud port=5432 dbname=postgres user=$PGUSER password=$PGPASSWORD"
-                    ],
-                    "bin": "psql",
-                    "composed": [
-                        "psql 'host=5aa314a5-76d9-4440-8e84-faa343d40127.private.axd.us-east.postgresql.dataservices.dev.appdomain.cloud port=5432 dbname=postgres user=$PGUSER password=$PGPASSWORD'"
-                    ],
-                    "type": "cli"
-                },
-                "postgres": {
-                    "composed": [
-                        "postgres://$PGUSER:$PGPASSWORD@5aa314a5-76d9-4440-8e84-faa343d40127.private.axd.us-east.postgresql.dataservices.dev.appdomain.cloud:5432/postgres"
-                    ],
-                    "database": "postgres",
-                    "hosts": [
-                        {
-                            "hostname": "5aa314a5-76d9-4440-8e84-faa343d40127.private.axd.us-east.postgresql.dataservices.dev.appdomain.cloud",
-                            "port": 5432
-                        }
-                    ],
-                    "path": "/postgres",
-                    "port": 5432,
-                    "query_options": {
-                        "sslmode": "require"
-                    },
-                    "scheme": "postgres",
-                    "type": "uri"
-                }
-            },
-            "encryption": {
-              "disk": "crn:v1..."
-            },
-            "endpoints": "private",
-            "version": "18",
-            "$schema": {
-              "version": "1.0.0"
-            },
-            "virtual_private_endpoints": {
-                    "dns_domain": "private.axd.us-east.postgresql.dataservices.dev.appdomain.cloud",
-                    "dns_hosts": [
-                        "5aa314a5-76d9-4440-8e84-faa343d40127",
-                        "*.5aa314a5-76d9-4440-8e84-faa343d40127"
-                    ],
-                    "endpoints": [
-                        {
-                            "ip_address": "10.16.117.27",
-                            "zone": "us-east-1"
-                        },
-                        {
-                            "ip_address": "10.16.119.1",
-                            "zone": "us-east-2"
-                        },
-                        {
-                            "ip_address": "10.16.123.0",
-                            "zone": "us-east-3"
-                        }
-                    ],
-                    "origin_type": "vpc",
-                    "ports": [
-                        {
-                            "port_max": 5432,
-                            "port_min": 5432
-                        }
-                    ]
-                }
-            },
-          }
-        }
-        "create_time": 0,
-        "created_by": "IBMid-5500013U80",
-        "state": "active",
-        "type": "service_instance",
-        "resource_id": "0de4305b-b472-449d-b369-07d14bba2d1d",
-        "dashboard_url": null,
-        "allow_cleanup": false,
-        "locked": false,
-        "onetime_credentials": true,
-        "last_operation": {
-            "type": "create",
-            "state": "succeeded",
-            "description": "Provision completed successfully",
-            "updated_at": null,
-            "cancelable": true
-        },
-        "account_url": "",
-        "resource_plan_url": "",
-        "resource_bindings_url": "/v2/resource_instances/5aa314a5-76d9-4440-8e84-faa343d40127/resource_bindings",
-        "resource_aliases_url": "/v2/resource_instances/5aa314a5-76d9-4440-8e84-faa343d40127/resource_aliases",
-        "siblings_url": "",
-        "target_crn": "crn:v1:staging:public:globalcatalog::::deployment:databases-for-postgresql-cdp-dev-standard-deployment-us-east-72d307a5"
-    }
-]
+{
+	"id": "crn:v1:bluemix:public:databases-for-postgresql:us-east:a/23b09aee04da4545b6e32805fa93249d:95004d03-9fec-443b-9f6e-083f2b25e73a::",
+	"guid": "95004d03-9fec-443b-9f6e-083f2b25e73a",
+	"url": "/v2/resource_instances/95004d03-9fec-443b-9f6e-083f2b25e73a",
+	"created_at": "2026-07-02T14:04:29.613949688Z",
+	"updated_at": "2026-07-02T14:15:54.226535327Z",
+	"deleted_at": null,
+	"created_by": "Id-4700030B2K",
+	"updated_by": "",
+	"deleted_by": "",
+	"scheduled_reclaim_at": null,
+	"restored_at": null,
+	"scheduled_reclaim_by": "",
+	"restored_by": "",
+	"name": "Databases for PostgreSQL-3b",
+	"region_id": "us-east",
+	"account_id": "23b09aee04da4545b6e32805fa93249d",
+	"reseller_channel_id": "",
+	"resource_plan_id": "databases-for-postgresql-gen2-standard",
+	"resource_group_id": "c21a4e8564c14d1aab2a9a8b441904eb",
+	"resource_group_crn": "crn:v1:bluemix:public:resource-controller::a/23b09aee04da4545b6e32805fa93249d::resource-group:c21a4e8564c14d1aab2a9a8b441904eb",
+	"target_crn": "crn:v1:bluemix:public:globalcatalog::::deployment:databases-for-postgresql-standard-gen2%3Aus-east",
+	"parameters": {
+		"dataservices": {
+			"postgresql": {
+				"host_flavor": "bx3d.4x20",
+				"members": 2,
+				"storage_gb": 10,
+				"version": "18"
+			}
+		}
+	},
+	"allow_cleanup": false,
+	"crn": "crn:v1:bluemix:public:databases-for-postgresql:us-east:a/23b09aee04da4545b6e32805fa93249d:95004d03-9fec-443b-9f6e-083f2b25e73a::",
+	"state": "active",
+	"type": "service_instance",
+	"sub_type": "Public",
+	"resource_id": "databases-for-postgresql",
+	"dashboard_url": null,
+	"last_operation": {
+		"type": "create",
+		"state": "succeeded",
+		"async": true,
+		"description": "Provision completed successfully",
+		"cancelable": true,
+		"poll": true
+	},
+	"resource_keys_url": "/v2/resource_instances/95004d03-9fec-443b-9f6e-083f2b25e73a/resource_keys",
+	"plan_history": [
+		{
+			"resource_plan_id": "databases-for-postgresql-gen2-standard",
+			"start_date": "2026-07-02T14:04:29.613949688Z",
+			"requestor_id": "Id-4700030B2K"
+		}
+	],
+	"migrated": false,
+	"extensions": {
+		"dataservices": {
+			"$schema": {
+				"version": "1.0.0"
+			},
+			"connection": {
+				"cli": {
+					"arguments": [
+						"host=95004d03-9fec-443b-9f6e-083f2b25e73a.private.uhp.postgresql.us-east.dataservices.appdomain.cloud port=5432 dbname=postgres user=$PGUSER password=$PGPASSWORD sslmode=verify-full"
+					],
+					"bin": "psql",
+					"composed": [
+						"PGUSER=$PGUSER PGPASSWORD=$PGPASSWORD PGSSLMODE=verify-full PGSSLROOTCERT=system psql 'host=95004d03-9fec-443b-9f6e-083f2b25e73a.private.uhp.postgresql.us-east.dataservices.appdomain.cloud port=5432 dbname=postgres'"
+					],
+					"environment": {
+						"PGPASSWORD": "$PGPASSWORD",
+						"PGSSLMODE": "verify-full",
+						"PGSSLROOTCERT": "system",
+						"PGUSER": "$PGUSER"
+					},
+					"type": "cli"
+				},
+				"postgres": {
+					"authentication": {
+						"method": "direct",
+						"password": "$PGPASSWORD",
+						"username": "$PGUSER"
+					},
+					"composed": [
+						"postgres://$PGUSER:$PGPASSWORD@95004d03-9fec-443b-9f6e-083f2b25e73a.private.uhp.postgresql.us-east.dataservices.appdomain.cloud:5432/postgres?sslmode=verify-full"
+					],
+					"database": "postgres",
+					"hosts": [
+						{
+							"hostname": "95004d03-9fec-443b-9f6e-083f2b25e73a.private.uhp.postgresql.us-east.dataservices.appdomain.cloud",
+							"port": 5432
+						}
+					],
+					"path": "/postgres",
+					"port": 5432,
+					"query_options": {
+						"sslmode": "verify-full"
+					},
+					"scheme": "postgres",
+					"type": "uri"
+				}
+			},
+			"postgresql": {
+				"configuration": {
+					"max_connections": 115
+				},
+				"cpu_count": 4,
+				"host_flavor": "bx3d.4x20",
+				"members": 2,
+				"memory_gb": 20,
+				"storage_gb": 10,
+				"version": "18"
+			}
+		},
+		"virtual_private_endpoints": {
+			"dns_domain": "95004d03-9fec-443b-9f6e-083f2b25e73a.private.uhp.postgresql.us-east.dataservices.appdomain.cloud",
+			"dns_hosts": [
+				"",
+				"*"
+			],
+			"endpoints": [
+				{
+					"ip_address": "10.51.217.34",
+					"zone": "us-east-1"
+				},
+				{
+					"ip_address": "10.51.219.57",
+					"zone": "us-east-2"
+				},
+				{
+					"ip_address": "10.51.221.12",
+					"zone": "us-east-3"
+				}
+			],
+			"origin_type": "vpc",
+			"ports": [
+				{
+					"port_max": 5432,
+					"port_min": 5432
+				}
+			]
+		}
+	},
+	"controlled_by": "",
+	"locked": false,
+	"onetime_credentials": false
+}
 ```
 {: pre}
 
@@ -393,8 +424,6 @@ Input Parameters
 }
 ```
 {: pre}
-
-
 
 ## Transition documentation
 {: #api-transition-doc}
