@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-07-17"
 
 subcollection: cloud-databases-gen2
 
@@ -48,15 +48,15 @@ Deployment IDs are CRNs on the Cloud Data Services platform. When you use the CR
 Example: The following CRN
 
 ```sh
-   crn:v1:bluemix:public:databases-for-redis:us-south:a/274074dce64e9c423ffc238516c755e1:29caf0e7-120f-4da8-9551-3abf57ebcfc7::
-   ```
+crn:v1:bluemix:public:databases-for-redis:us-south:a/274074dce64e9c423ffc238516c755e1:29caf0e7-120f-4da8-9551-3abf57ebcfc7::
+```
 {: pre}
 
 becomes as follows when URL encoded.
 
 ```sh
-   crn:v1:bluemix:public:databases-for-redis:us-south:a%2F274074dce64e9c423ffc238516c755e1:29caf0e7-120f-4da8-9551-3abf57ebcfc7::
-   ```
+crn:v1:bluemix:public:databases-for-redis:us-south:a%2F274074dce64e9c423ffc238516c755e1:29caf0e7-120f-4da8-9551-3abf57ebcfc7::
+```
 {: pre}
 
 
@@ -92,36 +92,85 @@ curl -X GET https://resource-controller.cloud.ibm.com/v2/resource_instances -H "
 
 Example response:
 
-```sh
-Name:                test-mysql-01
-Location:            us-south
-Family:              resource_controller
-Resource Type:       resource-instance
-Resource Group ID:   eb922ba0717f47589ca26d202c5cc915
-CRN:                 crn:v1:bluemix:public:databases-for-mysql:us-south:a/40ddc34a953a8c02f10987b59085b60e:09a8b8a3-29cf-4c1b-85ad-35e25611a414::
-Tags:
-Service Tags:
-Access Tags:
-
-Name:                test-mysql-02
-Location:            us-south
-Family:              resource_controller
-Resource Type:       resource-instance
-Resource Group ID:   eb922ba0717f47589ca26d202c5cc915
-CRN:                 crn:v1:bluemix:public:databases-for-mysql:us-south:a/40ddc34a953a8c02f10987b59085b60e:3a81147c-ae5a-48c4-a0e5-cbf3e88cf215::
-Tags:
-Service Tags:
-Access Tags:
+```json
+{
+  "rows_count": 100,
+  "next_url": "/v2/resource_instances?start=<token>",
+  "resources": [
+    {
+      "id": "crn:v1:bluemix:public:databases-for-redis:eu-de:a/40ddc34a953a8c02f10987b59085b60e:07d523b1-6eea-4263-bd03-c17edf355e0b::",
+      "guid": "07d523b1-6eea-4263-bd03-c17edf355e0b",
+      "url": "/v2/resource_instances/07d523b1-6eea-4263-bd03-c17edf355e0b",
+      "created_at": "2026-07-17T06:41:51.267012883Z",
+      "updated_at": "2026-07-17T06:42:11.22949657Z",
+      "deleted_at": null,
+      "created_by": "Id-270000000X",
+      "updated_by": "",
+      "deleted_by": "",
+      "scheduled_reclaim_at": null,
+      "restored_at": null,
+      "scheduled_reclaim_by": "",
+      "restored_by": "",
+      "name": "test-redis-gen2",
+      "region_id": "eu-de",
+      "account_id": "40ddc34a953a8c02f10987b59085b60e",
+      "reseller_channel_id": "",
+      "resource_plan_id": "databases-for-redis-gen2-standard",
+      "resource_group_id": "eb922ba0717f47589ca26d202c5cc915",
+      "resource_group_crn": "crn:v1:bluemix:public:resource-controller::a/40ddc34a953a8c02f10987b59085b60e::resource-group:eb922ba0717f47589ca26d202c5cc915",
+      "target_crn": "crn:v1:bluemix:public:globalcatalog::::deployment:databases-for-redis-standard-gen2%3Aeu-de",
+      "parameters": {
+        "dataservices": {
+          "redis": {
+            "host_flavor": "bxf.4x16",
+            "members": 2,
+            "storage_gb": 15,
+            "version": "8.2"
+          }
+        }
+      },
+      "allow_cleanup": false,
+      "crn": "crn:v1:bluemix:public:databases-for-redis:eu-de:a/40ddc34a953a8c02f10987b59085b60e:07d523b1-6eea-4263-bd03-c17edf355e0b::",
+      "state": "provisioning",
+      "type": "service_instance",
+      "sub_type": "Public",
+      "resource_id": "databases-for-redis",
+      "dashboard_url": null,
+      "last_operation": {
+        "type": "create",
+        "state": "in progress",
+        "async": true,
+        "description": "Provision in progress",
+        "cancelable": true,
+        "poll": true
+      },
+      "resource_keys_url": "/v2/resource_instances/07d523b1-6eea-4263-bd03-c17edf355e0b/resource_keys",
+      "plan_history": [
+        {
+          "resource_plan_id": "databases-for-redis-gen2-standard",
+          "start_date": "2026-07-17T06:41:51.267012883Z",
+          "requestor_id": "Id-270000000X"
+        }
+      ],
+      "migrated": false,
+      "controlled_by": "",
+      "locked": false,
+      "onetime_credentials": false
+    }
+  ]
+}
 ```
 {: pre}
 
-#### Get deployment information
+Additional resource objects are returned in the `resources` array. Use the `next_url` token to retrieve the next page of results.
+
+### Get deployment information
 {: #api-methods-get-deployment}
 
 Gets the full data that is associated with a deployment. This data includes the ID, name, database type, and version.
 
 ```sh
-GET /v2/resource_instances/{id}`
+GET /v2/resource_instances/{id}
 ```
 {: pre}
 
@@ -286,8 +335,14 @@ Example response:
 ```
 {: pre}
 
-#### How to manage and update your database configuration
-{: #api-manage-config}
+You can get the following information from the API response:
+
+- `last_operation` object - Shows the last task you have performed.
+- `connection` object - Shows product connection information.
+- Product-specific information is shown under the product object (for example, `postgresql`).
+
+### How to provision your database
+{: #api-provision}
 
 ```sh
 POST /v2/resource_instances
@@ -297,139 +352,85 @@ POST /v2/resource_instances
 Example request:
 
 ```sh
-curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
+curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H "Authorization: Bearer <IAM token>" \
+  -H 'Content-Type: application/json' \
+  -d '{
     "name": "my-instance",
     "target": "ca-mon",
     "resource_group": "5c49eabc-f5e8-5881-a37e-2d100a33b3df",
-    "resource_plan_id": "databases-for-postgresql-standard",
-    "dataservices": {
-      "resources": {
-        "database": {
+    "resource_plan_id": "databases-for-postgresql-gen2-standard",
+    "parameters": {
+      "dataservices": {
+        "postgresql": {
           "storage_gb": 10,
           "members": 2,
-          "host_flavor": "b3c.8x32.encrypted"
+          "host_flavor": "b3c.8x32.encrypted",
+          "version": "18"
+        },
+        "encryption": {
+          "disk": "crn:v1..."
+        },
+        "$schema": {
+          "version": "1.0.0"
         }
-      },
-      "encryption": {
-        "disk": "crn:v1..."
-      },
-      "version": "18",
-      "$schema": {
-        "version": "1.0.0"
       }
-    },
+    }
   }'
+```
+{: pre}
 
 Input Parameters
 
-   "dataservices": Object
-
-{
-
-      "resources":  Object
-
-{
-
-        "database": Object
-
-{
-
-          "storage_gb":  Integer,
-
-          "members": Integer,
-
-          "host_flavor": String
-
-      }
-
-      },
-
-      "encryption":  Object
-
-{
-
-        "disk": String
-
-      },
-
-      "version": String,
-
-      "$schema": Object
-
-{
-
-        "version": String
-
-      }
-
-   },
-```
-{: pre}
+- `name` (String) - The name of the instance.
+- `target` (String) - The region to deploy to (for example, `us-south`, `eu-de`).
+- `resource_group` (String) - The ID of the resource group.
+- `resource_plan_id` (String) - The plan ID (for example, `databases-for-postgresql-gen2-standard`).
+- `parameters` (Object)
+   - `dataservices` (Object)
+      - `<service>` (Object) - The service name key (for example, `postgresql`, `mysql`).
+         - `storage_gb` (Integer) - Storage size in GB.
+         - `members` (Integer) - Number of members.
+         - `host_flavor` (String) - The host flavor ID (for example, `b3c.8x32.encrypted`).
+         - `version` (String) - The database version (for example, `"18"`).
+      - `encryption` (Object, optional) - Disk encryption settings.
+         - `disk` (String) - CRN of the Key Protect key for disk encryption.
+      - `$schema` (Object) - Schema metadata.
+         - `version` (String) - Schema version, must be `"1.0.0"`.
 
 #### How to scale your database
 {: #api-scale-db}
 
 ```sh
-POST /v2/resource_instances
+PATCH /v2/resource_instances/{id}
 ```
 {: pre}
 
 Example request:
 
 ```sh
-curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
-    "name": "my-instance",
-    "target": "ca-mon",
-    "resource_group": "5c49eabc-f5e8-5881-a37e-2d100a33b3df",
-    "resource_plan_id": "databases-for-postgresql-standard",
-    "dataservices": {
-      "$schema": {
-          "version": "1.0.0"
-      },
-      "resources": {
-          "database": {
-              "host_flavor": "bx2.4x16", <--- UPDATE
-              "members": 1, <--- UPDATE
-              "storage_gb": 10 <--- UPDATE
-          }
-      },
-      "version": "18"
-    },
-  }'
-
-Input Parameters
-
-   "dataservices": Object
-
-{
-
-      "resources":  Object
-
-{
-
-        "database": Object
-
-{
-
-          "storage_gb":  Integer,
-
-          "members": Integer,
-
-          "host_flavor": String
-
+curl -X PATCH https://resource-controller.cloud.ibm.com/v2/resource_instances/ed9d2c9b-444b-421d-bbc0-503ca8dd3036 \
+  -H "Authorization: Bearer <IAM token>" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "parameters": {
+      "dataservices": {
+        "postgresql": {
+          "storage_gb": 12,
+          "members": 2,
+          "host_flavor": "bxf.4x16"
+        }
       }
-
-      },
-
-}
+    }
+  }'
 ```
 {: pre}
 
-## Transition documentation
-{: #api-transition-doc}
+Input Parameters
 
-Information you can expect to get back:
-
-- The last task you have conducted is seen under `last_operation`.
-- Product connection information under connection parameter.
-- Product specific information under the product object (for example, postgresql).
+- `parameters` (Object)
+   - `dataservices` (Object)
+      - `<service>` (Object) - The service name key (for example, `postgresql`, `mysql`).
+         - `storage_gb` (Integer) - Storage size in GB.
+         - `members` (Integer) - Number of members.
+         - `host_flavor` (String) - The host flavor ID (for example, `bxf.4x16`).
