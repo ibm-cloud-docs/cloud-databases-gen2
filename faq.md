@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-02"
+lastupdated: "2026-07-20"
 
 keywords: ICD Gen 2 FAQ
 
@@ -62,7 +62,7 @@ Gen 2 provides:
 
 Yes, the following limitations exist at this point:
 
-- Montreal, Chennai, Mumbai, and Frankfurt region only.
+- Montreal, Chennai, Mumbai, Frankfurt, and Washington DC region only.
 - Context-based restrictions (CBR) is not yet supported.
 
 ### 4. Do Gen 2 databases support the same features as Gen 1?
