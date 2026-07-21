@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-07-21"
 
 subcollection: cloud-databases-gen2
 
@@ -34,7 +34,7 @@ In the isolated compute model, CPU and RAM resources are fixed at the time of pr
 ## Isolated compute capacity
 {: #isolated-compute-capacity}
 
-These management containers take up some overhead in your isolated compute instance, consuming a portion of the machine's CPU and RAM, with the remainder available for your database to use. A portion of the database capacity will be allocated to essential operations such as security, ensuring data integrity and protection.
+These management containers take up some overhead (10-12%) in your isolated compute instance, consuming a portion of the machine's CPU and RAM, with the remainder available for your database to use. A portion of the database capacity will be allocated to essential operations such as security, ensuring data integrity and protection.
 
 
 
