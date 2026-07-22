@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-07-22"
 
 subcollection: cloud-databases-gen2
 
@@ -88,7 +88,7 @@ Unlike coupled backups, independent backups can be manually deleted at any time 
 ## Prerequisites
 {: #prerequisites}
 
-Before you use independent backups, ensure that you have the required IAM permissions. For more information, see [Independent backups IAM permissions](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-iam#independent-backups-iam).
+Before you use independent backups, ensure that you have the required IAM permissions. For more information, see [Independent backups IAM permissions](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-iam&interface=ui#independent-backups-iam).
 
 ## Accessing your backups
 {: #accessing-backups}
