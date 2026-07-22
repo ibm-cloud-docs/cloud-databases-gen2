@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-22"
+lastupdated: "2026-07-22"
 
 subcollection: cloud-databases-gen2
 
@@ -271,3 +271,41 @@ Bulk allowlist IP addresses
 POST /v5/ibm/deployments/:deployment_id/elasticsearch/file_syncs
 Create elasticsearch file sync
 ```
+
+## Independent backups IAM permissions
+{: #independent-backups-iam}
+
+The following table lists the actions that are available for each role.
+
+| Action | Required role |
+|--------|--------------|
+| Create independent backup | Editor or Administrator on independent backup service |
+| View independent backup | Viewer, Operator, Editor, or Administrator on independent backup service |
+| Delete independent backup | Editor or Administrator on independent backup service |
+| Restore from independent backup | Viewer, Operator, Editor, or Administrator on independent backup service |
+{: caption="Independent backups IAM permissions" caption-side="bottom"}
+
+### Service-to-service authorization
+{: #s2s-authorization-backups}
+
+Independent backups service requires service-to-service (S2S) authorization for the following actions:
+
+* Provision of automatic backups and automatic backup copies.
+* Deprovision of automatic backups and automatic backup copies.
+* Deprovision of on-demand backups when the configuration to preserve the backups is set to false on the database service.
+
+You need to set the following service-to-service authorization policies.
+
+1. Service-to-service authorization between database service and independent backups service:
+
+  - Source service: Database service (for example, `databases-for-postgresql`)
+  - Target service: `Databases independent backups`
+  - Role: `Editor`
+
+2. Service-to-service authorization between database service and Resource group:
+
+  - Source service: Database service (for example, `databases-for-postgresql`)
+  - Target service: `Resource group only`
+  - Role: `Viewer`
+
+For more information about setting up service-to-service authorizations, see [Using authorizations to grant access between services](/docs/iam?topic=iam-serviceauth&interface=ui){: external}.
