@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-22"
+lastupdated: "2026-07-28"
 
 subcollection: cloud-databases-gen2
 
@@ -281,7 +281,7 @@ The following table lists the actions that are available for each role.
 |--------|--------------|
 | Create independent backup | Editor or Administrator on independent backup service |
 | View independent backup | Viewer, Operator, Editor, or Administrator on independent backup service |
-| Delete independent backup | Editor or Administrator on independent backup service |
+| Delete independent backup | Administrator on independent backup service |
 | Restore from independent backup | Viewer, Operator, Editor, or Administrator on independent backup service |
 {: caption="Independent backups IAM permissions" caption-side="bottom"}
 
