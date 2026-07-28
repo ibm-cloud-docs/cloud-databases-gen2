@@ -23,7 +23,7 @@ Use this tutorial to choose a migration path, prepare your network, and complete
 Migration from Gen 1 to Gen 2 changes the networking model for your deployment. Gen 2 deployments support private endpoints only.
 {: important}
 
-Choose your desired {{site.data.keyword.databases-for}} service.
+Choose your desired {{site.data.keyword.databases-for}} service to migrate through the console. {: ui}
 
 - [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-migrating-databases-for-postgresql-from-gen-1-to-gen-2&interface=ui)
 - [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-migrating-mongodb&interface=ui)
@@ -33,6 +33,8 @@ Choose your desired {{site.data.keyword.databases-for}} service.
 - [{{site.data.keyword.messages-for-rabbitmq}}]()
 {: ui}
 
+Choose your desired {{site.data.keyword.databases-for}} service to migrate through the API. {: api}
+
 - [{{site.data.keyword.databases-for-postgresql}}]()
 - [{{site.data.keyword.databases-for-mongodb}}]()
 - [{{site.data.keyword.databases-for-redis}}]()
@@ -41,6 +43,8 @@ Choose your desired {{site.data.keyword.databases-for}} service.
 - [{{site.data.keyword.messages-for-rabbitmq}}]()
 {: api}
 
+Choose your desired {{site.data.keyword.databases-for}} service to migrate through the CLI. {: cli}
+
 - [{{site.data.keyword.databases-for-postgresql}}]()
 - [{{site.data.keyword.databases-for-mongodb}}]()
 - [{{site.data.keyword.databases-for-redis}}]()
@@ -48,6 +52,8 @@ Choose your desired {{site.data.keyword.databases-for}} service.
 - [{{site.data.keyword.databases-for-mysql}}]()
 - [{{site.data.keyword.messages-for-rabbitmq}}]()
 {: cli}
+
+Choose your desired {{site.data.keyword.databases-for}} service to migrate through Terraform. {: terraform}
 
 - [{{site.data.keyword.databases-for-postgresql}}]()
 - [{{site.data.keyword.databases-for-mongodb}}]()
