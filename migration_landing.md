@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-28"
 
 subcollection: cloud-databases-gen2
 
@@ -26,10 +26,10 @@ Migration from Gen 1 to Gen 2 changes the networking model for your deployment. 
 Choose your desired {{site.data.keyword.databases-for}} service.
 
 - [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-migrating-databases-for-postgresql-from-gen-1-to-gen-2&interface=ui)
-- [{{site.data.keyword.databases-for-mongodb}}]()
-- [{{site.data.keyword.databases-for-redis}}]()
-- [{{site.data.keyword.databases-for-elasticsearch}}]()
-- [{{site.data.keyword.databases-for-mysql}}]()
+- [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-migrating-mongodb&interface=ui)
+- [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis-gen2?topic=databases-for-redis-gen2-migrating-redis&interface=ui)
+- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-migrating-elasticsearch&interface=ui)
+- [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql-gen2?topic=databases-for-mysql-gen2-migrating-databases-for-mysql-from-gen-1-to-gen-2&interface=ui)
 - [{{site.data.keyword.messages-for-rabbitmq}}]()
 {: ui}
 
