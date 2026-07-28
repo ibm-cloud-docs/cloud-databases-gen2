@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-28"
 
 subcollection: cloud-databases-gen2
 
@@ -37,7 +37,7 @@ This topic covers backup management for all Gen 2 {{site.data.keyword.databases-
 
 - Backup storage is encrypted. To manage the encryption keys, see [{{site.data.keyword.keymanagementservicelong}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect&interface=ui ). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
 - Backups are restorable across accounts, only if the user that is running the restore has access to the backup along with access to both the source and destination accounts.
-- {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: external} is an effective tool for managing PostgreSQL backups.
+- {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/backup-dump.html){: external} is an effective tool for managing PostgreSQL backups.
 
 Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
 {: important}

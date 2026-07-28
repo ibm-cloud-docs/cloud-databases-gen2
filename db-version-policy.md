@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-07-28"
 
 subcollection: cloud-databases-gen2
 
@@ -35,7 +35,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.databases-for-valkey}} | {{site.data.keyword.databases-for}} Major versions are the first two numbers in a `major.x.patch` version number. | N/A  |   v9  |Automatically upgraded in place to next major version |
 {: caption="Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
-[^tabletext4]: This column describes the actions that will be taken by the {{site.data.keyword.cloud}} team on database instances that have not been upgraded to a new version prior to the version EoL date. This approach is not recommended. For more information, see [End of life procedure](#version-EOL).
+[^tabletext4]: This column describes the actions that will be taken by the {{site.data.keyword.cloud}} team on database instances that have not been upgraded to a new version prior to the version EoL date. This approach is not recommended. For more information, see [End of life procedure](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-versioning-policy).
 
 ## Subscribe for version updates
 {: #version-updates-subscribe}
@@ -111,5 +111,3 @@ Example request:
 curl -X GET https://resource-controller.cloud.ibm.com/v2/resource_instances/8d7af921-b136-4078-9666-081bd8470d94 -H "Authorization: Bearer <IAM token>" \
 ```
 {: pre}
-
-
