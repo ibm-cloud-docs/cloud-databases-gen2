@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-28"
 
 subcollection: cloud-databases-gen2
 
@@ -48,7 +48,7 @@ Review the following sections for the specific responsibilities for you and for 
 |----------|-----------------------|--------|
 |Encryption| {{site.data.keyword.databases-for}} is responsible for the encryption of data on disk, in motion, and in backups. | The Client is responsible for choosing and managing appropriate additional security features. If using Key Protect and Bring Your Own Key (BYOK), the client is responsible for managing Key Protect authorizations and keys. |
 |Security| {{site.data.keyword.databases-for}} is responsible for ensuring the security of data on disk and data in motion within our infrastructure. | The Client is responsible for managing {{site.data.keyword.cloud_notm}} passwords via service credentials and ensuring that they are stored properly. The Client is also responsible for configuring appropriate network security or isolation . |
-|Compliance| {{site.data.keyword.databases-for}} is responsible for ensuring adherence, auditing, and certification of compliances listed at the [IBM Cloud compliance page](https://www.ibm.com/cloud/compliance). | The Client is responsible for the storing, processing, and transmission of their data. More information on these specific responsibilities can be found in each of the {{site.data.keyword.databases-for}} offerings' specific Security Compliance documentation. |
+|Compliance| {{site.data.keyword.databases-for}} is responsible for ensuring adherence, auditing, and certification of compliances listed at the [IBM Cloud compliance page](https://www.ibm.com/products/cloud/compliance). | The Client is responsible for the storing, processing, and transmission of their data. More information on these specific responsibilities can be found in each of the {{site.data.keyword.databases-for}} offerings' specific Security Compliance documentation. |
 {: caption="Responsibilities for security and regulation compliance" caption-side="top"}
 
 ## Disaster recovery

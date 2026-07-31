@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-22"
+lastupdated: "2026-07-28"
 
 subcollection: cloud-databases-gen2
 
@@ -73,7 +73,7 @@ If you want to set up a more restrictive authorization policy, configure your po
 {: #granting-service-auth-api}
 {: api}
 
-1. Create an authorization policy to allow the {{site.data.keyword.databases-for}} service to access the {{site.data.keyword.keymanagementserviceshort}} service instance via the [IAM REST API](#auth_policy_api).
+1. Create an authorization policy to allow the {{site.data.keyword.databases-for}} service to access the {{site.data.keyword.keymanagementserviceshort}} service instance via the IAM REST API.
 
 For a full API reference, see  the [IAM Policy Management API](https://cloud.ibm.com/apidocs/iam-policy-management#create-policy).
 {: note}

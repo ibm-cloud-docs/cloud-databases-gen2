@@ -1,0 +1,64 @@
+---
+copyright:
+  years: 2026
+lastupdated: "2026-07-28"
+
+subcollection: cloud-databases-gen2
+
+keywords: migration, gen1 to gen2, classic infrastructure, vpc
+
+---
+
+{{site.data.keyword.attribute-definition-list}}
+
+# Migrating {{site.data.keyword.databases-for}} from Gen 1 to Gen 2
+
+[Gen 2]{: tag-purple}
+
+This tutorial shows you how to migrate your {{site.data.keyword.databases-for}} deployment from Gen 1 on Classic infrastructure to Gen 2 on VPC.
+{: shortdesc}
+
+Use this tutorial to choose a migration path, prepare your network, and complete your migration.
+
+Migration from Gen 1 to Gen 2 changes the networking model for your deployment. Gen 2 deployments support private endpoints only.
+{: important}
+
+Choose your desired {{site.data.keyword.databases-for}} service to migrate through the console. {: ui}
+
+- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-migrating-databases-for-postgresql-from-gen-1-to-gen-2&interface=ui)
+- [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-migrating-mongodb&interface=ui)
+- [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis-gen2?topic=databases-for-redis-gen2-migrating-redis&interface=ui)
+- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-migrating-elasticsearch&interface=ui)
+- [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql-gen2?topic=databases-for-mysql-gen2-migrating-databases-for-mysql-from-gen-1-to-gen-2&interface=ui)
+- [{{site.data.keyword.messages-for-rabbitmq}}]()
+{: ui}
+
+Choose your desired {{site.data.keyword.databases-for}} service to migrate through the API. {: api}
+
+- [{{site.data.keyword.databases-for-postgresql}}]()
+- [{{site.data.keyword.databases-for-mongodb}}]()
+- [{{site.data.keyword.databases-for-redis}}]()
+- [{{site.data.keyword.databases-for-elasticsearch}}]()
+- [{{site.data.keyword.databases-for-mysql}}]()
+- [{{site.data.keyword.messages-for-rabbitmq}}]()
+{: api}
+
+Choose your desired {{site.data.keyword.databases-for}} service to migrate through the CLI. {: cli}
+
+- [{{site.data.keyword.databases-for-postgresql}}]()
+- [{{site.data.keyword.databases-for-mongodb}}]()
+- [{{site.data.keyword.databases-for-redis}}]()
+- [{{site.data.keyword.databases-for-elasticsearch}}]()
+- [{{site.data.keyword.databases-for-mysql}}]()
+- [{{site.data.keyword.messages-for-rabbitmq}}]()
+{: cli}
+
+Choose your desired {{site.data.keyword.databases-for}} service to migrate through Terraform. {: terraform}
+
+- [{{site.data.keyword.databases-for-postgresql}}]()
+- [{{site.data.keyword.databases-for-mongodb}}]()
+- [{{site.data.keyword.databases-for-redis}}]()
+- [{{site.data.keyword.databases-for-elasticsearch}}]()
+- [{{site.data.keyword.databases-for-mysql}}]()
+- [{{site.data.keyword.messages-for-rabbitmq}}]()
+{: terraform}

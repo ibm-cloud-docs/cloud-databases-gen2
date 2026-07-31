@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-24"
+lastupdated: "2026-07-25"
 
 subcollection: cloud-databases-gen2
 
@@ -21,8 +21,7 @@ Migrating resources to a different data center
 
 {{site.data.keyword.cloud}}'s investments in data center infrastructure include rolling out newer data centers and multizone regions (MZRs) and closing older data centers that are unsuitable for upgrading.
 
-For a current list of data centers, see [Locations for resource deployment
-](/docs/overview?topic=overview-locations){: external}.
+For a current list of data centers, see [Location for resource deployment](/docs/overview?topic=overview-locations){: external}.
 
 For information on data center closures, see [Data center migrations](/docs/account?topic=account-migrate-data-center){: external}.
 
