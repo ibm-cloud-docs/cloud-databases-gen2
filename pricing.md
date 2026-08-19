@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-08-19"
 
 keywords: gen 2, pricing
 
@@ -91,7 +91,24 @@ For customers with specific performance or compliance requirements, it is recomm
 
 For pricing estimation, use the **Add to estimate** button on the provisioning page of each service. Input your total consumption across each data members into the calculator. This is equal to the number of members because your data is replicated to all members. For example, a 2-member {{site.data.keyword.databases-for}} deployment with 5 GB of disk on a 4 vCPU x 20 GB RAM profile would have a total bill for 10 GB of disk and the total cost of 2 members.
 
+## Backups pricing for Gen 2 instances
+{: #pricing-backup}
 
+Gen 2 {{site.data.keyword.databases-for}} uses independent backups with a snapshot-based model. Pricing is aligned to the size of your provisioned database storage. Snapshots are block-level incremental copies, so you are billed based on how much data has changed since the last snapshot, not just the total size of your database.
+
+By default, all Gen 2 {{site.data.keyword.databases-for}} provides a daily backup that is stored for 30 days. These backups, and any on-demand backups you make, all count toward the free allocation.
+
+### Independent backups billing
+{: #independent-backups-billing}
+
+Independent backups are billed as separate service instances:
+
+- Each backup instance appears as a separate line item in your billing statement.
+- Free allocation applies per database deployment (not per backup).
+
+- Manual deletion of backups stops billing immediately.
+
+For more information about independent backups, see [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
 
 ## Backup storage
 {: #pricing-storage}
@@ -129,7 +146,24 @@ This models the worst case scenario where the full snapshot is equal to the file
 - Overage = 480 GB - 300 GB  = 180 GB.
 - Monthly charge = (480 GB - 300 GB) X $0.095 = $17.1.
 
+### Pricing independent backups
+{: #pricing-independent-backups}
 
+The free backup storage allocation is equal to the total provisioned disk capacity of your deployment. The allocation is applied to backups created earlier in the month until the free allocation is exhausted. After the free allocation is exhausted, all additional backup storage is billed.
+
+For example, if a three-member {{site.data.keyword.databases-for}} deployment is provisioned with 100 GB of disk capacity per member, you receive 300 GB of backup storage at no additional cost. The free allocation is applied to backups as follows:
+
+Backup 1 is **80 GB**. The entire backup is covered by the free allocation, so the total charge is **$0.00**. The remaining free allocation is **220 GB**.
+Backup 2 is **80 GB**. The entire backup is covered by the free allocation, so the total charge is **$0.00**. The remaining free allocation is **140 GB**.
+Backup 3 is **80 GB**. The entire backup is covered by the free allocation, so the total charge is **$0.00**. The remaining free allocation is **60 GB**.
+Backup 4 is **80 GB**. The remaining free allocation of **20 GB** is applied to the backup. The billable storage is **60 GB** (80 GB - 20 GB), resulting in a charge of **60 GB × $0.095 = $5.70**. The remaining free allocation is **0 GB**.
+Backup 5 is **80 GB**. No free allocation remains. The entire backup is billable, resulting in a charge of **80 GB × $0.095 = $7.60**.
+Backup 6 is **80 GB**. No free allocation remains. The entire backup is billable, resulting in a charge of **80 GB × $0.095 = $7.60**.
+
+The free allocation applies only while the database instance is active. If the instance is disabled, any existing backups continue to exist but are fully billable and do not qualify for the free allocation. If backups remain after the database instance is deleted, those backups are also fully billable and do not qualify for the free allocation.
+
+The monthly free allocation is calculated based on the total provisioned disk size at the time the first backup is created and does not change if the disk size is scaled later in the month. This allocation applies only to backups created in that same month and does not apply to backups from previous months.
+{: note}
 
 ## Scaling per member
 {: #scaling-member}

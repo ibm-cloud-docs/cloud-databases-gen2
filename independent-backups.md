@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-22"
+lastupdated: "2026-08-19"
 
 subcollection: cloud-databases-gen2
 
@@ -86,9 +86,18 @@ Independent backups follow this lifecycle:
 Unlike coupled backups, independent backups can be manually deleted at any time through the Resource Controller, giving you greater control over your backup data and associated costs.
 
 ## Prerequisites
-{: #prerequisites}
+{: #backup-prerequisites}
 
-Before you use independent backups, ensure that you have the required IAM permissions. For more information, see [Independent backups IAM permissions](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-iam&interface=ui#independent-backups-iam).
+Before you use independent backups, ensure that service-to-service authorization is configured for the following operations:
+
+- Provisioning a database instance
+- Updating a database instance
+- Deprovisioning a database instance that is configured with preserve: false
+- Provisioning independent backups
+
+When a database instance is configured with preserve: false, its independent backups are also deleted when the database instance is permanently deleted.
+
+For more information, see [Service-to-service authorization](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-iam&interface=ui#s2s-authorization-backups).
 
 ## Accessing your backups
 {: #accessing-backups}
@@ -152,7 +161,7 @@ You can configure the following features on the database instance:
 | Feature |  Independent backups | Configuration |
 |---------|---------------------|---------------------|
 | Retention duration | Determines when the backups can be deleted. Automatic backups are automatically deleted after the retention duration expires. On-demand backups can be manually deleted after the retention duration expires. |  Set to fixed duration of 30 days and cannot be configured. |
-| Preserve backups | Determines whether the backups (both automatic and on-demand) are to be preserved if the database instance is deleted. | Set to false by default. Optionally can be enabled on the database instance. However, cannot be disabled once enabled. For {{site.data.keyword.databases-for-mysql}} database, preserve is disabled by default and cannot be enabled. |
+| Preserve backups | Determines whether the backups (both automatic and on-demand) are to be preserved if the database instance is deleted. | Set to false by default. Independent backups do not persist after the database instance is hard deleted. You can enable this option on a database instance, but it cannot be disabled after it is enabled. For {{site.data.keyword.databases-for-mysql}}, preserve is disabled by default and cannot be enabled. |
 | Start time | Determines the start time of one hour window during which the automatic backup is initiated on the database instance. Automatic backups are performed daily. | Set to a default value at the time of database instance provisioning and cannot be configured. |
 {: caption="Configuration features" caption-side="bottom"}
 
@@ -176,6 +185,31 @@ ibmcloud resource service-instance-create \
 {: pre}
 {: cli}
 
+You can set the preserve option in the database instance provisioning request. The following example configures the database instance to preserve backups after the database instance is deleted:
+{: api}
+
+```sh
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "<DATABASE_INSTANCE_NAME>",
+    "target": "<REGION>",
+    "resource_group": "<RESOURCE-GROUP>",
+    "resource_plan_id": "<DATABASE_SERVICE_PLAN_NAME>",
+    "parameters": {
+      "dataservices": {
+        "backups": {
+          "preserve": true
+        }
+      }
+    }
+  }'
+```
+{: pre}
+{: api}
+
 ### Taking an on-demand backup in the UI
 {: #ondemand-backup-ui}
 {: ui}
@@ -186,7 +220,7 @@ To create a manual backup in the UI, go to the **Backups and restore** tab of yo
 
 Once the backup provisioning is completed, you can see the details of the backup like the Backup CRN, associated database instance and its version, region, status and size.
 
-### Creating an independent backup using CLI
+### Creating an independent backup by using the CLI
 {: #creating-independent-backup-cli}
 {: cli}
 
@@ -212,8 +246,8 @@ Example:
 ```sh
 ibmcloud resource service-instance-create \
   my-mysql-backup-20260429 \
-  databases-for-mysql-backup \
-  standard \
+  databases-independent-backups  \
+  databases-independent-backups-gen2-standard \
   us-east \
   -g Default \
   -p '{
@@ -244,6 +278,53 @@ ibmcloud resource service-instance --output JSON crn:v1:staging:public:databases
 ```
 {: pre}
 
+### Creating an independent backup by using the API
+{: #creating-independent-backup-api}
+{: api}
+
+To create an on-demand independent backup, send a request to the backup creation endpoint:
+
+```sh
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "<DATABASE_INSTANCE_NAME>",
+    "target": "<REGION>",
+    "resource_group": "<RESOURCE-GROUP>",
+    "resource_plan_id": "<DATABASE_SERVICE_PLAN_NAME>",
+    "parameters": {
+      "dataservices": {
+        "source_dataservice_crn": "<DATABASE_INSTANCE_CRN>"
+      }
+    }
+  }'
+```
+{: pre}
+
+Example:
+
+```sh
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "my-mysql-backup-20260429",
+    "target": "us-east",
+    "resource_group": "b67d9228670d473097259e2b343de464",
+    "resource_plan_id": "databases-independent-backups-gen2-standard",
+    "parameters": {
+      "dataservices": {
+        "source_dataservice_crn": "crn:v1:bluemix:public:databases-for-mysql:us-east:a/1234567890:abcd-1234-efgh-5678::"
+      }
+    }
+  }'
+```
+{: pre}
+
+
 ### Deleting an independent backup
 {: #deleting-independent-backup}
 {: cli}
@@ -267,6 +348,29 @@ Backups use incremental infrastructure-level volume snapshots. As a result, dele
 Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
 {: important}
 
+### Deleting an independent backup
+{: #deleting-independent-backup}
+{: api}
+
+To manually delete an independent backup before its expiration:
+
+```sh
+curl -X DELETE \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances/${INDEPENDENT_BACKUP_ID} \
+  -H 'Authorization: Bearer <>'
+```
+{: pre}
+
+Example:
+
+```sh
+curl -X DELETE \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances/793b4f27-7733-4803-917f-de8e055e2deb \
+  -H 'Authorization: Bearer <>'
+```
+{: pre}
+
+
 ### Restoring from an independent backup
 {: #restoring-independent-backup}
 
@@ -281,6 +385,48 @@ Do not delete the backup while the backup is restoring. Before you delete the ba
 {: tip}
 
 You have immediate access to the restored database instance, but I/O performance is reduced until hydration completes. Backups cannot be created on the restored instance until hydration is complete. You can track hydration progress by using platform Activity Tracker events. For more information, see [at-events](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events#at_actions_platform).
+
+```sh
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "<DATABASE_INSTANCE_NAME>",
+    "target": "<REGION>",
+    "resource_group": "<RESOURCE-GROUP>",
+    "resource_plan_id": "<DATABASE_SERVICE_PLAN_NAME>",
+    "parameters": {
+      "dataservices": {
+        "restore_backup_id": "<BACKUP_CRN>"
+      }
+    }
+  }'
+```
+{: pre}
+{: api}
+
+Example:
+{: api}
+
+```curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "mysql-restore-abc",
+    "target": "us-east",
+    "resource_group": "b67d9228670d473097259e2b343de464",
+    "resource_plan_id": "databases-for-mysql-gen2-standard",
+    "parameters": {
+      "dataservices": {
+        "restore_backup_id": "crn:v1:bluemix:public:databases-independent-backups:us-east:a/26b19aex04da4475b6e31205fa93248d:793b4f27-7733-4803-917f-de8e055e2deb::"
+      }
+    }
+  }'
+```
+{: pre}
+{: api}
 
 #### Restoring a backup in the UI
 {: #restore-backup-ui}
@@ -309,7 +455,7 @@ ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-ID>-gen2-<PLA
 Example command:
 
 ```sh
-ibmcloud resource service-instance-create mysql-restore-abc databases-for-mysql databases-for-mysql-gen2-standard ca-mon -p  '{"dataservices":{"restore_backup_id":"crn:v1:bluemix:public:databases-for-mysql:ca-mon:a/26b19aex04da4475b6e31205fa93248d:a1e247d8-01c2-3bbe-a5e6-fdb5eb872d2f:backup:f689275f-7da9-4e90-9055-70b02c575492"}}'
+ibmcloud resource service-instance-create mysql-restore-abc databases-for-mysql databases-for-mysql-gen2-standard us-east -p  '{"dataservices":{"restore_backup_id":"crn:v1:bluemix:public:databases-independent-backups:us-east:a/26b19aex04da4475b6e31205fa93248d:793b4f27-7733-4803-917f-de8e055e2deb::"}}'
 ```
 {: pre}
 
@@ -452,9 +598,9 @@ For detailed pricing information, see [Pricing](/docs/cloud-databases-gen2?topic
 
 Independent backups maintain the same security standards as your database instances:
 
-- **Encryption at rest**: All backups are encrypted using either IBM-managed keys or your own keys via Key Protect
-- **Encryption in transit**: Data is encrypted during backup creation and restore operations
-- **Access control**: IAM policies control who can create, view, and restore backups
+- **Encryption at rest**: All backups are encrypted using either IBM-managed keys or your own keys via Key Protect.
+- **Encryption in transit**: Data is encrypted during backup creation and restore operations.
+- **Access control**: IAM policies control who can create, view, and restore backups. For more information, see [Independent backups IAM permissions](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-iam&interface=ui#independent-backups-iam).
 
 ## Limitations and restrictions
 {: #independent-backups-limitations}
