@@ -185,6 +185,9 @@ ibmcloud resource service-instance-create \
 {: pre}
 {: cli}
 
+You can set the preserve option in the database instance provisioning request. The following example configures the database instance to preserve backups after the database instance is deleted:
+{: api}
+
 ```sh
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
@@ -279,10 +282,8 @@ ibmcloud resource service-instance --output JSON crn:v1:staging:public:databases
 {: #creating-independent-backup-api}
 {: api}
 
-To create an on-demand independent backup by using the API:
+To create an on-demand independent backup, send a request to the backup creation endpoint:
 
-{: api}
-To create an on-demand independent backup using the {{site.data.keyword.cloud_notm}} API:
 ```sh
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
@@ -408,7 +409,7 @@ curl -X POST \
 Example:
 {: api}
 
-curl -X POST \
+```curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
   -H 'Authorization: Bearer <>' \
   -H 'Content-Type: application/json' \
@@ -423,6 +424,8 @@ curl -X POST \
       }
     }
   }'
+```
+{: pre}
 {: api}
 
 #### Restoring a backup in the UI
