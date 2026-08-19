@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-18"
+lastupdated: "2026-08-19"
 
 subcollection: cloud-databases-gen2
 
@@ -185,6 +185,28 @@ ibmcloud resource service-instance-create \
 {: pre}
 {: cli}
 
+```sh
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "<DATABASE_INSTANCE_NAME>",
+    "target": "<REGION>",
+    "resource_group": "<RESOURCE-GROUP>",
+    "resource_plan_id": "<DATABASE_SERVICE_PLAN_NAME>",
+    "parameters": {
+      "dataservices": {
+        "backups": {
+          "preserve": true
+        }
+      }
+    }
+  }'
+```
+{: pre}
+{: api}
+
 ### Taking an on-demand backup in the UI
 {: #ondemand-backup-ui}
 {: ui}
@@ -195,7 +217,7 @@ To create a manual backup in the UI, go to the **Backups and restore** tab of yo
 
 Once the backup provisioning is completed, you can see the details of the backup like the Backup CRN, associated database instance and its version, region, status and size.
 
-### Creating an independent backup using CLI
+### Creating an independent backup by using the CLI
 {: #creating-independent-backup-cli}
 {: cli}
 
@@ -253,6 +275,55 @@ ibmcloud resource service-instance --output JSON crn:v1:staging:public:databases
 ```
 {: pre}
 
+### Creating an independent backup by using the API
+{: #creating-independent-backup-api}
+{: api}
+
+To create an on-demand independent backup by using the API:
+
+{: api}
+To create an on-demand independent backup using the {{site.data.keyword.cloud_notm}} API:
+```sh
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "<DATABASE_INSTANCE_NAME>",
+    "target": "<REGION>",
+    "resource_group": "<RESOURCE-GROUP>",
+    "resource_plan_id": "<DATABASE_SERVICE_PLAN_NAME>",
+    "parameters": {
+      "dataservices": {
+        "source_dataservice_crn": "<DATABASE_INSTANCE_CRN>"
+      }
+    }
+  }'
+```
+{: pre}
+
+Example:
+
+```sh
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "my-mysql-backup-20260429",
+    "target": "us-east",
+    "resource_group": "b67d9228670d473097259e2b343de464",
+    "resource_plan_id": "databases-independent-backups-gen2-standard",
+    "parameters": {
+      "dataservices": {
+        "source_dataservice_crn": "crn:v1:bluemix:public:databases-for-mysql:us-east:a/1234567890:abcd-1234-efgh-5678::"
+      }
+    }
+  }'
+```
+{: pre}
+
+
 ### Deleting an independent backup
 {: #deleting-independent-backup}
 {: cli}
@@ -276,6 +347,29 @@ Backups use incremental infrastructure-level volume snapshots. As a result, dele
 Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
 {: important}
 
+### Deleting an independent backup
+{: #deleting-independent-backup}
+{: api}
+
+To manually delete an independent backup before its expiration:
+
+```sh
+curl -X DELETE \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances/${INDEPENDENT_BACKUP_ID} \
+  -H 'Authorization: Bearer <>'
+```
+{: pre}
+
+Example:
+
+```sh
+curl -X DELETE \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances/793b4f27-7733-4803-917f-de8e055e2deb \
+  -H 'Authorization: Bearer <>'
+```
+{: pre}
+
+
 ### Restoring from an independent backup
 {: #restoring-independent-backup}
 
@@ -290,6 +384,46 @@ Do not delete the backup while the backup is restoring. Before you delete the ba
 {: tip}
 
 You have immediate access to the restored database instance, but I/O performance is reduced until hydration completes. Backups cannot be created on the restored instance until hydration is complete. You can track hydration progress by using platform Activity Tracker events. For more information, see [at-events](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events#at_actions_platform).
+
+```sh
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "<DATABASE_INSTANCE_NAME>",
+    "target": "<REGION>",
+    "resource_group": "<RESOURCE-GROUP>",
+    "resource_plan_id": "<DATABASE_SERVICE_PLAN_NAME>",
+    "parameters": {
+      "dataservices": {
+        "restore_backup_id": "<BACKUP_CRN>"
+      }
+    }
+  }'
+```
+{: pre}
+{: api}
+
+Example:
+{: api}
+
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "mysql-restore-abc",
+    "target": "us-east",
+    "resource_group": "b67d9228670d473097259e2b343de464",
+    "resource_plan_id": "databases-for-mysql-gen2-standard",
+    "parameters": {
+      "dataservices": {
+        "restore_backup_id": "crn:v1:bluemix:public:databases-independent-backups:us-east:a/26b19aex04da4475b6e31205fa93248d:793b4f27-7733-4803-917f-de8e055e2deb::"
+      }
+    }
+  }'
+{: api}
 
 #### Restoring a backup in the UI
 {: #restore-backup-ui}
