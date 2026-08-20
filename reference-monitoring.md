@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-08-20"
 
 keywords: monitoring
 
@@ -1048,15 +1048,8 @@ How much WAL log file uses, in bytes
 | Metric Name |
 |-----------|
 | [MySQL Cache hit ratio](#ibm_databases_for_mysql_cache_hit_ratio) |
-| [MySQL Connection usage for an instance](#ibm_databases_for_mysql_connection_used_percent) |
 | [MySQL Disk read latency mean](#ibm_databases_for_mysql_disk_read_latency_mean) |
 | [MySQL Disk write latency mean](#ibm_databases_for_mysql_disk_write_latency_mean) |
-| [MySQL IO utilization in percent 15-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_15m) |
-| [MySQL IO utilization in percent 30-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_30m) |
-| [MySQL IO utilization in percent 5-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_5m) |
-| [MySQL IO utilization in percent 60-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_60m) |
-| [MySQL IOPS read & write total count for an instance](#ibm_databases_for_mysql_disk_iops_read_write_total) |
-| [MySQL Maximum allowed memory for an instance](#ibm_databases_for_mysql_memory_limit_bytes) |
 | [MySQL The maximum permitted number of simultaneous client connections.](#ibm_databases_for_mysql_max_connections) |
 | [MySQL Percent of threads connected](#ibm_databases_for_mysql_threads_connected_usage) |
 | [MySQL Percent of threads running](#ibm_databases_for_mysql_threads_running_usage) |
@@ -1064,22 +1057,14 @@ How much WAL log file uses, in bytes
 | [MySQL The number of threads created to handle connections](#ibm_databases_for_mysql_threads_created) |
 | [MySQL The number of threads in the thread cache](#ibm_databases_for_mysql_thread_cache_size) |
 | [MySQL The number of threads in the thread cache](#ibm_databases_for_mysql_threads_cached) |
-| [MySQL The open file usage](#ibm_databases_for_mysql_open_file_usage) |
-| [MySQL The pool hit rate](#ibm_databases_for_mysql_pool_hit_rate) |
-| [MySQL The pool utilization](#ibm_databases_for_mysql_pool_utilization) |
 | [MySQL The rate of bytes received from all clients](#ibm_databases_for_mysql_bytes_received_rate) |
 | [MySQL The rate of bytes sent to all clients](#ibm_databases_for_mysql_bytes_sent_rate) |
 | [MySQL The rate of failed attempts to connect to the MySQL server](#ibm_databases_for_mysql_aborted_connects_rate) |
 | [MySQL The rate of joins that did a full scan of the first table](#ibm_databases_for_mysql_select_scan_rate) |
-| [MySQL The rate of joins that perform table scans because they do not use indexes](#ibm_databases_for_mysql_select_full_join_rate) |
-| [MySQL The rate of joins that used a range search on a reference table](#ibm_databases_for_mysql_select_full_range_join_rate) |
-| [MySQL The rate of joins that used ranges on the first table](#ibm_databases_for_mysql_select_range_rate) |
 | [MySQL The rate of joins without keys that check for key usage after each row](#ibm_databases_for_mysql_select_range_check_rate) |
-| [MySQL The rate of merge passes that the sort algorithm has had to do](#ibm_databases_for_mysql_sort_merge_passes_rate) |
 | [MySQL The rate of queries that have taken more than long_query_time seconds](#ibm_databases_for_mysql_slow_queries_rate) |
 | [MySQL The rate of sorted rows](#ibm_databases_for_mysql_sort_rows_rate) |
 | [MySQL The rate of sorts that were done by scanning the table](#ibm_databases_for_mysql_sort_scan_rate) |
-| [MySQL The rate of sorts that were done using ranges](#ibm_databases_for_mysql_sort_range_rate) |
 | [MySQL The rate of statements executed by the server](#ibm_databases_for_mysql_questions_rate) |
 | [MySQL The rate of times that a request for a table lock could be granted immediately](#ibm_databases_for_mysql_table_locks_immediate_rate) |
 | [MySQL The rate of times that a request for a table lock could not be granted immediately and a wait was needed](#ibm_databases_for_mysql_table_locks_waited_rate) |
@@ -1088,13 +1073,10 @@ How much WAL log file uses, in bytes
 | [MySQL Total disk space for an instance](#ibm_databases_for_mysql_disk_total_bytes) |
 | [MySQL Used CPU for an instance](#ibm_databases_for_mysql_cpu_used_percent) |
 | [MySQL Used disk space for an instance](#ibm_databases_for_mysql_disk_used_bytes) |
-| [MySQL Used disk space for an instance](#ibm_databases_for_mysql_disk_used_percent) |
-| [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_bytes) |
-| [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_percent) |
-| [MySQL Total active connections to the database](#ibm_databases_for_mysql_total_connections) |
-| [MySQL Replica lag](#ibm_databases_for_mysql_replica_lag) |
-| [MySQL Replica state](#ibm_databases_for_mysql_replica_state) |
-{: caption="Metrics Available by Plan Names" caption-side="top"}
+{: caption="Metrics available by plan names" caption-side="top"}
+
+
+
 
 ### MySQL Metrics Descriptions
 {: #metrics-by-plan-mysql-desc}
@@ -1112,18 +1094,7 @@ Cache hit ratio
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Cache hit ratio metric metadata" caption-side="top"}
 
-#### MySQL Connection usage for an instance
-{: #ibm_databases_for_mysql_connection_used_percent}
 
-Represents the connection usage for your deployment.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_connection_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-`Segment By` | `Service instance, Service instance name` |
-{: caption="Connection usage for an instance metric metadata" caption-side="top"}
 
 #### MySQL Disk read latency mean
 {: #ibm_databases_for_mysql_disk_read_latency_mean}
@@ -1152,84 +1123,6 @@ Disk write latency mean
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Disk write latency mean metric metadata" caption-side="top"}
-
-#### MySQL IO utilization in percent 15-minute average
-{: #ibm_databases_for_mysql_disk_io_utilization_percent_average_15m}
-
-How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_disk_io_utilization_percent_average_15m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="IO utilization in percent 15 minute average metric metadata" caption-side="top"}
-
-#### MySQL IO utilization in percent 30-minute average
-{: #ibm_databases_for_mysql_disk_io_utilization_percent_average_30m}
-
-How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_disk_io_utilization_percent_average_30m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="IO utilization in percent 30 minute average metric metadata" caption-side="top"}
-
-#### MySQL IO utilization in percent 5-minute average
-{: #ibm_databases_for_mysql_disk_io_utilization_percent_average_5m}
-
-How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_disk_io_utilization_percent_average_5m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="IO utilization in percent 5 minute average metric metadata" caption-side="top"}
-
-#### MySQL IO utilization in percent 60-minute average
-{: #ibm_databases_for_mysql_disk_io_utilization_percent_average_60m}
-
-How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_disk_io_utilization_percent_average_60m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="IO utilization in percent 60 minute average metric metadata" caption-side="top"}
-
-#### MySQL IOPS read & write total count for an instance
-{: #ibm_databases_for_mysql_disk_iops_read_write_total}
-
-How many input-output operations per second your instance is performing
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_disk_iops_read_write_total`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="IOPS read & write total count for an instance metric metadata" caption-side="top"}
-
-#### MySQL Maximum allowed memory for an instance
-{: #ibm_databases_for_mysql_memory_limit_bytes}
-
-The maximum amount of memory available to your instance
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_memory_limit_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Maximum allowed memory for an instance metric metadata" caption-side="top"}
 
 #### MySQL Maximum permitted number of simultaneous client connections.
 {: #ibm_databases_for_mysql_max_connections}
@@ -1322,45 +1215,6 @@ The number of threads in the thread cache.
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="The number of threads in the thread cache metric metadata" caption-side="top"}
 
-#### MySQL The open file usage
-{: #ibm_databases_for_mysql_open_file_usage}
-
-The open file usage.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_open_file_usage`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="The open file usage metric metadata" caption-side="top"}
-
-#### MySQL The pool hit rate
-{: #ibm_databases_for_mysql_pool_hit_rate}
-
-The pool hit rate.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_pool_hit_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="The pool hit rate metric metadata" caption-side="top"}
-
-#### MySQL The pool utilization
-{: #ibm_databases_for_mysql_pool_utilization}
-
-The pool utilization.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_pool_utilization`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="The pool utilization metric metadata" caption-side="top"}
-
 #### MySQL The rate of bytes received from all clients
 {: #ibm_databases_for_mysql_bytes_received_rate}
 
@@ -1413,45 +1267,6 @@ The rate of joins that did a full scan of the first table.
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="The rate of joins that did a full scan of the first table metric metadata" caption-side="top"}
 
-#### MySQL The rate of joins that perform table scans because they do not use indexes
-{: #ibm_databases_for_mysql_select_full_join_rate}
-
-The rate of joins that perform table scans because they do not use indexes.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_select_full_join_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="The rate of joins that perform table scans because they do not use indexes metric metadata" caption-side="top"}
-
-#### MySQL The rate of joins that used a range search on a reference table
-{: #ibm_databases_for_mysql_select_full_range_join_rate}
-
-The rate of joins that used a range search on a reference table.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_select_full_range_join_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="The rate of joins that used a range search on a reference table metric metadata" caption-side="top"}
-
-#### MySQL The rate of joins that used ranges on the first table
-{: #ibm_databases_for_mysql_select_range_rate}
-
-The rate of joins that used ranges on the first table.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_select_range_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="The rate of joins that used ranges on the first table metric metadata" caption-side="top"}
-
 #### MySQL The rate of joins without keys that check for key usage after each row
 {: #ibm_databases_for_mysql_select_range_check_rate}
 
@@ -1464,19 +1279,6 @@ The rate of joins without keys that check for key usage after each row.
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="The rate of joins without keys that check for key usage after each row metric metadata" caption-side="top"}
-
-#### MySQL The rate of merge passes that the sort algorithm has had to do
-{: #ibm_databases_for_mysql_sort_merge_passes_rate}
-
-The rate of merge passes that the sort algorithm has had to do.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_sort_merge_passes_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="The rate of merge passes that the sort algorithm has had to do metric metadata" caption-side="top"}
 
 #### MySQL The rate of queries that have taken more than long_query_time seconds
 {: #ibm_databases_for_mysql_slow_queries_rate}
@@ -1516,19 +1318,6 @@ The rate of sorts that were done by scanning the table.
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="The rate of sorts that were done by scanning the table metric metadata" caption-side="top"}
-
-#### MySQL The rate of sorts that were done using ranges
-{: #ibm_databases_for_mysql_sort_range_rate}
-
-The rate of sorts that were done using ranges.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_sort_range_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="The rate of sorts that were done using ranges metric metadata" caption-side="top"}
 
 #### MySQL The rate of statements executed by the server
 {: #ibm_databases_for_mysql_questions_rate}
@@ -1595,19 +1384,6 @@ The rate of total command statements executed.
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="The rate of total command statements executed metric metadata" caption-side="top"}
 
-#### MySQL Total disk space for an instance
-{: #ibm_databases_for_mysql_disk_total_bytes}
-
-Represents the total amount of disk space available to your deployment
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_disk_total_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Total disk space for an instance metric metadata" caption-side="top"}
-
 #### MySQL Used CPU for an instance
 {: #ibm_databases_for_mysql_cpu_used_percent}
 
@@ -1646,71 +1422,6 @@ How much disk space is used as a percentage of total disk available
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Used disk space for an instance metric metadata" caption-side="top"}
-
-#### MySQL Used memory for an instance
-{: #ibm_databases_for_mysql_memory_used_bytes}
-
-How much memory your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_memory_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Used memory for an instance metric metadata" caption-side="top"}
-
-#### MySQL Used memory for an instance percent
-{: #ibm_databases_for_mysql_memory_used_percent}
-
-How much memory is used as a percentage of total memory available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_memory_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Used memory for an instance metric metadata" caption-side="top"}
-
-#### MySQL Total active connections to the database
-{: #ibm_databases_for_mysql_total_connections}
-
-Represents the total number of active connections to the database
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_total_connections`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Used memory for an instance metric metadata" caption-side="top"}
-
-#### Replica lag
-{: #ibm_databases_for_mysql_replica_lag}
-
-Represents the delay of a replica relative to the leader.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_replica_lag`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Resource Id, Service instance name` |
-{: caption="Replica lag metric metadata" caption-side="top"}
-
-#### Replica state
-{: #ibm_databases_for_mysql_replica_state}
-
-Represents the state of the replicas.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_replica_state`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Resource Id, Service instance name` |
-{: caption="Replica state metric metadata" caption-side="top"}
 
 ## Elasticsearch Metrics
 {: #metrics-by-plan-elasticsearch}
