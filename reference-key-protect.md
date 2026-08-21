@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-07-28"
+lastupdated: "2026-08-21"
 
 subcollection: cloud-databases-gen2
 
@@ -18,9 +18,6 @@ keywords: bring your own key, byok, cryptoshredding, key rotation, key rotation 
 
 
 The data that you store in {{site.data.keyword.databases-for}} is encrypted by default by using randomly generated keys. To control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-integrate-services) and use one of your own keys to encrypt your databases and backups.
-
-This document covers the integration of {{site.data.keyword.keymanagementserviceshort}} with Gen 2 {{site.data.keyword.databases-for}}, which includes {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}.
-{: .note}
 
 To get started, provision [{{site.data.keyword.keymanagementserviceshort}}](https://cloud.ibm.com/catalog/services/key-protect) on your {{site.data.keyword.cloud_notm}} account.
 
