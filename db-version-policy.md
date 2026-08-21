@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-28"
+lastupdated: "2026-08-20"
 
 subcollection: cloud-databases-gen2
 
@@ -24,7 +24,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 
 
-| Service | {{site.data.keyword.databases-for}} versioning schema| Next known end of life version and date | Preferred major version | End of life procedure [^tabletext4] |
+| Service | {{site.data.keyword.databases-for}} versioning schema| Next known end-of-life version and date | Preferred major version | End-of-life procedure [^tabletext4] |
 |----|----|----|----|----|
 | {{site.data.keyword.databases-for-postgresql}} | {{site.data.keyword.databases-for}} major version is defined by the first number in the version number. |  v14, 21 October 2026 |   v18 | Automatically upgraded in place to next major version, [Customer-initiated in-place upgrade from v14 to v15 supported](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-upgrading&interface=ui#upgrading-in-place) |
 | {{site.data.keyword.databases-for-mongodb}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. |  v8.0, 24 Oct 2029 |  v8.0  | Automatically upgraded in place to next Major version, [Customer-initiated in-place upgrade to the next major version is supported for Standard and Enterprise plans](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-upgrading&interface=ui#upgrading-in-place) |
@@ -35,7 +35,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.databases-for-valkey}} | {{site.data.keyword.databases-for}} Major versions are the first two numbers in a `major.x.patch` version number. | N/A  |   v9  |Automatically upgraded in place to next major version |
 {: caption="Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
-[^tabletext4]: This column describes the actions that will be taken by the {{site.data.keyword.cloud}} team on database instances that have not been upgraded to a new version prior to the version EoL date. This approach is not recommended. For more information, see [End of life procedure](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-versioning-policy).
+[^tabletext4]: This column describes the actions that will be taken by the {{site.data.keyword.cloud}} team on database instances that have not been upgraded to a new version prior to the version EoL date. This approach is not recommended. For more information, see [End-of-life procedure](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-versioning-policy).
 
 ## Subscribe for version updates
 {: #version-updates-subscribe}
@@ -68,7 +68,7 @@ Currently, only one version per Gen 2 {{site.data.keyword.databases-for}} servic
 |-------------|-------------|
 | **Preferred** | The recommended and default version for all new instances. It's the most stable, up-to-date version from both an instance-level and service-level perspective.|
 | **Preview** | A preview version is released for a limited time to try available functions. Often it is the newest available version available from the project maintainers in preparation for making it the "Preferred" version. While deployable, preview versions are not suitable for production, as they are excluded from service-level agreements and support. Also, a preview version isn't guaranteed to become a production-level release. IBM reserves the right to ask a customer to delete an instance that uses a preview version. |
-| **Deprecated** | Old versions and versions near their end of life dates are marked as "Deprecated". Provisions and restores of instances that run a deprecated version are still available and instances that run a deprecated version continue to be supported. However, you are encouraged to upgrade to the new "Preferred" version as deprecated versions are eventually removed from {{site.data.keyword.cloud_notm}} and are no longer provisionable, restorable, or supported. |
+| **Deprecated** | Old versions and versions near their end-of-life dates are marked as "Deprecated". Provisions and restores of instances that run a deprecated version are still available and instances that run a deprecated version continue to be supported. However, you are encouraged to upgrade to the new "Preferred" version as deprecated versions are eventually removed from {{site.data.keyword.cloud_notm}} and are no longer provisionable, restorable, or supported. |
 | **Untagged** | Untagged versions are fully supported and deployable versions. They are usually slightly older than the current preferred version, but they are still supported by the project maintainers. They continue to be supported on {{site.data.keyword.databases-for}} instances until their deprecation is announced.|
 | **Hidden** | A hidden version cannot be provisioned. Existing instances that are using a version marked as hidden are still able to be restored to the hidden version. |
 {: caption="{{site.data.keyword.databases-for}} Version tags" caption-side="bottom"}
@@ -78,7 +78,7 @@ Currently, only one version per Gen 2 {{site.data.keyword.databases-for}} servic
 
 {{site.data.keyword.cloud_notm}} is committed to providing secure, up-to-date versions of services. As updates are released by project maintainers, they are tested, evaluated, and released to {{site.data.keyword.databases-for}} instances. Your instance's minor version and patch updates are handled automatically and are not user configurable.
 
-## Major versioning end of life notifications
+## Major versioning end-of-life notifications
 {: #-major-version-eol}
 
 You receive multiple notifications when a major version reaches its end of life. You can typically expect:
