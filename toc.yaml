@@ -39,7 +39,6 @@ toc:
           - backup-restore.md
           - coupled-backups.md
           - independent-backups.md
-      - migration_landing.md
       - topicgroup:
           label: Observability
           topics:
