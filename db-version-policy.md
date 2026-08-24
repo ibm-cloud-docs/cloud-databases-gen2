@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-20"
+lastupdated: "2026-08-24"
 
 subcollection: cloud-databases-gen2
 
@@ -29,7 +29,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.databases-for-postgresql}} | {{site.data.keyword.databases-for}} major version is defined by the first number in the version number. |  v14, 21 October 2026 |   v18 | Automatically upgraded in place to next major version, [Customer-initiated in-place upgrade from v14 to v15 supported](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-upgrading&interface=ui#upgrading-in-place) |
 | {{site.data.keyword.databases-for-mongodb}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. |  v8.0, 24 Oct 2029 |  v8.0  | Automatically upgraded in place to next Major version, [Customer-initiated in-place upgrade to the next major version is supported for Standard and Enterprise plans](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-upgrading&interface=ui#upgrading-in-place) |
 | {{site.data.keyword.databases-for-redis}} | {{site.data.keyword.databases-for}} major versions are the first number in a `major.minor.patch` version number. | N/A |   v8.2   | Automatically upgraded in place to next Major version|
-| {{site.data.keyword.databases-for-elasticsearch}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `release.version`.maintenance version number. | N/A  |   v8.19   | Automatically upgraded in-place to next major version, Customer-initiated in-place upgrade to the version 8.19 is supported. |
+| {{site.data.keyword.databases-for-elasticsearch}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `release.version`.maintenance version number. | N/A  |   v8   | Automatically upgraded in-place to next major version |
 | {{site.data.keyword.databases-for-mysql}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a major.x.patch version number. | v8.4, 30 April 2029 |   v8.4 | Automatically upgraded in place to next major version |
 | {{site.data.keyword.messages-for-rabbitmq}} | {{site.data.keyword.databases-for}} Major versions are the first numbers in a `major.x.patch` version number. | N/A |   v4   | Backup taken and access removed for Major version, <br> Automatically upgraded in place to next minor version|
 | {{site.data.keyword.databases-for-valkey}} | {{site.data.keyword.databases-for}} Major versions are the first two numbers in a `major.x.patch` version number. | N/A  |   v9  |Automatically upgraded in place to next major version |
