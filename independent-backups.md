@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-24"
 
 subcollection: cloud-databases-gen2
 
@@ -575,7 +575,25 @@ For comprehensive information about business continuity and disaster recovery wi
 
 The transition from coupled backups to independent backups varies by database service:
 
+### Databases enabled with independent backups
+{: #databases-with-independent-backups}
+  
+| Database   | Regions                    |
+|------------|----------------------------|
+| PostgreSQL | `ca-mon`, `in-che`, `in-mum` |
 
+The databases listed in the table are transitioning from coupled backups to independent backups in the specified regions.
+
+Independent backups will be enabled for applicable databases and regions in a phased approach.
+
+During the 30-day transition period:
+
+- Coupled backups and independent backups coexist.
+- All new backups are created as independent backups.
+- Existing coupled backups continue to function and are automatically deleted after 30 days.
+- The UI displays both backup types.
+- No action is required. The transition is handled automatically.
+- After the 30-day transition period, only independent backups remain.
 
 ### MySQL
 {: #transition-mysql}
