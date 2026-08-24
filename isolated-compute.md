@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-21"
+lastupdated: "2026-08-24"
 
 subcollection: cloud-databases-gen2
 
@@ -36,7 +36,16 @@ In the isolated compute model, CPU and RAM resources are fixed at the time of pr
 
 These management containers take up some overhead (10-12%) in your isolated compute instance, consuming a portion of the machine's CPU and RAM, with the remainder available for your database to use. A portion of the database capacity will be allocated to essential operations such as security, ensuring data integrity and protection.
 
+## Compute profile types
+{: #isolated-compute-profile-types}
 
+{{site.data.keyword.databases-for}} Gen 2 offers two types of compute profiles to match your workload requirements:
+
+- **Fixed profiles**: Predefined vCPU and RAM combinations that run on the newest available CPU generation, delivering the highest level of consistent and predictable performance.
+
+- **Flex profiles**: Predefined vCPU and RAM combinations designed to run across available CPU generations, with dynamic placement optimized for cost.
+
+Both profile types run on single-tenant compute instances with hypervisor-level isolation. Storage is configured independently of the compute profile, allowing separate disk configuration.
 
 ## Compute sizing
 {: #isolated-compute-sizing}
@@ -90,7 +99,7 @@ The host_flavor parameter defines your Compute sizing. Input the appropriate val
 |-----------|----------------------|---------------------------|
 | 4x20      | 4 vCPU x 20 GB RAM   | bx3d.4x20.encrypted        |
 | 8x40      | 8 vCPU x 40 GB RAM   | bx3d.8x40.encrypted        |
-| 8x80      | 8 vCPU x 80 GB RAM   | mx3d.8x80.encrypted        |
+| 16x80      | 16 vCPU x 80 GB RAM   | mx3d.16x80.encrypted        |
 | 32x160    | 32 vCPU x 160 GB RAM | bx3d.32x160.encrypted      |
 | 48x240    | 48 vCPU x 240 GB RAM | bx3d.48x240.encrypted      |
 {: caption="Fixed profile CLI selections" caption-side="bottom"}
@@ -122,7 +131,7 @@ The host_flavor parameter defines your Compute sizing. Input the appropriate val
 |-----------|----------------------|---------------------------|
 | 4x20      | 4 vCPU x 20 GB RAM   | bx3d.4x20.encrypted        |
 | 8x40      | 8 vCPU x 40 GB RAM   | bx3d.8x40.encrypted        |
-| 8x80      | 8 vCPU x 80 GB RAM   | mx3d.8x80.encrypted        |
+| 16x80      | 16 vCPU x 80 GB RAM   | mx3d.16x80.encrypted        |
 | 32x160    | 32 vCPU x 160 GB RAM | bx3d.32x160.encrypted      |
 | 48x240    | 48 vCPU x 240 GB RAM | bx3d.48x240.encrypted      |
 {: caption="Fixed profile API selections" caption-side="bottom"}
@@ -154,7 +163,7 @@ The host_flavor parameter defines your Compute sizing. Input the appropriate val
 |-----------|----------------------|---------------------------|
 | 4x20      | 4 vCPU x 20 GB RAM   | bx3d.4x20.encrypted        |
 | 8x40      | 8 vCPU x 40 GB RAM   | bx3d.8x40.encrypted        |
-| 8x80      | 8 vCPU x 80 GB RAM   | mx3d.8x80.encrypted        |
+| 16x80      | 16 vCPU x 80 GB RAM   | mx3d.16x80.encrypted        |
 | 32x160    | 32 vCPU x 160 GB RAM | bx3d.32x160.encrypted      |
 | 48x240    | 48 vCPU x 240 GB RAM | bx3d.48x240.encrypted      |
 {: caption="Fixed profile Terraform selections" caption-side="bottom"}
