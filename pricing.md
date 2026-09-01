@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-09-01"
 
 keywords: gen 2, pricing
 
@@ -28,8 +28,12 @@ The charge for an {{site.data.keyword.databases-for}} instance is determined by 
 | Database | Database type | Default configuration|
 | --- | --- | --- |
 | Databases for PostgreSQL | Relational | 2-member |
+| Databases for MySQL | Relational | 2-member |
 | Databases for MongoDB | Non-relational | 3-member |
-{: caption="Out of the box configurations per database " caption-side="bottom"}
+| Databases for Redis | Non-relational (Key-value) | 2-member |
+| Databases for Elasticsearch | Non-relational (Search and Analytics) | 3-member |
+| Databases for RabbitMQ | Messaging | 3-member |
+{: caption="Out of the box configurations per database" caption-side="bottom"}
 
 Each database instance consists of two or three members, depending on the database type, with each member holding a copy of the data to provide resiliency and high availability. Gen 2 {{site.data.keyword.databases-for}} instances are only available with [Isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui) hosting. Isolated compute offers a choice of standard vCPU x RAM resource profiles that are hosted on single-tenant compute instances for maximum workload isolation and security. Disk storage capacity per member is specified independently of the vCPU x RAM profile selected. Gen 2 deployments depend on regional availability, for more information, see [Isolated Compute sizing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui#isolated-compute-sizing-ui).
 
@@ -176,3 +180,14 @@ The monthly free allocation is calculated based on the total provisioned disk si
 | RAM | 16 GB | 240 GB | Isolated compute – Resource scaling with host sizes |
 | CPU | 4 vCPU | 48 vCPU| Isolated compute – Resource scaling with host sizes |
 {: caption="Scaling limits" caption-side="bottom"}
+
+## Billing metrics reference
+{: #pricing-metrics}
+The following billing metrics are used to calculate charges for Gen 2 {{site.data.keyword.databases-for}} deployments.
+
+| Component | Description |
+| --- | --- |
+| Compute | Defines the CPU and memory resources allocated to each database member. Available in a range of predefined host sizes, for example **HOST_FOUR_SIXTEEN_FLEX** provides **4 vCPUs and 16 GB RAM** per member. |
+| Storage | Persistent database storage backed by IBM Cloud VPC Block Storage. Storage is provisioned using the **5 IOPS/GB performance tier** and billed based on allocated capacity using **GIGABYTE_HOUR_DISK_GEN2**. |
+| Backups | Automated backups used for recovery and point-in-time restore. Backup storage is billed separately using **GIGABYTE_MONTH_BACKUP_GEN2**. |
+{: caption="Core deployment components and billing dimensions" caption-side="bottom"}
