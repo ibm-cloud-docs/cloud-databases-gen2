@@ -563,12 +563,12 @@ For comprehensive information about business continuity and disaster recovery wi
 - [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr)
 - [Understanding high availability and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-ha-dr)
 
-## Cross-region Copy
+## Cross-region copy
 {: #independent-backups-crc}
 
 Cross-region copy allows you to create a copy of an independent backup in another supported {{site.data.keyword.cloud_notm}} region for disaster recovery and business continuity purposes.
 
-### Availability of Cross-region Copy
+### Availability of cross-region copy
 {: #cross-region-copy-availability}
 
 | Database | Supported regions |
@@ -580,7 +580,7 @@ A backup can be copied only when it is in the **Active** state. The target regio
 
 Copied backups are created as independent backup instances in the target region and can be restored only within that region. For example, if a backup exists in `ca-mon` and you want to restore it in `in-che`, you must first create a copy of the backup in `in-che` and then restore from the copied backup.
 
-Automatic cross-region backup copy can be configured on a database instance. Only one target copy region can be configured. Any supported region can be selected as the target, provided it is different from the database instance region. Automatic backup cross region copy can also be disabled through the UI/API or CLI by removing the configured target region from the database instance configuration.
+You can configure automatic cross-region backup copy on a database instance. Only one target copy region can be configured. Any supported region can be selected as the target, provided it is different from the database instance region. Automatic backup cross region copy can also be disabled through the UI, API, or CLI by removing the configured target region from the database instance configuration.
 
 {{site.data.keyword.databases-for-mysql}} does not support cross-region copy.
 {: note}
@@ -599,7 +599,7 @@ The transition from coupled backups to independent backups varies by database se
 
 ### Databases enabled with independent backups
 {: #databases-with-independent-backups}
-  
+
 | Database   | Regions                                 |
 |------------|-----------------------------------------|
 | PostgreSQL | `ca-mon`, `in-che`, `in-mum`            |
