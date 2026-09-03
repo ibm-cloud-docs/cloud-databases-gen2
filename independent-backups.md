@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-01"
+lastupdated: "2026-09-03"
 
 subcollection: cloud-databases-gen2
 
@@ -577,7 +577,7 @@ The transition from coupled backups to independent backups varies by database se
 
 ### Databases enabled with independent backups
 {: #databases-with-independent-backups}
-  
+
 | Database   | Regions                                 |
 |------------|-----------------------------------------|
 | PostgreSQL | `ca-mon`, `in-che`, `in-mum`            |
