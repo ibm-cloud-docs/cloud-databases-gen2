@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-09-01"
+lastupdated: "2026-09-12"
 
 keywords: cloud databases gen 2 overview
 
@@ -16,17 +16,17 @@ subcollection: cloud-databases-gen2
 
 [Gen 2]{: tag-purple}
 
-{{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across all industries. The following page outlines the key differences between {{site.data.keyword.databases-for}} built on IBM’s Classic platform (Gen 1) and the latest VPC based platform (Gen 2).
+{{site.data.keyword.databases-for}} support an extensive portfolio of relational and non-relational (NoSQL) databases and integrations to support building a wide range of application types across all industries. The following page outlines the key differences between {{site.data.keyword.databases-for}} built on IBM’s Classic platform (Gen 1) and the latest VPC-based platform (Gen 2).
 
-## Generation  1 (Classic)
+## Generation 1 (Classic)
 {: #gen1}
 
-IBM’s original platform consisting of all databases across all regions and a rich feature set. Gen 1 Databases support both private and public endpoints, with options for isolated and shared compute. This environment is best suited for workloads that benefit from simpler networking and isolation features.
+IBM’s original platform that consists of all databases across all regions and a rich feature set. Gen 1 Databases support both private and public endpoints, with options for isolated and shared compute. This environment is best suited for workloads that benefit from simpler networking and isolation features.
 
 ## Generation 2 (VPC)
 {: #gen2}
 
-Gen 2 databases are built on {{site.data.keyword.cloud}}’s latest platform, based on highly secure software-defined networking architecture and ideal for cloud-native applications. Gen 2 Databases currently are only available in select regions only and support private endpoints and isolated compute options. This environment is ideal for modern applications that demand advanced networking and secure, software-defined isolation.
+Gen 2 databases are built on {{site.data.keyword.cloud}}’s latest platform, based on highly secure software-defined networking architecture and ideal for cloud-native applications. Gen 2 Databases are currently only available in select regions only and support private endpoints and isolated compute options. This environment is ideal for modern applications that demand advanced networking and secure, software-defined isolation.
 
 ## Feature differentiators
 {: #feature-differentiators}
@@ -49,9 +49,9 @@ Gen 2 databases are built on {{site.data.keyword.cloud}}’s latest platform, ba
 |------------------------|-----------------------------------------------------------------------|-----------------------------------------------------|
 | Compute generation     | IBM Classic infrastructure                                            | IBM Cloud VPC                                       |
 | Availability           | High availability                                                     | High availability                                   |
-| Deployment timeframe   | Minutes                                                               | Minutes                                             |
+| Deployment time frame   | Minutes                                                               | Minutes                                             |
 | Pricing                | Hourly and monthly billing                                            | Hourly and monthly billing                          |
-| Backup and restore     | Timing depends on size of backup and performance impact during backup | Consistent, fast [Comparison of Gen 1 and Gen 2 backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-comparison-backups&interface=ui)|
+| Backup and restore     | Timing depends on the size of backup and performance impact during backup | Consistent, fast [Comparison of Gen 1 and Gen 2 backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-comparison-backups&interface=ui)|
 {: caption="Performance differentiators" caption-side="bottom"}
 
 ## Access, compliance, and security differentiators
@@ -59,7 +59,7 @@ Gen 2 databases are built on {{site.data.keyword.cloud}}’s latest platform, ba
 
 | Category               | Gen 1                                                                 | Gen 2                                              |
 |------------------------|-----------------------------------------------------------------------|----------------------------------------------------|
-| User and role management | [Database `admin` user created by IBM](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-user-management&interface=ui) | Database "manager" via service-credential                              |
+| User and role management | [Database `admin` user created by IBM](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-user-management&interface=ui) | Database "manager" by using service-credential                              |
 | Certificate type       | Signed by IBM Cloud Database Certificate Authority                    | Certificates signed by a Certificate Authority (Let's Encrypt)         |
 | Encryption             | Encryption at Rest <br> Encryption in Transit <br> Customer-managed encryption - Bring your own key (BYOK) | Encryption at Rest <br> Encryption in Transit <br> Customer-managed encryption - Bring your own key (BYOK) |
 | Compliance             | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018 <br> SOC 1, SOC 2 <br> PCI DSS <br> HIPAA  | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018SOC 1 <br> SOC 2 <br> PCI DSS <br> HIPAA      |

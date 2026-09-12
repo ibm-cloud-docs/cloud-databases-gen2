@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-03"
+lastupdated: "2026-09-12"
 
 subcollection: cloud-databases-gen2
 
@@ -126,7 +126,7 @@ The IBM Cloud console provides a centralized view of all backups across your acc
 2. View your database instances and their associated backups.
 3. Independent backups appear as separate service instances in your resource list.
 
-This helps you identify backups that may need cleanup or long-term retention.
+This helps you identify backups that might need cleanup or long-term retention.
 
 ### Resource List
 {: #resource-list-view}
@@ -562,6 +562,8 @@ Independent backups are a critical component of your business continuity and dis
 For comprehensive information about business continuity and disaster recovery with {{site.data.keyword.databases-for}}, see:
 - [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr)
 - [Understanding high availability and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-ha-dr)
+
+
 
 ## Next steps
 {: #independent-backups-next-steps}
