@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-03"
+lastupdated: "2026-09-15"
 
 keywords: cloud databases release notes
 
@@ -21,6 +21,8 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+
 
 ## 1 September 2026
 {: #cloud-databases-01sep2026}
