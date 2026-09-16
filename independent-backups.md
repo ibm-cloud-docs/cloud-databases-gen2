@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-12"
+lastupdated: "2026-09-16"
 
 subcollection: cloud-databases-gen2
 
@@ -17,7 +17,7 @@ keywords: independent backups, decoupled backups, backup lifecycle, backup manag
 
 [Gen 2]{: tag-purple}
 
-Independent backups are currently available only for {{site.data.keyword.databases-for-mysql}}, {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}.
+Independent backups are currently available only for {{site.data.keyword.databases-for-mysql}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, and {{site.data.keyword.databases-for-elasticsearch}}.
 {: important}
 
 Independent backups represent a fundamental shift in how {{site.data.keyword.databases-for}} Gen 2 manages backup data. Unlike traditional backups that are tightly coupled to your database instance lifecycle, independent backups exist as separate, provisionable service instances with their own lifecycle, allowing you to retain backup data even after the source database instance is deleted. Independent backups are billed as separate service instances. For more information, see [Independent backups billing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing#independent-backups-billing).
@@ -580,10 +580,12 @@ The transition from coupled backups to independent backups varies by database se
 ### Databases enabled with independent backups
 {: #databases-with-independent-backups}
 
-| Database   | Regions                                 |
-|------------|-----------------------------------------|
-| PostgreSQL | `ca-mon`, `in-che`, `in-mum`            |
-| MongoDB    | `ca-mon`, `in-che`, `in-mum`, `us-east` |
+| Database           | Regions                                                             |
+|--------------------|---------------------------------------------------------------------|
+| PostgreSQL         | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east` |
+| MongoDB Enterprise | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east` |
+| MongoDB Sharding   | `ca-mon`, `in-che`, `in-mum`, `us-east`                             |
+| Elasticsearch      | `ca-mon`, `in-che`, `in-mum`                                        |
 The databases listed in the table are transitioning from coupled backups to independent backups in the specified regions.
 
 Independent backups will be enabled for applicable databases and regions in a phased approach.
@@ -631,3 +633,4 @@ Be aware of the following limitations:
 - Independent backups cannot be downloaded; use database-specific tools (for example, `mysqldump`) for local backups.
 - Backup retention duration is not yet configurable (30 days default).
 - You can create upto 50 on-demand backups per database instance.
+- On-demand backup on MySQL is not supported.
