@@ -534,21 +534,7 @@ Independent backups are encrypted at rest with the same encryption as the databa
 
 When you restore a backup that was encrypted with a Key Protect key, you can use the same key or a different key. If you use a different key, the new instance is encrypted with the new key.
 
-### Cross-account restore
-{: #cross-account-restore}
 
-Independent backups can be restored across IBM Cloud accounts, enabling scenarios such as:
-- Restoring production data to a development account for testing
-- Migrating databases between organizational units
-- Disaster recovery to a separate account
-
-To restore a backup to a different account:
-
-1. The source account must grant the target account access to the backup resource
-2. Use the backup CRN when creating the new instance in the target account
-3. Ensure the target account has appropriate IAM permissions
-
-For more information about cross-account restore, see [Cross-account restore](#cross-account-restore).
 
 ## Business continuity and disaster recovery
 {: #independent-backups-bcdr}
