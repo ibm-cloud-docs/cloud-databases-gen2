@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-10"
+lastupdated: "2026-09-17"
 
 keywords: gen 2, pricing
 
@@ -86,7 +86,7 @@ The total cost of your {{site.data.keyword.databases-for}} deployment will consi
 Disk storage is provisioned per member and billed based on the total allocated capacity (GB) across all members in a deployment.
 {{site.data.keyword.databases-for}} uses IBM Cloud VPC Block Storage as the underlying storage layer. Storage capacity can be configured independently of the selected compute profile, allowing customers to scale storage based on workload requirements.
 
-The available storage performance profile is determined by the region in which the service is deployed. Most regions support the latest generation of storage capabilities (SSD Defined Performance (`sdp`)), which provides more flexible and consistent performance characteristics. In Chennai - Airtel (`in-che`), Mumbai - Airtel (`in-mum`), Montreal (`ca-mon`), Frankfurt (`eu-de`), Washington DC (`us-east`), Madrid (`eu-es`), and Sydney (`au-syd`) regions, storage is delivered using standard profiles with predefined performance levels at 5 IOPS/GB. As a result, both storage performance characteristics and pricing varies by region, reflecting differences in the underlying storage infrastructure.
+The available storage performance profile is determined by the region in which the service is deployed. Most regions support the latest generation of storage capabilities (SSD Defined Performance (`sdp`)), which provides more flexible and consistent performance characteristics. In Chennai - Airtel (`in-che`), Mumbai - Airtel (`in-mum`), Montreal (`ca-mon`), Frankfurt (`eu-de`), Washington DC (`us-east`), Madrid (`eu-es`), Sydney (`au-syd`), Dallas (`us-south`), and London (`eu-gb`) regions, storage is delivered using standard profiles with predefined performance levels at 5 IOPS/GB. As a result, both storage performance characteristics and pricing varies by region, reflecting differences in the underlying storage infrastructure.
 
 For customers with specific performance or compliance requirements, it is recommended to validate regional capabilities during deployment planning.
 

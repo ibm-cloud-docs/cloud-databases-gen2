@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-12"
+lastupdated: "2026-09-17"
 
 subcollection: cloud-databases-gen2
 
