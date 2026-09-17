@@ -17,7 +17,7 @@ keywords: independent backups, decoupled backups, backup lifecycle, backup manag
 
 [Gen 2]{: tag-purple}
 
-Independent backups are currently available only for {{site.data.keyword.databases-for-mysql}}, {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}}.
+Independent backups are currently available only for {{site.data.keyword.databases-for-mysql}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, and {{site.data.keyword.databases-for-elasticsearch}}.
 {: important}
 
 Independent backups represent a fundamental shift in how {{site.data.keyword.databases-for}} Gen 2 manages backup data. Unlike traditional backups that are tightly coupled to your database instance lifecycle, independent backups exist as separate, provisionable service instances with their own lifecycle, allowing you to retain backup data even after the source database instance is deleted. Independent backups are billed as separate service instances. For more information, see [Independent backups billing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing#independent-backups-billing).
@@ -45,7 +45,7 @@ This architecture provides greater flexibility in managing your backup data, ena
 | Management | UI only | {{site.data.keyword.cloud_notm}} Resource Controller |
 | Visibility | Instance UI only | Database Hub, Resource List, Instance UI |
 | Deletion | Automatic only (30 days) | Manual and automatic |
-| Cross-region copies | Not supported | Future release |
+| Cross-region copies | Not supported | PostgreSQL only |
 | Provisioning | Automatic and on-demand | Automatic and on-demand |
 | Billing | Included with instance | Separate service billing |
 {: caption="Comparison of coupled and independent backups" caption-side="bottom"}
@@ -534,21 +534,7 @@ Independent backups are encrypted at rest with the same encryption as the databa
 
 When you restore a backup that was encrypted with a Key Protect key, you can use the same key or a different key. If you use a different key, the new instance is encrypted with the new key.
 
-### Cross-account restore
-{: #cross-account-restore}
 
-Independent backups can be restored across IBM Cloud accounts, enabling scenarios such as:
-- Restoring production data to a development account for testing
-- Migrating databases between organizational units
-- Disaster recovery to a separate account
-
-To restore a backup to a different account:
-
-1. The source account must grant the target account access to the backup resource
-2. Use the backup CRN when creating the new instance in the target account
-3. Ensure the target account has appropriate IAM permissions
-
-For more information about cross-account restore, see [Cross-account restore](#cross-account-restore).
 
 ## Business continuity and disaster recovery
 {: #independent-backups-bcdr}
@@ -580,10 +566,12 @@ The transition from coupled backups to independent backups varies by database se
 ### Databases enabled with independent backups
 {: #databases-with-independent-backups}
 
-| Database   | Regions                                 |
-|------------|-----------------------------------------|
-| PostgreSQL | `ca-mon`, `in-che`, `in-mum`            |
-| MongoDB    | `ca-mon`, `in-che`, `in-mum`, `us-east` |
+| Database           | Regions                                                             |
+|--------------------|---------------------------------------------------------------------|
+| PostgreSQL         | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east` |
+| MongoDB Enterprise | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east` |
+| MongoDB Sharding   | `ca-mon`, `in-che`, `in-mum`, `us-east`                             |
+| Elasticsearch      | `ca-mon`, `in-che`, `in-mum`                                        |
 The databases listed in the table are transitioning from coupled backups to independent backups in the specified regions.
 
 Independent backups will be enabled for applicable databases and regions in a phased approach.
@@ -631,3 +619,4 @@ Be aware of the following limitations:
 - Independent backups cannot be downloaded; use database-specific tools (for example, `mysqldump`) for local backups.
 - Backup retention duration is not yet configurable (30 days default).
 - You can create upto 50 on-demand backups per database instance.
+- On-demand backup on MySQL is not supported.
