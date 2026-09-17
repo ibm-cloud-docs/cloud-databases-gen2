@@ -45,7 +45,7 @@ This architecture provides greater flexibility in managing your backup data, ena
 | Management | UI only | {{site.data.keyword.cloud_notm}} Resource Controller |
 | Visibility | Instance UI only | Database Hub, Resource List, Instance UI |
 | Deletion | Automatic only (30 days) | Manual and automatic |
-| Cross-region copies | Not supported | PostgreSQL only |
+| Cross-region copies | Not supported | Future release |
 | Provisioning | Automatic and on-demand | Automatic and on-demand |
 | Billing | Included with instance | Separate service billing |
 {: caption="Comparison of coupled and independent backups" caption-side="bottom"}
