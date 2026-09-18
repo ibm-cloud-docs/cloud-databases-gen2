@@ -17,7 +17,7 @@ keywords: independent backups, decoupled backups, backup lifecycle, backup manag
 
 [Gen 2]{: tag-purple}
 
-Independent backups are currently available only for {{site.data.keyword.databases-for-mysql}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, and {{site.data.keyword.databases-for-elasticsearch}}.
+Independent backups are currently available only for {{site.data.keyword.databases-for-mysql}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-elasticsearch}},  and {{site.data.keyword.databases-for-redis}}.
 {: important}
 
 Independent backups represent a fundamental shift in how {{site.data.keyword.databases-for}} Gen 2 manages backup data. Unlike traditional backups that are tightly coupled to your database instance lifecycle, independent backups exist as separate, provisionable service instances with their own lifecycle, allowing you to retain backup data even after the source database instance is deleted. Independent backups are billed as separate service instances. For more information, see [Independent backups billing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing#independent-backups-billing).
@@ -148,7 +148,7 @@ The backup types can be either _On-demand_ or _Automatic_. Each backup is listed
 
 Click the backup to reveal information for that specific backup, including its full ID and CRN. A **Restore** button or a pre-formatted CLI command is there for restore options.
 
-During the 30-day transition period for PostgreSQL, MongoDB, and Elasticsearch, you may see both coupled and independent backups in this view. Coupled backups will be automatically deleted after 30 days.
+During the 30-day transition period for PostgreSQL, MongoDB, Elasticsearch,  and Redis, you may see both coupled and independent backups in this view. Coupled backups will be automatically deleted after 30 days.
 {: note}
 
 ## Managing independent backups
@@ -162,7 +162,7 @@ You can configure the following features on the database instance:
 | Feature |  Independent backups | Configuration |
 |---------|---------------------|---------------------|
 | Retention duration | Determines when the backups can be deleted. Automatic backups are automatically deleted after the retention duration expires. On-demand backups can be manually deleted after the retention duration expires. |  Set to fixed duration of 30 days and cannot be configured. |
-| Preserve backups | Determines whether the backups (both automatic and on-demand) are to be preserved if the database instance is deleted. | Set to false by default. Independent backups do not persist after the database instance is hard deleted. You can enable this option on a database instance, but it cannot be disabled after it is enabled. For {{site.data.keyword.databases-for-mysql}}, preserve is disabled by default and cannot be enabled. |
+| Preserve backups | Determines whether backups (automatic, on-demand, and backup copies) are preserved if the database instance is deleted. | Set to false by default. Independent backups, except for on-demand backup copies, do not persist after the database instance is hard deleted. You can enable this option on a database instance, but it cannot be disabled after it is enabled. For {{site.data.keyword.databases-for-mysql}}, preserve is disabled by default and cannot be enabled. |
 | Start time | Determines the start time of one hour window during which the automatic backup is initiated on the database instance. Automatic backups are performed daily. | Set to a default value at the time of database instance provisioning and cannot be configured. |
 {: caption="Configuration features" caption-side="bottom"}
 
@@ -324,53 +324,6 @@ curl -X POST \
   }'
 ```
 {: pre}
-
-
-### Deleting an independent backup
-{: #deleting-independent-backup}
-{: cli}
-
-To manually delete an independent backup before its expiration:
-
-```sh
-ibmcloud resource service-instance-delete <BACKUP_CRN> --force
-```
-{: pre}
-
-Example:
-
-```sh
-ibmcloud resource service-instance-delete e318275d-f860-4e4e-a63b-271fb4400c26 --force
-```
-{: pre}
-
-Backups use incremental infrastructure-level volume snapshots. As a result, deleting a backup can increase the size of the remaining backups.
-
-Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
-{: important}
-
-### Deleting an independent backup
-{: #deleting-independent-backup}
-{: api}
-
-To manually delete an independent backup before its expiration:
-
-```sh
-curl -X DELETE \
-  https://resource-controller.cloud.ibm.com/v2/resource_instances/${INDEPENDENT_BACKUP_ID} \
-  -H 'Authorization: Bearer <>'
-```
-{: pre}
-
-Example:
-
-```sh
-curl -X DELETE \
-  https://resource-controller.cloud.ibm.com/v2/resource_instances/793b4f27-7733-4803-917f-de8e055e2deb \
-  -H 'Authorization: Bearer <>'
-```
-{: pre}
-
 
 ### Restoring from an independent backup
 {: #restoring-independent-backup}
@@ -552,6 +505,51 @@ For comprehensive information about business continuity and disaster recovery wi
 
 
 
+### Deleting an independent backup by using the CLI
+{: #deleting-independent-backup-cli}
+{: cli}
+
+To delete an independent backup before its expiration, use the following command:
+
+```sh
+ibmcloud resource service-instance-delete <BACKUP_CRN> --force
+```
+{: pre}
+
+Example:
+
+```sh
+ibmcloud resource service-instance-delete e318275d-f860-4e4e-a63b-271fb4400c26 --force
+```
+{: pre}
+
+Backups use incremental infrastructure-level volume snapshots. As a result, deleting a backup can increase the size of the remaining backups.
+
+Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
+{: important}
+
+### Deleting an independent backup by using the API
+{: #deleting-independent-backup-api}
+{: api}
+
+To delete an independent backup before its expiration, use the following command:
+
+```sh
+curl -X DELETE \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances/${INDEPENDENT_BACKUP_ID} \
+  -H 'Authorization: Bearer <>'
+```
+{: pre}
+
+Example:
+
+```sh
+curl -X DELETE \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances/793b4f27-7733-4803-917f-de8e055e2deb \
+  -H 'Authorization: Bearer <>'
+```
+{: pre}
+
 ## Next steps
 {: #independent-backups-next-steps}
 
@@ -567,12 +565,16 @@ The transition from coupled backups to independent backups varies by database se
 ### Databases enabled with independent backups
 {: #databases-with-independent-backups}
 
-| Database           | Regions                                                             |
-|--------------------|---------------------------------------------------------------------|
-| PostgreSQL         | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east` |
-| MongoDB Enterprise | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east` |
-| MongoDB Sharding   | `ca-mon`, `in-che`, `in-mum`, `us-east`                             |
-| Elasticsearch      | `ca-mon`, `in-che`, `in-mum`                                        |
+| Database           | Regions                                                                                  |
+|--------------------|------------------------------------------------------------------------------------------|
+| PostgreSQL         | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb` |
+| MongoDB Enterprise | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb` |
+| MongoDB Sharding   | `ca-mon`, `in-che`, `in-mum`, `us-east`                                                  |
+| Elasticsearch      | `ca-mon`, `in-che`, `in-mum`, `eu-gb`                                                    |
+
+| Redis              | `eu-gb`                                                                                  |
+{: caption="Databases enabled with independent backups" caption-side="bottom"}
+
 The databases listed in the table are transitioning from coupled backups to independent backups in the specified regions.
 
 Independent backups will be enabled for applicable databases and regions in a phased approach.
@@ -599,6 +601,8 @@ Independent backups are billed as separate service instances:
 - **Free allocation**: You receive free backup storage equal to the total provisioned disk size of your database deployment.
 - **Overage charges**: Usage beyond the free allocation is charged additionally.
 - **Billing visibility**: Backup costs appear as separate line items in your billing statement.
+
+
 
 For detailed pricing information, see [Pricing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing#pricing-backup).
 
