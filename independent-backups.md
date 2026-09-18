@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-17"
+lastupdated: "2026-09-18"
 
 subcollection: cloud-databases-gen2
 
@@ -148,7 +148,8 @@ The backup types can be either _On-demand_ or _Automatic_. Each backup is listed
 
 Click the backup to reveal information for that specific backup, including its full ID and CRN. A **Restore** button or a pre-formatted CLI command is there for restore options.
 
-
+During the 30-day transition period for PostgreSQL, MongoDB, and Elasticsearch, you may see both coupled and independent backups in this view. Coupled backups will be automatically deleted after 30 days.
+{: note}
 
 ## Managing independent backups
 {: #managing-independent-backups}
