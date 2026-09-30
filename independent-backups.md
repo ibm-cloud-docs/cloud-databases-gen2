@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-18"
+lastupdated: "2026-09-30"
 
 subcollection: cloud-databases-gen2
 
@@ -569,10 +569,10 @@ The transition from coupled backups to independent backups varies by database se
 |--------------------|------------------------------------------------------------------------------------------|
 | PostgreSQL         | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb` |
 | MongoDB Enterprise | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb` |
-| MongoDB Sharding   | `ca-mon`, `in-che`, `in-mum`, `us-east`                                                  |
-| Elasticsearch      | `ca-mon`, `in-che`, `in-mum`, `eu-gb`                                                    |
+| MongoDB Sharding   | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb` |
+| Elasticsearch      | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb` |
 
-| Redis              | `eu-gb`                                                                                  |
+| Redis              | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb` |
 {: caption="Databases enabled with independent backups" caption-side="bottom"}
 
 The databases listed in the table are transitioning from coupled backups to independent backups in the specified regions.
