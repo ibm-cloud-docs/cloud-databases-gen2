@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-17"
+lastupdated: "2026-10-01"
 
 keywords: cloud databases release notes
 
@@ -23,13 +23,13 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: shortdesc}
 
 
+
 ## 17 September 2026
 {: #cloud-databases-17sep2026}
 {: release-note}
 
 {{site.data.keyword.databases-for}} Gen 2 is now available in Dallas and London
 : {{site.data.keyword.databases-for}} Gen 2 is now available in Dallas (us-south) and London (eu-gb), in addition to Washington (us-east), Chennai - Airtel (in-che), Montreal (ca-mon), Mumbai (in-mum), Frankfurt (eu-de), Sydney (au-syd) and Madrid (eu-es). For more information, see [Overview of Gen 1 and Gen 2](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2&interface=ui#feature-differentiators).
-
 
 ## 1 September 2026
 {: #cloud-databases-01sep2026}
