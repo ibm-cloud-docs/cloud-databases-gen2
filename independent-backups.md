@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-01"
+lastupdated: "2026-10-02"
 
 subcollection: cloud-databases-gen2
 
@@ -571,7 +571,6 @@ The transition from coupled backups to independent backups varies by database se
 | MongoDB Enterprise | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor`  |
 | MongoDB Sharding   | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `eu-fr2`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor`  |
 | Elasticsearch      | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `eu-fr2`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor` |
-
 | Redis              | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `eu-fr2`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor` |
 {: caption="Databases enabled with independent backups" caption-side="bottom"}
 
