@@ -17,7 +17,7 @@ keywords: independent backups, decoupled backups, backup lifecycle, backup manag
 
 [Gen 2]{: tag-purple}
 
-Independent backups are currently available only for {{site.data.keyword.databases-for-mysql}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-elasticsearch}},  and {{site.data.keyword.databases-for-redis}}.
+Independent backups are currently available only for {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}},  and {{site.data.keyword.databases-for-mysql}}.
 {: important}
 
 Independent backups represent a fundamental shift in how {{site.data.keyword.databases-for}} Gen 2 manages backup data. Unlike traditional backups that are tightly coupled to your database instance lifecycle, independent backups exist as separate, provisionable service instances with their own lifecycle, allowing you to retain backup data even after the source database instance is deleted. Independent backups are billed as separate service instances. For more information, see [Independent backups billing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing#independent-backups-billing).
@@ -120,9 +120,9 @@ Independent backups can be viewed in multiple locations:
 {: #database-hub-view}
 {: ui}
 
-The IBM Cloud console provides a centralized view of all backups across your account:
+The {{site.data.keyword.cloud_notm}} console provides a centralized view of all backups across your account:
 
-1. Navigate to the IBM Cloud console and go to **Resource list** > **Databases**.
+1. Navigate to the {{site.data.keyword.cloud_notm}} console and go to **Resource list** > **Databases**.
 2. View your database instances and their associated backups.
 3. Independent backups appear as separate service instances in your resource list.
 
@@ -414,7 +414,7 @@ ibmcloud resource service-instance-create mysql-restore-abc databases-for-mysql 
 {: pre}
 
 * Change the value of `instance_name` to the name that you want for your new instance.
-* The `service-id` is the type of instance (for example, _databases-for-mysql_).
+* The `service-id` is the type of instance (for example, _databases-for-postgresql_, _databases-for-mongodb_,  _databases-for-mysql_).
 * The `region` is where you want the new instance to be located, which can be a different region from the source instance.
 * The `restore_backup_id` is the backup that you want to restore.
 
@@ -467,7 +467,7 @@ The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are al
 {: important}
 
 * Change the value of `name` to the name that you want for your new instance.
-* The `resource_plan_id` is the type of instance (for example, _databases-for-mysql_).
+* The `resource_plan_id` is the type of instance (for example, _databases-for-postgresql_, _databases-for-mongodb_,  _databases-for-mysql_).
 * The `target` is the region where you want the new instance to be located, which must be a Gen 2 region.
 * The `restore_backup_id` is the backup that you want to restore.
 
@@ -570,8 +570,8 @@ The transition from coupled backups to independent backups varies by database se
 | PostgreSQL         | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor` |
 | MongoDB Enterprise | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor`  |
 | MongoDB Sharding   | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `eu-fr2`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor`  |
-| Elasticsearch      | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `eu-fr2`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor` |
 | Redis              | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `eu-fr2`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor` |
+| Elasticsearch      | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `eu-fr2`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor` |
 {: caption="Databases enabled with independent backups" caption-side="bottom"}
 
 The databases listed in the table are transitioning from coupled backups to independent backups in the specified regions.
