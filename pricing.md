@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-17"
+lastupdated: "2026-10-02"
 
 keywords: gen 2, pricing
 
@@ -19,7 +19,7 @@ subcollection: cloud-databases-gen2
 
 The charge for an {{site.data.keyword.databases-for}} instance is determined by the following five factors:
 
-- Database: PostgreSQL, MongoDB
+- Database
 - Quantity of vCPU allocated per database instance member
 - GB of RAM allocated per database instance member
 - GB of disk storage allocated per database instance member
@@ -27,12 +27,12 @@ The charge for an {{site.data.keyword.databases-for}} instance is determined by 
 
 | Database | Database type | Default configuration|
 | --- | --- | --- |
-| Databases for PostgreSQL | Relational | 2-member |
-| Databases for MySQL | Relational | 2-member |
-| Databases for MongoDB | Non-relational | 3-member |
-| Databases for Redis | Non-relational (Key-value) | 2-member |
-| Databases for Elasticsearch | Non-relational (Search and Analytics) | 3-member |
-| Databases for RabbitMQ | Messaging | 3-member |
+| {{site.data.keyword.databases-for-postgresql}} | Relational | 2-member |
+| {{site.data.keyword.databases-for-mongodb}} | Non-relational | 3-member |
+| {{site.data.keyword.databases-for-mysql}} | Relational | 2-member |
+| {{site.data.keyword.messages-for-rabbitmq}} | Messaging | 3-member |
+| {{site.data.keyword.databases-for-elasticsearch}} | Non-relational (Search and Analytics) | 3-member |
+| {{site.data.keyword.databases-for-redis}} | Non-relational (Key-value) | 2-member |
 {: caption="Out of the box configurations per database" caption-side="bottom"}
 
 Each database instance consists of two or three members, depending on the database type, with each member holding a copy of the data to provide resiliency and high availability. Gen 2 {{site.data.keyword.databases-for}} instances are only available with [Isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui) hosting. Isolated compute offers a choice of standard vCPU x RAM resource profiles that are hosted on single-tenant compute instances for maximum workload isolation and security. Disk storage capacity per member is specified independently of the vCPU x RAM profile selected. Gen 2 deployments depend on regional availability, for more information, see [Isolated Compute sizing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui#isolated-compute-sizing-ui).
