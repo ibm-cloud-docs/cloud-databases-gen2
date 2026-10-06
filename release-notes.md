@@ -26,8 +26,8 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: #cloud-databases-gen2-30sep2026}
 {: release-note}
 
-The {{site.data.keyword.messages-for}} Gen 2 is now available in all VPC multizone regions
-:  You can now deploy {{site.data.keyword.messages-for}} Gen 2 in all supported {{site.data.keyword.cloud}} VPC multizone regions (MZRs). This release adds support for Toronto (ca-tor), Tokyo (jp-tok), Osaka (jp-osa), and Sao Paulo (br-sao). For more information, see [Overview of Gen 1 and Gen 2](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-overview-gen1-gen2#feature-differentiators).
+The {{site.data.keyword.databases-for}} Gen 2 is now available in all VPC multizone regions
+:  You can now deploy {{site.data.keyword.databases-for}} Gen 2 in all supported {{site.data.keyword.cloud}} VPC multizone regions (MZRs). This release adds support for Toronto (ca-tor), Tokyo (jp-tok), Osaka (jp-osa), and Sao Paulo (br-sao). For more information, see [Overview of Gen 1 and Gen 2](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-overview-gen1-gen2#feature-differentiators).
 
 
 
