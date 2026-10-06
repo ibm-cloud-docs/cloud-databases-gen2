@@ -1,6 +1,6 @@
 ---
 copyright:
-  years: 2026
+  years: 2026, 2026
 lastupdated: "2026-10-06"
 
 keywords: cloud databases gen 2 overview
@@ -59,7 +59,7 @@ Gen 2 databases are built on {{site.data.keyword.cloud}}’s latest platform, ba
 
 | Category               | Gen 1       | Gen 2     |
 |------------------------|-------------|-----------| 
-User and role management | [Database `admin` user created by IBM](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-user-management&interface=ui) | Database "manager" by using service-credential  |
+| User and role management | [Database `admin` user created by IBM](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-user-management&interface=ui) | Database "manager" by using service-credential  |
 | Certificate type       | Signed by IBM Cloud Database Certificate Authority  | Certificates signed by a Certificate Authority (Let's Encrypt)   |
 | Encryption             | Encryption at Rest <br> Encryption in Transit <br> Customer-managed encryption - Bring your own key (BYOK) | Encryption at Rest <br> Encryption in Transit <br> Customer-managed encryption - Bring your own key (BYOK) |
 | Compliance             | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018 <br> SOC 1, SOC 2 <br> PCI DSS <br> HIPAA  | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018SOC 1 <br> SOC 2 <br> PCI DSS <br> HIPAA      |
