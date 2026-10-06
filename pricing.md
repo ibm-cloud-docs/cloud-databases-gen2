@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-17"
+lastupdated: "2026-10-06"
 
 keywords: gen 2, pricing
 
@@ -19,7 +19,7 @@ subcollection: cloud-databases-gen2
 
 The charge for an {{site.data.keyword.databases-for}} instance is determined by the following five factors:
 
-- Database: PostgreSQL, MongoDB
+- Database
 - Quantity of vCPU allocated per database instance member
 - GB of RAM allocated per database instance member
 - GB of disk storage allocated per database instance member
@@ -27,12 +27,12 @@ The charge for an {{site.data.keyword.databases-for}} instance is determined by 
 
 | Database | Database type | Default configuration|
 | --- | --- | --- |
-| Databases for PostgreSQL | Relational | 2-member |
-| Databases for MySQL | Relational | 2-member |
-| Databases for MongoDB | Non-relational | 3-member |
-| Databases for Redis | Non-relational (Key-value) | 2-member |
-| Databases for Elasticsearch | Non-relational (Search and Analytics) | 3-member |
-| Databases for RabbitMQ | Messaging | 3-member |
+| {{site.data.keyword.databases-for-postgresql}} | Relational | 2-member |
+| {{site.data.keyword.databases-for-mongodb}} | Non-relational | 3-member |
+| {{site.data.keyword.databases-for-redis}} | Non-relational (Key-value) | 2-member |
+| {{site.data.keyword.databases-for-elasticsearch}} | Non-relational (Search and Analytics) | 3-member |
+| {{site.data.keyword.databases-for-mysql}} | Relational | 2-member |
+| {{site.data.keyword.messages-for-rabbitmq}} | Messaging | 3-member |
 {: caption="Out of the box configurations per database" caption-side="bottom"}
 
 Each database instance consists of two or three members, depending on the database type, with each member holding a copy of the data to provide resiliency and high availability. Gen 2 {{site.data.keyword.databases-for}} instances are only available with [Isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui) hosting. Isolated compute offers a choice of standard vCPU x RAM resource profiles that are hosted on single-tenant compute instances for maximum workload isolation and security. Disk storage capacity per member is specified independently of the vCPU x RAM profile selected. Gen 2 deployments depend on regional availability, for more information, see [Isolated Compute sizing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=ui#isolated-compute-sizing-ui).
@@ -115,12 +115,12 @@ Independent backups are billed as separate service instances:
 For more information about independent backups, see [Understanding independent backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-independent-backups).
 
 ## Backup storage
-{: #pricing-storage}
+{: #pricing-backup-storage}
 
 ### Free allocation
 {: #pricing-storage-free}
 
-- You receive free backup storage equal to the total provisioned disk size of your deployment.
+- You receive free backup storage equal to the provisioned disk size per member multiplied by the number of members in your deployment.
 - This includes both automated daily backups and manual (on-demand) snapshots.
 
 To help manage variability in monthly charges, especially during failover events or update events, the free backup storage {{site.data.keyword.databases-for}} with every instance is for each member. This buffer ensures that when a failover or cluster update occurs, resulting in a switch in the database primary, it does not result in unexpected costs. In the rare case where there’s no update or failover activity during a given month, your usage may fall below the free allocation, and you'll be charged less accordingly. This approach gives you predictable pricing while still accounting for the realities of high availability.
@@ -157,16 +157,16 @@ The free backup storage allocation is equal to the total provisioned disk capaci
 
 For example, if a three-member {{site.data.keyword.databases-for}} deployment is provisioned with 100 GB of disk capacity per member, you receive 300 GB of backup storage at no additional cost. The free allocation is applied to backups as follows:
 
-Backup 1 is **80 GB**. The entire backup is covered by the free allocation, so the total charge is **$0.00**. The remaining free allocation is **220 GB**.
-Backup 2 is **80 GB**. The entire backup is covered by the free allocation, so the total charge is **$0.00**. The remaining free allocation is **140 GB**.
-Backup 3 is **80 GB**. The entire backup is covered by the free allocation, so the total charge is **$0.00**. The remaining free allocation is **60 GB**.
-Backup 4 is **80 GB**. The remaining free allocation of **20 GB** is applied to the backup. The billable storage is **60 GB** (80 GB - 20 GB), resulting in a charge of **60 GB × $0.095 = $5.70**. The remaining free allocation is **0 GB**.
-Backup 5 is **80 GB**. No free allocation remains. The entire backup is billable, resulting in a charge of **80 GB × $0.095 = $7.60**.
-Backup 6 is **80 GB**. No free allocation remains. The entire backup is billable, resulting in a charge of **80 GB × $0.095 = $7.60**.
+- Backup 1 is **80 GB**. The entire backup is covered by the free allocation, so the charge is **$0.00**. The remaining free allocation is **220 GB**.
+- Backup 2 is **80 GB**. The entire backup is covered by the free allocation, so the charge is **$0.00**. The remaining free allocation is **140 GB**.
+- Backup 3 is **80 GB**. The entire backup is covered by the free allocation, so the charge is **$0.00**. The remaining free allocation is **60 GB**.
+- Backup 4 is **80 GB**. The remaining free allocation of **60 GB** is applied to the backup. The billable storage is **20 GB** (80 GB - 60 GB), resulting in a charge of **20 GB × $0.095 = $1.90**. The remaining free allocation is **0 GB**.
+- Backup 5 is **80 GB**. No free allocation remains. The entire backup is billable, resulting in a charge of **80 GB × $0.095 = $7.60**.
+- Backup 6 is **80 GB**. No free allocation remains. The entire backup is billable, resulting in a charge of **80 GB × $0.095 = $7.60**.
 
 The free allocation applies only while the database instance is active. If the instance is disabled, any existing backups continue to exist but are fully billable and do not qualify for the free allocation. If backups remain after the database instance is deleted, those backups are also fully billable and do not qualify for the free allocation.
 
-The monthly free allocation is calculated based on the total provisioned disk size at the time the first backup is created and does not change if the disk size is scaled later in the month. This allocation applies only to backups created in that same month and does not apply to backups from previous months.
+The monthly free allocation is calculated as the disk size per member multiplied by the number of members. This allocation does not change if the disk size is scaled later in the month. It applies only to backups created in that same month and does not apply to backups from previous months.
 {: note}
 
 ## Scaling per member

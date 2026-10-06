@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-10-02"
 
 keywords: disaster recovery, restrict, context-based restrictions
 
@@ -27,5 +27,8 @@ subcollection: cloud-databases-gen2
 You've now provisioned a {{site.data.keyword.databases-for}} service instance, set up notifications and monitoring, and secured it. Next, jump into the specific Getting Started documentation for your chosen service.
 
 - [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-getting-started){: external}
-
 - [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-getting-started-gen2){: external}
+- [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis-gen2?topic=databases-for-redis-gen2-getting-started){: external}
+- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-getting-started){: external}
+- [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql-gen2?topic=databases-for-mysql-gen2-getting-started){: external}
+- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq-gen2?topic=messages-for-rabbitmq-gen2-getting-started){: external}

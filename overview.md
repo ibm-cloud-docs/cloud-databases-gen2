@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2026
-lastupdated: "2026-09-18"
+  years: 2026, 2026
+lastupdated: "2026-10-06"
 
 keywords: cloud databases gen 2 overview
 
@@ -31,36 +31,36 @@ Gen 2 databases are built on {{site.data.keyword.cloud}}’s latest platform, ba
 ## Feature differentiators
 {: #feature-differentiators}
 
-| Category                     | Gen 1                                                            | Gen 2                                             |
-|-----------------------------|-------------------------------------------------------------------|---------------------------------------------------|
-| Regions                     | Multizone location (MZR) <br> Dallas (us-south) <br> Sao Paulo (br-sao) <br> Toronto (ca-tor) <br> Washington (us-east) <br> Frankfurt (eu-de) <br> London (eu-gb) <br> Madrid (eu-es) <br> Osaka (jp-osa) <br> Sydney (au-syd) <br> Tokyo (jp-tok) | Single-campus MZR (SC-MZR) <br> Dallas (us-south) <br> Montreal (ca-mon) <br> Chennai - Airtel (in-che) <br> Mumbai (in-mum) <br> Washington (us-east) <br> Frankfurt (eu-de) <br> London (eu-gb) <br> Madrid (eu-es) <br> Sydney (au-syd) |
-| Database editions           | PostgreSQL <br> MongoDB (Standard and Enterprise) <br> Redis <br> Elasticsearch (Enterprise and Platinum) <br> MySQL <br> RabbitMQ           | PostgreSQL <br> MongoDB (Standard and Enterprise) <br> Redis <br> Elasticsearch (Standard and Enterprise) <br>  MySQL <br> RabbitMQ  |
-| Endpoints                   | Private endpoints <br> Public endpoints                           | Private endpoints                                 |
-| Hosting models              | Isolated compute <br> Shared compute                              | Isolated compute                                  |
-| Database versions supported | Minimum 2, varies per database                                    | Latest                                            |
-| Autoscaling                 | Yes                                                               | Future release                                    |
-| Read replicas (SQL only)    | Yes                                                               | Future release                                    |
+| Category                     | Gen 1        | Gen 2    |
+|---|---|---|
+| Regions | **Multizone location (MZR)** <br> Dallas (us-south) <br> Frankfurt (eu-de) <br> London (eu-gb) <br> Madrid (eu-es) <br> Osaka (jp-osa) <br> São Paulo (br-sao) <br> Sydney (au-syd) <br> Tokyo (jp-tok) <br> Toronto (ca-tor) <br> Washington (us-east) | **Multizone location (MZR)** <br> Dallas (us-south) <br> Frankfurt (eu-de) <br> London (eu-gb) <br> Madrid (eu-es) <br> Osaka (jp-osa) <br> São Paulo (br-sao) <br> Sydney (au-syd) <br> Tokyo (jp-tok) <br> Toronto (ca-tor) <br> Washington (us-east) <br><br> **Single-campus MZR (SC-MZR)** <br> Chennai - Airtel (in-che) <br> Montreal (ca-mon) <br> Mumbai (in-mum) |
+| Database editions           | PostgreSQL <br> MongoDB (Standard and Enterprise) <br> Redis <br> Elasticsearch (Enterprise and Platinum) <br> MySQL <br> RabbitMQ  | PostgreSQL <br> MongoDB (Standard and Enterprise) <br> Redis <br> Elasticsearch (Standard and Enterprise) <br>  MySQL <br> RabbitMQ  |
+| Endpoints                   | Private endpoints <br> Public endpoints  | Private endpoints |
+| Hosting models              | Isolated compute <br> Shared compute   | Isolated compute    |
+| Database versions supported | Minimum 2, varies per database   | Latest  |
+| Autoscaling                 | Yes  | Future release   |
+| Read replicas (SQL only)    | Yes  | Future release   |
 {: caption="Feature differentiators" caption-side="bottom"}
 
 ## Performance differentiators
 {: #performance-differentiators}
 
-| Category               | Gen 1                                                                 | Gen 2                                               |
-|------------------------|-----------------------------------------------------------------------|-----------------------------------------------------|
-| Compute generation     | IBM Classic infrastructure                                            | IBM Cloud VPC                                       |
-| Availability           | High availability                                                     | High availability                                   |
-| Deployment time frame   | Minutes                                                               | Minutes                                             |
-| Pricing                | Hourly and monthly billing                                            | Hourly and monthly billing                          |
+| Category               | Gen 1     | Gen 2      |
+|---|---|---|
+| Compute generation     | IBM Classic infrastructure  | IBM Cloud VPC |
+| Availability           | High availability | High availability  |
+| Deployment time frame   | Minutes    | Minutes   |
+| Pricing                | Hourly and monthly billing   | Hourly and monthly billing  |
 | Backup and restore     | Timing depends on the size of backup and performance impact during backup | Consistent, fast [Comparison of Gen 1 and Gen 2 backups](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-comparison-backups&interface=ui)|
 {: caption="Performance differentiators" caption-side="bottom"}
 
 ## Access, compliance, and security differentiators
 {: #access-compliance-security-differentiators}
 
-| Category               | Gen 1                                                                 | Gen 2                                              |
-|------------------------|-----------------------------------------------------------------------|----------------------------------------------------|
-| User and role management | [Database `admin` user created by IBM](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-user-management&interface=ui) | Database "manager" by using service-credential                              |
-| Certificate type       | Signed by IBM Cloud Database Certificate Authority                    | Certificates signed by a Certificate Authority (Let's Encrypt)         |
+| Category               | Gen 1       | Gen 2     |
+|------------------------|-------------|-----------| 
+| User and role management | [Database `admin` user created by IBM](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-user-management&interface=ui) | Database "manager" by using service-credential  |
+| Certificate type       | Signed by IBM Cloud Database Certificate Authority  | Certificates signed by a Certificate Authority (Let's Encrypt)   |
 | Encryption             | Encryption at Rest <br> Encryption in Transit <br> Customer-managed encryption - Bring your own key (BYOK) | Encryption at Rest <br> Encryption in Transit <br> Customer-managed encryption - Bring your own key (BYOK) |
 | Compliance             | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018 <br> SOC 1, SOC 2 <br> PCI DSS <br> HIPAA  | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018SOC 1 <br> SOC 2 <br> PCI DSS <br> HIPAA      |
 {: caption="Access, compliance, and security differentiators" caption-side="bottom"}

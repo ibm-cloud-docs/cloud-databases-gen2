@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-10-02"
 
 subcollection: cloud-databases-gen2
 
@@ -22,8 +22,6 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 ## Major versions defined
 {: #version-definitions}
 
-
-
 | Service | {{site.data.keyword.databases-for}} versioning schema| Next known end-of-life version and date | Preferred major version | End-of-life procedure [^tabletext4] |
 |----|----|----|----|----|
 | {{site.data.keyword.databases-for-postgresql}} | {{site.data.keyword.databases-for}} major version is defined by the first number in the version number. |  v14, 21 October 2026 |   v18 | Automatically upgraded in place to next major version, [Customer-initiated in-place upgrade from v14 to v15 supported](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-upgrading&interface=ui#upgrading-in-place) |
@@ -32,7 +30,6 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.databases-for-elasticsearch}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `release.version`.maintenance version number. | N/A  |   v8   | Automatically upgraded in-place to next major version |
 | {{site.data.keyword.databases-for-mysql}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a major.x.patch version number. | v8.4, 30 April 2029 |   v8.4 | Automatically upgraded in place to next major version |
 | {{site.data.keyword.messages-for-rabbitmq}} | {{site.data.keyword.databases-for}} Major versions are the first numbers in a `major.x.patch` version number. | N/A |   v4   | Backup taken and access removed for Major version, <br> Automatically upgraded in place to next minor version|
-| {{site.data.keyword.databases-for-valkey}} | {{site.data.keyword.databases-for}} Major versions are the first two numbers in a `major.x.patch` version number. | N/A  |   v9  |Automatically upgraded in place to next major version |
 {: caption="Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 [^tabletext4]: This column describes the actions that will be taken by the {{site.data.keyword.cloud}} team on database instances that have not been upgraded to a new version prior to the version EoL date. This approach is not recommended. For more information, see [End-of-life procedure](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-versioning-policy).

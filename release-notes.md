@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-17"
+lastupdated: "2026-10-06"
 
 keywords: cloud databases release notes
 
@@ -22,31 +22,38 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
+## 30 September 2026
+{: #cloud-databases-gen2-30sep2026}
+{: release-note}
+
+The {{site.data.keyword.messages-for}} Gen 2 is now available in all VPC multizone regions
+:  You can now deploy {{site.data.keyword.messages-for}} Gen 2 in all supported {{site.data.keyword.cloud}} VPC multizone regions (MZRs). This release adds support for Toronto (ca-tor), Tokyo (jp-tok), Osaka (jp-osa), and Sao Paulo (br-sao). For more information, see [Overview of Gen 1 and Gen 2](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-overview-gen1-gen2#feature-differentiators).
+
+
 
 ## 17 September 2026
-{: #cloud-databases-17sep2026}
+{: #cloud-databases-gen2-17sep2026}
 {: release-note}
 
 {{site.data.keyword.databases-for}} Gen 2 is now available in Dallas and London
 : {{site.data.keyword.databases-for}} Gen 2 is now available in Dallas (us-south) and London (eu-gb), in addition to Washington (us-east), Chennai - Airtel (in-che), Montreal (ca-mon), Mumbai (in-mum), Frankfurt (eu-de), Sydney (au-syd) and Madrid (eu-es). For more information, see [Overview of Gen 1 and Gen 2](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2&interface=ui#feature-differentiators).
 
-
 ## 1 September 2026
-{: #cloud-databases-01sep2026}
+{: #cloud-databases-gen2-01sep2026}
 {: release-note}
 
 {{site.data.keyword.databases-for}} Gen 2 is now available in multiple regions
 : {{site.data.keyword.databases-for}} Gen 2 is now available in Madrid DC (eu-es) and Sydney (au-syd), in addition to Washington (us-east), Chennai - Airtel (in-che), Montreal (ca-mon), Mumbai (in-mum), and Frankfurt (eu-de). For more information, see [Overview of Gen 1 and Gen 2](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2&interface=ui#feature-differentiators).
 
 ## 20 July 2026
-{: #cloud-databases-20jul2026}
+{: #cloud-databases-gen2-20jul2026}
 {: release-note}
 
 {{site.data.keyword.databases-for}} Gen 2 is now available in Washington DC
 : {{site.data.keyword.databases-for}} Gen 2 is now also available in Washington DC (us-east), in addition to Chennai - Airtel (in-che), Montreal (ca-mon), Mumbai (in-mum), and Frankfurt (eu-de). For more information, see [Overview of Gen 1 and Gen 2](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2&interface=ui#feature-differentiators).
 
 ## 6 July 2026
-{: #cloud-databases-06jul2026}
+{: #cloud-databases-gen2-06jul2026}
 {: release-note}
 
 {{site.data.keyword.databases-for-redis}} Gen 2, {{site.data.keyword.databases-for-elasticsearch}} Gen 2, {{site.data.keyword.databases-for-mysql}} Gen 2, and {{site.data.keyword.messages-for-rabbitmq}} Gen 2 are now generally available (GA)
@@ -56,14 +63,14 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 : {{site.data.keyword.databases-for}} Gen 2 is now also available in Frankfurt (eu-de), in addition to Chennai - Airtel (in-che), Montreal (ca-mon), and Mumbai (in-mum). For more information, see [Overview of Gen 1 and Gen 2](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2&interface=ui#feature-differentiators).
 
 ## 01 June 2026
-{: #cloud-databases-01jun2026}
+{: #cloud-databases-gen2-01jun2026}
 {: release-note}
 
 {{site.data.keyword.databases-for-postgresql}} Gen 2 and {{site.data.keyword.databases-for-mongodb}} Gen 2 are now available in Mumbai
 : {{site.data.keyword.databases-for}} Gen 2 is now also available in Mumbai (in-mum), in addition to Chennai - Airtel (in-che) and Montreal (ca-mon). For more information, see [Overview of Gen 1 and Gen 2](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2&interface=ui#feature-differentiators).
 
 ## 29 May 2026
-{: #cloud-databases-18may2026}
+{: #cloud-databases-gen-18may2026}
 {: release-note}
 
 Introduction of Flex profiles for {{site.data.keyword.databases-for}} Gen 2 (on VPC), pricing and billing changes
@@ -72,7 +79,7 @@ Introduction of Flex profiles for {{site.data.keyword.databases-for}} Gen 2 (on 
 : Billing for compute and the software-defined storage transitions from monthly prorated pricing to true hourly pricing model.
 
 ## 27 March 2026
-{: #cloud-databases-27mar2026}
+{: #cloud-databases-gen-27mar2026}
 {: release-note}
 
 Deprecation of {{site.data.keyword.hscrypto}}
@@ -80,7 +87,7 @@ Deprecation of {{site.data.keyword.hscrypto}}
 To ensure continued service availability and support, you must migrate all existing HPCS root keys to {{site.data.keyword.keymanagementservicelong_notm}} Dedicated (Single Tenant) before the EOL date. For more information on how to migrate your encryption keys, see [Migrating from {{site.data.keyword.hscrypto}} (HPCS) to {{site.data.keyword.keymanagementserviceshort}} Dedicated (KP-ST)](/docs/EventStreams-gen2?topic=EventStreams-gen2-managing_encryption#migrating_hpcs_to_kp).
 
 ## 02 March 2026
-{: #cloud-databases-02mar2026}
+{: #cloud-databases-gen2-02mar2026}
 {: release-note}
 
 {{site.data.keyword.databases-for}} Gen 2 is now available in Chennai
@@ -88,7 +95,7 @@ To ensure continued service availability and support, you must migrate all exist
 see [Overview of Gen 1 and Gen 2{{site.data.keyword.databases-for}}](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-overview-gen1-gen2#feature-differentiators).
 
 ## 26 February 2026
-{: #cloud-databases-26feb2026}
+{: #cloud-databases-gen2-26feb2026}
 {: release-note}
 
 {{site.data.keyword.databases-for}} Gen 2 is now generally available (GA)
@@ -96,7 +103,7 @@ see [Overview of Gen 1 and Gen 2{{site.data.keyword.databases-for}}](/docs/datab
 [Try {{site.data.keyword.databases-for}} Gen 2 now](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-provisioning).
 
 ## 15 December 2025
-{: #cloud-databases-15dec2025}
+{: #cloud-databases-gen2-15dec2025}
 {: release-note}
 
 {{site.data.keyword.databases-for}} Gen 2 is now in beta
