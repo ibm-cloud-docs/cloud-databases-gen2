@@ -17,6 +17,8 @@ This document outlines the process for using context-based restrictions to prote
 # Context-based restrictions
 {: #cbr}
 
+[Gen 2]{: tag-purple}
+
 Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and Identity and Access Management (IAM) policies.
 {: shortdesc}
 
