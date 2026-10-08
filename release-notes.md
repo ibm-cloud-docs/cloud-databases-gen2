@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-06"
+lastupdated: "2026-10-08"
 
 keywords: cloud databases release notes
 
@@ -22,14 +22,19 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
+## 7 October 2026
+{: #cloud-databases-gen2-07Oct2026}
+{: release-note}
+
+Enhanced Bring Your Own Key (BYOK) experience in the provisioning UI
+ : The provisioning experience now includes an updated encryption configuration component for customer-managed encryption keys through {{site.data.keyword.keymanagementservicefull}}. This update provides a more consistent key management experience during deployment creation. Learn more about [{{site.data.keyword.keymanagementserviceshort}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect&interface=ui) or provision a new {{site.data.keyword.databases-for}} Gen 2 database with customer-managed encryption enabled.
+
 ## 30 September 2026
 {: #cloud-databases-gen2-30sep2026}
 {: release-note}
 
 The {{site.data.keyword.databases-for}} Gen 2 is now available in all VPC multizone regions
 :  You can now deploy {{site.data.keyword.databases-for}} Gen 2 in all supported {{site.data.keyword.cloud}} VPC multizone regions (MZRs). This release adds support for Toronto (ca-tor), Tokyo (jp-tok), Osaka (jp-osa), and Sao Paulo (br-sao). For more information, see [Overview of Gen 1 and Gen 2](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-overview-gen1-gen2#feature-differentiators).
-
-
 
 ## 17 September 2026
 {: #cloud-databases-gen2-17sep2026}
@@ -70,7 +75,7 @@ The {{site.data.keyword.databases-for}} Gen 2 is now available in all VPC multiz
 : {{site.data.keyword.databases-for}} Gen 2 is now also available in Mumbai (in-mum), in addition to Chennai - Airtel (in-che) and Montreal (ca-mon). For more information, see [Overview of Gen 1 and Gen 2](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2&interface=ui#feature-differentiators).
 
 ## 29 May 2026
-{: #cloud-databases-gen-18may2026}
+{: #cloud-databases-gen2-18may2026}
 {: release-note}
 
 Introduction of Flex profiles for {{site.data.keyword.databases-for}} Gen 2 (on VPC), pricing and billing changes
@@ -79,7 +84,7 @@ Introduction of Flex profiles for {{site.data.keyword.databases-for}} Gen 2 (on 
 : Billing for compute and the software-defined storage transitions from monthly prorated pricing to true hourly pricing model.
 
 ## 27 March 2026
-{: #cloud-databases-gen-27mar2026}
+{: #cloud-databases-gen2-27mar2026}
 {: release-note}
 
 Deprecation of {{site.data.keyword.hscrypto}}
