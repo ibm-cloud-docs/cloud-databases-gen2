@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-08"
+lastupdated: "2026-10-09"
 
 subcollection: cloud-databases-gen2
 
@@ -500,10 +500,43 @@ Independent backups are a critical component of your business continuity and dis
 - Regional failures (when backups are stored in different regions)
 
 For comprehensive information about business continuity and disaster recovery with {{site.data.keyword.databases-for}}, see:
+
 - [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-bc-dr)
 - [Understanding high availability and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-ha-dr)
 
+## Cross-region copy
+{: #independent-backups-crc}
 
+Cross-region copy allows you to create a copy of an independent backup in another supported {{site.data.keyword.cloud_notm}} region for disaster recovery and business continuity purposes.
+
+### Availability of cross-region copy
+{: #cross-region-copy-availability}
+
+| Database                      | Supported regions            |
+|-------------------------------|------------------------------|
+| PostgreSQL                    | `ca-mon`, `in-che`, `in-mum` |
+| MongoDB Enterprise            | `ca-mon`, `in-che`, `in-mum` |
+| MongoDB Sharding              | `ca-mon`, `in-che`, `in-mum` |
+| Elasticsearch Enterprise      | `ca-mon`, `in-che`, `in-mum` |
+| Redis                         | `ca-mon`, `in-che`, `in-mum` |
+{: caption="Cross-region copy availability" caption-side="bottom"}
+
+A backup can be copied only when it is in the **Active** state. The target region must be different from the source region.
+
+Copied backups are created as independent backup instances in the target region and can be restored only within that region. For example, if a backup exists in `ca-mon` and you want to restore it in `in-che`, you must first create a copy of the backup in `in-che` and then restore from the copied backup.
+
+You can configure automatic cross-region backup copies for a database instance. Only one target region can be configured for backup copies, and it must be different from the database instance region. You can select any supported region as the target region.
+
+You can also disable automatic cross-region backup copies by removing the configured target region from the database instance configuration by using the UI, API, or CLI.
+
+If target regions are not specified and automatic backup copies are enabled, the following default target regions are applied to the database instance.
+
+| Source region | Default target region  |
+|---------------|------------------------|
+| ca-mon        | None                   |
+| in-che        | in-mum                 |
+| in-mum        | in-che                 |
+{: caption="Default target regions for automatic backup copies" caption-side="bottom"}
 
 ### Provisioning an independent backup copy by using the CLI
 {: #provisioning-independent-backup-copy-cli}
