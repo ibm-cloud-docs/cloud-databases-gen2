@@ -54,7 +54,6 @@ toc:
           - secure.md
           - topic: manage-scc.md
             navtitle: Managing security and compliance
-          - howto-cbr.md
           - reference-iam.md
           - reference-key-protect.md
           - howto-deprovisioning.md
