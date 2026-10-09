@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-06"
+lastupdated: "2026-10-08"
 
 subcollection: cloud-databases-gen2
 
@@ -505,6 +505,93 @@ For comprehensive information about business continuity and disaster recovery wi
 
 
 
+### Provisioning an independent backup copy by using the CLI
+{: #provisioning-independent-backup-copy-cli}
+{: cli}
+
+To provision an independent backup copy on demand, use the following command:
+
+```sh
+ibmcloud resource service-instance-create \
+  <BACKUP_INSTANCE_NAME> \
+  <BACKUP_SERVICE_NAME> \
+  <BACKUP_SERVICE_PLAN_NAME> \
+  <REGION> \
+  -g <RESOURCE_GROUP> \
+  -p '{
+    "dataservices": {
+      "source_backup_crn": "<BACKUP_CRN>"
+    }
+  }'
+```
+{: pre}
+
+Example:
+
+```sh
+ibmcloud resource service-instance-create \
+  my-backup-copy \
+  databases-independent-backups \
+  databases-independent-backups-gen2-standard \
+  ca-mon \
+  -g Default \
+  -p '{
+    "dataservices": {
+      "source_backup_crn": "crn:v1:bluemix:public:databases-independent-backups:ca-mon:a/23b09aee04da4545b6e32805fa93249d:c97d1ca8-bfb8-4bcb-a46f-85c6374901ac::"
+    }
+  }'
+```
+{: pre}
+
+### Provisioning an independent backup copy by using the API
+{: #provisioning-independent-backup-copy-api}
+{: api}
+
+To provision an independent backup copy on-demand, use the following command:
+
+```sh
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "<BACKUP_INSTANCE_NAME>",
+    "target": "<REGION>",
+    "resource_group": "<RESOURCE-GROUP>",
+    "resource_plan_id": "databases-independent-backups-gen2-standard",
+    "parameters": {
+      "dataservices": {
+        "source_backup_crn": "<BACKUP_CRN>"
+      }
+    }
+  }'
+```
+{: pre}
+
+Example:
+
+```sh
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "my-backup-copy",
+    "target": "<REGION>",
+    "resource_group": "b67d9228670d473097259e2b343de464",
+    "resource_plan_id": "databases-independent-backups-gen2-standard",
+    "parameters": {
+      "dataservices": {
+        "source_backup_crn": "crn:v1:bluemix:public:databases-independent-backups:ca-mon:a/23b09aee04da4545b6e32805fa93249d:c97d1ca8-bfb8-4bcb-a46f-85c6374901ac::"
+      }
+    }
+  }'
+```
+{: pre}
+
+{{site.data.keyword.databases-for-mysql}} does not support cross-region copy.
+{: note}
+
 ### Deleting an independent backup by using the CLI
 {: #deleting-independent-backup-cli}
 {: cli}
@@ -602,8 +689,8 @@ Independent backups are billed as separate service instances:
 - **Overage charges**: Usage beyond the free allocation is charged additionally.
 - **Billing visibility**: Backup costs appear as separate line items in your billing statement.
 
-
-
+The backup copies are fully billable and do not qualify for the free allocation.
+  
 For detailed pricing information, see [Pricing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing#pricing-backup).
 
 ## Security and compliance
