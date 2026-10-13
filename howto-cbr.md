@@ -2,7 +2,7 @@
 
 copyright:
   years:  2026
-lastupdated: "2026-10-12"
+lastupdated: "2026-10-13"
 
 keywords: restricting access to cloud databases, restricting access to ICD, Elasticsearch cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr, valkey cbr
 
@@ -13,7 +13,7 @@ subcollection: cloud-databases-gen2
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Context-based restrictions
+# Managing access with context-based restrictions
 {: #cbr}
 
 [Gen 2]{: tag-purple}
