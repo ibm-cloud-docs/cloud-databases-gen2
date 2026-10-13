@@ -30,26 +30,10 @@ Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events generate
 
 To start protecting your {{site.data.keyword.databases-for}} resources with context-based restrictions, see the tutorial for [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial).
 
-This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources.
+This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. 
 
 {{site.data.keyword.databases-for}} currently does not support control plane scoping rules. This limitation will be addressed in a future phase of the implementation.
 {: important}
-
-## Regional rollout
-{: #cbr-rollout}
-
-Context-based restrictions will be enabled for the following databases on a rolling basis, one region at time. This rollout is applicable to all plans for a service, including Gen 1 and Gen 2.
-
-| Database | CBR-enabled | Regions
-| ---------- | ----- | ----------- |
-| {{site.data.keyword.databases-for-postgresql}} | Available | All regions |
-| {{site.data.keyword.databases-for-mongodb}} | Upcoming release | All regions |
-| {{site.data.keyword.databases-for-redis}} | Available | All regions |
-| {{site.data.keyword.databases-for-elasticsearch}} | Upcoming release | All regions |
-| {{site.data.keyword.databases-for-mysql}} | Availalable | All regions |
-| {{site.data.keyword.messages-for-rabbitmq}} | Available | All regions |
-| {{site.data.keyword.databases-for-valkey}} | Available | All regions |
-{: caption="CBR enablement by service and region overview" caption-side="top"}
 
 ## How {{site.data.keyword.databases-for}} integrates with context-based restrictions
 {: #cbr-overview}
