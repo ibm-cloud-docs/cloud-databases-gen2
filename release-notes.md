@@ -27,7 +27,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 Context-based restrictions (CBR) support now available
-:  You can now use context-based restrictions (CBR) to restrict access to {{site.data.keyword.databases-for}} resources based on network context, such as IP addresses, VPCs, and {{site.data.keyword.cloud}} services. For more information, see [Managing access with context-based restrictions](/cloud-databases-gen2?topic=cloud-databases-gen2-cbr&interface=ui).
+:  You can now use context-based restrictions (CBR) to restrict access to {{site.data.keyword.databases-for}} resources based on network context, such as IP addresses, VPCs, and {{site.data.keyword.cloud}} services. For more information, see [Managing access with context-based restrictions](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cbr&interface=ui#cbr-overview).
 
 ## 7 October 2026
 {: #cloud-databases-gen2-07Oct2026}
