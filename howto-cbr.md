@@ -2,7 +2,7 @@
 
 copyright:
   years:  2026
-lastupdated: "2026-10-13"
+lastupdated: "2026-10-15"
 
 keywords: restricting access to cloud databases, restricting access to ICD, Elasticsearch cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr, valkey cbr
 
@@ -203,9 +203,6 @@ Full closure of access to non-allowlisted endpoints: To provide a more robust se
 1. Under **Service**, select the service you want to target with your rule.
 1. Under **APIs**, select `Data plane`. Currently any other selection results in an error.
 
-   0 actions are expected for the Data Plane API type.
-   {: .note}
-
    {{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.
    {: .note}
 
@@ -347,11 +344,3 @@ resource "ibm_cbr_rule" "cbr_rule" {
 }
 ```
 {: pre}
-
-### Verifying your rule
-{: #rules-ui-verify}
-
-To verify that your rule is applied, go to the {{site.data.keyword.cloud}} Dashboard and select the relevant instance from your *Resource List*. Within **Recent Tasks**, you see your rule's status.
-
-The task of creating or modifying a rule goes into your instance's task queue. Depending on workload, it might take some time for your rule enforcement to complete.
-{: .note}
