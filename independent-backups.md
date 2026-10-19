@@ -325,13 +325,7 @@ curl -X POST \
 ```
 {: pre}
 
-<staging
-  
-### Creating an independent backup by using Terraform
-{: #creating-independent-backup-tf}
-{: terraform}
 
-</staging>
 
 ### Restoring from an independent backup
 {: #restoring-independent-backup}
