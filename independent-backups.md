@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-09"
+lastupdated: "2026-10-19"
 
 subcollection: cloud-databases-gen2
 
@@ -128,7 +128,7 @@ The {{site.data.keyword.cloud_notm}} console provides a centralized view of all 
 
 This helps you identify backups that might need cleanup or long-term retention.
 
-### Resource List
+### Resource list
 {: #resource-list-view}
 {: ui}
 
@@ -325,6 +325,12 @@ curl -X POST \
 ```
 {: pre}
 
+### Creating an independent backup by using Terraform
+{: #creating-independent-backup-tf}
+{: terraform}
+
+<! Shanti new section for TF--->
+
 ### Restoring from an independent backup
 {: #restoring-independent-backup}
 
@@ -419,6 +425,12 @@ ibmcloud resource service-instance-create mysql-restore-abc databases-for-mysql 
 * The `restore_backup_id` is the backup that you want to restore.
 
 The previous command will restore a backup to a machine of the same configuration and on the same hosting model as your original deployment.
+
+#### Restoring a backup by using Terraform
+{: #restore-backup-tf}
+{: terraform}
+
+<! Shanti new section for TF--->
 
 ##### Optional parameters in the CLI
 {: #restore-cli-optional}
@@ -625,28 +637,11 @@ curl -X POST \
 {{site.data.keyword.databases-for-mysql}} does not support cross-region copy.
 {: note}
 
-### Deleting an independent backup by using the CLI
-{: #deleting-independent-backup-cli}
-{: cli}
+### Provisioning an independent backup copy by using Terraform
+{: #provisioning-independent-backup-copy-tf}
+{: terraform}
 
-To delete an independent backup before its expiration, use the following command:
-
-```sh
-ibmcloud resource service-instance-delete <BACKUP_CRN> --force
-```
-{: pre}
-
-Example:
-
-```sh
-ibmcloud resource service-instance-delete e318275d-f860-4e4e-a63b-271fb4400c26 --force
-```
-{: pre}
-
-Backups use incremental infrastructure-level volume snapshots. As a result, deleting a backup can increase the size of the remaining backups.
-
-Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
-{: important}
+<! Shanti new section for TF--->
 
 ### Deleting an independent backup by using the API
 {: #deleting-independent-backup-api}
@@ -670,6 +665,35 @@ curl -X DELETE \
 ```
 {: pre}
 
+### Deleting an independent backup by using the CLI
+{: #deleting-independent-backup-cli}
+{: cli}
+
+To delete an independent backup before its expiration, use the following command:
+
+```sh
+ibmcloud resource service-instance-delete <BACKUP_CRN> --force
+```
+{: pre}
+
+Example:
+
+```sh
+ibmcloud resource service-instance-delete e318275d-f860-4e4e-a63b-271fb4400c26 --force
+```
+{: pre}
+
+Backups use incremental infrastructure-level volume snapshots. As a result, deleting a backup can increase the size of the remaining backups.
+
+Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
+{: important}
+
+### Deleting an independent backup by using Terraform
+{: #deleting-independent-backup-tf}
+{: terraform}
+
+<! Shanti new section for TF--->
+
 ## Next steps
 {: #independent-backups-next-steps}
 
@@ -685,8 +709,8 @@ The transition from coupled backups to independent backups varies by database se
 ### Databases enabled with independent backups
 {: #databases-with-independent-backups}
 
-| Database                   | Regions                                                                                                                          |
-|----------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| Database  | Regions |
+|---|---|
 | PostgreSQL                 | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor` |
 | MongoDB Enterprise         | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor` |
 | MongoDB Sharding           | `au-syd`, `ca-mon`, `eu-de`, `eu-es`, `in-che`, `in-mum`, `us-east`, `us-south`, `eu-gb`, `br-sao`, `jp-osa`, `jp-tok`, `ca-tor` |
