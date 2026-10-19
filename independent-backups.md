@@ -325,12 +325,13 @@ curl -X POST \
 ```
 {: pre}
 
-<! Shanti new section for TF
+<staging
+  
 ### Creating an independent backup by using Terraform
 {: #creating-independent-backup-tf}
 {: terraform}
 
- --->
+</staging>
 
 ### Restoring from an independent backup
 {: #restoring-independent-backup}
@@ -427,12 +428,7 @@ ibmcloud resource service-instance-create mysql-restore-abc databases-for-mysql 
 
 The previous command will restore a backup to a machine of the same configuration and on the same hosting model as your original deployment.
 
-<! Shanti new section for TF
-#### Restoring a backup by using Terraform
-{: #restore-backup-tf}
-{: terraform}
 
---->
 
 ##### Optional parameters in the CLI
 {: #restore-cli-optional}
@@ -639,12 +635,7 @@ curl -X POST \
 {{site.data.keyword.databases-for-mysql}} does not support cross-region copy.
 {: note}
 
-<! Shanti new section for TF
-### Provisioning an independent backup copy by using Terraform
-{: #provisioning-independent-backup-copy-tf}
-{: terraform}
 
---->
 
 ### Deleting an independent backup by using the API
 {: #deleting-independent-backup-api}
@@ -691,12 +682,7 @@ Backups use incremental infrastructure-level volume snapshots. As a result, dele
 Deleting a backup is permanent and cannot be undone. Ensure you no longer need the backup data before deletion.
 {: important}
 
-<! Shanti new section for TF
-### Deleting an independent backup by using Terraform
-{: #deleting-independent-backup-tf}
-{: terraform}
 
---->
 
 ## Next steps
 {: #independent-backups-next-steps}
