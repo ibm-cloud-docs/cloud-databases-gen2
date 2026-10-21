@@ -32,6 +32,7 @@ toc:
       topics:
       - notifications.md
       - scaling.md
+      - maintenance-windows.md
       - closures.md
       - topicgroup:
           label: Managing backups
