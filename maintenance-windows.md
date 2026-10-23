@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-23"
 
 keywords: maintenance window, maintenance start time, scheduled maintenance, emergency maintenance, postgresql maintenance window, mongodb maintenance window
 
@@ -278,4 +278,4 @@ The remaining work runs in your next maintenance window. Your deployment stays a
 ## Emergency maintenance
 {: #maintenance-windows-emergency}
 
-In exceptional circumstances, such as a critical security vulnerability or a high-severity defect, {{site.data.keyword.IBM_notm}} will apply maintenance outside your maintenance window. Emergency maintenance is used only when waiting for your next maintenance window would put the security or stability of your deployment at risk. Because emergency maintenance is time-sensitive, advance notifications and scheduled maintenance events are not available.
+In exceptional circumstances, emergency maintenance might occur outside the scheduled maintenance window without advance notice. In these cases, scheduled maintenance events aren't created.
