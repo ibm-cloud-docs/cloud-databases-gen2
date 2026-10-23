@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-13"
+lastupdated: "2026-10-23"
 
 keywords: cloud databases release notes
 
@@ -21,6 +21,16 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 21 October 2026
+{: #cloud-databases-gen2-21Oct2026}
+{: release-note}
+
+Single-node deployments (Beta) now available for select databases
+:  {{site.data.keyword.databases-for}} now supports single-node deployments (Beta) for select databases in select regions. Single-node deployments provision a single database member instead of the default two or three-member high-availability configuration and are intended for development, testing, and proof-of-concept workloads. Single-node deployments can be converted to a high-availability deployment without requiring data migration. For more information, see [Provisioning for PostgreSQL](/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-provisioning&interface=ui) and [MongoDB Enterprise Sharding](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-enterprise-sharding-provisioning-single-node&interface=cli).
+
+Customer-defined maintenance windows now available for select databases
+:   You can now configure the days and start time for maintenance on your {{site.data.keyword.databases-for}} deployment for select databases. Customer-defined maintenance windows allow you to schedule maintenance activities during times that align with your operational requirements while ensuring critical security, reliability, and platform updates are applied. For more information, see [Customer-defined maintenance windows](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-maintenance-windows&interface=cli).
 
 ## 12 October 2026
 {: #cloud-databases-gen2-12Oct2026}
