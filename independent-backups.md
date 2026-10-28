@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-19"
+lastupdated: "2026-10-23"
 
 subcollection: cloud-databases-gen2
 
@@ -210,6 +210,43 @@ curl -X POST \
 ```
 {: pre}
 {: api}
+
+
+You can set an automatic backups configurations by using the following Terraform request:
+{: terraform}
+
+Example:
+
+```sh
+data "ibm_resource_group" "rg" {
+  name = var.resource_group_name
+}
+
+resource "ibm_database" "backup_configuration_test" {
+  name              = "<DATABASE_INSTANCE_NAME>"
+  resource_group_id = data.ibm_resource_group.rg.id
+  service = "<DATABASE_SERVICE_NAME>"
+  plan    = "<DATABASE_SERVICE_PLAN_ID>"
+  location          = "<GEN2-REGION>"
+  service_endpoints = "private"
+  backups {
+    retention = 30
+    preserve = true
+    automatic_backups {
+      copy {
+        enabled = true
+        target = [
+          {
+            region = "<TARGET-GEN2-REGION>"
+          }
+        ]
+      }
+    }
+  }
+}
+```
+{: pre}
+{: terraform}
 
 ### Taking an on-demand backup in the UI
 {: #ondemand-backup-ui}
