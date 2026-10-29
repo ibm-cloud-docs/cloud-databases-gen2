@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-23"
+lastupdated: "2026-10-28"
 
 subcollection: cloud-databases-gen2
 
@@ -212,7 +212,7 @@ curl -X POST \
 {: api}
 
 
-You can set an automatic backups configurations by using the following Terraform request:
+You can set an automatic backups configuration by using the following Terraform request:
 {: terraform}
 
 Example:
