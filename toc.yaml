@@ -30,6 +30,7 @@ toc:
   - navgroup:
       id: howto
       topics:
+      - migration_landing.md
       - notifications.md
       - scaling.md
       - maintenance-windows.md
