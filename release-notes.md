@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-30"
+lastupdated: "2026-11-02"
 
 keywords: cloud databases release notes
 
@@ -23,6 +23,12 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: shortdesc}
 
 
+## 2 November 2026
+{: #cloud-databases-gen2-02nov2026}
+{: release-note}
+
+General availability of Gen 1 to Gen 2 migration for {{site.data.keyword.databases-for}}
+:  Migration from Gen 1 (Classic) to Gen 2 (VPC) is now available for all {{site.data.keyword.databases-for}} services. Migration guidance is available for multiple services and migration methods, including read replica, backup and restore, and service-specific migration approaches. For more information, see [Migrating {{site.data.keyword.databases-for}} deployments from Gen 1 to Gen 2](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-migrating-cloud-databases-from-gen-1-to-gen-2).
 
 ## 21 October 2026
 {: #cloud-databases-gen2-21Oct2026}
