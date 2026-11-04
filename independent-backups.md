@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-28"
+lastupdated: "2026-11-04"
 
 subcollection: cloud-databases-gen2
 
@@ -786,7 +786,14 @@ Independent backups maintain the same security standards as your database instan
 Be aware of the following limitations:
 
 - Bulk operations (bulk copy, bulk delete) are not supported.
-- Independent backups cannot be downloaded; use database-specific tools (for example, `mysqldump`) for local backups.
+- Independent backups cannot be downloaded; use database-specific tools (for example, `mysqldump`, `pg_dump`, or `mongodump`) for local backups.
 - Backup retention duration is not yet configurable (30 days default).
 - You can create upto 50 on-demand backups per database instance.
 - On-demand backup on MySQL is not supported.
+
+## Next steps
+{: #independent-backups-next-steps}
+
+- Learn about [backup pricing](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing#pricing-backup).
+- Review [backup FAQs](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-faq#faq-backups).
+- Understand [your responsibilities](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-responsibilities-cloud-databases) for managing backups.
