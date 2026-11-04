@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-11-04"
 
 keywords: ICD Gen 2 FAQ
 
@@ -119,8 +119,7 @@ Gen 2 delivers:
 
 Yes, with:
 
-- Snapshot-based bakups.
-- Enhanced point-in-time recovery (PITR).
+- Snapshot-based backups.
 - More performant and predictable backup and restore performance due to newer Gen 2 storage architecture.
 - Indpenedent backups (currently for {{site.data.keyword.databases-for-mysql}} only).
 
