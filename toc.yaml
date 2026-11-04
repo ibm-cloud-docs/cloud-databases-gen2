@@ -41,6 +41,7 @@ toc:
           - backup-restore.md
           - coupled-backups.md
           - independent-backups.md
+      - pitr.md
       - topicgroup:
           label: Observability
           topics:
