@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-11-02"
+lastupdated: "2026-11-05"
 
 keywords: cloud databases release notes
 
@@ -22,6 +22,12 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
+## 5 November 2026
+{: #cloud-databases-gen2-05nov2026}
+{: release-note}
+
+New regions available for Gen 1 to Gen 2 migration
+:  Migration from Gen 1 (Classic) to Gen 2 (VPC) is now available in the `br-sao` and `us-south` regions, in addition to `us-east`, for all {{site.data.keyword.databases-for}} services. 
 
 ## 2 November 2026
 {: #cloud-databases-gen2-02nov2026}
