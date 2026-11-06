@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-11-06"
 
 keywords: postgresql, databases, gen 2, postgresql connection strings, postgresql connection ibm application
 
@@ -57,7 +57,7 @@ Use {{site.data.keyword.cloud_notm}} instructions to [create a Virtual Private C
 
 5. SSH into your VSI using the following command:
 
-    `$ ssh -i ~/.ssh/<NAME_OF_THE_SSH_KEY> root@<FLOATING_IP_ADDRESS>`
+    `$ ssh -i ~/.ssh/<NAME_OF_THE_SSH_KEY> vpcuser@<FLOATING_IP_ADDRESS>`
 
 ### Step 3: Create a VPE
 {: #howto-privateendpoints-vsi3}
@@ -77,15 +77,24 @@ Modify the security group to allow outbound traffic from your VSI to the databas
 Use {{site.data.keyword.cloud_notm}} CLI or UI to create a service key for the database. The service key contains the information that is needed to access the database.
 
 ### Step 6: Connect to your database with private endpoints
-{: #howto-privateendpoints-vsi8}
+{: #howto-privateendpoints-vsi6}
 
 Install and verify the required database client, and connect to the database using the connection details from the service key. This command will vary depending on the database. The instructions required per database are listed in the table below.
 
-| Service   | Client tool | Sample command                                                                 |
-|-----------------------------|------------------|-------------------------------------------------------------------------------------|
-| {{site.data.keyword.databases-for-postgresql}}    | `psql`           | You can connect to the VSI from a local environment by sending the root certificate from a local machine to a VSI.`$  PGPASSWORD=$PASSWORD psql “<PASSWORD>` You can verify your connection with the following command (optional):`$ /list`       |
-| {{site.data.keyword.databases-for-mongodb}}       | `mongosh`           | You can verify your connection with the following command:`--eval "db.stats()"`     |
+| Service | Client tool | Sample command |
+| --- | --- | --- |
+| {{site.data.keyword.databases-for-postgresql}} | `psql` | You can connect to the VSI from a local environment by sending the root certificate from a local machine to a VSI.`$  PGPASSWORD=$PASSWORD psql “<PASSWORD>` You can verify your connection with the following command (optional):`$ /list` |
+| {{site.data.keyword.databases-for-mongodb}} | `mongosh` | You can verify your connection with the following command:`--eval "db.stats()"` |
 {: caption="Client tools and example connection commands for private access" }
+
+### Step 7 (optional): Connect to your database from your local machine
+{: #howto-privateendpoints-vsi7}
+
+To connect to your database from your local machine, use SSH port forwarding through the VSI to the database endpoint.
+
+  `$ ssh -i ~/.ssh/<NAME_OF_THE_SSH_KEY> -N -L <LOCAL_PORT>:<VPE_HOSTNAME>:<DATABASE_PORT> vpcuser@<FLOATING_IP_ADDRESS>`
+
+This command forwards connections from your local machine on `LOCAL_PORT` to `<VPE_HOSTNAME>:<DATABASE_PORT>` through the VSI tunnel. You can then connect your local database client to `localhost:<LOCAL_PORT>`.
 
 ## Establishing Virtual Private Endpoints using a VPN connection
 {: #howto-privateendpoints-vpn}
