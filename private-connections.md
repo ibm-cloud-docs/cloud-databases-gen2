@@ -18,7 +18,6 @@ subcollection: cloud-databases-gen2
 
 [Gen 2]{: tag-purple}
 
-
 Gen 2 {{site.data.keyword.databases-for}} enable a secure by default approach using private connections enabled by Virtual Private Endpoints (VPE).
 
 {{site.data.keyword.cloud}} uses private endpoints that restrict access to your internal network, protecting your data and applications from unwanted access and security vulnerabilities.
@@ -98,7 +97,10 @@ Install and verify the required database client, and connect to the database usi
 
 To connect to your database from your local machine, use SSH port forwarding through the VSI to the database endpoint.
 
-  `$ ssh -i ~/.ssh/<NAME_OF_THE_SSH_KEY> -N -L <LOCAL_PORT>:<VPE_HOSTNAME>:<DATABASE_PORT> vpcuser@<FLOATING_IP_ADDRESS>`
+  ```sh
+  -i ~/.ssh/<NAME_OF_THE_SSH_KEY> -N -L <LOCAL_PORT>:<VPE_HOSTNAME>:<DATABASE_PORT> vpcuser@<FLOATING_IP_ADDRESS>
+  ```
+  {: pre}
 
 This command forwards connections from your local machine on `LOCAL_PORT` to `<VPE_HOSTNAME>:<DATABASE_PORT>` through the VSI tunnel. You can then connect your local database client to `localhost:<LOCAL_PORT>`.
 
