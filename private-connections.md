@@ -18,7 +18,6 @@ subcollection: cloud-databases-gen2
 
 [Gen 2]{: tag-purple}
 
-
 Gen 2 {{site.data.keyword.databases-for}} enable a secure by default approach using private connections enabled by Virtual Private Endpoints (VPE).
 
 {{site.data.keyword.cloud}} uses private endpoints that restrict access to your internal network, protecting your data and applications from unwanted access and security vulnerabilities.
@@ -53,11 +52,17 @@ Use {{site.data.keyword.cloud_notm}} instructions to [create a Virtual Private C
 3. Once the key pair is ready, move the private key into the `~/.ssh` directory on your local machine to follow best practises for secure SSH key management.
 4. Change the permissions of the private key. This makes the key read-only to the file owner. On Unix-like systems such as macOS, run the following command:
 
-    `$ chmod 400 ~/.ssh/<NAME_OF_THE_SSH_KEY>`
+    ```sh
+    chmod 400 ~/.ssh/NAME_OF_THE_SSH_KEY
+    ```
+    {: pre}
 
 5. SSH into your VSI using the following command:
 
-    `$ ssh -i ~/.ssh/<NAME_OF_THE_SSH_KEY> vpcuser@<FLOATING_IP_ADDRESS>`
+    ```sh
+    ssh -i ~/.ssh/NAME_OF_THE_SSH_KEY vpcuser@FLOATING_IP_ADDRESS
+    ```
+    {: pre}
 
 ### Step 3: Create a VPE
 {: #howto-privateendpoints-vsi3}
@@ -92,7 +97,10 @@ Install and verify the required database client, and connect to the database usi
 
 To connect to your database from your local machine, use SSH port forwarding through the VSI to the database endpoint.
 
-  `$ ssh -i ~/.ssh/<NAME_OF_THE_SSH_KEY> -N -L <LOCAL_PORT>:<VPE_HOSTNAME>:<DATABASE_PORT> vpcuser@<FLOATING_IP_ADDRESS>`
+  ```sh
+  -i ~/.ssh/<NAME_OF_THE_SSH_KEY> -N -L <LOCAL_PORT>:<VPE_HOSTNAME>:<DATABASE_PORT> vpcuser@<FLOATING_IP_ADDRESS>
+  ```
+  {: pre}
 
 This command forwards connections from your local machine on `LOCAL_PORT` to `<VPE_HOSTNAME>:<DATABASE_PORT>` through the VSI tunnel. You can then connect your local database client to `localhost:<LOCAL_PORT>`.
 
@@ -135,11 +143,42 @@ Download the VPN client file and use a VPN client to connect to the VPN.
 ### Step 6: Connect to your database with private endpoints
 {: #howto-privateendpoints-vpn7}
 
-| Service   | Client tool | Sample command                                                                 |
-|-----------------------------|------------------|-------------------------------------------------------------------------------------|
-| {{site.data.keyword.databases-for-postgresql}}    | `psql`           | You can verify your connection with the following command:`$ /list`       |
-| {{site.data.keyword.databases-for-mongodb}}       | `mongosh`          | You can verify your connection with the following command:`--eval "db.stats()"`      |
-{: caption="Client tools and example connection commands for private access via VPN" }
+| Service   | Client tool |
+|-----------|-------------|
+| {{site.data.keyword.databases-for-postgresql}}    | `psql`  |
+| {{site.data.keyword.databases-for-mongodb}}       | `mongosh` |
+{: caption="Client tools for private access via VPN"}
+
+- **{{site.data.keyword.databases-for-postgresql}} (`psql`):**
+
+  ```bash
+  PGUSER=USERNAME \
+  PGPASSWORD='PASSWORD' \
+  PGSSLMODE=verify-full \
+  PGSSLROOTCERT=system \
+  psql 'host=HOSTNAME port=5432 dbname=postgres'
+  ```
+  {: pre}
+
+  Verify your connection by listing the databases:
+
+  ```sh
+  \list
+  ```
+  {: pre}
+
+- **{{site.data.keyword.databases-for-mongodb}} (`mongosh`):**
+
+  ```bash
+  mongosh \
+    -u USERNAME \
+    -p 'PASSWORD' \
+    --tls \
+    --authenticationDatabase admin \
+    --host "replset/HOST-0:27017,HOST-1:27017,HOST-2:27017" \
+    --eval "db.stats()"
+  ```
+  {: pre}
 
 ## Establishing VPC/VPN gateway from on-premise
 {: #howto-privateendpoints-site2site}
@@ -178,10 +217,41 @@ Log in to the network by connecting through the VPN. When the service-to-service
 ### Step 6: Connect to your database with private endpoints
 {: #howto-privateendpoints-vpn7}
 
-Connect to your database from an on-premise location by installing and verifying the required client. The clients for each database and sample verification commands are shown in the following table:
+Connect to your database from an on-premise location by installing and verifying the required client. The clients for each database are shown in the following table:
 
-| Service   | Client tool | Sample command                                                                 |
-|-----------------------------|------------------|-------------------------------------------------------------------------------------|
-| {{site.data.keyword.databases-for-postgresql}}   | `psql`           | You can verify your connection with the following command (optional):`$ /list`       |
-| {{site.data.keyword.databases-for-mongodb}}      | `mongosh`       | You can verify your connection with the following command:`--eval "db.stats()"`     |
-{: caption="Client tools and example connection commands for private access via VPN" }
+| Service   | Client tool |
+|-----------|-------------|
+| {{site.data.keyword.databases-for-postgresql}}   | `psql`  |
+| {{site.data.keyword.databases-for-mongodb}}      | `mongosh` |
+{: caption="Client tools for private access via a site-to-site VPN"}
+
+- **{{site.data.keyword.databases-for-postgresql}} (`psql`):**
+
+  ```bash
+  PGUSER=USERNAME \
+  PGPASSWORD='PASSWORD' \
+  PGSSLMODE=verify-full \
+  PGSSLROOTCERT=system \
+  psql 'host=HOSTNAME port=5432 dbname=postgres'
+  ```
+  {: pre}
+
+  Optionally, verify your connection by listing the databases:
+
+  ```sh
+  \list
+  ```
+  {: pre}
+
+- **{{site.data.keyword.databases-for-mongodb}} (`mongosh`):**
+
+  ```bash
+  mongosh \
+    -u USERNAME \
+    -p 'PASSWORD' \
+    --tls \
+    --authenticationDatabase admin \
+    --host "replset/HOST-0:27017,HOST-1:27017,HOST-2:27017" \
+    --eval "db.stats()"
+  ```
+  {: pre}
