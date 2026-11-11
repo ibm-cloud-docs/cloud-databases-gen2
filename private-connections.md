@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-11-06"
+lastupdated: "2026-11-11"
 
 keywords: postgresql, databases, gen 2, postgresql connection strings, postgresql connection ibm application
 
@@ -95,14 +95,37 @@ Install and verify the required database client, and connect to the database usi
 ### Step 7 (optional): Connect to your database from your local machine
 {: #howto-privateendpoints-vsi7}
 
-To connect to your database from your local machine, use SSH port forwarding through the VSI to the database endpoint.
+To connect to your database from your local machine, use SSH port forwarding (an SSH tunnel) through the VSI to the database's VPE endpoint. This requires the VSI to have a floating IP.
 
-  ```sh
-  -i ~/.ssh/<NAME_OF_THE_SSH_KEY> -N -L <LOCAL_PORT>:<VPE_HOSTNAME>:<DATABASE_PORT> vpcuser@<FLOATING_IP_ADDRESS>
-  ```
-  {: pre}
+1. Open the SSH tunnel by running the following command on your local machine. Leave this terminal open while you use the tunnel.
 
-This command forwards connections from your local machine on `LOCAL_PORT` to `<VPE_HOSTNAME>:<DATABASE_PORT>` through the VSI tunnel. You can then connect your local database client to `localhost:<LOCAL_PORT>`.
+    ```sh
+    ssh -i ~/.ssh/NAME_OF_THE_SSH_KEY -N -L LOCAL_PORT:VPE_HOSTNAME:DATABASE_PORT vpcuser@FLOATING_IP_ADDRESS
+    ```
+    {: pre}
+
+    | Variable | Description |
+    | --- | --- |
+    | `NAME_OF_THE_SSH_KEY` | The private key file that you created in [Step 2](#howto-privateendpoints-vsi2). |
+    | `LOCAL_PORT` | An unused port on your local machine, for example `5432` for {{site.data.keyword.databases-for-postgresql}}. |
+    | `VPE_HOSTNAME` | The hostname of your database from the service key that you created in [Step 5](#howto-privateendpoints-vsi5). |
+    | `DATABASE_PORT` | The port of your database from the service key. |
+    | `FLOATING_IP_ADDRESS` | The floating IP address of your VSI. |
+    {: caption="SSH port forwarding variables"}
+
+    The `-N` option opens the tunnel without running a remote command, and the `-L` option forwards connections on `LOCAL_PORT` on your local machine through the VSI to `VPE_HOSTNAME:DATABASE_PORT`.
+
+2. In a second terminal, connect your local database client to `localhost` on `LOCAL_PORT` instead of the VPE hostname. For example, for {{site.data.keyword.databases-for-postgresql}}:
+
+    ```sh
+    PGUSER=USERNAME \
+    PGPASSWORD='PASSWORD' \
+    psql 'host=localhost port=LOCAL_PORT dbname=postgres'
+    ```
+    {: pre}
+
+    TLS hostname verification (`PGSSLMODE=verify-full`) fails when you connect to `localhost` because the certificate is issued for the VPE hostname. Use a less strict `PGSSLMODE`, or map the VPE hostname to `127.0.0.1` in your local `hosts` file.
+    {: note}
 
 ## Establishing Virtual Private Endpoints using a VPN connection
 {: #howto-privateendpoints-vpn}
@@ -149,36 +172,36 @@ Download the VPN client file and use a VPN client to connect to the VPN.
 | {{site.data.keyword.databases-for-mongodb}}       | `mongosh` |
 {: caption="Client tools for private access via VPN"}
 
-- **{{site.data.keyword.databases-for-postgresql}} (`psql`):**
+**{{site.data.keyword.databases-for-postgresql}} (`psql`):**
 
-  ```bash
-  PGUSER=USERNAME \
-  PGPASSWORD='PASSWORD' \
-  PGSSLMODE=verify-full \
-  PGSSLROOTCERT=system \
-  psql 'host=HOSTNAME port=5432 dbname=postgres'
-  ```
-  {: pre}
+```bash
+PGUSER=USERNAME \
+PGPASSWORD='PASSWORD' \
+PGSSLMODE=verify-full \
+PGSSLROOTCERT=system \
+psql 'host=HOSTNAME port=5432 dbname=postgres'
+```
+{: pre}
 
-  Verify your connection by listing the databases:
+Verify your connection by listing the databases:
 
-  ```sh
-  \list
-  ```
-  {: pre}
+```sh
+\list
+```
+{: pre}
 
-- **{{site.data.keyword.databases-for-mongodb}} (`mongosh`):**
+**{{site.data.keyword.databases-for-mongodb}} (`mongosh`):**
 
-  ```bash
-  mongosh \
-    -u USERNAME \
-    -p 'PASSWORD' \
-    --tls \
-    --authenticationDatabase admin \
-    --host "replset/HOST-0:27017,HOST-1:27017,HOST-2:27017" \
-    --eval "db.stats()"
-  ```
-  {: pre}
+```bash
+mongosh \
+  -u USERNAME \
+  -p 'PASSWORD' \
+  --tls \
+  --authenticationDatabase admin \
+  --host "replset/HOST-0:27017,HOST-1:27017,HOST-2:27017" \
+  --eval "db.stats()"
+```
+{: pre}
 
 ## Establishing VPC/VPN gateway from on-premise
 {: #howto-privateendpoints-site2site}
@@ -225,33 +248,33 @@ Connect to your database from an on-premise location by installing and verifying
 | {{site.data.keyword.databases-for-mongodb}}      | `mongosh` |
 {: caption="Client tools for private access via a site-to-site VPN"}
 
-- **{{site.data.keyword.databases-for-postgresql}} (`psql`):**
+**{{site.data.keyword.databases-for-postgresql}} (`psql`):**
 
-  ```bash
-  PGUSER=USERNAME \
-  PGPASSWORD='PASSWORD' \
-  PGSSLMODE=verify-full \
-  PGSSLROOTCERT=system \
-  psql 'host=HOSTNAME port=5432 dbname=postgres'
-  ```
-  {: pre}
+```bash
+PGUSER=USERNAME \
+PGPASSWORD='PASSWORD' \
+PGSSLMODE=verify-full \
+PGSSLROOTCERT=system \
+psql 'host=HOSTNAME port=5432 dbname=postgres'
+```
+{: pre}
 
-  Optionally, verify your connection by listing the databases:
+Optionally, verify your connection by listing the databases:
 
-  ```sh
-  \list
-  ```
-  {: pre}
+```sh
+\list
+```
+{: pre}
 
-- **{{site.data.keyword.databases-for-mongodb}} (`mongosh`):**
+**{{site.data.keyword.databases-for-mongodb}} (`mongosh`):**
 
-  ```bash
-  mongosh \
-    -u USERNAME \
-    -p 'PASSWORD' \
-    --tls \
-    --authenticationDatabase admin \
-    --host "replset/HOST-0:27017,HOST-1:27017,HOST-2:27017" \
-    --eval "db.stats()"
-  ```
-  {: pre}
+```bash
+mongosh \
+  -u USERNAME \
+  -p 'PASSWORD' \
+  --tls \
+  --authenticationDatabase admin \
+  --host "replset/HOST-0:27017,HOST-1:27017,HOST-2:27017" \
+  --eval "db.stats()"
+```
+{: pre}
