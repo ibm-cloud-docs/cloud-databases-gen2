@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026, 2026
-lastupdated: "2026-10-14"
+lastupdated: "2026-11-20"
 
 keywords: cloud databases gen 2 overview
 
@@ -21,22 +21,22 @@ subcollection: cloud-databases-gen2
 ## Generation 1 (Classic)
 {: #gen1}
 
-IBM’s original platform that consists of all databases across all regions and a rich feature set. Gen 1 Databases support both private and public endpoints, with options for isolated and shared compute. This environment is best suited for workloads that benefit from simpler networking and isolation features.
+IBM’s original platform that consists of all databases across all regions and a rich feature set. Gen 1 {{site.data.keyword.databases-for}} support both private and public endpoints, with options for isolated and shared compute. This environment is best suited for workloads that benefit from simpler networking and isolation features.
 
 ## Generation 2 (VPC)
 {: #gen2}
 
-Gen 2 databases are built on {{site.data.keyword.cloud}}’s latest platform, based on highly secure software-defined networking architecture and ideal for cloud-native applications. Gen 2 Databases are currently only available in select regions only and support private endpoints and isolated compute options. This environment is ideal for modern applications that demand advanced networking and secure, software-defined isolation.
+Gen 2 databases are built on {{site.data.keyword.cloud}}’s latest platform, based on highly secure software-defined networking architecture and ideal for cloud-native applications. Gen 2 Databases are available across all VPC multizone regions and support private endpoints and isolated compute options. This environment is ideal for modern applications that demand advanced networking and secure, software-defined isolation.
 
 ## Feature differentiators
 {: #feature-differentiators}
 
 | Category                     | Gen 1        | Gen 2    |
 |---|---|---|
-| Regions | **Multizone location (MZR)** <br> Dallas (us-south) <br> Frankfurt (eu-de) <br> London (eu-gb) <br> Madrid (eu-es) <br> Osaka (jp-osa) <br> São Paulo (br-sao) <br> Sydney (au-syd) <br> Tokyo (jp-tok) <br> Toronto (ca-tor) <br> Washington (us-east) | **Multizone location (MZR)** <br> Dallas (us-south) <br>  London (eu-gb) <br> Madrid (eu-es) <br> Osaka (jp-osa) <br> São Paulo (br-sao) <br> Sydney (au-syd) <br> Tokyo (jp-tok) <br> Toronto (ca-tor) <br> Washington (us-east) <br><br> **Single-campus MZR (SC-MZR)** <br> Chennai - Airtel (in-che) <br> Montreal (ca-mon) <br> Mumbai (in-mum) |
+| Regions | **Multizone location (MZR)** <br> Dallas (us-south) <br> Frankfurt (eu-de) <br> London (eu-gb) <br> Madrid (eu-es) <br> Osaka (jp-osa) <br> São Paulo (br-sao) <br> Sydney (au-syd) <br> Tokyo (jp-tok) <br> Toronto (ca-tor) <br> Washington (us-east) | **Multizone location (MZR)** <br> Dallas (us-south) <br> Frankfurt (eu-de) <br> London (eu-gb) <br> Madrid (eu-es) <br> Osaka (jp-osa) <br> São Paulo (br-sao) <br> Sydney (au-syd) <br> Tokyo (jp-tok) <br> Toronto (ca-tor) <br> Washington (us-east) <br><br> **Single-campus MZR (SC-MZR)** <br> Chennai - Airtel (in-che) <br> Montreal (ca-mon) <br> Mumbai (in-mum) |
 | Database editions           | PostgreSQL <br> MongoDB (Standard and Enterprise) <br> Redis <br> Elasticsearch (Enterprise and Platinum) <br> MySQL <br> RabbitMQ  | PostgreSQL <br> MongoDB (Standard and Enterprise) <br> Redis <br> Elasticsearch (Standard and Enterprise) <br>  MySQL <br> RabbitMQ  |
 | Endpoints                   | Private endpoints <br> Public endpoints  | Private endpoints |
-| Hosting models              | Isolated compute <br> Shared compute   | Isolated compute    |
+| Hosting models              | Isolated compute <br> Shared compute   | Isolated compute  <br> Single-node (Beta)  |
 | Database versions supported | Minimum 2, varies per database   | Latest  |
 | Autoscaling                 | Yes  | Future release   |
 | Read replicas (SQL only)    | Yes  | Future release   |
@@ -59,8 +59,8 @@ Gen 2 databases are built on {{site.data.keyword.cloud}}’s latest platform, ba
 
 | Category               | Gen 1       | Gen 2     |
 |------------------------|-------------|-----------| 
-| User and role management | [Database `admin` user created by IBM](/docs/databases-for-mongodb-gen2?topic=databases-for-mongodb-gen2-user-management&interface=ui) | Database "manager" by using service-credential  |
+| User and role management | Database `admin` user created by IBM | Database "manager" by using service-credential  |
 | Certificate type       | Signed by IBM Cloud Database Certificate Authority  | Certificates signed by a Certificate Authority (Let's Encrypt)   |
 | Encryption             | Encryption at Rest <br> Encryption in Transit <br> Customer-managed encryption - Bring your own key (BYOK) | Encryption at Rest <br> Encryption in Transit <br> Customer-managed encryption - Bring your own key (BYOK) |
-| Compliance             | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018 <br> SOC 1, SOC 2 <br> PCI DSS <br> HIPAA  | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018SOC 1 <br> SOC 2 <br> PCI DSS <br> HIPAA      |
+| Compliance             | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018 <br> SOC 1, SOC 2 <br> PCI DSS <br> HIPAA  | FS Cloud <br> GDPR <br> ISO 27001, 27017, 27018 <br> SOC 1, SOC 2 <br> PCI DSS <br> HIPAA      |
 {: caption="Access, compliance, and security differentiators" caption-side="bottom"}
