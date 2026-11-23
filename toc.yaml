@@ -11,6 +11,7 @@ toc:
   - navgroup:
       id: overview
       topics:
+      - index.md
       - overview.md
       - isolated-compute.md
       - topic: pricing.md
@@ -23,7 +24,6 @@ toc:
   - navgroup:
       id: plan
       topics:
-      - index.md
       - topic: learn-getting-to-production.md
         navtitle: Getting to production
       - topic: private-connections.md
@@ -34,6 +34,8 @@ toc:
       - notifications.md
       - scaling.md
       - maintenance-windows.md
+      - topic: single-node.md
+        navtitle: Single-node deployments
       - closures.md
       - topicgroup:
           label: Managing backups
@@ -85,7 +87,7 @@ toc:
               href: https://cloud.ibm.com/docs/databases-for-mongodb-gen2
           - link:
               label: Cloud Databases for Redis
-              href: https://cloud.ibm.com/docs/databases-for-redis-
+              href: https://cloud.ibm.com/docs/databases-for-redis-gen2
           - link:
               label: Cloud Databases for Elasticsearch
               href: https://cloud.ibm.com/docs/databases-for-elasticsearch-gen2
@@ -99,7 +101,7 @@ toc:
       id: help
       topics:
       - topicgroup:
-          label: FAQs
+          label: FAQ
           topics:
           - topic: faq.md
             navtitle: Gen 2 FAQ
