@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-11-20"
+lastupdated: "2026-11-24"
 
 keywords: single-node, single node, beta, availability, regions, postgresql, mongodb
 
@@ -36,7 +36,7 @@ You can convert a single-node deployment to a high-availability deployment witho
 The following table shows where single-node deployments are available.
 
 | | `eu-de` |
-| --- | --- | --- |
+| --- | --- |
 | {{site.data.keyword.databases-for-postgresql}} | Available |
 | {{site.data.keyword.databases-for-mongodb}} | Available |
 {: row-headers}
