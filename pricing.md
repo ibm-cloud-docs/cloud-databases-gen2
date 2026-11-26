@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025, 2026
-lastupdated: "2026-10-06"
+lastupdated: "2026-11-24"
 
 keywords: gen 2, pricing
 
@@ -93,7 +93,14 @@ For customers with specific performance or compliance requirements, it is recomm
 ## Using the pricing calculator
 {: #pricing-calc}
 
-For pricing estimation, use the **Add to estimate** button on the provisioning page of each service. Input your total consumption across each data members into the calculator. This is equal to the number of members because your data is replicated to all members. For example, a 2-member {{site.data.keyword.databases-for}} deployment with 5 GB of disk on a 4 vCPU x 20 GB RAM profile would have a total bill for 10 GB of disk and the total cost of 2 members.
+For pricing estimates, use the **Add to estimate** button on the provisioning page for each service. Current pricing is available in the {{site.data.keyword.cloud}} console, including on the provisioning page and the **Pricing** tab. Therefore, actual prices are not listed in the documentation. 
+
+When creating estimates, enter your requirements **per member**. Because data is replicated across all members, charges apply to the total resources provisioned across are calculated across the deployment. 
+
+For example, a 2-member {{site.data.keyword.databases-for}} deployment with 5 GB of disk per member and a profile of 4 vCPUs and 20 GB of RAM per member is billed for:
+
+- 10 GB of total disk capacity (5 GB per member × 2 members).
+- Two members, each with 4 vCPUs and 20 GB of RAM.
 
 ## Backups pricing for Gen 2 instances
 {: #pricing-backup}
@@ -132,9 +139,9 @@ To help manage variability in monthly charges, especially during failover events
 
 - Overage is billed monthly and applies when your snapshot storage exceeds the included allocation.
 - Total snapshot storage = (Initial single member snapshot * number of members) + (Daily change × 29 days).
-- Any usage beyond the free allocation is charged at $0.095 per GB per month.
+- Snapshot storage that exceeds the included allocation is charged at the backup storage rate (per GB-month). The following example uses a sample rate of **$0.10 per GB-month** for illustration purposes. For the current rate, see the [pricing calculator](#pricing-calc).
 
-### Worked example, for a 3-member {{site.data.keyword.databases-for}} deployment with 100 GB of data per member
+### Worked example: 3-member {{site.data.keyword.databases-for}} deployment with 100 GB of data per member
 {: #pricing-example}
 
 - Day 1: A full snapshot is taken from the current primary. This consumes 100 GB of snapshot storage.
@@ -148,7 +155,7 @@ This models the worst case scenario where the full snapshot is equal to the file
 - Total snapshot = 100 GB (initial) + 150 GB (incremental) + 100 GB (failover snapshot) + 130 GB (post-failover incremental) = 480 GB.
 - Free allocation = 100 GB x 3 members = 300 GB.
 - Overage = 480 GB - 300 GB  = 180 GB.
-- Monthly charge = (480 GB - 300 GB) X $0.095 = $17.1.
+- Monthly charge = (480 GB - 300 GB) X $0.1 = $18.
 
 ### Pricing independent backups
 {: #pricing-independent-backups}
@@ -160,9 +167,9 @@ For example, if a three-member {{site.data.keyword.databases-for}} deployment is
 - Backup 1 is **80 GB**. The entire backup is covered by the free allocation, so the charge is **$0.00**. The remaining free allocation is **220 GB**.
 - Backup 2 is **80 GB**. The entire backup is covered by the free allocation, so the charge is **$0.00**. The remaining free allocation is **140 GB**.
 - Backup 3 is **80 GB**. The entire backup is covered by the free allocation, so the charge is **$0.00**. The remaining free allocation is **60 GB**.
-- Backup 4 is **80 GB**. The remaining free allocation of **60 GB** is applied to the backup. The billable storage is **20 GB** (80 GB - 60 GB), resulting in a charge of **20 GB × $0.095 = $1.90**. The remaining free allocation is **0 GB**.
-- Backup 5 is **80 GB**. No free allocation remains. The entire backup is billable, resulting in a charge of **80 GB × $0.095 = $7.60**.
-- Backup 6 is **80 GB**. No free allocation remains. The entire backup is billable, resulting in a charge of **80 GB × $0.095 = $7.60**.
+- Backup 4 is **80 GB**. The remaining free allocation of **60 GB** is applied to the backup. The billable storage is **20 GB** (80 GB - 60 GB), resulting in a charge of **20 GB × $0.1 = $2.00**. The remaining free allocation is **0 GB**.
+- Backup 5 is **80 GB**. No free allocation remains. The entire backup is billable, resulting in a charge of **80 GB × $0.1 = $8.00**.
+- Backup 6 is **80 GB**. No free allocation remains. The entire backup is billable, resulting in a charge of **80 GB × $0.1 = $8.00**.
 
 The free allocation applies only while the database instance is active. If the instance is disabled, any existing backups continue to exist but are fully billable and do not qualify for the free allocation. If backups remain after the database instance is deleted, those backups are also fully billable and do not qualify for the free allocation.
 
