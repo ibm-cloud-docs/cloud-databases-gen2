@@ -11,12 +11,12 @@ subcollection: cloud-databases-gen2
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding data portability for {{site.data.keyword.independent-backups}}
+# Understanding data portability for independent backups
 {: #data-portability}
 
 [Gen 2]{: tag-purple}
 
-{{site.data.keyword.independent-backups}} preserves database data independently of the lifecycle of the original deployment. To move data outside of {{site.data.keyword.cloud_notm}}, restore an independent backup to a supported database deployment and use database-native export tools to create a portable copy of your data.
+Independent backups preserves database data independently of the lifecycle of the original deployment. To move data outside of {{site.data.keyword.cloud_notm}}, restore an independent backup to a supported database deployment and use database-native export tools to create a portable copy of your data.
 {: shortdesc}
 
 ## Responsibilities
@@ -36,7 +36,7 @@ For more information about responsibility ownership between {{site.data.keyword.
 ## Data export procedures
 {: #data-portability-procedures}
 
-{{site.data.keyword.independent-backups}} preserves database data independently of the lifecycle of the original deployment. Independent backups are not a downloadable export format and cannot be exported directly.
+Independent backups preserves database data independently of the lifecycle of the original deployment. Independent backups are not a downloadable export format and cannot be exported directly.
 
 To obtain a portable copy of your data:
 
@@ -55,9 +55,9 @@ For detailed export procedures and supported export formats, see the documentati
 ## Exported data formats
 {: #data-portability-data-formats}
 
-{{site.data.keyword.independent-backups}} stores backup data in a service-managed format that is used to restore supported database deployments.
+Independent backups stores backup data in a service-managed format that is used to restore supported database deployments.
 
-{{site.data.keyword.independent-backups}} doesn't provide direct access to downloadable backup files or a customer-accessible backup format.
+Independent backups doesn't provide direct access to downloadable backup files or a customer-accessible backup format.
 
 To move data to another cloud provider or on-premises environment, restore the independent backup to a supported database deployment and use the export tools that are provided by the database engine.
 
